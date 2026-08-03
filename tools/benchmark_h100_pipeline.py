@@ -5,16 +5,20 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import platform
 import statistics
 import subprocess
 import sys
+import tempfile
 import time
 from collections.abc import Callable
 from functools import partial
 from pathlib import Path
 from typing import Any, TypeVar
 
+import numpy as np
 import torch
 
 sys.path.insert(0, str(Path.cwd()))
@@ -30,6 +34,55 @@ from capture_h100_pipeline import (
 from utils.wan_wrapper import WanVAEWrapper  # type: ignore[import-not-found]
 
 T = TypeVar("T")
+SOURCE_REVISION = "8db419e341e5fc52542c0b2c4542728420ddfb4a"
+CHECKPOINT_SHA256 = {
+    1: "sha256:bdb1b475fc88d528f510158a0990cd457f02c661b527ceb11ca9e4728533e2d0",
+    2: "sha256:8f899a016dffb9539788fac82c6200e43ef6e23b6e61ec6b885bb507a760ce42",
+}
+VAE_SHA256 = "sha256:38071ab59bd94681c686fa51d75a1968f64e470262043be31f7a094e442fd981"
+OUTPUT_LATENT_SHA256 = {
+    1: "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+    2: "sha256:aef034994f097090d7d1e500b5bad510be467637a0cbbd79660f4b2ab6d0365d",
+}
+OUTPUT_PIXEL_SHA256 = {
+    1: "sha256:d47d7b5cb1b93aeed3b004d2a16f90bef389319ef3f5dd0c62f4efff5b87124c",
+    2: "sha256:e1f587770eb4c20865819e8b256de20e0b72879d2083a254b75ea96381741241",
+}
+
+
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        while chunk := stream.read(8 * 1024 * 1024):
+            digest.update(chunk)
+    return "sha256:" + digest.hexdigest()
+
+
+def _tensor_payload(value: torch.Tensor, *, dtype: str) -> bytes:
+    tensor = value.detach().cpu().contiguous()
+    if dtype == "bfloat16":
+        return tensor.to(torch.bfloat16).view(torch.uint16).numpy().astype("<u2").tobytes()
+    if dtype == "float16":
+        return tensor.to(torch.float16).numpy().astype("<f2").tobytes()
+    raise ValueError(f"unsupported digest dtype: {dtype}")
+
+
+def _encode_h264(pixels: np.ndarray) -> float:
+    height, width = pixels.shape[1:3]
+    with tempfile.TemporaryDirectory() as temporary:
+        output = Path(temporary) / "benchmark.mp4"
+        started = time.perf_counter()
+        subprocess.run(
+            [
+                "ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo",
+                "-pixel_format", "rgb24", "-video_size", f"{width}x{height}",
+                "-framerate", "16", "-i", "-", "-an", "-c:v", "libx264",
+                "-preset", "veryfast", "-crf", "18", str(output),
+            ],
+            input=pixels.tobytes(order="C"),
+            check=True,
+        )
+        return time.perf_counter() - started
 
 
 def _timed(operation: Callable[[], T]) -> tuple[T, float]:
@@ -140,6 +193,8 @@ def _one_run(
     block_rows = []
     emission_events: list[tuple[float, int]] = []
     thermal_samples = []
+    generated = []
+    decoded_chunks = []
     emitted_frames = 0
     run_started = time.perf_counter()
 
@@ -176,7 +231,9 @@ def _one_run(
                     + sigma * scheduler_noise.double()
                 ).to(torch.bfloat16)
 
+        generated.append(prediction)
         pixels, decode_seconds = _timed(partial(_decode_call, vae, prediction))
+        decoded_chunks.append(pixels)
         emitted_frames += pixels.shape[1]
         emission_events.append((time.perf_counter() - run_started, pixels.shape[1]))
 
@@ -216,13 +273,30 @@ def _one_run(
             )
 
     torch.cuda.synchronize()
+    compute_wall_seconds = time.perf_counter() - run_started
+    materialize_started = time.perf_counter()
+    output_latents = torch.cat(generated, dim=1)
+    output_pixels = torch.cat(decoded_chunks, dim=1)
+    latent_payload = _tensor_payload(output_latents, dtype="bfloat16")
+    pixel_payload = _tensor_payload(output_pixels, dtype="float16")
+    uint8_pixels = (
+        output_pixels.mul(255.0).round().clamp(0, 255).to(torch.uint8)[0]
+        .permute(0, 2, 3, 1).cpu().contiguous().numpy()
+    )
+    materialization_seconds = time.perf_counter() - materialize_started
+    encoding_seconds = _encode_h264(uint8_pixels)
     wall_seconds = time.perf_counter() - run_started
     measured_seconds = sum(row["total_seconds"] for row in block_rows)
     return {
         "student_steps": student_steps,
         "emitted_pixel_frames": emitted_frames,
         "wall_seconds": wall_seconds,
+        "compute_wall_seconds": compute_wall_seconds,
         "measured_gpu_seconds": measured_seconds,
+        "pixel_materialization_seconds": materialization_seconds,
+        "encoding_seconds": encoding_seconds,
+        "output_latent_sha256": "sha256:" + hashlib.sha256(latent_payload).hexdigest(),
+        "output_pixel_sha256": "sha256:" + hashlib.sha256(pixel_payload).hexdigest(),
         "generated_pixel_fps": emitted_frames / wall_seconds,
         "gpu_only_pixel_fps": emitted_frames / measured_seconds,
         "ttff_seconds": block_rows[0]["ttff_path_seconds"],
@@ -261,8 +335,20 @@ def benchmark(
     load_started = time.perf_counter()
     if latent_blocks < 21:
         raise ValueError("sustained benchmark requires at least 21 latent blocks")
-    if local_attn_frames < 2 or not 0 <= sink_frames < local_attn_frames:
+    if latent_blocks != 21:
+        raise ValueError("claim-eligible H100 denominator requires exactly 21 latent blocks")
+    if local_attn_frames == -1:
+        valid_attention = sink_frames == 0
+    else:
+        valid_attention = local_attn_frames >= 2 and 0 <= sink_frames < local_attn_frames
+    if not valid_attention:
         raise ValueError("invalid rolling attention or sink frame count")
+    checkpoint_sha256 = _sha256_file(checkpoint)
+    if checkpoint_sha256 != CHECKPOINT_SHA256[student_steps]:
+        raise ValueError("H100 benchmark checkpoint digest mismatch")
+    vae_path = Path("wan_models/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth")
+    if _sha256_file(vae_path) != VAE_SHA256:
+        raise ValueError("H100 benchmark VAE digest mismatch")
     generator = _load_generator(
         checkpoint, local_attn_size=local_attn_frames, sink_size=sink_frames
     )
@@ -291,8 +377,34 @@ def benchmark(
         )
         for _ in range(repeats)
     ]
+    expected_latents = OUTPUT_LATENT_SHA256[student_steps]
+    expected_pixels = OUTPUT_PIXEL_SHA256[student_steps]
+    identity_passed = all(
+        sample["output_latent_sha256"] == expected_latents
+        and sample["output_pixel_sha256"] == expected_pixels
+        for sample in samples
+    )
+    if not identity_passed:
+        raise RuntimeError("H100 benchmark output identity anchor failed")
+
+    def median(name: str) -> float:
+        return statistics.median(float(sample[name]) for sample in samples)
+
+    denoising = statistics.median(
+        sum(float(row["denoising_seconds"]) for row in sample["blocks"])
+        for sample in samples
+    )
+    refresh = statistics.median(
+        sum(float(row["refresh_seconds"]) for row in sample["blocks"])
+        for sample in samples
+    )
+    vae_seconds = statistics.median(
+        sum(float(row["decode_seconds"]) for row in sample["blocks"])
+        for sample in samples
+    )
     return {
         "schema": "liveframe.h100-pipeline-benchmark.v1",
+        "claim_eligible": True,
         "student_steps": student_steps,
         "latent_blocks": latent_blocks,
         "pixel_frames": 4 * (latent_blocks - 1) + 1,
@@ -303,10 +415,32 @@ def benchmark(
         "torch": torch.__version__,
         "cuda": torch.version.cuda,
         "tf32": False,
+        "runtime": {
+            "source_revision": SOURCE_REVISION,
+            "checkpoint_sha256": checkpoint_sha256,
+            "vae_sha256": VAE_SHA256,
+            "python": platform.python_version(),
+            "driver": subprocess.check_output(
+                ["nvidia-smi", "--query-gpu=driver_version", "--format=csv,noheader"],
+                text=True,
+            ).strip(),
+        },
+        "identity_anchor": {
+            "passed": identity_passed,
+            "output_latent_sha256": expected_latents,
+            "output_pixel_sha256": expected_pixels,
+        },
         "model_load_seconds": load_seconds,
         "warmup": warmup,
         "samples": samples,
         "summary": {
+            "wall_seconds_median": median("wall_seconds"),
+            "compute_wall_seconds_median": median("compute_wall_seconds"),
+            "denoising_seconds_median": denoising,
+            "refresh_seconds_median": refresh,
+            "vae_seconds_median": vae_seconds,
+            "pixel_materialization_seconds_median": median("pixel_materialization_seconds"),
+            "encoding_seconds_median": median("encoding_seconds"),
             "generated_pixel_fps_median": statistics.median(
                 sample["generated_pixel_fps"] for sample in samples
             ),
@@ -326,8 +460,8 @@ def main() -> None:
     parser.add_argument("--student-steps", type=int, choices=(1, 2), required=True)
     parser.add_argument("--repeats", type=int, default=3)
     parser.add_argument("--latent-blocks", type=int, default=360)
-    parser.add_argument("--local-attn-frames", type=int, default=21)
-    parser.add_argument("--sink-frames", type=int, default=1)
+    parser.add_argument("--local-attn-frames", type=int, default=-1)
+    parser.add_argument("--sink-frames", type=int, default=0)
     parser.add_argument("--telemetry-interval", type=int, default=30)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -341,9 +475,11 @@ def main() -> None:
         telemetry_interval=args.telemetry_interval,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
+    temporary_output = args.output.with_suffix(args.output.suffix + ".tmp")
+    temporary_output.write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+    temporary_output.replace(args.output)
     print(json.dumps(report["summary"], sort_keys=True))
 
 

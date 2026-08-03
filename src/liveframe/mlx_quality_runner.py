@@ -30,6 +30,15 @@ from liveframe.quality_stochastic import (
 )
 from liveframe.rolling_forcing import RollingForcingSchedule
 
+VAE_EXECUTION_MODES = ("eager", "compiled-steady")
+
+
+def validate_vae_execution_mode(value: str) -> str:
+    if value not in VAE_EXECUTION_MODES:
+        raise ValueError(f"unsupported VAE execution mode: {value}")
+    return value
+
+
 HOLDOUT_SEEDS = frozenset({81131, 90001, 101111, 120011})
 HOLDOUT_LATENT_FRAMES = frozenset({60, 243})
 MLX_MODEL_DIGEST = (
@@ -173,6 +182,7 @@ class MLXQualityRunner:
         metric_batch_size: int,
         noise_root: Path,
         metric_device: str = "mps",
+        vae_execution_mode: str = "eager",
     ) -> None:
         import mlx.core as mx
         from mlx_video.models.wan_2.config import WanModelConfig  # type: ignore[import-untyped]
@@ -195,6 +205,7 @@ class MLXQualityRunner:
         )
         self.model_dir = model_dir
         self.noise_root = noise_root
+        self.vae_execution_mode = validate_vae_execution_mode(vae_execution_mode)
         self.mx = mx
         self.runtime = {
             **runtime,
@@ -205,6 +216,7 @@ class MLXQualityRunner:
             "policy_bundle_digest": POLICY_BUNDLE_V2_DIGEST,
             "tokenizer_repository": TOKENIZER_REPOSITORY,
             "tokenizer_revision": TOKENIZER_REVISION,
+            "vae_execution_mode": self.vae_execution_mode,
         }
 
     @staticmethod
@@ -349,14 +361,25 @@ class MLXQualityRunner:
         )
 
         cache: list[Any] = [None] * _decoder_cache_slots(self.vae.decoder)
+        compiled = None
+
+        def decode(value: Any) -> Any:
+            return _causal_decode_frame(self.vae, value, cache)
+
         temporary = output.with_name(f".{output.name}.tmp")
         started = time.monotonic()
         emitted = 0
         with temporary.open("wb") as stream:
             for frame in range(latents.shape[1]):
-                decoded = _causal_decode_frame(
-                    self.vae, latents[:, frame : frame + 1].transpose(0, 2, 1, 3, 4), cache
-                )
+                latent = latents[:, frame : frame + 1].transpose(0, 2, 1, 3, 4)
+                if self.vae_execution_mode == "eager" or frame < 2:
+                    decoded = decode(latent)
+                else:
+                    if compiled is None:
+                        compiled = self.mx.compile(
+                            decode, inputs=[self.vae.state, cache], outputs=cache
+                        )
+                    decoded = compiled(latent)
                 self.mx.eval(decoded)
                 pixels = np.array(decoded[0].transpose(1, 2, 3, 0), dtype=np.float32)
                 pixels = np.clip((pixels + 1.0) * 127.5, 0, 255).astype(np.uint8)

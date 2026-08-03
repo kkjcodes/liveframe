@@ -47,6 +47,11 @@ def main() -> None:
     parser.add_argument("--noise-root", type=Path, required=True)
     parser.add_argument("--metric-batch-size", type=int, default=8)
     parser.add_argument("--metric-device", default="mps")
+    parser.add_argument(
+        "--vae-execution-mode",
+        choices=("eager", "compiled-steady"),
+        default="eager",
+    )
     args = parser.parse_args()
 
     protocol, protocol_digest = load_protocol(args.protocol)
@@ -70,6 +75,7 @@ def main() -> None:
         metric_batch_size=args.metric_batch_size,
         noise_root=args.noise_root,
         metric_device=args.metric_device,
+        vae_execution_mode=args.vae_execution_mode,
     )
     report = execute_batch(protocol, manifest, batch, args.output_root, runner)
     print(json.dumps(report, indent=2, sort_keys=True))

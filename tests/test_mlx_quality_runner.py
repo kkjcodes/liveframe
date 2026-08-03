@@ -12,6 +12,7 @@ from liveframe.mlx_quality_runner import (
     mlx_runtime_provenance,
     validate_candidate_job,
     validate_mlx_assets,
+    validate_vae_execution_mode,
 )
 from liveframe.quality_calibration import load_protocol
 from liveframe.quality_capture import load_run_manifest
@@ -91,3 +92,10 @@ def test_runtime_provenance_requires_declared_m5_device() -> None:
 
     with pytest.raises(ValueError, match="requires Apple M5 Max"):
         mlx_runtime_provenance(Runtime())
+
+
+def test_vae_execution_mode_is_fail_closed() -> None:
+    assert validate_vae_execution_mode("eager") == "eager"
+    assert validate_vae_execution_mode("compiled-steady") == "compiled-steady"
+    with pytest.raises(ValueError, match="unsupported VAE execution mode"):
+        validate_vae_execution_mode("unknown")

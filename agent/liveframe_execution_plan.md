@@ -265,7 +265,7 @@ the primary backend for the 17% paired DS wall-clock decision only if its measur
 wall share makes 17% mathematically attainable after overhead. Otherwise M4 records a
 pre-measurement feasibility STOP rather than running a foreordained timing test. The M5 baseline
 remains valid for cross-backend overhead and negative-control reporting and is not replaced by
-the H100 row.
+the H100 row. Execute this prerequisite through `agent/h100_cfpp_denominator_runbook.md`.
 
 **Implementation steps**
 
