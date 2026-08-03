@@ -1,0 +1,15 @@
+{
+  "checkpoint_digest": "sha256:8e3ab670d1247591786e287f8c395e09d7340db0b069d550f8b4c816e2b3f790",
+  "failures": [],
+  "first_calibration_seed": 11003,
+  "manifest_digest": "sha256:8967e70cbc3978544eea92428d2dda78044ebbcaae91e933271f7e1abd72fdc4",
+  "maximum_projected_hours": 5.2875000000000005,
+  "maximum_projected_storage_gib": 263.75,
+  "passed": true,
+  "projected_executor_hours": 4.204251801156335,
+  "projected_storage_gib": 208.31852996349335,
+  "protocol_digest": "sha256:aef6a7ad9426c97a9ae7f99c9a7a4f93799a574ca9e88d341da430c60ca75c52",
+  "schema": "liveframe.quality-calibration-checkpoint.v1",
+  "total_calibration_jobs": 256,
+  "validated_jobs": 32
+}

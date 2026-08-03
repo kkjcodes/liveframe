@@ -1,0 +1,110 @@
+{
+  "schema": "liveframe.rolling-parity-provenance.v1",
+  "algorithm": "rolling_forcing_long_video",
+  "source": {
+    "runtime": "pytorch-cuda-h100",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "checkpoint_sha256": "sha256:1f123dce60e60424a9c6d949643176840fceffb947932997bcf1202d93656d98"
+  },
+  "candidate": {
+    "runtime": "mlx-metal",
+    "device": "Apple M5 Max",
+    "default_device": "Device(gpu, 0)",
+    "mlx_version": "0.32.0",
+    "mlx_metal_version": "0.32.0",
+    "machine": "arm64",
+    "model_sha256": "sha256:1f15d166a8a60bed70c2a8ab2923f40bd2b6b53ed2e0be87905bf45d0666d971"
+  },
+  "decoder": {
+    "comparison": "same-decoder",
+    "runtime": "mlx-metal",
+    "protocol": "upstream-faithful-causal-latent-frames.v1",
+    "vae_sha256": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414",
+    "first_emission_frames": 1,
+    "steady_emission_frames": 4
+  },
+  "metrics": {
+    "lpips": {
+      "network": "alex-v0.1",
+      "state_sha256": "sha256:973be7f57af4d36c6aeecee198cb98ae315192054653634e3ba5d1a421a5023b"
+    },
+    "clip": {
+      "repository": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "state_sha256": "sha256:57aa824e35fc53de9c7aa7ee56749bc5467fae8c7837130924d193d399578415"
+    }
+  },
+  "runs": [
+    {
+      "fixture_id": "rolling-forcing-native-60latent-local21-anchor3-h100",
+      "fixture_manifest_sha256": "sha256:784de22c95596b2ada818de20dd96f4c3b31f80136723900769d8891ac644fed",
+      "latent_frames": 60,
+      "pixel_frames": 237,
+      "playback_seconds": 14.8125,
+      "window_count": 23,
+      "numerical_report_sha256": "sha256:f53c1243764b01de0594d5aabb10ccd1f83372f09fc588e0490edd165cf5157f",
+      "decode_report_sha256": "sha256:41e27f27cc5a1a6eb82752f237b55b7f76389c7cd20d6bf210d5852b108761ff",
+      "perceptual_report_sha256": "sha256:a3f47966ebfa73dd7492d5c266fb013757b812d295e8d6a1512754b47a7230e8",
+      "numerical_canary_passed": true,
+      "output_latents": {
+        "cosine": 0.9993929416696893,
+        "rmse": 0.020457358227697182,
+        "max_abs": 0.15234375
+      },
+      "perceptual": {
+        "lpips_mean": 0.01314897197475539,
+        "clip_cosine_mean": 0.9990523701478661,
+        "temporal_clip_cosine_mean": 0.9473092144323607,
+        "temporal_lpips_delta_mean": 0.002964714494675903,
+        "verdict": "measurement-only"
+      }
+    },
+    {
+      "fixture_id": "rolling-forcing-native-243latent-local21-anchor3-h100",
+      "fixture_manifest_sha256": "sha256:f0a3235717660d753f8d42ae7657e3cb5e6cd5364e5d46872d0cdf8ad5448988",
+      "latent_frames": 243,
+      "pixel_frames": 969,
+      "playback_seconds": 60.5625,
+      "window_count": 84,
+      "numerical_report_sha256": "sha256:1ed26b37591335669b2cff7b7ba3e6a93be60bdd36c42d9bb29810218277cd7f",
+      "decode_report_sha256": "sha256:b1d1b5a7cd082147973c273d4fed61d79f1a602e88ffa46c78b45457f490a829",
+      "perceptual_report_sha256": "sha256:52ffd0d1a3f4797061959f1aee92bfac6cfd624dbeeb6f3642bfa8bcd29fa360",
+      "numerical_canary_passed": false,
+      "output_latents": {
+        "cosine": 0.9989440120334164,
+        "rmse": 0.026755021758989483,
+        "max_abs": 0.1953125
+      },
+      "perceptual": {
+        "lpips_mean": 0.014296557758122651,
+        "clip_cosine_mean": 0.9987486313617143,
+        "temporal_clip_cosine_mean": 0.9337634947304884,
+        "temporal_lpips_delta_mean": 0.003901539624414661,
+        "checkpoint_15s": {
+          "lpips": 0.01507644634693861,
+          "clip_cosine": 0.9993776082992554,
+          "temporal_clip_cosine": 0.9160184860229492,
+          "temporal_lpips_delta": 0.002216637134552002
+        },
+        "checkpoint_60s": {
+          "lpips": 0.015535399317741394,
+          "clip_cosine": 0.9974976778030396,
+          "temporal_clip_cosine": 0.8687276244163513,
+          "temporal_lpips_delta": 0.005718976259231567
+        },
+        "verdict": "measurement-only"
+      }
+    }
+  ],
+  "policy": {
+    "numerical_canary_cosine_minimum": 0.999,
+    "numerical_canary_changed": false,
+    "perceptual_authority": "unavailable until cross-seed floors are pre-registered",
+    "current_perceptual_verdict": "measurement-only"
+  },
+  "limitations": [
+    "The same MLX VAE decoder was used for reference and candidate latents; this isolates generator parity and is not CUDA-to-Metal VAE parity.",
+    "No sustained M5 generation throughput or thermal proof has been measured.",
+    "The H100 19.3 FPS result is a short native-window burst, not a sustained real-time result."
+  ]
+}

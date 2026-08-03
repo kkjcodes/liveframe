@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "liveframe"
+version = "0.1.0.dev0"
+description = "Real-time diffusion video generation, honestly measured."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "kkjcodes" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.14",
+  "pytest>=8.3",
+  "ruff>=0.9",
+]
+mlx = [
+  "mlx>=0.31; platform_system == 'Darwin'",
+  "mlx-video @ git+https://github.com/Blaizzy/mlx-video.git@87db56a51758fefb748a359b90a5283bb8ba4837 ; platform_system == 'Darwin'",
+]
+cuda = ["torch>=2.6"]
+metrics = [
+  "lpips>=0.1.4",
+  "numpy>=2.0",
+  "pillow>=11.0",
+  "scipy>=1.14",
+  "torch>=2.6",
+  "torchvision>=0.21",
+  "transformers>=5.0",
+]
+
+[project.scripts]
+liveframe = "liveframe.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/liveframe"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/liveframe/data" = "liveframe/data"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/liveframe"]
+
+[[tool.mypy.overrides]]
+module = [
+  "liveframe.backends.mlx_causal",
+  "liveframe.mlx_causal_smoke",
+  "liveframe.mlx_parity",
+  "liveframe.mlx_pipeline_parity",
+  "liveframe.mlx_rolling_parity",
+  "liveframe.mlx_vae_decode",
+  "liveframe.rolling_perceptual_parity",
+]
+ignore_errors = true

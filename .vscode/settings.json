@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        ".venv/bin/python": true,
+        ".venv/bin/ruff": true,
+        ".venv/bin/mypy": true,
+        ".venv/bin/pytest": true
+    }
+}

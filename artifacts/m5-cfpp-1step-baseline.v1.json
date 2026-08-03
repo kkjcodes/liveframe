@@ -1,0 +1,1050 @@
+{
+  "allocator": {
+    "cache_limit_bytes": 1073741824,
+    "cache_limit_gib": 1.0,
+    "memory_limit_bytes": 30150672384,
+    "memory_limit_gib": 28.080001831054688,
+    "policy": "device-recommended-working-set-with-bounded-free-cache.v1",
+    "previous_cache_limit_bytes": 36721970380,
+    "previous_memory_limit_bytes": 36721970380
+  },
+  "assets": {
+    "conversion": {
+      "model_sha256": "sha256:40735e0eb76c4a710163d337a5167cee2d7b1ed27dea9b1d8357714bebc1115b",
+      "schema": "liveframe.cfpp-mlx-conversion.v1",
+      "source_checkpoint": "/Users/kumarjha/Code/liveframe/weights/Causal-Forcing/causal-forcing++/framewise-1step.pt",
+      "source_sha256": "sha256:bdb1b475fc88d528f510158a0990cd457f02c661b527ceb11ca9e4728533e2d0",
+      "stock_assets": {
+        "config.json": "sha256:2e67801aacdab64458665e1dab3969046101dec205bcb87aa520c21e5ea4ee5b",
+        "t5_encoder.safetensors": "sha256:e86ee4199903e00a88dcd43583a43a6eb898cef600e38670f222d7e37d163787",
+        "vae.safetensors": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414"
+      },
+      "stock_mlx_dir": "/Users/kumarjha/Code/liveframe/weights/Wan2.1-T2V-1.3B-MLX",
+      "target_dtype": "bfloat16",
+      "tensor_count": 825
+    },
+    "conversion_manifest_sha256": "sha256:f382eb499678e3080c885070987a71193d36ae53e05f8b1196b433350319c001",
+    "fixture_manifest_sha256": "sha256:d621037dc84c416dd7182991fc8e3f10a0245894cf5fd74002a517dc65862eb9",
+    "model_sha256": "sha256:40735e0eb76c4a710163d337a5167cee2d7b1ed27dea9b1d8357714bebc1115b",
+    "vae_sha256": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414"
+  },
+  "claim_eligible": true,
+  "claim_ineligibility_reason": null,
+  "configuration": {
+    "context_noise": 0,
+    "denoising_forwards": 24,
+    "free_cache_limit_gib": 1.0,
+    "latent_blocks": 21,
+    "memory_limit": "Metal recommended working set",
+    "model_loading": "excluded-steady-state",
+    "pixel_frames": 81,
+    "playback_fps": 16,
+    "playback_seconds": 5.0625,
+    "power": "not-measured-powermetrics-requires-privilege",
+    "prompt_encoding": "excluded-precomputed-frozen-fixture",
+    "refresh_forwards": 21,
+    "student_steps": 1,
+    "transformer_forwards": 45
+  },
+  "fixture": {
+    "id": "cfpp-1step-native-21block-h100",
+    "manifest_sha256": "sha256:d621037dc84c416dd7182991fc8e3f10a0245894cf5fd74002a517dc65862eb9"
+  },
+  "median": {
+    "active_mlx_memory_gib": 15.146588711068034,
+    "cache_mlx_memory_gib": 0.5210432261228561,
+    "denoising_seconds": 7.217814414999793,
+    "encoding_seconds": 0.3005705000000489,
+    "generated_fps": 1.1710832502172959,
+    "peak_mlx_memory_gib": 26.66885138861835,
+    "pixel_materialization_seconds": 0.2367657069999609,
+    "refresh_seconds": 6.708888381000037,
+    "swap_delta_mib": 0.0,
+    "ttff_seconds": 1.4890336660000116,
+    "vae_seconds": 54.43052145900012,
+    "wall_seconds": 69.16673087500001
+  },
+  "preflight": {
+    "free_memory_percent": 91.0,
+    "limits": {
+      "max_run_swap_delta_mib": 128.0,
+      "max_start_swap_mib": 128.0,
+      "min_start_free_percent": 25.0
+    },
+    "pressure_output": [
+      "The system has 38654705664 (2359296 pages with a page size of 16384).",
+      "System-wide memory free percentage: 91%"
+    ],
+    "swap": {
+      "free_mib": 0.0,
+      "total_mib": 0.0,
+      "used_mib": 0.0
+    },
+    "top_processes": [
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)",
+        "pid": 1613,
+        "rss_mib": 1375.875
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer)",
+        "pid": 610,
+        "rss_mib": 1181.015625
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)",
+        "pid": 651,
+        "rss_mib": 993.5625
+      },
+      {
+        "command": "/opt/homebrew/Cellar/python@3.13/3.13.13_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python",
+        "pid": 3671,
+        "rss_mib": 469.125
+      },
+      {
+        "command": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer",
+        "pid": 168,
+        "rss_mib": 414.015625
+      },
+      {
+        "command": "/System/Library/PrivateFrameworks/SiriTTSService.framework/sirittsd",
+        "pid": 658,
+        "rss_mib": 288.375
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper",
+        "pid": 1506,
+        "rss_mib": 272.625
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/MacOS/Code",
+        "pid": 463,
+        "rss_mib": 270.4375
+      },
+      {
+        "command": "/System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd",
+        "pid": 583,
+        "rss_mib": 220.609375
+      },
+      {
+        "command": "/System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight",
+        "pid": 558,
+        "rss_mib": 190.0
+      },
+      {
+        "command": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores",
+        "pid": 333,
+        "rss_mib": 188.703125
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper",
+        "pid": 662,
+        "rss_mib": 152.21875
+      },
+      {
+        "command": "/System/Library/ExtensionKit/Extensions/WallpaperDynamicExtension.appex/Contents/MacOS/WallpaperDynamicExtension",
+        "pid": 522,
+        "rss_mib": 146.78125
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper",
+        "pid": 652,
+        "rss_mib": 143.84375
+      },
+      {
+        "command": "/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper",
+        "pid": 581,
+        "rss_mib": 129.625
+      }
+    ]
+  },
+  "quality_anchor": {
+    "failures": [],
+    "limits": {
+      "cosine": 0.999,
+      "max_abs": 0.25,
+      "rmse": 0.035
+    },
+    "metrics": {
+      "cosine": 0.9994899751475398,
+      "elements": 2096640,
+      "max_abs": 0.220703125,
+      "max_rel": 135742.1875,
+      "mean_abs": 0.02549788173309002,
+      "rmse": 0.03155465617073045
+    },
+    "passed": true,
+    "reference": "pinned H100 BF16 output latents; existing MLX parity anchor"
+  },
+  "runtime": {
+    "default_device": "Device(gpu, 0)",
+    "device": {
+      "architecture": "applegpu_g17s",
+      "device_name": "Apple M5 Max",
+      "max_buffer_length": 22613000192,
+      "max_recommended_working_set_size": 30150672384,
+      "memory_size": 38654705664,
+      "resource_limit": 499000
+    },
+    "metal_available": true,
+    "mlx_metal_version": "0.32.0",
+    "mlx_version": "0.32.0",
+    "platform": {
+      "machine": "arm64",
+      "release": "25.6.0",
+      "system": "Darwin",
+      "version": "Darwin Kernel Version 25.6.0: Sat Jul 11 15:27:04 PDT 2026; root:xnu-12377.161.13~4/RELEASE_ARM64_T6050"
+    },
+    "python_version": "3.13.13",
+    "runtime": "mlx-metal"
+  },
+  "schema": "liveframe.mlx-cfpp-benchmark.v1",
+  "trials": [
+    {
+      "active_mlx_memory_gib": 15.142682461068034,
+      "blocks": [
+        {
+          "block": 0,
+          "cumulative_pixel_frames": 1,
+          "denoising_seconds": 0.6402647500000285,
+          "emitted_pixel_frames": 1,
+          "pixel_materialization_seconds": 0.0051215409999940675,
+          "refresh_seconds": 0.1622899999999845,
+          "vae_seconds": 0.8149848329999827,
+          "wall_seconds": 1.6539463329999933
+        },
+        {
+          "block": 1,
+          "cumulative_pixel_frames": 5,
+          "denoising_seconds": 0.17415783399999896,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.013232332999990604,
+          "refresh_seconds": 0.17821829199999684,
+          "vae_seconds": 2.8213777500000106,
+          "wall_seconds": 3.195702874999995
+        },
+        {
+          "block": 2,
+          "cumulative_pixel_frames": 9,
+          "denoising_seconds": 0.19167375000000675,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.010664499999990085,
+          "refresh_seconds": 0.19541233300000727,
+          "vae_seconds": 2.6574403750000215,
+          "wall_seconds": 3.0667580839999857
+        },
+        {
+          "block": 3,
+          "cumulative_pixel_frames": 13,
+          "denoising_seconds": 0.20138791699997682,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011039791000001742,
+          "refresh_seconds": 0.20519962500000588,
+          "vae_seconds": 2.6802112919999956,
+          "wall_seconds": 3.10761204100001
+        },
+        {
+          "block": 4,
+          "cumulative_pixel_frames": 17,
+          "denoising_seconds": 0.22273291700000186,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011226416999988942,
+          "refresh_seconds": 0.22666299999997364,
+          "vae_seconds": 2.650372291999986,
+          "wall_seconds": 3.1237121249999973
+        },
+        {
+          "block": 5,
+          "cumulative_pixel_frames": 21,
+          "denoising_seconds": 0.23901045799999565,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011507958000009921,
+          "refresh_seconds": 0.24203458400000954,
+          "vae_seconds": 2.6476229579999995,
+          "wall_seconds": 3.15241316700002
+        },
+        {
+          "block": 6,
+          "cumulative_pixel_frames": 25,
+          "denoising_seconds": 0.2547632920000069,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.01145483299998773,
+          "refresh_seconds": 0.2579744999999889,
+          "vae_seconds": 2.656921292000021,
+          "wall_seconds": 3.1912171250000085
+        },
+        {
+          "block": 7,
+          "cumulative_pixel_frames": 29,
+          "denoising_seconds": 0.26236679100000515,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011474542000001975,
+          "refresh_seconds": 0.26060320799999204,
+          "vae_seconds": 2.6516841670000133,
+          "wall_seconds": 3.196324541999985
+        },
+        {
+          "block": 8,
+          "cumulative_pixel_frames": 33,
+          "denoising_seconds": 0.28870429100001616,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011915750000014214,
+          "refresh_seconds": 0.2890696249999962,
+          "vae_seconds": 2.6530398339999977,
+          "wall_seconds": 3.254403499999995
+        },
+        {
+          "block": 9,
+          "cumulative_pixel_frames": 37,
+          "denoising_seconds": 0.30500474999999483,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011205958999994436,
+          "refresh_seconds": 0.3069470000000081,
+          "vae_seconds": 2.6900093339999955,
+          "wall_seconds": 3.324096499999996
+        },
+        {
+          "block": 10,
+          "cumulative_pixel_frames": 41,
+          "denoising_seconds": 0.3232637499999953,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011577833000018245,
+          "refresh_seconds": 0.3230016250000176,
+          "vae_seconds": 2.6610633330000155,
+          "wall_seconds": 3.330719375000001
+        },
+        {
+          "block": 11,
+          "cumulative_pixel_frames": 45,
+          "denoising_seconds": 0.3287403749999953,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011676208000011457,
+          "refresh_seconds": 0.3236058749999984,
+          "vae_seconds": 2.6916427909999925,
+          "wall_seconds": 3.366453750000005
+        },
+        {
+          "block": 12,
+          "cumulative_pixel_frames": 49,
+          "denoising_seconds": 0.35905204200000185,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011047625000003336,
+          "refresh_seconds": 0.35482987499997876,
+          "vae_seconds": 2.674779749999999,
+          "wall_seconds": 3.409519415999995
+        },
+        {
+          "block": 13,
+          "cumulative_pixel_frames": 53,
+          "denoising_seconds": 0.37657295899998644,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011380624999986821,
+          "refresh_seconds": 0.3739639590000081,
+          "vae_seconds": 2.7073424999999816,
+          "wall_seconds": 3.481844209000002
+        },
+        {
+          "block": 14,
+          "cumulative_pixel_frames": 57,
+          "denoising_seconds": 0.39647741699999983,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011186458999986826,
+          "refresh_seconds": 0.38811720800001126,
+          "vae_seconds": 2.6880914170000096,
+          "wall_seconds": 3.495209708999994
+        },
+        {
+          "block": 15,
+          "cumulative_pixel_frames": 61,
+          "denoising_seconds": 0.40466200000000185,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011655875000002425,
+          "refresh_seconds": 0.3925991670000144,
+          "vae_seconds": 2.7216158749999977,
+          "wall_seconds": 3.5402947080000047
+        },
+        {
+          "block": 16,
+          "cumulative_pixel_frames": 65,
+          "denoising_seconds": 0.4377970829999924,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011618874999982154,
+          "refresh_seconds": 0.42777045900001553,
+          "vae_seconds": 2.7232473749999997,
+          "wall_seconds": 3.61098366600001
+        },
+        {
+          "block": 17,
+          "cumulative_pixel_frames": 69,
+          "denoising_seconds": 0.45529654200001346,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.012731916999996429,
+          "refresh_seconds": 0.44694350000000327,
+          "vae_seconds": 2.701980958000007,
+          "wall_seconds": 3.628329334
+        },
+        {
+          "block": 18,
+          "cumulative_pixel_frames": 73,
+          "denoising_seconds": 0.4749505830000089,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.01172420899999338,
+          "refresh_seconds": 0.46682224999997857,
+          "vae_seconds": 2.710718667000009,
+          "wall_seconds": 3.6774262910000175
+        },
+        {
+          "block": 19,
+          "cumulative_pixel_frames": 77,
+          "denoising_seconds": 0.4740543750000086,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011639416000008396,
+          "refresh_seconds": 0.46911145800001464,
+          "vae_seconds": 2.7050659589999952,
+          "wall_seconds": 3.6717795000000137
+        },
+        {
+          "block": 20,
+          "cumulative_pixel_frames": 81,
+          "denoising_seconds": 0.5128389170000105,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.01168304099999773,
+          "refresh_seconds": 0.5056914580000011,
+          "vae_seconds": 2.8025323749999984,
+          "wall_seconds": 3.8460754170000087
+        }
+      ],
+      "cache_mlx_memory_gib": 0.5210432261228561,
+      "denoising_seconds": 7.323772793000046,
+      "encoded_bytes": 5448828,
+      "encoded_sha256": "sha256:4a689ceec1eada9abd327292f0b2c3b5edff97a39dc690ca5194b21214f995c0",
+      "encoding_seconds": 0.31541416700000013,
+      "generated_fps": 1.1629640355607047,
+      "memory_after": {
+        "free_memory_percent": 62.0,
+        "pressure_output": [
+          "The system has 38654705664 (2359296 pages with a page size of 16384).",
+          "System-wide memory free percentage: 62%"
+        ],
+        "swap": {
+          "free_mib": 0.0,
+          "total_mib": 0.0,
+          "used_mib": 0.0
+        }
+      },
+      "memory_before": {
+        "free_memory_percent": 75.0,
+        "pressure_output": [
+          "The system has 38654705664 (2359296 pages with a page size of 16384).",
+          "System-wide memory free percentage: 75%"
+        ],
+        "swap": {
+          "free_mib": 0.0,
+          "total_mib": 0.0,
+          "used_mib": 0.0
+        }
+      },
+      "peak_mlx_memory_gib": 26.66494513861835,
+      "pixel_materialization_seconds": 0.2367657069999609,
+      "quality_anchor": {
+        "failures": [],
+        "limits": {
+          "cosine": 0.999,
+          "max_abs": 0.25,
+          "rmse": 0.035
+        },
+        "metrics": {
+          "cosine": 0.9994899751475398,
+          "elements": 2096640,
+          "max_abs": 0.220703125,
+          "max_rel": 135742.1875,
+          "mean_abs": 0.02549788173309002,
+          "rmse": 0.03155465617073045
+        },
+        "passed": true,
+        "reference": "pinned H100 BF16 output latents; existing MLX parity anchor"
+      },
+      "refresh_seconds": 6.796869001000005,
+      "swap_delta_mib": 0.0,
+      "thermal_after": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "thermal_before": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "ttff_seconds": 1.4890336660000116,
+      "vae_seconds": 54.71174512700003,
+      "wall_seconds": 69.649617291
+    },
+    {
+      "active_mlx_memory_gib": 15.146588711068034,
+      "blocks": [
+        {
+          "block": 0,
+          "cumulative_pixel_frames": 1,
+          "denoising_seconds": 0.6492579570000032,
+          "emitted_pixel_frames": 1,
+          "pixel_materialization_seconds": 0.00543520800002284,
+          "refresh_seconds": 0.16408033400000477,
+          "vae_seconds": 0.8142771660000108,
+          "wall_seconds": 1.6664069999999924
+        },
+        {
+          "block": 1,
+          "cumulative_pixel_frames": 5,
+          "denoising_seconds": 0.17823924999999008,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.014519666999973424,
+          "refresh_seconds": 0.18119004199999722,
+          "vae_seconds": 2.873086457999989,
+          "wall_seconds": 3.257354499999991
+        },
+        {
+          "block": 2,
+          "cumulative_pixel_frames": 9,
+          "denoising_seconds": 0.19480216700000597,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.010889542000001029,
+          "refresh_seconds": 0.19535995900000103,
+          "vae_seconds": 2.6795612499999777,
+          "wall_seconds": 3.0925509169999827
+        },
+        {
+          "block": 3,
+          "cumulative_pixel_frames": 13,
+          "denoising_seconds": 0.2058245420000162,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011125375000005988,
+          "refresh_seconds": 0.20667670800000337,
+          "vae_seconds": 2.686786000000012,
+          "wall_seconds": 3.1230528750000133
+        },
+        {
+          "block": 4,
+          "cumulative_pixel_frames": 17,
+          "denoising_seconds": 0.22876079200000277,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011685124999985419,
+          "refresh_seconds": 0.22908808400001135,
+          "vae_seconds": 2.673510250000021,
+          "wall_seconds": 3.1552253330000326
+        },
+        {
+          "block": 5,
+          "cumulative_pixel_frames": 21,
+          "denoising_seconds": 0.24378729099998964,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011817665999956262,
+          "refresh_seconds": 0.24382654200002207,
+          "vae_seconds": 2.6798366670000178,
+          "wall_seconds": 3.190479666999977
+        },
+        {
+          "block": 6,
+          "cumulative_pixel_frames": 25,
+          "denoising_seconds": 0.2598432919999709,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011093209000023307,
+          "refresh_seconds": 0.25853499999999485,
+          "vae_seconds": 2.6792838329999995,
+          "wall_seconds": 3.2207989999999995
+        },
+        {
+          "block": 7,
+          "cumulative_pixel_frames": 29,
+          "denoising_seconds": 0.2658877920000009,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011569624999992811,
+          "refresh_seconds": 0.2651578339999787,
+          "vae_seconds": 2.6735163339999986,
+          "wall_seconds": 3.227833916999998
+        },
+        {
+          "block": 8,
+          "cumulative_pixel_frames": 33,
+          "denoising_seconds": 0.29219608400001107,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011332041000002846,
+          "refresh_seconds": 0.2892706669999825,
+          "vae_seconds": 2.6469247080000287,
+          "wall_seconds": 3.251235333000011
+        },
+        {
+          "block": 9,
+          "cumulative_pixel_frames": 37,
+          "denoising_seconds": 0.30839941699997553,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011926042000027337,
+          "refresh_seconds": 0.30679745900005173,
+          "vae_seconds": 2.7079188750000185,
+          "wall_seconds": 3.345597625000039
+        },
+        {
+          "block": 10,
+          "cumulative_pixel_frames": 41,
+          "denoising_seconds": 0.3268203330000006,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.014076917000011235,
+          "refresh_seconds": 0.322914457999957,
+          "vae_seconds": 2.67184850000001,
+          "wall_seconds": 3.3453756659999954
+        },
+        {
+          "block": 11,
+          "cumulative_pixel_frames": 45,
+          "denoising_seconds": 0.3270730829999593,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011282250000022032,
+          "refresh_seconds": 0.32451000000003205,
+          "vae_seconds": 2.6378786669999954,
+          "wall_seconds": 3.3114981249999573
+        },
+        {
+          "block": 12,
+          "cumulative_pixel_frames": 49,
+          "denoising_seconds": 0.3560017499999617,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011596499999996013,
+          "refresh_seconds": 0.3528953750000028,
+          "vae_seconds": 2.6826716670000224,
+          "wall_seconds": 3.4137537920000227
+        },
+        {
+          "block": 13,
+          "cumulative_pixel_frames": 53,
+          "denoising_seconds": 0.37210645800001885,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011456207999970047,
+          "refresh_seconds": 0.36851037500002803,
+          "vae_seconds": 2.680734083999994,
+          "wall_seconds": 3.4452270830000202
+        },
+        {
+          "block": 14,
+          "cumulative_pixel_frames": 57,
+          "denoising_seconds": 0.38690687499996557,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011231041999963054,
+          "refresh_seconds": 0.38381087499999467,
+          "vae_seconds": 2.6727049589999865,
+          "wall_seconds": 3.4651870840000356
+        },
+        {
+          "block": 15,
+          "cumulative_pixel_frames": 61,
+          "denoising_seconds": 0.3916900830000145,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011254499999949985,
+          "refresh_seconds": 0.3880603750000091,
+          "vae_seconds": 2.669043708000004,
+          "wall_seconds": 3.472610083999996
+        },
+        {
+          "block": 16,
+          "cumulative_pixel_frames": 65,
+          "denoising_seconds": 0.41701408299996956,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011072584000032748,
+          "refresh_seconds": 0.41647158400002127,
+          "vae_seconds": 2.6197815419999984,
+          "wall_seconds": 3.474823375000028
+        },
+        {
+          "block": 17,
+          "cumulative_pixel_frames": 69,
+          "denoising_seconds": 0.4342669170000022,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011083291999966605,
+          "refresh_seconds": 0.43140141699996093,
+          "vae_seconds": 2.6394122089999996,
+          "wall_seconds": 3.5273157080000033
+        },
+        {
+          "block": 18,
+          "cumulative_pixel_frames": 73,
+          "denoising_seconds": 0.45106016599999066,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011049249999985022,
+          "refresh_seconds": 0.4481098750000001,
+          "vae_seconds": 2.6184280410000156,
+          "wall_seconds": 3.539483292
+        },
+        {
+          "block": 19,
+          "cumulative_pixel_frames": 77,
+          "denoising_seconds": 0.4481179579999548,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011057499999992615,
+          "refresh_seconds": 0.4524940839999658,
+          "vae_seconds": 2.713757708000003,
+          "wall_seconds": 3.6391184169999633
+        },
+        {
+          "block": 20,
+          "cumulative_pixel_frames": 81,
+          "denoising_seconds": 0.4797581249999894,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.010845667000012327,
+          "refresh_seconds": 0.47972733400001744,
+          "vae_seconds": 2.709558833000017,
+          "wall_seconds": 3.69238224999998
+        }
+      ],
+      "cache_mlx_memory_gib": 0.5478224009275436,
+      "denoising_seconds": 7.217814414999793,
+      "encoded_bytes": 5448828,
+      "encoded_sha256": "sha256:69678daea2da19ace5176159e68f7916638e53ae91d580bbfd2bebf3381dfede",
+      "encoding_seconds": 0.3005705000000489,
+      "generated_fps": 1.1710832502172959,
+      "memory_after": {
+        "free_memory_percent": 60.0,
+        "pressure_output": [
+          "The system has 38654705664 (2359296 pages with a page size of 16384).",
+          "System-wide memory free percentage: 60%"
+        ],
+        "swap": {
+          "free_mib": 0.0,
+          "total_mib": 0.0,
+          "used_mib": 0.0
+        }
+      },
+      "memory_before": {
+        "free_memory_percent": 79.0,
+        "pressure_output": [
+          "The system has 38654705664 (2359296 pages with a page size of 16384).",
+          "System-wide memory free percentage: 79%"
+        ],
+        "swap": {
+          "free_mib": 0.0,
+          "total_mib": 0.0,
+          "used_mib": 0.0
+        }
+      },
+      "peak_mlx_memory_gib": 26.66885138861835,
+      "pixel_materialization_seconds": 0.23739920999989295,
+      "quality_anchor": {
+        "failures": [],
+        "limits": {
+          "cosine": 0.999,
+          "max_abs": 0.25,
+          "rmse": 0.035
+        },
+        "metrics": {
+          "cosine": 0.9994899751475398,
+          "elements": 2096640,
+          "max_abs": 0.220703125,
+          "max_rel": 135742.1875,
+          "mean_abs": 0.02549788173309002,
+          "rmse": 0.03155465617073045
+        },
+        "passed": true,
+        "reference": "pinned H100 BF16 output latents; existing MLX parity anchor"
+      },
+      "refresh_seconds": 6.708888381000037,
+      "swap_delta_mib": 0.0,
+      "thermal_after": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "thermal_before": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "ttff_seconds": 1.4995289579999849,
+      "vae_seconds": 54.43052145900012,
+      "wall_seconds": 69.16673087500001
+    },
+    {
+      "active_mlx_memory_gib": 15.146588711068034,
+      "blocks": [
+        {
+          "block": 0,
+          "cumulative_pixel_frames": 1,
+          "denoising_seconds": 0.6393404170000281,
+          "emitted_pixel_frames": 1,
+          "pixel_materialization_seconds": 0.004919875000041429,
+          "refresh_seconds": 0.16220304199998736,
+          "vae_seconds": 0.7874694999999861,
+          "wall_seconds": 1.6270098329999882
+        },
+        {
+          "block": 1,
+          "cumulative_pixel_frames": 5,
+          "denoising_seconds": 0.17418070800005125,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.014581958999997369,
+          "refresh_seconds": 0.18073541699999396,
+          "vae_seconds": 2.7944875829999773,
+          "wall_seconds": 3.174386208000044
+        },
+        {
+          "block": 2,
+          "cumulative_pixel_frames": 9,
+          "denoising_seconds": 0.1916308749999871,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.01036491700000397,
+          "refresh_seconds": 0.19457829200001697,
+          "vae_seconds": 2.6035830419999684,
+          "wall_seconds": 3.0075575000000185
+        },
+        {
+          "block": 3,
+          "cumulative_pixel_frames": 13,
+          "denoising_seconds": 0.2012107910000509,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011095957999998518,
+          "refresh_seconds": 0.20537591700002622,
+          "vae_seconds": 2.6132060409999553,
+          "wall_seconds": 3.040709291999974
+        },
+        {
+          "block": 4,
+          "cumulative_pixel_frames": 17,
+          "denoising_seconds": 0.2225727910000046,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.010950459000014234,
+          "refresh_seconds": 0.22598283299998911,
+          "vae_seconds": 2.604142832999969,
+          "wall_seconds": 3.075858291999964
+        },
+        {
+          "block": 5,
+          "cumulative_pixel_frames": 21,
+          "denoising_seconds": 0.23943579199999476,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011693124999965221,
+          "refresh_seconds": 0.24219891600000665,
+          "vae_seconds": 2.6392349579999745,
+          "wall_seconds": 3.1443190420000064
+        },
+        {
+          "block": 6,
+          "cumulative_pixel_frames": 25,
+          "denoising_seconds": 0.2547010419999651,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011514208999983566,
+          "refresh_seconds": 0.25730145900001844,
+          "vae_seconds": 2.6108820829999786,
+          "wall_seconds": 3.1474992089999887
+        },
+        {
+          "block": 7,
+          "cumulative_pixel_frames": 29,
+          "denoising_seconds": 0.2611297919999629,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011400916000013694,
+          "refresh_seconds": 0.2614887499999554,
+          "vae_seconds": 2.6129058330000134,
+          "wall_seconds": 3.154688915999998
+        },
+        {
+          "block": 8,
+          "cumulative_pixel_frames": 33,
+          "denoising_seconds": 0.28673225,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011281750000023294,
+          "refresh_seconds": 0.2879511250000064,
+          "vae_seconds": 2.612372332999996,
+          "wall_seconds": 3.2087125420000007
+        },
+        {
+          "block": 9,
+          "cumulative_pixel_frames": 37,
+          "denoising_seconds": 0.30316491599995743,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.01127800000000434,
+          "refresh_seconds": 0.3050703330000033,
+          "vae_seconds": 2.6341818750000243,
+          "wall_seconds": 3.2639335000000074
+        },
+        {
+          "block": 10,
+          "cumulative_pixel_frames": 41,
+          "denoising_seconds": 0.3208297919999836,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011494625000011638,
+          "refresh_seconds": 0.32177666699999463,
+          "vae_seconds": 2.6113281670000106,
+          "wall_seconds": 3.276759208000044
+        },
+        {
+          "block": 11,
+          "cumulative_pixel_frames": 45,
+          "denoising_seconds": 0.32310374999997293,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.01083695799997031,
+          "refresh_seconds": 0.3208349170000133,
+          "vae_seconds": 2.5912759999999935,
+          "wall_seconds": 3.257513749999987
+        },
+        {
+          "block": 12,
+          "cumulative_pixel_frames": 49,
+          "denoising_seconds": 0.35196450000000823,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.0109955419999892,
+          "refresh_seconds": 0.3526397910000014,
+          "vae_seconds": 2.604403375000004,
+          "wall_seconds": 3.3323292910000077
+        },
+        {
+          "block": 13,
+          "cumulative_pixel_frames": 53,
+          "denoising_seconds": 0.3688616250000223,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011168959000031009,
+          "refresh_seconds": 0.3684368330000325,
+          "vae_seconds": 2.631499917000042,
+          "wall_seconds": 3.3907052079999858
+        },
+        {
+          "block": 14,
+          "cumulative_pixel_frames": 57,
+          "denoising_seconds": 0.3851149999999848,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011522208000030787,
+          "refresh_seconds": 0.3843735410000022,
+          "vae_seconds": 2.6291103329999714,
+          "wall_seconds": 3.4221533749999935
+        },
+        {
+          "block": 15,
+          "cumulative_pixel_frames": 61,
+          "denoising_seconds": 0.3823266659999831,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011310125000022708,
+          "refresh_seconds": 0.3849997499999631,
+          "vae_seconds": 2.6414570830000343,
+          "wall_seconds": 3.432898625000007
+        },
+        {
+          "block": 16,
+          "cumulative_pixel_frames": 65,
+          "denoising_seconds": 0.41563345800000207,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011349957999982507,
+          "refresh_seconds": 0.41553249999998343,
+          "vae_seconds": 2.6260362919999807,
+          "wall_seconds": 3.481951874999993
+        },
+        {
+          "block": 17,
+          "cumulative_pixel_frames": 69,
+          "denoising_seconds": 0.4334630830000492,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011397625000029166,
+          "refresh_seconds": 0.43335325000003877,
+          "vae_seconds": 2.6182590840000444,
+          "wall_seconds": 3.510692208000023
+        },
+        {
+          "block": 18,
+          "cumulative_pixel_frames": 73,
+          "denoising_seconds": 0.45038795900001105,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011228249999987838,
+          "refresh_seconds": 0.4497501669999906,
+          "vae_seconds": 2.6064179580000086,
+          "wall_seconds": 3.525747290999959
+        },
+        {
+          "block": 19,
+          "cumulative_pixel_frames": 77,
+          "denoising_seconds": 0.44929125000004433,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011095916999977362,
+          "refresh_seconds": 0.45408116700002665,
+          "vae_seconds": 2.615617874999998,
+          "wall_seconds": 3.538573583000016
+        },
+        {
+          "block": 20,
+          "cumulative_pixel_frames": 81,
+          "denoising_seconds": 0.48242616600003885,
+          "emitted_pixel_frames": 4,
+          "pixel_materialization_seconds": 0.011300207999966005,
+          "refresh_seconds": 0.48168637500003797,
+          "vae_seconds": 2.6594136250000133,
+          "wall_seconds": 3.646217666000041
+        }
+      ],
+      "cache_mlx_memory_gib": 0.520280048251152,
+      "denoising_seconds": 7.137502623000103,
+      "encoded_bytes": 5448828,
+      "encoded_sha256": "sha256:6b3ba4b09fcf25807bc3d54d4561e3a6c5345a7a4ab76a2e09aef208b1091866",
+      "encoding_seconds": 0.26709579200002054,
+      "generated_fps": 1.1922562843934543,
+      "memory_after": {
+        "free_memory_percent": 61.0,
+        "pressure_output": [
+          "The system has 38654705664 (2359296 pages with a page size of 16384).",
+          "System-wide memory free percentage: 61%"
+        ],
+        "swap": {
+          "free_mib": 0.0,
+          "total_mib": 0.0,
+          "used_mib": 0.0
+        }
+      },
+      "memory_before": {
+        "free_memory_percent": 78.0,
+        "pressure_output": [
+          "The system has 38654705664 (2359296 pages with a page size of 16384).",
+          "System-wide memory free percentage: 78%"
+        ],
+        "swap": {
+          "free_mib": 0.0,
+          "total_mib": 0.0,
+          "used_mib": 0.0
+        }
+      },
+      "peak_mlx_memory_gib": 26.66885138861835,
+      "pixel_materialization_seconds": 0.23278154300004417,
+      "quality_anchor": {
+        "failures": [],
+        "limits": {
+          "cosine": 0.999,
+          "max_abs": 0.25,
+          "rmse": 0.035
+        },
+        "metrics": {
+          "cosine": 0.9994899751475398,
+          "elements": 2096640,
+          "max_abs": 0.220703125,
+          "max_rel": 135742.1875,
+          "mean_abs": 0.02549788173309002,
+          "rmse": 0.03155465617073045
+        },
+        "passed": true,
+        "reference": "pinned H100 BF16 output latents; existing MLX parity anchor"
+      },
+      "refresh_seconds": 6.6903510420000885,
+      "swap_delta_mib": 0.0,
+      "thermal_after": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "thermal_before": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "ttff_seconds": 1.4621409160000098,
+      "vae_seconds": 53.347285789999944,
+      "wall_seconds": 67.93841312500001
+    }
+  ],
+  "video": {
+    "bytes": 5448828,
+    "path": "outputs/m5-cfpp-1step-baseline.mp4",
+    "sha256": "sha256:6b3ba4b09fcf25807bc3d54d4561e3a6c5345a7a4ab76a2e09aef208b1091866"
+  },
+  "warmups": 1
+}

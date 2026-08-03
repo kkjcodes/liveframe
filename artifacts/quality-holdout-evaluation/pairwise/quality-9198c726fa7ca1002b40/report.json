@@ -1,0 +1,16 @@
+{
+  "candidate_run_id": "quality-9198c726fa7ca1002b40",
+  "identity_metrics": {
+    "pairwise_clip_distance_mean": 0.1319367576186748,
+    "pairwise_lpips_mean": 0.6382071906076004,
+    "pairwise_temporal_clip_distance_mean": 0.9686769298304253
+  },
+  "metric_provenance_digest": "sha256:2133979749da2bcf603b498cd68f057ca63f6def26d5febb8a9366c02eba3d06",
+  "pixel_artifacts": {
+    "candidate_sha256": "sha256:ca71afa4fc81a3b2c04657c72c3bd4d216c5061fb7f30c13363a429143599521",
+    "reference_sha256": "sha256:c18193803880e8f5e35f2459285e81079f500bf394918ebe4ec3009f003d87a0"
+  },
+  "reference_run_id": "quality-bcbf7737a39ef0cab6e6",
+  "schema": "liveframe.quality-pairwise-identity.v1",
+  "stochastic_payload_sha256": "sha256:8da9536071cba6588026193504b5fe4581e33eb2b8dc88c836aab5008eff3bd4"
+}

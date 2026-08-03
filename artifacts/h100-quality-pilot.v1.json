@@ -1,0 +1,69 @@
+{
+  "batch_digest": "sha256:c9e8e2882e7a85059473e8d8d3fa7a896bbb8295f75db8dc5c53aefd00130525",
+  "jobs": [
+    {
+      "backend": "cuda",
+      "horizon_seconds": 15,
+      "latent_frames": 60,
+      "pixel_frames": 237,
+      "playback_seconds": 14.8125,
+      "prompt": "Hand-drawn 2D animation, locked camera, a young astronomer holds a telescope pose on a quiet painted rooftop, only breathing, blinking, and a few strands of hair move, stable flat colors.",
+      "prompt_id": "limited_hold_01",
+      "role": "teacher",
+      "run_id": "quality-8f0c2b4cef7d21d863f6",
+      "seed": 11003,
+      "split": "calibration",
+      "status": "planned",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "backend": "cuda",
+      "horizon_seconds": 60,
+      "latent_frames": 243,
+      "pixel_frames": 969,
+      "playback_seconds": 60.5625,
+      "prompt": "Hand-drawn 2D animation, locked camera, a young astronomer holds a telescope pose on a quiet painted rooftop, only breathing, blinking, and a few strands of hair move, stable flat colors.",
+      "prompt_id": "limited_hold_01",
+      "role": "teacher",
+      "run_id": "quality-cd2f6f745bfe759e2b36",
+      "seed": 11003,
+      "split": "calibration",
+      "status": "planned",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "backend": "cuda",
+      "horizon_seconds": 15,
+      "latent_frames": 60,
+      "pixel_frames": 237,
+      "playback_seconds": 14.8125,
+      "prompt": "Energetic 2D chase through a crowded night market, multiple running characters, cloth and signs moving, lateral camera tracking, dense painted details and no cuts.",
+      "prompt_id": "dense_motion_01",
+      "role": "teacher",
+      "run_id": "quality-46026182f137efa0bfae",
+      "seed": 11003,
+      "split": "calibration",
+      "status": "planned",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "backend": "cuda",
+      "horizon_seconds": 60,
+      "latent_frames": 243,
+      "pixel_frames": 969,
+      "playback_seconds": 60.5625,
+      "prompt": "Energetic 2D chase through a crowded night market, multiple running characters, cloth and signs moving, lateral camera tracking, dense painted details and no cuts.",
+      "prompt_id": "dense_motion_01",
+      "role": "teacher",
+      "run_id": "quality-1399d2d968b8c20ee468",
+      "seed": 11003,
+      "split": "calibration",
+      "status": "planned",
+      "stratum": "high-motion-dense-scenes"
+    }
+  ],
+  "manifest_digest": "sha256:8967e70cbc3978544eea92428d2dda78044ebbcaae91e933271f7e1abd72fdc4",
+  "output_root": "artifacts/h100-quality-results",
+  "protocol_digest": "sha256:aef6a7ad9426c97a9ae7f99c9a7a4f93799a574ca9e88d341da430c60ca75c52",
+  "schema": "liveframe.quality-capture-batch.v1"
+}

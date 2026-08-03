@@ -1,0 +1,21 @@
+{
+  "schema": "liveframe.perceptual-metrics-provenance.v1",
+  "lpips": {
+    "implementation": "lpips",
+    "network": "alex",
+    "version": "0.1",
+    "package_version": "0.1.4",
+    "state_sha256": "sha256:973be7f57af4d36c6aeecee198cb98ae315192054653634e3ba5d1a421a5023b"
+  },
+  "clip": {
+    "implementation": "transformers.CLIPModel",
+    "repository": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "state_sha256": "sha256:57aa824e35fc53de9c7aa7ee56749bc5467fae8c7837130924d193d399578415"
+  },
+  "temporal_consistency": {
+    "clip": "cosine similarity of consecutive-frame CLIP feature deltas",
+    "lpips": "absolute difference between teacher and candidate consecutive-frame LPIPS motion"
+  },
+  "verdict_policy": "authoritative only through a digest-bound liveframe.perceptual-policy.v2 bundle derived before holdout visibility"
+}

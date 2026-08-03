@@ -1,0 +1,49 @@
+{
+  "schema": "liveframe.local-conversion.v1",
+  "created_on": "2026-07-20",
+  "converter": {
+    "repository": "Blaizzy/mlx-video",
+    "revision": "87db56a51758fefb748a359b90a5283bb8ba4837",
+    "installed_version": "0.0.1",
+    "mlx_version": "0.32.0",
+    "command_module": "mlx_video.models.wan_2.convert"
+  },
+  "source": {
+    "repository": "Wan-AI/Wan2.1-T2V-1.3B",
+    "revision": "37ec512624d61f7aa208f7ea8140a131f93afc9a",
+    "files": {
+      "diffusion_pytorch_model.safetensors": "sha256:96b6b242ca1c2f24e9d02cd6596066fab6d310e2d7538f33ae267cb18d957e8f",
+      "Wan2.1_VAE.pth": "sha256:38071ab59bd94681c686fa51d75a1968f64e470262043be31f7a094e442fd981",
+      "models_t5_umt5-xxl-enc-bf16.pth": "sha256:7cace0da2b446bbbbc57d031ab6cf163a3d59b36da94e5afe36745b746fd81d"
+    }
+  },
+  "conversion": {
+    "dtype": "bfloat16",
+    "model_version": "2.1",
+    "quantized": false,
+    "output_files": {
+      "model.safetensors": "sha256:74c062f8a1e4e466ef7bb8fbf54a5d52766a406c49094a49e27c3f14d8c5b733",
+      "t5_encoder.safetensors": "sha256:e86ee4199903e00a88dcd43583a43a6eb898cef600e38670f222d7e37d163787",
+      "vae.safetensors": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414",
+      "config.json": "sha256:2e67801aacdab64458665e1dab3969046101dec205bcb87aa520c21e5ea4ee5b"
+    }
+  },
+  "smoke": {
+    "prompt": "A simple red circle on a white background",
+    "requested_width": 832,
+    "requested_height": 480,
+    "requested_pixel_frames": 1,
+    "steps": 1,
+    "guide_scale": 1,
+    "seed": 42,
+    "t5_seconds": 10.3,
+    "denoising_seconds": 1.9,
+    "vae_seconds": 4.4,
+    "total_seconds": 18.2,
+    "actual_encoded_frames": 4,
+    "actual_fps": 16,
+    "output_sha256": "sha256:71e670a4fc81422d45859072eefc3db2ba3e9c0bfb6f22bb1f492b7697a70612",
+    "claim_eligible": false,
+    "finding": "The pinned stock mlx-video decoder emitted four encoded frames from a one-latent-frame request. First-emission semantics require parity investigation before streaming accounting."
+  }
+}

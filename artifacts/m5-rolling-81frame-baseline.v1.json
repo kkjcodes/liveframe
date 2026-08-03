@@ -1,0 +1,130 @@
+{
+  "claim_eligible": true,
+  "configuration": {
+    "block_frames": 3,
+    "context_noise": 0,
+    "latent_frames": 21,
+    "model_loading": "excluded-steady-state",
+    "pixel_frames": 81,
+    "playback_fps": 16,
+    "playback_seconds": 5.0625,
+    "power": "not-measured-powermetrics-requires-privilege",
+    "prompt_encoding": "excluded-precomputed-frozen-fixture",
+    "transformer_forwards": 20,
+    "ttff": "not-measured-batch-decode-after-generation",
+    "window_count": 10
+  },
+  "fixture": {
+    "id": "rolling-forcing-native-60latent-local21-anchor3-h100",
+    "manifest_sha256": "sha256:784de22c95596b2ada818de20dd96f4c3b31f80136723900769d8891ac644fed"
+  },
+  "median": {
+    "active_mlx_memory_gib": 3.014661220833659,
+    "clean_cache_refresh_seconds": 11.328580874484032,
+    "dit_denoise_seconds": 46.278826541733,
+    "encoding_seconds": 0.7258799173869193,
+    "generated_fps": 0.7681748428182387,
+    "peak_mlx_memory_gib": 20.766431329771876,
+    "pixel_materialization_seconds": 0.24530616588890553,
+    "scheduler_seconds": 0.06499566370621324,
+    "vae_seconds": 45.6810547481291,
+    "wall_seconds": 105.4447444579564
+  },
+  "model_sha256": "sha256:1f15d166a8a60bed70c2a8ab2923f40bd2b6b53ed2e0be87905bf45d0666d971",
+  "runtime": {
+    "default_device": "Device(gpu, 0)",
+    "device": {
+      "architecture": "applegpu_g17s",
+      "device_name": "Apple M5 Max",
+      "max_buffer_length": 22613000192,
+      "max_recommended_working_set_size": 30150672384,
+      "memory_size": 38654705664,
+      "resource_limit": 499000
+    },
+    "metal_available": true,
+    "mlx_metal_version": "0.32.0",
+    "mlx_version": "0.32.0",
+    "platform": {
+      "machine": "arm64",
+      "release": "25.4.0",
+      "system": "Darwin",
+      "version": "Darwin Kernel Version 25.4.0: Thu Mar 19 19:33:50 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T6050"
+    },
+    "python_version": "3.13.13",
+    "runtime": "mlx-metal"
+  },
+  "schema": "liveframe.mlx-rolling-benchmark.v1",
+  "trials": [
+    {
+      "active_mlx_memory_gib": 3.014661220833659,
+      "clean_cache_refresh_seconds": 11.328580874484032,
+      "dit_denoise_seconds": 47.47787196049467,
+      "encoded_bytes": 5493425,
+      "encoding_seconds": 0.4526203749701381,
+      "generated_fps": 0.7681748428182387,
+      "peak_mlx_memory_gib": 20.766431329771876,
+      "pixel_materialization_seconds": 0.24530616588890553,
+      "scheduler_seconds": 0.06499566370621324,
+      "thermal_after": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "thermal_before": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "vae_seconds": 45.6810547481291,
+      "wall_seconds": 105.4447444579564
+    },
+    {
+      "active_mlx_memory_gib": 3.014661220833659,
+      "clean_cache_refresh_seconds": 11.172206040937454,
+      "dit_denoise_seconds": 46.278826541733,
+      "encoded_bytes": 5493425,
+      "encoding_seconds": 0.7258799173869193,
+      "generated_fps": 0.7841845685254504,
+      "peak_mlx_memory_gib": 20.766431329771876,
+      "pixel_materialization_seconds": 0.1440235418267548,
+      "scheduler_seconds": 0.1047855825163424,
+      "thermal_after": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "thermal_before": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "vae_seconds": 44.46107554156333,
+      "wall_seconds": 103.29200962511823
+    },
+    {
+      "active_mlx_memory_gib": 3.014661220833659,
+      "clean_cache_refresh_seconds": 24.167792457621545,
+      "dit_denoise_seconds": 43.614484501071274,
+      "encoded_bytes": 5493425,
+      "encoding_seconds": 1.0589222498238087,
+      "generated_fps": 0.5334593504812146,
+      "peak_mlx_memory_gib": 20.766431329771876,
+      "pixel_materialization_seconds": 0.2548182513564825,
+      "scheduler_seconds": 0.04642100119963288,
+      "thermal_after": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "thermal_before": [
+        "Note: No thermal warning level has been recorded",
+        "Note: No performance warning level has been recorded",
+        "Note: No CPU power status has been recorded"
+      ],
+      "vae_seconds": 82.37932941503823,
+      "wall_seconds": 151.83912312518805
+    }
+  ],
+  "vae_sha256": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414",
+  "warmups": 1
+}

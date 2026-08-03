@@ -1,0 +1,29 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Large or machine-local artifacts
+outputs/
+weights/
+checkpoints/
+third_party/
+artifacts/h100-holdout-results/
+artifacts/mlx-holdout-results/
+artifacts/shared-rolling-noise.v1/
+*.pt
+*.pth
+*.safetensors
+*.mp4
+*.mov
+*.mkv
+
+# Runtime state
+.liveframe/
+.claude/settings.local.json

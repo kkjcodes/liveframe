@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://liveframe.dev/schemas/gate-artifact.v1.json",
+  "title": "LiveFrame immutable gate artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["gate_id", "canonicalization", "digest", "contract"],
+  "properties": {
+    "gate_id": {"const": "gates.v1"},
+    "canonicalization": {"const": "rfc8785-compatible-json-v1"},
+    "digest": {"pattern": "^sha256:[0-9a-f]{64}$"},
+    "contract": {
+      "type": "object",
+      "required": ["status", "temporal", "latency", "primary_proof", "secondary_proof", "rejections"]
+    }
+  }
+}

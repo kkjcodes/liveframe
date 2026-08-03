@@ -1,0 +1,79 @@
+{
+  "gate_id": "gates.v1",
+  "canonicalization": "rfc8785-compatible-json-v1",
+  "digest": "sha256:809cba47d33942e6ee7fabf0943647eced12a8f61a2568fe719d0233fb375813",
+  "contract": {
+    "status": "frozen",
+    "temporal": {
+      "native_pixel_fps": 16,
+      "playback_pixel_fps": 16,
+      "latent_frames_default": 21,
+      "pixel_frames_default": 81,
+      "pixel_frames_formula": "4*(latent_frames-1)+1",
+      "temporal_stride": 4
+    },
+    "latency": {
+      "warm_ttff_max_ms": 3000,
+      "warm_ttff_end": "first_displayed_rgb_frame",
+      "warm_requires_pre_roll": false,
+      "cold_start_required_disclosure": true,
+      "steady_p95_below_emission_playback_duration": true
+    },
+    "primary_proof": {
+      "duration_seconds": 60,
+      "min_generated_frames": 960,
+      "max_display_underruns": 0,
+      "queue_lower_bound": 0,
+      "queue_must_be_bounded": true,
+      "queue_end_min_formula": "Q_start-c",
+      "aligned_window_seconds": 10,
+      "aligned_window_min_generated_formula": "160-c",
+      "generated_count_starts_at_playback": true
+    },
+    "secondary_proof": {
+      "duration_seconds": 300,
+      "required_disclosures": [
+        "generated_fps_by_minute",
+        "queue_min_max",
+        "deadline_misses",
+        "memory_slope",
+        "thermal_context",
+        "latency_slope",
+        "drift_curve",
+        "refresh_overhead",
+        "charger_state",
+        "battery_start_end",
+        "macos_power_mode",
+        "lid_display_state",
+        "ambient_conditions"
+      ]
+    },
+    "quality": {
+      "animation_floor_manifest": {"state": "unresolved", "must_freeze_before_candidate": true},
+      "general_t2v_floor_manifest": {"state": "unresolved", "must_freeze_before_candidate": true},
+      "stitch_floor_manifest": {"state": "unresolved", "must_freeze_before_candidate": true}
+    },
+    "fallbacks": {
+      "native_320p_16fps": "eligible",
+      "generated_12fps": "temporal_scale_0.75_only",
+      "generated_8_presented_16": "interpolation_labeled_only",
+      "preview_then_finalize": "non_realtime_fallback"
+    },
+    "applicability": {
+      "primary_hardware": "Apple M5 Max 36GB",
+      "primary_checkpoint_family": "Causal Forcing++ frame-wise",
+      "native_resolution": "832x480"
+    },
+    "rejections": [
+      "temporal_slowing",
+      "unlabeled_interpolation",
+      "frame_duplication",
+      "frame_decimation",
+      "pre_start_frame_accounting",
+      "queue_drain",
+      "queue_overflow",
+      "power_state_ambiguity",
+      "gate_digest_mismatch"
+    ]
+  }
+}

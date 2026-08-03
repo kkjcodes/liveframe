@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://liveframe.local/schemas/perceptual-calibration-protocol.v1.json",
+  "title": "LiveFrame perceptual calibration protocol v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "frozen_at",
+    "claim",
+    "horizons_seconds",
+    "horizon_specs",
+    "prompt_catalog",
+    "strata",
+    "quality_metrics",
+    "identity_tripwires",
+    "sampling",
+    "visual_selection",
+    "budget_ceiling",
+    "retuning_policy",
+    "ds_oracle_gate"
+  ],
+  "properties": {
+    "schema": {"const": "liveframe.perceptual-calibration-protocol.v1"},
+    "status": {"const": "frozen"},
+    "frozen_at": {"type": "string", "format": "date"},
+    "claim": {"const": "intrinsic-quality-noninferiority-with-identity-tripwire"},
+    "horizons_seconds": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1}
+    },
+    "horizon_specs": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["latent_frames", "pixel_frames", "playback_seconds"],
+        "properties": {
+          "latent_frames": {"type": "integer", "minimum": 3, "multipleOf": 3},
+          "pixel_frames": {"type": "integer", "minimum": 1},
+          "playback_seconds": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "prompt_catalog": {
+      "type": "object",
+      "minProperties": 16,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "strata": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "prompt_ids", "ds_gate_class"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "description": {"type": "string", "minLength": 1},
+          "prompt_ids": {
+            "type": "array",
+            "minItems": 4,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "ds_gate_class": {"type": "boolean"}
+        }
+      }
+    },
+    "quality_metrics": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/qualityMetric"}
+    },
+    "identity_tripwires": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/identityTripwire"}
+    },
+    "sampling": {"$ref": "#/$defs/sampling"},
+    "visual_selection": {"type": "object"},
+    "budget_ceiling": {
+      "type": "object",
+      "required": ["h100_hours", "storage_gib", "cloud_usd"],
+      "properties": {
+        "h100_hours": {"type": "number", "exclusiveMinimum": 0},
+        "storage_gib": {"type": "number", "exclusiveMinimum": 0},
+        "cloud_usd": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "retuning_policy": {
+      "const": "no changes after any holdout result is visible"
+    },
+    "ds_oracle_gate": {"type": "object"},
+    "metric_provenance": {
+      "type": "object",
+      "required": ["artifact", "artifact_sha256", "clip_model", "clip_revision", "lpips_network"],
+      "properties": {
+        "artifact": {"type": "string", "minLength": 1},
+        "artifact_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "clip_model": {"type": "string", "minLength": 1},
+        "clip_revision": {"type": "string", "minLength": 1},
+        "lpips_network": {"type": "string", "minLength": 1}
+      }
+    },
+    "prior_results_policy": {"type": "string"}
+  },
+  "$defs": {
+    "qualityMetric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["direction", "aggregation", "band_sigma", "margin_sigma", "scale_epsilon"],
+      "properties": {
+        "direction": {"enum": ["higher", "lower", "two-sided"]},
+        "aggregation": {"enum": ["mean", "p10"]},
+        "band_sigma": {"type": "number", "minimum": 0},
+        "margin_sigma": {"type": "number", "minimum": 0},
+        "scale_epsilon": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "identityTripwire": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["upper", "rationale"],
+      "properties": {
+        "upper": {"type": "number", "exclusiveMinimum": 0},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "minimum_calibration_videos_per_prompt",
+        "minimum_holdout_videos_per_prompt",
+        "minimum_holdout_pass_fraction",
+        "calibration_seeds",
+        "holdout_seeds",
+        "tail_policy"
+      ],
+      "properties": {
+        "unit": {"const": "independent-video"},
+        "minimum_calibration_videos_per_prompt": {"type": "integer", "minimum": 8},
+        "minimum_holdout_videos_per_prompt": {"type": "integer", "minimum": 4},
+        "minimum_holdout_pass_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "calibration_seeds": {
+          "type": "array",
+          "minItems": 8,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "holdout_seeds": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "tail_policy": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

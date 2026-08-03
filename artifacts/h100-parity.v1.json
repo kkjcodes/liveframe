@@ -1,0 +1,93 @@
+{
+  "schema": "liveframe.h100-parity-provenance.v1",
+  "fixtures": [
+    {
+      "id": "cfpp-2step-native-21block-h100",
+      "manifest_sha256": "sha256:2d4e7a4f25a7582da8f9573e88eb42bf9a9972492bda754c6d30141e0fea7c6d",
+      "tensor_count": 458,
+      "local_bytes": 675151872
+    },
+    {
+      "id": "cfpp-1step-native-21block-h100",
+      "manifest_sha256": "sha256:d621037dc84c416dd7182991fc8e3f10a0245894cf5fd74002a517dc65862eb9",
+      "tensor_count": 338,
+      "local_bytes": 654848000
+    }
+  ],
+  "source": {
+    "runtime": "pytorch-cuda-h100",
+    "revision": "8db419e341e5fc52542c0b2c4542728420ddfb4a",
+    "checkpoint_sha256": "sha256:8f899a016dffb9539788fac82c6200e43ef6e23b6e61ec6b885bb507a760ce42",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "driver": "550.163.01",
+    "cuda": "12.8",
+    "torch": "2.8.0+cu128",
+    "tf32": false
+  },
+  "pipeline": {
+    "native_latent_shape": [1, 21, 16, 60, 104],
+    "pixel_shape": [1, 81, 3, 480, 832],
+    "denoising_forwards": 44,
+    "refresh_forwards": 21,
+    "total_transformer_forwards": 65,
+    "scheduler_noise_draws": 23,
+    "capture_elapsed_seconds_including_serialization": 31.585036277770996
+  },
+  "mlx_parity": {
+    "runs": [
+      {
+        "student_steps": 2,
+        "report_sha256": "sha256:984279a98f8dbe04f60897dbea705a9408a93bff186a6fea0c5575ffdd6061a0",
+        "policy": "native-21block-2step-bfloat16.v1",
+        "passed": true,
+        "compared_tensors": 366,
+        "output_latents": {
+          "cosine": 0.999745988925492,
+          "rmse": 0.02475119710702358,
+          "max_abs": 0.16015625
+        }
+      },
+      {
+        "student_steps": 1,
+        "checkpoint_sha256": "sha256:bdb1b475fc88d528f510158a0990cd457f02c661b527ceb11ca9e4728533e2d0",
+        "mlx_model_sha256": "sha256:40735e0eb76c4a710163d337a5167cee2d7b1ed27dea9b1d8357714bebc1115b",
+        "report_sha256": "sha256:cc9c4b2caf8ee1bc53c86b572aa1a0479499a84833b9d8f28014ec62d36e9636",
+        "policy": "native-21block-1step-bfloat16.v1",
+        "passed": true,
+        "compared_tensors": 286,
+        "output_latents": {
+          "cosine": 0.9994899751475398,
+          "rmse": 0.03155465617073045,
+          "max_abs": 0.220703125
+        }
+      }
+    ]
+  },
+  "vae": {
+    "checkpoint_sha256": "sha256:38071ab59bd94681c686fa51d75a1968f64e470262043be31f7a094e442fd981",
+    "batch_decode_seconds": 2.1729514598846436,
+    "incremental_decode_seconds": 1.8650288581848145,
+    "first_emission_frames": 1,
+    "steady_emission_frames": 4,
+    "batch_stream_max_abs": 0.0,
+    "batch_stream_mean_abs": 0.0
+  },
+  "benchmarks": [
+    {
+      "student_steps": 1,
+      "report_sha256": "sha256:e65e0f4b3756c7308e940bd2c9436e18bb07ae75ad7c2b3c09d975fae73f7949",
+      "repeats": 3,
+      "generated_pixel_fps_median": 19.302121350430173,
+      "ttff_seconds_median": 0.20202012634277342,
+      "steady_block_seconds_median": 0.19780930995941162
+    },
+    {
+      "student_steps": 2,
+      "report_sha256": "sha256:3e749a78076653fe3b8aa697d7126ab3daf398da95d53736e9f54195e108a75a",
+      "repeats": 3,
+      "generated_pixel_fps_median": 15.301038079555763,
+      "ttff_seconds_median": 0.20431074905395508,
+      "steady_block_seconds_median": 0.2524020683288574
+    }
+  ]
+}

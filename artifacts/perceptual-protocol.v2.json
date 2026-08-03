@@ -1,0 +1,174 @@
+{
+  "schema": "liveframe.perceptual-calibration-protocol.v2",
+  "status": "frozen",
+  "frozen_at": "2026-07-26",
+  "claim": "intrinsic-quality-noninferiority-with-identity-tripwire",
+  "source_protocol_digest": "sha256:aef6a7ad9426c97a9ae7f99c9a7a4f93799a574ca9e88d341da430c60ca75c52",
+  "source_calibration_digest": "sha256:437081b72edcb531b4a18733a524a4ffba2a0438ce3ad9cd358d6ac2901c984a",
+  "source_sanity_digest": "sha256:320953225c1e4775ec10285d27ec38f48a504f0cba4fd89161ea828f11e3f6e3",
+  "amendment": "Calibration-informed metric authority revision after the frozen v1 sanity failure and before any holdout visibility. Epsilon-dominated cells remain reported but cannot define authoritative candidate bounds. Numerical thresholds are unchanged.",
+  "metric_authority_policy": {
+    "epsilon_dominated": "diagnostic",
+    "identity_tripwires": "authoritative",
+    "required_coverage": ["semantic-fidelity", "frame-dynamics", "temporal-behavior"],
+    "coverage_categories": {
+      "semantic-fidelity": ["clip_prompt_mean", "clip_prompt_p10"],
+      "frame-dynamics": ["motion_clip_distance_mean", "motion_lpips_mean"],
+      "temporal-behavior": ["temporal_delta_cosine_mean", "motion_lpips_mean", "luma_flicker_mean"]
+    }
+  },
+  "horizons_seconds": [15, 60],
+  "horizon_specs": {
+    "15": {
+      "latent_frames": 60,
+      "pixel_frames": 237,
+      "playback_seconds": 14.8125
+    },
+    "60": {
+      "latent_frames": 243,
+      "pixel_frames": 969,
+      "playback_seconds": 60.5625
+    }
+  },
+  "prompt_catalog": {
+    "limited_hold_01": "Hand-drawn 2D animation, locked camera, a young astronomer holds a telescope pose on a quiet painted rooftop, only breathing, blinking, and a few strands of hair move, stable flat colors.",
+    "limited_hold_02": "Traditional cel animation, a cook pauses beside a simmering pot in a painted kitchen, held body pose with subtle steam and eye movement, static background, clean color regions.",
+    "limited_hold_03": "2D anime style, a passenger sits by a train window reading a letter, nearly held pose with a small blink and page tremble, fixed interior composition, restrained motion.",
+    "limited_hold_04": "Limited animation, a guard stands under a streetlamp at night, locked-off shot, only coat hem and lamp moths move, painted background and stable character silhouette.",
+    "dialogue_01": "Hand-drawn 2D dialogue scene, two characters seated across a cafe table, fixed medium shot, alternating mouth shapes and natural blinks only, stable faces and background.",
+    "dialogue_02": "Anime close-up of a mechanic speaking calmly to someone off camera, subtle lip movement, one blink and slight head motion, fixed camera, consistent facial identity.",
+    "dialogue_03": "Traditional 2D over-the-shoulder conversation in a library, restrained mouth and eye motion, no camera movement, bookshelves and clothing remain stable.",
+    "dialogue_04": "Cel-animated radio host delivering a line at a desk microphone, small mouth shapes and hand gesture, locked camera, flat-shaded studio background remains unchanged.",
+    "cyclic_01": "Side-view 2D animation of a traveler walking in a clean repeating cycle past a painted countryside, consistent limb lengths, steady lateral motion, no cuts.",
+    "cyclic_02": "Hand-drawn cyclist pedaling in a smooth loop along a riverside path, repeating wheel and leg motion, stable character design, gentle background parallax.",
+    "cyclic_03": "Anime character standing on a balcony while hair, scarf, and hanging flags sway in repeating wind cycles, fixed camera and stable flat colors.",
+    "cyclic_04": "2D workshop scene with a large fan and belt mechanism rotating cyclically while a technician watches, locked composition, clean repeated mechanical motion.",
+    "dense_motion_01": "Energetic 2D chase through a crowded night market, multiple running characters, cloth and signs moving, lateral camera tracking, dense painted details and no cuts.",
+    "dense_motion_02": "Hand-drawn fantasy duel with fast body motion, sparks, cloth, and crossing weapons, dynamic camera pan, consistent character identities in a dense scene.",
+    "dense_motion_03": "Anime city intersection in heavy rain, camera pans across moving crowds, umbrellas, vehicles, reflections, and layered parallax, high motion throughout.",
+    "dense_motion_04": "2D aerial scene following a flock of birds through trees and clouds, rapid camera movement, overlapping subjects, detailed parallax, stable silhouettes without cuts."
+  },
+  "strata": [
+    {
+      "id": "limited-animation-held-frames",
+      "description": "Static-heavy limited animation with held poses and sparse local motion.",
+      "prompt_ids": ["limited_hold_01", "limited_hold_02", "limited_hold_03", "limited_hold_04"],
+      "ds_gate_class": true
+    },
+    {
+      "id": "dialogue-minimal-motion",
+      "description": "Dialogue shots dominated by mouth, blink, and small gesture motion.",
+      "prompt_ids": ["dialogue_01", "dialogue_02", "dialogue_03", "dialogue_04"],
+      "ds_gate_class": true
+    },
+    {
+      "id": "cyclic-motion",
+      "description": "Repeated locomotion, wind, and mechanical cycles with moderate temporal change.",
+      "prompt_ids": ["cyclic_01", "cyclic_02", "cyclic_03", "cyclic_04"],
+      "ds_gate_class": false
+    },
+    {
+      "id": "high-motion-dense-scenes",
+      "description": "Camera motion, many subjects, occlusion, and dense temporal change.",
+      "prompt_ids": ["dense_motion_01", "dense_motion_02", "dense_motion_03", "dense_motion_04"],
+      "ds_gate_class": false
+    }
+  ],
+  "quality_metrics": {
+    "clip_prompt_mean": {
+      "direction": "higher",
+      "aggregation": "mean",
+      "band_sigma": 1.645,
+      "margin_sigma": 0.5,
+      "scale_epsilon": 0.002
+    },
+    "clip_prompt_p10": {
+      "direction": "higher",
+      "aggregation": "p10",
+      "band_sigma": 1.645,
+      "margin_sigma": 0.5,
+      "scale_epsilon": 0.002
+    },
+    "motion_clip_distance_mean": {
+      "direction": "two-sided",
+      "aggregation": "mean",
+      "band_sigma": 1.645,
+      "margin_sigma": 0.5,
+      "scale_epsilon": 0.001
+    },
+    "motion_lpips_mean": {
+      "direction": "two-sided",
+      "aggregation": "mean",
+      "band_sigma": 1.645,
+      "margin_sigma": 0.5,
+      "scale_epsilon": 0.002
+    },
+    "temporal_delta_cosine_mean": {
+      "direction": "higher",
+      "aggregation": "mean",
+      "band_sigma": 1.645,
+      "margin_sigma": 0.5,
+      "scale_epsilon": 0.01
+    },
+    "luma_flicker_mean": {
+      "direction": "lower",
+      "aggregation": "mean",
+      "band_sigma": 1.645,
+      "margin_sigma": 0.5,
+      "scale_epsilon": 0.25
+    }
+  },
+  "identity_tripwires": {
+    "pairwise_lpips_mean": {
+      "upper": 0.1,
+      "rationale": "Loose same-seed identity tripwire, deliberately separate from intrinsic quality and ineligible to rescue a quality failure."
+    },
+    "pairwise_clip_distance_mean": {
+      "upper": 0.05,
+      "rationale": "Rejects gross same-seed semantic trajectory changes without borrowing a cross-seed content-distance scale."
+    },
+    "pairwise_temporal_clip_distance_mean": {
+      "upper": 0.35,
+      "rationale": "Loose temporal identity sanity bound intended to catch changed motion trajectories rather than BF16-scale drift."
+    }
+  },
+  "sampling": {
+    "unit": "independent-video",
+    "minimum_calibration_videos_per_prompt": 8,
+    "minimum_holdout_videos_per_prompt": 4,
+    "minimum_holdout_pass_fraction": 0.75,
+    "calibration_seeds": [11003, 17389, 25111, 33941, 42073, 50821, 60101, 70937],
+    "holdout_seeds": [81131, 90001, 101111, 120011],
+    "tail_policy": "p05 and p95 across videos are diagnostic until at least 20 independent videos exist per prompt; frames never increase sample count"
+  },
+  "visual_selection": {
+    "required_holdout_seed_ranks_per_prompt": [0, 2],
+    "include_every_failed_video": true,
+    "include_horizons_seconds": [15, 60],
+    "selection_timing": "seed ranks fixed before holdout visibility"
+  },
+  "budget_ceiling": {
+    "h100_hours": 80,
+    "storage_gib": 1000,
+    "cloud_usd": 300
+  },
+  "metric_provenance": {
+    "artifact": "artifacts/perceptual-metrics.v1.json",
+    "artifact_sha256": "sha256:2133979749da2bcf603b498cd68f057ca63f6def26d5febb8a9366c02eba3d06",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "lpips_network": "alex-v0.1"
+  },
+  "retuning_policy": "no changes after any holdout result is visible",
+  "prior_results_policy": "All results visible before this protocol was frozen remain measurement-only and cannot be promoted to an authoritative holdout.",
+  "ds_oracle_gate": {
+    "required_strata": ["limited-animation-held-frames", "dialogue-minimal-motion"],
+    "minimum_reclaimable_block_compute_fraction": 0.3,
+    "minimum_signal_precision": 0.8,
+    "minimum_signal_recall": 0.6,
+    "minimum_end_to_end_wall_clock_reduction_fraction": 0.17,
+    "wall_clock_backends_required": 1,
+    "quality_requirement": "all horizon-indexed authoritative intrinsic floors and identity tripwires pass",
+    "decision": "all conditions must pass before any DS policy implementation"
+  }
+}
