@@ -23,16 +23,6 @@ import torch
 
 sys.path.insert(0, str(Path.cwd()))
 
-from capture_h100_pipeline import (
-    CONFIGURED_STEPS,
-    FIRST_BLOCK_CONFIGURED_STEPS,
-    TOKENS_PER_FRAME,
-    _load_generator,
-    _make_caches,
-    _warped_steps,
-)
-from utils.wan_wrapper import WanVAEWrapper  # type: ignore[import-not-found]
-
 T = TypeVar("T")
 SOURCE_REVISION = "8db419e341e5fc52542c0b2c4542728420ddfb4a"
 CHECKPOINT_SHA256 = {
@@ -56,6 +46,60 @@ def _sha256_file(path: Path) -> str:
         while chunk := stream.read(8 * 1024 * 1024):
             digest.update(chunk)
     return "sha256:" + digest.hexdigest()
+
+
+def _require_file_digest(path: Path, expected: str, *, label: str) -> str:
+    observed = _sha256_file(path)
+    if observed != expected:
+        raise ValueError(f"H100 benchmark {label} digest mismatch")
+    return observed
+
+
+def _validate_attention(local_attn_frames: int, sink_frames: int) -> None:
+    if local_attn_frames == -1:
+        valid = sink_frames == 0
+    else:
+        valid = local_attn_frames >= 2 and 0 <= sink_frames < local_attn_frames
+    if not valid:
+        raise ValueError("invalid rolling attention or sink frame count")
+
+
+def _require_output_identity(
+    samples: list[dict[str, Any]], *, expected_latents: str, expected_pixels: str
+) -> None:
+    if not samples:
+        raise ValueError("H100 benchmark requires at least one measured sample")
+    if not all(
+        sample["output_latent_sha256"] == expected_latents
+        and sample["output_pixel_sha256"] == expected_pixels
+        for sample in samples
+    ):
+        raise RuntimeError("H100 benchmark output identity anchor failed")
+
+
+def _summarize_samples(samples: list[dict[str, Any]]) -> dict[str, float]:
+    def median(name: str) -> float:
+        return statistics.median(float(sample[name]) for sample in samples)
+
+    def block_median(name: str) -> float:
+        return statistics.median(
+            sum(float(row[name]) for row in sample["blocks"]) for sample in samples
+        )
+
+    return {
+        "wall_seconds_median": median("wall_seconds"),
+        "compute_wall_seconds_median": median("compute_wall_seconds"),
+        "denoising_seconds_median": block_median("denoising_seconds"),
+        "refresh_seconds_median": block_median("refresh_seconds"),
+        "vae_seconds_median": block_median("decode_seconds"),
+        "pixel_materialization_seconds_median": median(
+            "pixel_materialization_seconds"
+        ),
+        "encoding_seconds_median": median("encoding_seconds"),
+        "generated_pixel_fps_median": median("generated_pixel_fps"),
+        "ttff_seconds_median": median("ttff_seconds"),
+        "steady_block_seconds_median": median("steady_block_mean_seconds"),
+    }
 
 
 def _tensor_payload(value: torch.Tensor, *, dtype: str) -> bytes:
@@ -177,6 +221,14 @@ def _one_run(
     latent_blocks: int,
     telemetry_interval: int,
 ) -> dict[str, Any]:
+    from capture_h100_pipeline import (
+        CONFIGURED_STEPS,
+        FIRST_BLOCK_CONFIGURED_STEPS,
+        TOKENS_PER_FRAME,
+        _make_caches,
+        _warped_steps,
+    )
+
     cpu_rng = torch.Generator(device="cpu").manual_seed(seed)
     initial_noise = torch.randn(
         (1, latent_blocks, 16, 60, 104), generator=cpu_rng, dtype=torch.float32
@@ -329,26 +381,25 @@ def benchmark(
     sink_frames: int,
     telemetry_interval: int,
 ) -> dict[str, Any]:
+    from capture_h100_pipeline import _load_generator
+    from utils.wan_wrapper import WanVAEWrapper  # type: ignore[import-not-found]
+
     torch.set_grad_enabled(False)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
     load_started = time.perf_counter()
+    if repeats < 1:
+        raise ValueError("H100 benchmark requires at least one measured sample")
     if latent_blocks < 21:
         raise ValueError("sustained benchmark requires at least 21 latent blocks")
     if latent_blocks != 21:
         raise ValueError("claim-eligible H100 denominator requires exactly 21 latent blocks")
-    if local_attn_frames == -1:
-        valid_attention = sink_frames == 0
-    else:
-        valid_attention = local_attn_frames >= 2 and 0 <= sink_frames < local_attn_frames
-    if not valid_attention:
-        raise ValueError("invalid rolling attention or sink frame count")
-    checkpoint_sha256 = _sha256_file(checkpoint)
-    if checkpoint_sha256 != CHECKPOINT_SHA256[student_steps]:
-        raise ValueError("H100 benchmark checkpoint digest mismatch")
+    _validate_attention(local_attn_frames, sink_frames)
+    checkpoint_sha256 = _require_file_digest(
+        checkpoint, CHECKPOINT_SHA256[student_steps], label="checkpoint"
+    )
     vae_path = Path("wan_models/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth")
-    if _sha256_file(vae_path) != VAE_SHA256:
-        raise ValueError("H100 benchmark VAE digest mismatch")
+    _require_file_digest(vae_path, VAE_SHA256, label="VAE")
     generator = _load_generator(
         checkpoint, local_attn_size=local_attn_frames, sink_size=sink_frames
     )
@@ -379,28 +430,10 @@ def benchmark(
     ]
     expected_latents = OUTPUT_LATENT_SHA256[student_steps]
     expected_pixels = OUTPUT_PIXEL_SHA256[student_steps]
-    identity_passed = all(
-        sample["output_latent_sha256"] == expected_latents
-        and sample["output_pixel_sha256"] == expected_pixels
-        for sample in samples
-    )
-    if not identity_passed:
-        raise RuntimeError("H100 benchmark output identity anchor failed")
-
-    def median(name: str) -> float:
-        return statistics.median(float(sample[name]) for sample in samples)
-
-    denoising = statistics.median(
-        sum(float(row["denoising_seconds"]) for row in sample["blocks"])
-        for sample in samples
-    )
-    refresh = statistics.median(
-        sum(float(row["refresh_seconds"]) for row in sample["blocks"])
-        for sample in samples
-    )
-    vae_seconds = statistics.median(
-        sum(float(row["decode_seconds"]) for row in sample["blocks"])
-        for sample in samples
+    _require_output_identity(
+        samples,
+        expected_latents=expected_latents,
+        expected_pixels=expected_pixels,
     )
     return {
         "schema": "liveframe.h100-pipeline-benchmark.v1",
@@ -426,31 +459,14 @@ def benchmark(
             ).strip(),
         },
         "identity_anchor": {
-            "passed": identity_passed,
+            "passed": True,
             "output_latent_sha256": expected_latents,
             "output_pixel_sha256": expected_pixels,
         },
         "model_load_seconds": load_seconds,
         "warmup": warmup,
         "samples": samples,
-        "summary": {
-            "wall_seconds_median": median("wall_seconds"),
-            "compute_wall_seconds_median": median("compute_wall_seconds"),
-            "denoising_seconds_median": denoising,
-            "refresh_seconds_median": refresh,
-            "vae_seconds_median": vae_seconds,
-            "pixel_materialization_seconds_median": median("pixel_materialization_seconds"),
-            "encoding_seconds_median": median("encoding_seconds"),
-            "generated_pixel_fps_median": statistics.median(
-                sample["generated_pixel_fps"] for sample in samples
-            ),
-            "ttff_seconds_median": statistics.median(
-                sample["ttff_seconds"] for sample in samples
-            ),
-            "steady_block_seconds_median": statistics.median(
-                sample["steady_block_mean_seconds"] for sample in samples
-            ),
-        },
+        "summary": _summarize_samples(samples),
     }
 
 
