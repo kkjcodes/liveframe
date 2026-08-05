@@ -327,6 +327,15 @@ combined reclaim; any realizable path requires more. Therefore M4 passes only wh
 pre-registered 30% oracle-compute floor and the paired 17% complete-wall gate pass. A result such
 as 31% combined reclaim is explicitly a wall-gate failure, not authorization to proceed.
 
+The prospective proof contract is frozen as
+`artifacts/refresh-addressability-manifest.v1.json`, manifest digest
+`sha256:4433ab656e55e9e337c27d6b453b43991594e9fc2fddf1cb814eaeb72f975d48`.
+It contains 64 paired full-refresh/re-RoPE jobs: all eight prompts in the two DS gate strata,
+both 15-second and 60-second horizons, and four fresh seeds (`130003`, `140009`, `150011`,
+`160001`) disjoint from calibration and opened holdout. The mechanism, ancestry schema, drift
+curves, quality binding, and four-way accounting are immutable after the first proof result is
+visible. Synthetic development data may test the implementation but may not alter this campaign.
+
 **Implementation steps**
 
 1. Use the frozen H100 component denominator above; do not replace or retune it after DS
