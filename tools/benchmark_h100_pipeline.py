@@ -64,6 +64,16 @@ def _validate_attention(local_attn_frames: int, sink_frames: int) -> None:
         raise ValueError("invalid rolling attention or sink frame count")
 
 
+def _validate_claim_configuration(
+    *, repeats: int, latent_blocks: int, local_attn_frames: int, sink_frames: int
+) -> None:
+    if repeats != 3:
+        raise ValueError("claim-eligible H100 denominator requires exactly 3 repeats")
+    if latent_blocks != 21:
+        raise ValueError("claim-eligible H100 denominator requires exactly 21 latent blocks")
+    _validate_attention(local_attn_frames, sink_frames)
+
+
 def _require_output_identity(
     samples: list[dict[str, Any]], *, expected_latents: str, expected_pixels: str
 ) -> None:
@@ -74,7 +84,17 @@ def _require_output_identity(
         and sample["output_pixel_sha256"] == expected_pixels
         for sample in samples
     ):
-        raise RuntimeError("H100 benchmark output identity anchor failed")
+        observed = [
+            {
+                "output_latent_sha256": sample["output_latent_sha256"],
+                "output_pixel_sha256": sample["output_pixel_sha256"],
+            }
+            for sample in samples
+        ]
+        raise RuntimeError(
+            "H100 benchmark output identity anchor failed: "
+            + json.dumps(observed, sort_keys=True)
+        )
 
 
 def _summarize_samples(samples: list[dict[str, Any]]) -> dict[str, float]:
@@ -160,6 +180,25 @@ def _generator_call(
 
 def _decode_call(vae: Any, latent: torch.Tensor) -> torch.Tensor:
     return vae.decode_to_pixel(latent, use_cache=True)
+
+
+def _renoise(
+    generator: Any,
+    prediction: torch.Tensor,
+    scheduler_noise: torch.Tensor,
+    next_step: float,
+) -> torch.Tensor:
+    target = torch.full(
+        (prediction.shape[0] * prediction.shape[1],),
+        next_step,
+        device=prediction.device,
+        dtype=torch.float32,
+    )
+    return generator.scheduler.add_noise(
+        prediction.flatten(0, 1),
+        scheduler_noise.to(device=prediction.device).flatten(0, 1),
+        target,
+    ).unflatten(0, prediction.shape[:2])
 
 
 def _gpu_telemetry() -> dict[str, float]:
@@ -276,12 +315,10 @@ def _one_run(
             if step < len(steps) - 1:
                 scheduler_noise = torch.randn(
                     prediction.shape, generator=cpu_rng, dtype=torch.float32
-                ).to(torch.bfloat16).cuda()
-                sigma = steps[step + 1] / 1000.0
-                noisy = (
-                    (1.0 - sigma) * prediction.double()
-                    + sigma * scheduler_noise.double()
                 ).to(torch.bfloat16)
+                noisy = _renoise(
+                    generator, prediction, scheduler_noise, steps[step + 1]
+                )
 
         generated.append(prediction)
         pixels, decode_seconds = _timed(partial(_decode_call, vae, prediction))
@@ -388,13 +425,12 @@ def benchmark(
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
     load_started = time.perf_counter()
-    if repeats < 1:
-        raise ValueError("H100 benchmark requires at least one measured sample")
-    if latent_blocks < 21:
-        raise ValueError("sustained benchmark requires at least 21 latent blocks")
-    if latent_blocks != 21:
-        raise ValueError("claim-eligible H100 denominator requires exactly 21 latent blocks")
-    _validate_attention(local_attn_frames, sink_frames)
+    _validate_claim_configuration(
+        repeats=repeats,
+        latent_blocks=latent_blocks,
+        local_attn_frames=local_attn_frames,
+        sink_frames=sink_frames,
+    )
     checkpoint_sha256 = _require_file_digest(
         checkpoint, CHECKPOINT_SHA256[student_steps], label="checkpoint"
     )
@@ -450,6 +486,7 @@ def benchmark(
         "tf32": False,
         "runtime": {
             "source_revision": SOURCE_REVISION,
+            "harness_sha256": _sha256_file(Path(__file__)),
             "checkpoint_sha256": checkpoint_sha256,
             "vae_sha256": VAE_SHA256,
             "python": platform.python_version(),

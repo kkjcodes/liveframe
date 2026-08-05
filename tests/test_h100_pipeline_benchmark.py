@@ -6,15 +6,18 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+import torch
 
 ROOT = Path(__file__).parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
 from benchmark_h100_pipeline import (  # noqa: E402
+    _renoise,
     _require_file_digest,
     _require_output_identity,
     _summarize_samples,
     _validate_attention,
+    _validate_claim_configuration,
 )
 
 
@@ -54,6 +57,21 @@ def test_attention_validation_accepts_full_and_valid_rolling_attention() -> None
         _validate_attention(12, 12)
 
 
+def test_claim_configuration_requires_frozen_trial_policy() -> None:
+    _validate_claim_configuration(
+        repeats=3, latent_blocks=21, local_attn_frames=-1, sink_frames=0
+    )
+
+    with pytest.raises(ValueError, match="exactly 3 repeats"):
+        _validate_claim_configuration(
+            repeats=1, latent_blocks=21, local_attn_frames=-1, sink_frames=0
+        )
+    with pytest.raises(ValueError, match="exactly 21 latent blocks"):
+        _validate_claim_configuration(
+            repeats=3, latent_blocks=22, local_attn_frames=-1, sink_frames=0
+        )
+
+
 def test_file_digest_validation_fails_closed(tmp_path: Path) -> None:
     checkpoint = tmp_path / "checkpoint.pt"
     checkpoint.write_bytes(b"checkpoint")
@@ -62,6 +80,32 @@ def test_file_digest_validation_fails_closed(tmp_path: Path) -> None:
     assert _require_file_digest(checkpoint, expected, label="checkpoint") == expected
     with pytest.raises(ValueError, match="checkpoint digest mismatch"):
         _require_file_digest(checkpoint, "sha256:wrong", label="checkpoint")
+
+
+def test_renoise_uses_frozen_scheduler_shape_and_target_semantics() -> None:
+    class Scheduler:
+        def add_noise(
+            self,
+            prediction: torch.Tensor,
+            noise: torch.Tensor,
+            target: torch.Tensor,
+        ) -> torch.Tensor:
+            assert prediction.shape == (2, 3, 4)
+            assert noise.shape == prediction.shape
+            assert target.dtype == torch.float32
+            assert target.tolist() == [625.0, 625.0]
+            return prediction + noise
+
+    class Generator:
+        scheduler = Scheduler()
+
+    prediction = torch.ones((1, 2, 3, 4), dtype=torch.bfloat16)
+    noise = torch.full_like(prediction, 2.0)
+
+    result = _renoise(Generator(), prediction, noise, 625.0)
+
+    assert result.shape == prediction.shape
+    assert torch.equal(result, torch.full_like(prediction, 3.0))
 
 
 def test_output_identity_requires_every_sample_and_both_anchors() -> None:
@@ -76,7 +120,7 @@ def test_output_identity_requires_every_sample_and_both_anchors() -> None:
     )
 
     samples[1]["output_pixel_sha256"] = "changed"
-    with pytest.raises(RuntimeError, match="output identity anchor failed"):
+    with pytest.raises(RuntimeError, match='"output_pixel_sha256": "changed"'):
         _require_output_identity(
             samples, expected_latents="latent", expected_pixels="pixel"
         )

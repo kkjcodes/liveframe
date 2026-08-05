@@ -1,6 +1,6 @@
 # H100 one-step CF++ denominator runbook
 
-**Status:** locally validated harness; authoritative H100 execution pending.
+**Status:** authoritative H100 denominator frozen on 2026-08-04.
 
 ## Purpose
 
@@ -8,6 +8,30 @@ Capture the claim-eligible H100 component denominator required before any Delta 
 instrumentation, oracle replay, or DS-on timing. This row does not replace the frozen M5
 denominator. It determines whether the pre-registered 17% end-to-end DS gate is mathematically
 attainable on H100.
+
+## Frozen result
+
+The claim-eligible report is `artifacts/h100-cfpp-1step-denominator.v1.json`, SHA-256
+`sha256:82394c2bad77718668c8fbe7b42dd568de5a607679737312a8004321e740f766`.
+It was captured on an NVIDIA H100 80GB HBM3 with driver 580.159.04 and exact harness SHA-256
+`sha256:93f886e6e397fb4fc49888ed5fca1534c89e8876189655a787231f09e41589d4`.
+All three measured trials reproduced both frozen output anchors, contained 21 block rows and 21
+telemetry rows, and passed complete-wall decomposition checks. Peak sampled temperature was
+53 C and peak sampled GPU memory was 16,379 MiB.
+
+The median complete wall was 5.960916 seconds, or 13.588516 generated pixel FPS. Median
+components were 1.440107 seconds denoising, 1.165517 seconds mandatory refresh, 1.851257
+seconds causal VAE, 0.545644 seconds pixel materialization, and 0.363311 seconds H.264 encoding.
+The conservative denoising-only DS-addressable share is 24.1592%. A 17% complete-wall reduction
+therefore requires at least 70.3667% denoising reclaim before any DS overhead. Reclaiming only
+30% of denoising would reduce complete wall by about 7.2477%. Even perfect denoising elimination
+leaves at most about 0.427 seconds for all DS overhead while meeting the 17% gate.
+
+An initial pre-publication attempt correctly failed output identity. Diagnosis found that the
+benchmark had hand-implemented re-noising with double-precision interpolation instead of calling
+the frozen `generator.scheduler.add_noise` path. No failed report was published. The corrected
+harness reproduced both anchors before the final uninterrupted campaign and records its own
+digest in the final report.
 
 ## Frozen workload
 

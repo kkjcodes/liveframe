@@ -267,10 +267,29 @@ pre-measurement feasibility STOP rather than running a foreordained timing test.
 remains valid for cross-backend overhead and negative-control reporting and is not replaced by
 the H100 row. Execute this prerequisite through `agent/h100_cfpp_denominator_runbook.md`.
 
+**Frozen H100 DS denominator (2026-08-04, before DS instrumentation or oracle visibility):**
+the claim-eligible primary-backend report is
+`artifacts/h100-cfpp-1step-denominator.v1.json`, SHA-256
+`sha256:82394c2bad77718668c8fbe7b42dd568de5a607679737312a8004321e740f766`.
+It binds harness SHA-256
+`sha256:93f886e6e397fb4fc49888ed5fca1534c89e8876189655a787231f09e41589d4`,
+Causal-Forcing revision `8db419e341e5fc52542c0b2c4542728420ddfb4a`, the frozen one-step
+checkpoint/VAE/output anchors, full attention, TF32 disabled, and NVIDIA H100 80GB HBM3 driver
+580.159.04. One warmup and three measured trials all reproduced exact latent and FP16 pixel
+anchors. The median complete wall is 5.960916 seconds (13.588516 generated FPS), including
+1.440107 seconds denoising, 1.165517 seconds mandatory refresh, 1.851257 seconds causal VAE,
+0.545644 seconds materialization, and 0.363311 seconds encoding. The denoising-only addressable
+share is 24.1592%, so H100 is mathematically eligible as the primary paired wall-clock backend,
+but the oracle must reclaim at least 70.3667% of denoising before overhead to make 17% complete
+wall attainable. The generic 30% reclaim floor alone implies only about 7.2477% complete-wall
+reduction. Even perfect denoising elimination permits at most about 0.427 seconds total DS
+overhead. These measured constraints are immutable for M4; the realized path must still pass the
+paired 17% gate.
+
 **Implementation steps**
 
-1. Capture and freeze the H100 component denominator described above; do not begin DS
-   instrumentation until its report and digest are recorded here.
+1. Use the frozen H100 component denominator above; do not replace or retune it after DS
+   instrumentation or oracle visibility.
 2. Sub-profile and optimize the causal VAE first, banking only quality-passing changes. Freeze the
    resulting named post-VAE baseline and digest before realizable DS wall-clock measurement.
 3. Instrument unchanged one-step CF++ full-compute generation to record per-tile latent deltas,
