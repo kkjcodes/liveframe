@@ -286,24 +286,67 @@ reduction. Even perfect denoising elimination permits at most about 0.427 second
 overhead. These measured constraints are immutable for M4; the realized path must still pass the
 paired 17% gate.
 
+**Refresh-addressability amendment (2026-08-04, after denominator visibility and before any P4
+oracle capture or result visibility):** P4 must settle whether mandatory clean-cache refresh is
+DS-addressable before broad oracle instrumentation. The first specified mechanism is cached
+refresh-KV substitution with temporal re-RoPE for genuinely static content. It is motivated by
+the existing Rolling Forcing three-frame anchor path: `RollingForcingKVCache` stores the anchor's
+raw key, re-applies temporal RoPE when its visible position changes, and reuses its value. That
+implementation is evidence that temporal key repositioning machinery exists, not evidence that
+full-attention CF++ refresh can already be skipped. The existing anchor operates under a bounded
+21-frame local-attention policy, while this denominator uses full attention. Moreover, values
+are not position-rotated, and deeper-layer refresh K/V depend on contextual transformer
+activations rather than only the input tile and rotary offset. Re-RoPE refresh reuse therefore
+remains a falsifiable mechanism hypothesis until the following proof gate passes.
+
+1. Specify the substituted state per layer and tile: raw key, re-RoPE'd key, value, cache indices,
+   and the source and destination temporal positions. Directly relabeling already-RoPE'd keys or
+   reusing cache entries with unresolved positional ancestry is prohibited.
+2. Compare substituted refresh state against full refresh at every affected layer, then continue
+   generation so the test measures future latent, K/V, and decoded-pixel drift rather than only
+   immediate cache similarity. Full-attention propagation is part of the measured error.
+3. Publish horizon-indexed drift curves through both frozen 15-second and 60-second horizons for
+   the declared prompts, independent seeds, and content strata. A three-to-five-block spot check
+   cannot authorize refresh accounting. No shorter-horizon result may be extrapolated unless an
+   extrapolation rule is separately frozen before its source observations are visible.
+4. Require the same frozen intrinsic quality floors and identity tripwires used by P4. Cache
+   cursor correctness, finite tensors, and exact source/destination position accounting are
+   structural prerequisites and cannot rescue a quality or trajectory failure.
+5. Demonstrate a realizable dense-skipping or compacted execution path. Refresh FLOPs count as
+   reclaimed only when the measured implementation avoids them after including re-RoPE,
+   selection, cache movement, compaction, and synchronization overhead.
+6. Report four non-substitutable quantities: denoise-only reclaim, refresh-only reclaim, combined
+   reclaim weighted by the frozen component times, and paired complete-wall reduction including
+   all overhead. If this proof gate fails, refresh remains mandatory and denoise-only accounting
+   controls M4.
+
+On the frozen H100 denominator, refresh is 19.5527% of complete wall and denoise plus refresh is
+43.7118%. Thirty percent combined reclaim implies only 13.1135% complete-wall reduction before
+overhead and is not a GO. The zero-overhead lower bound for the 17% wall gate is 38.8911%
+combined reclaim; any realizable path requires more. Therefore M4 passes only when both the
+pre-registered 30% oracle-compute floor and the paired 17% complete-wall gate pass. A result such
+as 31% combined reclaim is explicitly a wall-gate failure, not authorization to proceed.
+
 **Implementation steps**
 
 1. Use the frozen H100 component denominator above; do not replace or retune it after DS
    instrumentation or oracle visibility.
-2. Sub-profile and optimize the causal VAE first, banking only quality-passing changes. Freeze the
+2. Run the refresh-addressability proof gate above and freeze its result before deciding whether
+   P4 instrumentation may count refresh. Do not tune its mechanism against P4 oracle captures.
+3. Sub-profile and optimize the causal VAE first, banking only quality-passing changes. Freeze the
    resulting named post-VAE baseline and digest before realizable DS wall-clock measurement.
-3. Instrument unchanged one-step CF++ full-compute generation to record per-tile latent deltas,
+4. Instrument unchanged one-step CF++ full-compute generation to record per-tile latent deltas,
    block residual norms, KV drift, wall-clock block cost, prompt identifier, horizon, seed, and
    content stratum. Preserve the two M4 GO strata as explicit fields rather than inferring them
    after capture.
-4. Build an offline oracle replay that selectively reuses a tile only where post-hoc evidence
+5. Build an offline oracle replay that selectively reuses a tile only where post-hoc evidence
    says reuse remains inside the frozen quality floor.
-5. Measure oracle-reclaimable block compute and actual wall-clock ceiling separately.
+6. Measure oracle-reclaimable block compute and actual wall-clock ceiling separately.
    Wall-clock measurement must use a realizable dense/compacted execution path and include
    selection, compaction, cache movement, and synchronization overhead.
-6. Evaluate cheap delta-signal precision and recall against the oracle-safe set. Report the
+7. Evaluate cheap delta-signal precision and recall against the oracle-safe set. Report the
    fraction of the oracle ceiling captured, not precision in isolation.
-7. Freeze the R0 report before implementing a learned or hand-tuned reuse policy.
+8. Freeze the R0 report before implementing a learned or hand-tuned reuse policy.
 
 **Decision checkpoint M4**
 
