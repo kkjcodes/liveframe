@@ -1,9 +1,14 @@
 # LiveFrame Accelerated Execution Plan
 
-**Status:** active execution plan; M1 sealed holdout completed with authoritative FAIL  
-**Date:** 2026-08-01  
+**Status:** publication fallback active; engineering speedup and three negative results frozen
+**Date:** 2026-08-05
 **Supersedes for scheduling:** the phase ordering in `liveframe_plan.md`; the research
 details in `liveframe_research_track.md` remain applicable.
+
+**Current scheduling authority:** package the completed evidence described in
+`liveframe_publication_package.md`. Do not resume the periodic refresh mechanism or spend H100
+time on its timing replay. New acceleration mechanisms require separately versioned prospective
+contracts and cannot replace the three frozen negative results.
 
 ## 1. End goal and success boundary
 
@@ -293,9 +298,10 @@ refresh-KV substitution with temporal re-RoPE for genuinely static content. It i
 the existing Rolling Forcing three-frame anchor path: `RollingForcingKVCache` stores the anchor's
 raw key, re-applies temporal RoPE when its visible position changes, and reuses its value. That
 implementation is evidence that temporal key repositioning machinery exists, not evidence that
-full-attention CF++ refresh can already be skipped. The existing anchor operates under a bounded
-21-frame local-attention policy, while this denominator uses full attention. Moreover, values
-are not position-rotated, and deeper-layer refresh K/V depend on contextual transformer
+framewise CF++ refresh can already be skipped. The frozen denominator reaches exactly the
+21-frame cache capacity without rolling; longer jobs must use the equivalent 21-frame rolling
+context with zero sink frames. Moreover, values are not position-rotated, and deeper-layer
+refresh K/V depend on contextual transformer
 activations rather than only the input tile and rotary offset. Re-RoPE refresh reuse therefore
 remains a falsifiable mechanism hypothesis until the following proof gate passes.
 
@@ -304,7 +310,8 @@ remains a falsifiable mechanism hypothesis until the following proof gate passes
    reusing cache entries with unresolved positional ancestry is prohibited.
 2. Compare substituted refresh state against full refresh at every affected layer, then continue
    generation so the test measures future latent, K/V, and decoded-pixel drift rather than only
-   immediate cache similarity. Full-attention propagation is part of the measured error.
+   immediate cache similarity. Propagation through the pinned 21-frame model context is part of
+   the measured error.
 3. Publish horizon-indexed drift curves through both frozen 15-second and 60-second horizons for
    the declared prompts, independent seeds, and content strata. A three-to-five-block spot check
    cannot authorize refresh accounting. No shorter-horizon result may be extrapolated unless an
@@ -335,6 +342,98 @@ both 15-second and 60-second horizons, and four fresh seeds (`130003`, `140009`,
 `160001`) disjoint from calibration and opened holdout. The mechanism, ancestry schema, drift
 curves, quality binding, and four-way accounting are immutable after the first proof result is
 visible. Synthetic development data may test the implementation but may not alter this campaign.
+
+**Framewise geometry correction (2026-08-05, before any proof result visibility):** source
+inspection and a local executable hook test falsified the v1 campaign geometry. V1 inherited the
+Rolling Forcing anchor's three-frame block and `latent_frames / 3 + 3` drift cardinality, but the
+authoritative framewise CF++ path refreshes one latent frame (1,560 tokens) at each block. V1 is
+retained only as a superseded audit record and cannot accept proof evidence. The controlling
+prospective contract is `artifacts/refresh-addressability-manifest.v2.json`, manifest digest
+`sha256:c97a6fc1f042a7f56eab08273f0f6bd2f343b938498907c267a7d7ab3334d59b`.
+It preserves the same 64 jobs, prompts, seeds, horizons, quality gates, and accounting floors,
+while requiring one-frame substitutions and one drift point per latent frame. Long-horizon
+reference runs use full refresh compute with a 21-frame rolling attention context and zero sink
+frames; this is cache-identical to the denominator through its measured 21 blocks. This explicitly
+narrows the earlier unbounded full-attention propagation requirement because the pinned framewise
+cache cannot execute beyond 21 frames without rolling; v2 evidence therefore
+supports refresh addressability only under this declared bounded-context runtime and cannot be
+presented as an unbounded full-attention result. The candidate
+hook skips destination K, K-normalization, and V projections only. Query, attention, output
+projection, and downstream block computation remain mandatory, so no larger fraction of refresh
+may be counted as reclaimed without a separately realized compacted execution path. Frames
+$0,3,6,\ldots$ perform full refresh and capture an anchor; each of the following two framewise
+blocks substitutes all 30 layers from that latest anchor. This three-frame reuse cadence does not
+change the corrected one-frame execution geometry. The anchor schedule and complete
+layer-by-destination ancestry are mandatory, not runner-selectable, and the candidate may not
+borrow source K/V from the paired reference trajectory.
+
+The periodic anchor schedule can eliminate at most two of every three refresh forwards. On the
+frozen denominator, its zero-overhead refresh-only ceiling is therefore $\frac{2}{3} \times
+19.5527\% = 13.0351\%$ of complete wall. Refresh substitution alone cannot satisfy the 17% wall
+gate under this schedule; denoise-side reclaim remains load-bearing in the combined accounting.
+
+**Refresh evidence eligibility amendment (2026-08-04, after source-only preflight and before any
+refresh proof result):** numerical and timing authority are separate, non-substitutable layers.
+The frozen policy is `artifacts/refresh-evidence-eligibility.v1.json`, canonical digest
+`sha256:597c8fee919aa66d700153173bbec3debcce7f5b8e10c07c7c9ed48b78b830c5`.
+Numerical drift, intrinsic quality, and identity evidence may be authoritative on an NVIDIA H100
+80GB HBM3 without driver equality only when the pinned source revision, checkpoint, pristine
+framewise source hashes, TF32=false, stochastic byte identity, and frozen output identity anchors
+all pass and the identity-anchor report digest is recorded. This permits a driver `570.124.06`
+run to answer the mechanism question without borrowing timing authority from another runtime.
+
+Complete-wall timing is authoritative only when the same result is numerically eligible and uses
+driver `580.159.04`, PyTorch `2.8.0+cu128`, CUDA `12.8`, and paired interleaved same-runtime
+measurement against the frozen H100 denominator. Timing from any other runtime is diagnostic and
+cannot satisfy the 17% wall gate, even if numerical quality passes. The frozen denominator remains
+controlling and its exact report digest must be bound into every timing-eligible result; selecting
+a replacement denominator after any refresh proof result is visible is prohibited. The prospective
+execution batch is named
+`artifacts/h100-refresh-proof-batch.v2.json`, batch digest
+`sha256:d9541d8a7e77f0495bf80ed8b8536bed4b56ea0974e48ed1b8732d045d3e4934`; it is a job plan,
+not proof evidence. The v1 batch is superseded and must not be executed.
+
+The memory-hardened local paired runner is preflighted in
+`artifacts/h100-refresh-runner-preflight.v6.json`, file digest
+`sha256:a27e4317445b5b127eee5105995110b51c74fb85ee026d5dbbb0b42c14e599d0`.
+It binds all 64 jobs, the exact source/checkpoint identities, runner digest
+`sha256:cb47246f6f6c30f16634c749797afd8d36bdad9b05f1e8f77f2a237d54693cc7`, runner-core digest
+`sha256:5c19b0924a2c87e87c94f0fb87280dea3a567bb95d38e3ba5c38fdbe4eb5d8d7`, and refresh-hook digest
+`sha256:5934282adbe9ec36ac08fc8ea738158ffa5091054f7c97e30460b3017d18eb63`, with
+`proof_results_generated: false`. Per-frame predictions stream directly to CPU-backed BF16
+artifacts, VAE pixels stream in bounded chunks, and generator, VAE, and perceptual models occupy
+CUDA in separate phases. Before proof visibility, the H100 must pass the proof-blind allocation
+smoke in `agent/h100_refresh_campaign_runbook.md`; that smoke uses only a fixed synthetic prompt
+and deterministic non-proof tensors and must report all three memory checkpoints without CUDA
+OOM. The instrumented
+interleaved proof execution is numerical-only and must remain timing-ineligible. Timing authority
+requires a later uninstrumented paired replay on the exact frozen timing runtime after numerical
+GO.
+
+The proof-blind allocation smoke passed on the H100 with driver `570.124.06`, PyTorch
+`2.8.0+cu128`, and CUDA `12.8`. Its report is
+`artifacts/h100-refresh-allocation-smoke.v1.json`, file digest
+`sha256:250432796242122ef93d7843a51dc53570113e8701a2e88054f7122e0b646e52`.
+It completed one maximum-context generation forward with both paired cache sets, all 243
+sequential latent decodes producing 969 pixel frames, and one metric batch. Peak CUDA allocation
+was 15,274,963,968 bytes and peak reservation was 15,311,306,752 bytes. The report states
+`proof_inputs_loaded: false` and `proof_results_generated: false`; no proof-results directory was
+created. This clears the H100 allocation gate but does not authorize proof visibility.
+
+**Refresh numerical decision (2026-08-06, after all 64 prospective results were frozen):** STOP.
+The complete campaign validation is
+`artifacts/h100-refresh-campaign-validation.v1.json`, file digest
+`sha256:d9e8c75e3233a0af4acc5bafee926ae01bdc5a94f31fceed5bd4b9454c572737`;
+all 64 results and their bound artifacts are complete and numerically eligible. The frozen quality
+decision is `artifacts/h100-refresh-numerical-decision.v1.json`, file digest
+`sha256:c0fe75da36e5a5e968c288021b8ca8fde8b9a1d0e71bb04ba792cc793f9bd4b4`,
+decision digest `sha256:51b1146027c6213336d9e9eaf2c9bbd404e3b517ab78aad80370510f4e8624bb`.
+All 16 prompt/horizon cells failed at 0/4 passing videos. Pairwise temporal CLIP identity failed
+64/64 videos, pairwise LPIPS identity failed 59/64, and intrinsic motion floors failed broadly.
+The periodic raw-K/V re-RoPE substitution mechanism is therefore not refresh-addressable under
+the frozen quality contract. Do not run or claim an authoritative timing replay for this failed
+mechanism, and do not tune it against the now-visible proof results. The matching driver
+`580.159.04` H100 was verified but left unused after this fail-closed decision.
 
 **Implementation steps**
 

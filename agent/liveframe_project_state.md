@@ -1,8 +1,14 @@
 # LiveFrame — Project State & Restart Handoff
 
-**Last updated:** 2026-08-02
-**Status:** Foundation + measurement complete. Correctness verdict is an authoritative FAIL. Fast engine not built. Next concrete milestone: **clean 1-step CF++ M5 baseline.**
-**Validation as of this snapshot:** 140 tests pass, Ruff clean, strict mypy clean.
+**Last updated:** 2026-08-05
+**Status:** Publication fallback active. The clean M5 baseline and exact-output VAE speedup are
+complete; cross-runtime parity, M5 native-FPS target, and periodic refresh reuse are three
+quantified negative results. See `liveframe_publication_package.md` and
+`../artifacts/liveframe-publication-claims.v1.json` before starting new experiments.
+**Validation:** publication ledger tests 3/3 pass; locally executable suite 185 passed with one
+Metal-only test deselected and `test_mlx_causal.py` excluded because the sandbox has no Metal
+device; Ruff clean. Strict mypy remains blocked by seven pre-existing `mlx_vae_profile.py` errors
+from unavailable `mlx.core` typing and untyped MLX lambdas.
 
 > Read this first on restart. It captures where the project stands, what was decided, the hard-won lessons, and the exact next steps. Companion docs: `liveframe_plan.md` (vision), `liveframe_research_track.md` (Delta Scheduling proposal), `liveframe_execution_plan.md` (ladder/gates), plus the M0/M1 reports below.
 

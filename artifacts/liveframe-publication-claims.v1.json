@@ -1,0 +1,99 @@
+{
+  "engineering_speedups": [
+    {
+      "baseline": {
+        "artifact": "artifacts/m5-cfpp-1step-baseline.v1.json",
+        "generated_fps": 1.1710832502172959,
+        "sha256": "sha256:99b18d143dfff1323cdf850b367efc84b8051df676abd5fe54348b6695f0ec3d",
+        "vae_seconds": 54.43052145900012,
+        "wall_seconds": 69.16673087500001
+      },
+      "candidate": {
+        "artifact": "artifacts/m5-cfpp-1step-cache4-baseline.v1.json",
+        "generated_fps": 1.4179056025319092,
+        "pixel_sha256": "sha256:4b55f063d0164fd1c44358186af6cd04ae2dba1356dedd5b86403dfd101e8f61",
+        "sha256": "sha256:5bdc9fdbae59842158f278163d738656d1e4c05996ccf7495cf4d074009e3ce1",
+        "swap_delta_mib": 0.0,
+        "vae_seconds": 41.31944479000049,
+        "wall_seconds": 57.12651099999948
+      },
+      "claim": "Increasing the bounded MLX free-buffer cache from 1 GiB to 4 GiB reduced complete wall time by 17.41% on the frozen 81-frame one-step CF++ fixture while preserving exact raw RGB output and zero swap.",
+      "id": "m5-cfpp-vae-buffer-policy",
+      "scope": "Apple M5 Max, MLX/MLX Metal 0.32.0, Wan2.1-T2V-1.3B one-step CF++, 480x832 output, one warmup and three measured trials",
+      "vae_reduction_fraction": 0.24087729306204742,
+      "wall_reduction_fraction": 0.17407530647588276,
+      "wall_speedup": 1.210764138475053
+    }
+  ],
+  "methodology": {
+    "claim_layers": [
+      "numerical-trajectory",
+      "intrinsic-quality",
+      "same-seed-identity",
+      "complete-wall-performance"
+    ],
+    "features": [
+      "pre-registered horizon-indexed quality policies",
+      "serialized stochastic byte identity across runtimes",
+      "digest-bound model, runtime, metric, and output provenance",
+      "15-second and 60-second long-horizon evaluation",
+      "separate numerical and timing eligibility",
+      "fail-closed artifact and campaign validation",
+      "component-resolved wall-clock accounting",
+      "proof-blind H100 allocation testing"
+    ],
+    "frozen_policy_bundle": "sha256:41a228ceac16a026c7771d2e2c496714e5476c8e9287d3da3d15a78e993a9870",
+    "sealed_cross_runtime_videos": 256,
+    "refresh_proof_videos": 64
+  },
+  "negative_results": [
+    {
+      "claim": "The tested CUDA-to-MLX autoregressive Rolling Forcing trajectory did not remain within the frozen cross-runtime quality and identity contract despite byte-identical stochastic inputs.",
+      "evidence": {
+        "artifact": "artifacts/quality-holdout-evaluation/verdict.json",
+        "identity_cells_passed": 0,
+        "identity_cells_total": 32,
+        "identity_videos_passed": 0,
+        "identity_videos_total": 128,
+        "intrinsic_cells_passed": 19,
+        "intrinsic_cells_total": 32,
+        "sha256": "sha256:146cc868534f1a0955f7d8e49f899df0da63137c4ecb83acd68c1487993f3bcd"
+      },
+      "id": "cross-runtime-ar-divergence",
+      "not_claimed": "This does not establish that all CUDA and MLX video diffusion implementations must diverge.",
+      "scope": "Frozen Rolling Forcing checkpoint and CUDA/MLX implementations, 16 prompts, four seeds, four content strata, 15-second and 60-second horizons"
+    },
+    {
+      "claim": "The fastest claim-eligible tested M5 one-step CF++ configuration remained 11.28x below the 16 native-generated-FPS target on the frozen 81-frame fixture.",
+      "evidence": {
+        "artifact": "artifacts/m5-cfpp-1step-cache4-baseline.v1.json",
+        "generated_fps": 1.4179056025319092,
+        "sha256": "sha256:5bdc9fdbae59842158f278163d738656d1e4c05996ccf7495cf4d074009e3ce1",
+        "target_fps": 16.0,
+        "target_gap_factor": 11.28424908641965,
+        "wall_seconds": 57.12651099999948
+      },
+      "id": "m5-native-fps-target-gap",
+      "not_claimed": "This does not establish an Apple Silicon hardware impossibility; quantization, lower resolution, different models, interpolation, and custom kernels were not exhausted.",
+      "scope": "Apple M5 Max, MLX/MLX Metal 0.32.0, Wan2.1-T2V-1.3B one-step CF++, 480x832 output, 81 generated frames; not a 60-second sustained-streaming claim"
+    },
+    {
+      "claim": "Periodic raw-K/V reuse with temporal re-RoPE at two of every three framewise clean-cache refreshes failed the frozen numerical quality contract.",
+      "evidence": {
+        "artifact": "artifacts/h100-refresh-numerical-decision.v1.json",
+        "cells_passed": 0,
+        "cells_total": 16,
+        "decision_digest": "sha256:51b1146027c6213336d9e9eaf2c9bbd404e3b517ab78aad80370510f4e8624bb",
+        "pairwise_lpips_failures": 59,
+        "pairwise_temporal_clip_failures": 64,
+        "sha256": "sha256:c0fe75da36e5a5e968c288021b8ca8fde8b9a1d0e71bb04ba792cc793f9bd4b4",
+        "videos_total": 64
+      },
+      "id": "periodic-refresh-kv-reuse",
+      "not_claimed": "This rejects only the frozen periodic refresh-substitution mechanism, not all partial refresh, adaptive refresh, denoise reuse, or Delta Scheduling designs.",
+      "scope": "NVIDIA H100 80GB HBM3 numerical campaign, two high-redundancy strata, four prompts per stratum, four seeds, 15-second and 60-second horizons"
+    }
+  ],
+  "package_status": "publication-fallback-active",
+  "schema": "liveframe.publication-claims.v1"
+}
