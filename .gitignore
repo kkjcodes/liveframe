@@ -8,6 +8,7 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+release/
 
 # Large or machine-local artifacts
 outputs/

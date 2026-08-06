@@ -10,8 +10,11 @@
       },
       "candidate": {
         "artifact": "artifacts/m5-cfpp-1step-cache4-baseline.v1.json",
+        "encoded_video_decoded_rgb_sha256": "sha256:ee287790463104842f2a7310e2261963267f1401229fa93858d9321cc538f6c4",
+        "encoded_video_sha256": "sha256:245b41d6077948e23006af753178ae943e84e0702fa423f291b66a77bfbae151",
         "generated_fps": 1.4179056025319092,
-        "pixel_sha256": "sha256:4b55f063d0164fd1c44358186af6cd04ae2dba1356dedd5b86403dfd101e8f61",
+        "raw_pixel_payload_retained": false,
+        "recorded_raw_pixel_anchor_sha256": "sha256:4b55f063d0164fd1c44358186af6cd04ae2dba1356dedd5b86403dfd101e8f61",
         "sha256": "sha256:5bdc9fdbae59842158f278163d738656d1e4c05996ccf7495cf4d074009e3ce1",
         "swap_delta_mib": 0.0,
         "vae_seconds": 41.31944479000049,

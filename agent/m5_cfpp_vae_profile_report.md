@@ -84,8 +84,16 @@ The repeatable exact-output effect is allocator reuse.
 Compilation does compose with the cache, reaching 35.985 seconds VAE-only, but changes the raw
 RGB output. Against eager RGB over 97,044,480 values, compiled output has cosine 0.999997700,
 RMSE 0.277515, mean absolute error 0.076857, and max absolute error 5. It is an output-changing
-quality candidate, not an exact optimization, and cannot be banked without the frozen quality
-gates.
+diagnostic, not an exact optimization. The diagnostic was run with output drift explicitly
+allowed, is marked `claim_eligible: false`, and has no pre-registered intrinsic or identity
+acceptance threshold. Because its output was already visible, a post-hoc local screening rule
+cannot promote it into a publication claim. The candidate is therefore closed for this package
+and listed as future work. Any reconsideration requires a new prospective, versioned quality
+campaign frozen before candidate visibility.
+
+The preserved diagnostic is
+`artifacts/m5-cfpp-vae-profile-cache4-compiled-diagnostic.v1.json`, SHA-256
+`sha256:0fee7903de6d0b8e707e1684b466971629f30ff0372532d4cad209685203b801`.
 
 ## Stage profile
 
@@ -113,7 +121,8 @@ directly with eager as an implementation candidate.
 1. Bank the 4 GiB free-buffer cache as the authoritative exact-output post-VAE baseline when
    configured before model loading.
 2. Close async/deferred materialization as a useful acceleration path for this decoder.
-3. Retain compiled steady state as an output-changing candidate pending frozen quality tests.
+3. Close compiled steady state as a diagnostic-only result for this publication; retain a new
+   prospective quality campaign as future work.
 4. Target the final high-resolution residual convolutions for kernel or quantization work.
 5. Do not test an 8 GiB cache without a separate zero-swap preflight and fail-closed memory gate;
    4 GiB already retains 3.586 GiB while the integrated pipeline peaks at 26.669 GiB.

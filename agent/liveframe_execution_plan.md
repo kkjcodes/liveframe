@@ -435,7 +435,15 @@ the frozen quality contract. Do not run or claim an authoritative timing replay 
 mechanism, and do not tune it against the now-visible proof results. The matching driver
 `580.159.04` H100 was verified but left unused after this fail-closed decision.
 
-**Implementation steps**
+**DS disposition:** the denoise-side oracle was never run and has no pass/fail result. The project
+stopped at the preceding refresh-addressability gate by choice and archived the DS research track
+rather than opening another H100 campaign. On the frozen H100 denominator, denoising alone is
+24.1592% of complete wall, so a denoise-only path had to reclaim at least 70.3667% of denoising
+before overhead to reach the 17% complete-wall gate. That bar remains a pre-measurement
+feasibility requirement, not an observed oracle miss. Public language must say "stopped after the
+refresh gate; denoise oracle unrun," never "the DS oracle failed."
+
+**Unexecuted oracle steps (historical plan)**
 
 1. Use the frozen H100 component denominator above; do not replace or retune it after DS
    instrumentation or oracle visibility.
@@ -456,7 +464,7 @@ mechanism, and do not tune it against the now-visible proof results. The matchin
    fraction of the oracle ceiling captured, not precision in isolation.
 8. Freeze the R0 report before implementing a learned or hand-tuned reuse policy.
 
-**Decision checkpoint M4**
+**Decision checkpoint M4 (pre-registered but unexecuted)**
 
 - **GO:** on one-step CF++, for both limited-animation/held-frame and dialogue/minimal-motion
    classes, at least
@@ -470,8 +478,9 @@ mechanism, and do not tune it against the now-visible proof results. The matchin
    CF++ oracle ceiling/negative result, archive DS as a completed research branch, and continue
    independently with quantization and measured product optimization.
 
-This checkpoint is publishable in either direction because it measures a previously uncertain
-spatiotemporal reuse ceiling.
+No M4 oracle verdict exists because these steps were not executed. The refresh substitution
+result is independently publishable, but it must not be represented as the broader
+spatiotemporal denoise-reuse ceiling.
 
 ### P5 - Delta Scheduling implementation, only after GO
 

@@ -11,7 +11,7 @@ from typing import Any
 def _profile_stage(
     name: str, operation: Callable[[], Any]
 ) -> tuple[Any, dict[str, Any]]:
-    import mlx.core as mx
+    import mlx.core as mx  # type: ignore[import-not-found]
 
     build_started = time.perf_counter()
     value = operation()
@@ -56,27 +56,44 @@ def profiled_causal_decode_frame(
     for layer_index, layer in enumerate(decoder.middle):
         name = f"middle.{layer_index:02d}.{type(layer).__name__}"
         if hasattr(layer, "residual"):
-            x = stage(
-                name,
-                lambda layer=layer, x=x: layer(x, feat_cache=cache, feat_idx=index),
-            )
+            def middle_residual(
+                current_layer: Any = layer, current_value: Any = x
+            ) -> Any:
+                return current_layer(current_value, feat_cache=cache, feat_idx=index)
+
+            x = stage(name, middle_residual)
         else:
-            x = stage(name, lambda layer=layer, x=x: layer(x))
+            def middle_layer(
+                current_layer: Any = layer, current_value: Any = x
+            ) -> Any:
+                return current_layer(current_value)
+
+            x = stage(name, middle_layer)
     for layer_index, layer in enumerate(decoder.upsamples):
         name = f"upsamples.{layer_index:02d}.{type(layer).__name__}"
         if hasattr(layer, "residual"):
-            x = stage(
-                name,
-                lambda layer=layer, x=x: layer(x, feat_cache=cache, feat_idx=index),
-            )
+            def upsample_residual(
+                current_layer: Any = layer, current_value: Any = x
+            ) -> Any:
+                return current_layer(current_value, feat_cache=cache, feat_idx=index)
+
+            x = stage(name, upsample_residual)
         elif getattr(layer, "mode", "").startswith("upsample"):
-            x = stage(
-                name,
-                lambda layer=layer, x=x: _cached_upsample(layer, x, cache, index),
-            )
+            def cached_upsample(
+                current_layer: Any = layer, current_value: Any = x
+            ) -> Any:
+                return _cached_upsample(current_layer, current_value, cache, index)
+
+            x = stage(name, cached_upsample)
         else:
-            x = stage(name, lambda layer=layer, x=x: layer(x))
-    x = stage("head.norm_silu", lambda: nn.silu(decoder.head[0](x)))
+            def upsample_layer(
+                current_layer: Any = layer, current_value: Any = x
+            ) -> Any:
+                return current_layer(current_value)
+
+            x = stage(name, upsample_layer)
+    silu = nn.silu  # type: ignore[attr-defined]
+    x = stage("head.norm_silu", lambda: silu(decoder.head[0](x)))
     x = stage("head.conv", lambda: _cache_conv(decoder.head[2], x, cache, index))
     x = stage("output.clip", lambda: mx.clip(x, -1, 1))
     if index[0] != len(cache):

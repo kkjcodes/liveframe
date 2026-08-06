@@ -57,7 +57,18 @@ The methodology is itself a primary result:
 7. **Lessons for acceleration research:** quality-safe timing gates, refresh-versus-denoise
    accounting, and why numerical eligibility must precede timing claims.
 8. **Limitations and future work:** no universal backend impossibility, no 60-second clean M5
-   streaming row, no general Delta Scheduling rejection, and no second model family.
+    streaming row, no general Delta Scheduling rejection, no denoise-side oracle result, no second
+    model family, and a diagnostic-only compiled VAE candidate requiring a new prospective gate.
+
+## Closed diagnostics and unrun gates
+
+- **Compiled VAE:** measured at 35.985s VAE-only with zero swap, but it changes pixels and its
+   artifact is `claim_eligible: false`. No acceptance threshold was frozen before output
+   visibility. It is future work, not a bounded publication claim.
+- **Denoise-side DS oracle:** never run. The track stopped after the failed refresh-substitution
+   gate by choice. A denoise-only path would have needed at least 70.3667% denoise reclaim before
+   overhead to reach the frozen 17% complete-wall gate; that is a feasibility bar, not an observed
+   failure.
 
 ## Artifact release tiers
 
@@ -70,6 +81,19 @@ timing tables, failure distributions, and compact per-video metric records.
 **Tier C - archived corpus:** the large raw H100/MLX and refresh campaign trees retained on the
 network volume with checksummed indexes. Do not require downloading the full corpus to validate
 the compact claims.
+
+## Repository visibility decision
+
+Keep the repository non-public until Tier A and Tier B have durable public locations, the curated
+videos complete content review, and the published files verify against
+`artifacts/liveframe-publication-release-tiers.v1.json`. Tier C may remain in checksummed cold
+storage and is not a publication blocker. After those gates pass, make the repository public at
+the frozen release revision and publish the evidence URLs in the same release operation so no
+manifest points to an unavailable tier.
+
+This decision does not require another H100 run. The inaccessible refresh volume still requires
+one low-cost mount to copy and verify its raw corpus before that volume can be terminated; that is
+a storage closeout task, not a condition for publishing the compact claims.
 
 ## Immediate work order
 

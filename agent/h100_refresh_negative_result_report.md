@@ -57,6 +57,14 @@ refresh, error-corrected reuse, spatially selective denoise reuse, and new model
 untested hypotheses. They must begin as new experiments and cannot tune against these visible
 proof results.
 
+## Broader DS disposition
+
+The denoise-side oracle was not run. The project stopped after this refresh gate by choice and
+archived the research track before collecting oracle instrumentation. The frozen H100 denominator
+put denoising at 24.1592% of complete wall; reaching the separate 17% wall gate through denoising
+alone required at least 70.3667% denoise reclaim before overhead. That is an untested feasibility
+bar, not a failed-oracle measurement. This report rejects the periodic refresh mechanism only.
+
 ## Evidence identity
 
 - Campaign validation SHA-256:

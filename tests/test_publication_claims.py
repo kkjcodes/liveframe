@@ -34,6 +34,9 @@ def test_publication_speedup_is_derived_from_frozen_rows() -> None:
     speedup = _claims()["engineering_speedups"][0]
     baseline = speedup["baseline"]
     candidate = speedup["candidate"]
+    candidate_artifact = json.loads(
+        (ROOT / candidate["artifact"]).read_text(encoding="utf-8")
+    )
 
     assert math.isclose(
         speedup["wall_speedup"],
@@ -47,9 +50,11 @@ def test_publication_speedup_is_derived_from_frozen_rows() -> None:
         speedup["vae_reduction_fraction"],
         1 - candidate["vae_seconds"] / baseline["vae_seconds"],
     )
-    assert candidate["pixel_sha256"] == (
-        "sha256:4b55f063d0164fd1c44358186af6cd04ae2dba1356dedd5b86403dfd101e8f61"
+    assert candidate["recorded_raw_pixel_anchor_sha256"] == (
+        candidate_artifact["pixel_identity_anchor"]["sha256"]
     )
+    assert candidate["raw_pixel_payload_retained"] is False
+    assert candidate["encoded_video_sha256"] == candidate_artifact["video"]["sha256"]
     assert candidate["swap_delta_mib"] == 0.0
 
 
