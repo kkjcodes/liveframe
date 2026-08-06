@@ -11,10 +11,10 @@ from typing import Any
 
 from liveframe.perceptual_policy import canonical_digest
 
-MANIFEST_SCHEMA = "liveframe.refresh-addressability-manifest.v1"
-RESULT_SCHEMA = "liveframe.refresh-addressability-result.v1"
-SUBSTITUTION_SCHEMA = "liveframe.refresh-kv-substitution.v1"
-MECHANISM_ID = "reroped-refresh-kv-v1"
+MANIFEST_SCHEMA = "liveframe.refresh-addressability-manifest.v2"
+RESULT_SCHEMA = "liveframe.refresh-addressability-result.v2"
+SUBSTITUTION_SCHEMA = "liveframe.refresh-kv-substitution.v2"
+MECHANISM_ID = "reroped-framewise-refresh-kv-v2"
 PROOF_STRATA = (
     "limited-animation-held-frames",
     "dialogue-minimal-motion",
@@ -33,9 +33,21 @@ DENOISE_SECONDS = 1.4401073913574218
 REFRESH_SECONDS = 1.1655172805786134
 COMPUTE_RECLAIM_FLOOR = 0.30
 WALL_REDUCTION_FLOOR = 0.17
-BLOCK_FRAMES = 3
+BLOCK_FRAMES = 1
 TOKENS_PER_FRAME = 1560
 MODEL_LAYERS = 30
+MAX_CONTEXT_FRAMES = 21
+FULL_REFRESH_INTERVAL_FRAMES = 3
+
+
+def is_full_refresh_frame(frame_index: int) -> bool:
+    return frame_index % FULL_REFRESH_INTERVAL_FRAMES == 0
+
+
+def source_frame_for_destination(destination_start_frame: int) -> int:
+    if destination_start_frame < 1 or is_full_refresh_frame(destination_start_frame):
+        raise ValueError("refresh substitution destination must be between anchor frames")
+    return destination_start_frame - destination_start_frame % FULL_REFRESH_INTERVAL_FRAMES
 
 
 def _job_id(protocol_digest: str, identity: Mapping[str, Any]) -> str:
@@ -116,7 +128,7 @@ def build_refresh_proof_manifest(
     manifest: dict[str, Any] = {
         "schema": MANIFEST_SCHEMA,
         "status": "frozen-before-refresh-oracle-visibility",
-        "frozen_at": "2026-08-04",
+        "frozen_at": "2026-08-05",
         "claim": "refresh-addressability-with-horizon-indexed-drift",
         "source_protocol_digest": protocol_digest,
         "policy_bundle_digest": bundle_digest,
@@ -132,11 +144,20 @@ def build_refresh_proof_manifest(
             "reference": "full-refresh",
             "candidate": "reuse-source-value-and-rerope-source-raw-key",
             "source_key_form": "raw-pre-rope",
+            "source_selection": "latest-periodic-full-refresh-anchor",
+            "full_refresh_interval_frames": FULL_REFRESH_INTERVAL_FRAMES,
+            "bootstrap": "frame-zero-and-every-third-frame-full-refresh",
             "candidate_key_form": "reroped-from-source-raw-key",
             "value_policy": "reuse-source-value",
-            "attention_scope": "full",
+            "attention_scope": "full-within-pinned-21-frame-model-context",
+            "reference_runtime": "full-refresh-compute-with-21-frame-rolling-attention",
             "block_frames": BLOCK_FRAMES,
             "tokens_per_frame": TOKENS_PER_FRAME,
+            "max_context_frames": MAX_CONTEXT_FRAMES,
+            "sink_frames": 0,
+            "denominator_equivalence": (
+                "identical cache contents through the denominator's measured 21 blocks"
+            ),
             "prohibited": [
                 "relabel-already-roped-key",
                 "unresolved-source-position",
@@ -233,8 +254,16 @@ def validate_substitution_ancestry(record: Mapping[str, Any]) -> None:
         values[name] = value
     if values["destination_start_frame"] <= values["source_start_frame"]:
         raise ValueError("refresh substitution destination must follow its source")
+    try:
+        expected_source = source_frame_for_destination(values["destination_start_frame"])
+    except ValueError as exc:
+        raise ValueError("refresh substitution cannot replace a scheduled full refresh") from exc
+    if values["source_start_frame"] != expected_source:
+        raise ValueError("refresh substitution must use the latest periodic anchor")
+    if values["tile_index"] != values["source_start_frame"]:
+        raise ValueError("refresh substitution tile must identify its source frame")
     if values["frame_count"] != BLOCK_FRAMES:
-        raise ValueError("refresh substitution must cover one three-frame block")
+        raise ValueError("refresh substitution must cover one framewise block")
     if values["token_count"] != BLOCK_FRAMES * TOKENS_PER_FRAME:
         raise ValueError("refresh substitution token count mismatch")
     if record.get("source_key_form") != "raw-pre-rope":
@@ -312,7 +341,7 @@ def validate_refresh_proof_result(
         if result.get(name) != job[name]:
             raise ValueError(f"refresh proof result {name} mismatch")
 
-    window_count = int(job["latent_frames"]) // BLOCK_FRAMES + 3
+    window_count = int(job["latent_frames"])
     curves = result.get("drift_curves")
     if not isinstance(curves, dict) or set(curves) != {
         "future_latent",
@@ -363,6 +392,18 @@ def validate_refresh_proof_result(
         if key in seen:
             raise ValueError("refresh proof result duplicates substitution ancestry")
         seen.add(key)
+    expected_substitutions = {
+        (
+            layer_index,
+            source_frame_for_destination(destination_start_frame),
+            destination_start_frame,
+        )
+        for destination_start_frame in range(1, int(job["latent_frames"]))
+        if not is_full_refresh_frame(destination_start_frame)
+        for layer_index in range(MODEL_LAYERS)
+    }
+    if seen != expected_substitutions:
+        raise ValueError("refresh proof result substitution ancestry is incomplete")
 
 
 def reclaim_accounting(

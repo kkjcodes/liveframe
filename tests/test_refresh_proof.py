@@ -7,7 +7,27 @@ from typing import Any
 
 import pytest
 
+from liveframe.perceptual_policy import canonical_digest
 from liveframe.quality_calibration import load_protocol
+from liveframe.quality_capture import sha256_file
+from liveframe.refresh_capture import (
+    EVIDENCE_POLICY,
+    EVIDENCE_POLICY_DIGEST,
+    H100_EVIDENCE,
+    IDENTITY_METRICS,
+    QUALITY_METRICS,
+    REQUIRED_ARTIFACTS,
+    SYNTHETIC_EVIDENCE,
+    TIMING_FIELDS,
+    build_capture_result,
+    evidence_eligibility,
+    load_capture_batch,
+    load_capture_results,
+    prepare_capture_batch,
+    publish_capture_result,
+    validate_capture_result,
+    validate_causal_source_contract,
+)
 from liveframe.refresh_proof import (
     DENOMINATOR_SHA256,
     HORIZONS,
@@ -18,8 +38,10 @@ from liveframe.refresh_proof import (
     RESULT_SCHEMA,
     SUBSTITUTION_SCHEMA,
     build_refresh_proof_manifest,
+    is_full_refresh_frame,
     load_refresh_proof_manifest,
     reclaim_accounting,
+    source_frame_for_destination,
     validate_refresh_proof_result,
     validate_substitution_ancestry,
 )
@@ -27,7 +49,9 @@ from liveframe.refresh_proof import (
 ROOT = Path(__file__).parents[1]
 PROTOCOL_PATH = ROOT / "artifacts" / "perceptual-protocol.v1.json"
 BUNDLE_PATH = ROOT / "artifacts" / "perceptual-policy-bundle.v2.json"
-MANIFEST_PATH = ROOT / "artifacts" / "refresh-addressability-manifest.v1.json"
+MANIFEST_PATH = ROOT / "artifacts" / "refresh-addressability-manifest.v2.json"
+H100_BATCH_PATH = ROOT / "artifacts" / "h100-refresh-proof-batch.v2.json"
+EVIDENCE_POLICY_PATH = ROOT / "artifacts" / "refresh-evidence-eligibility.v1.json"
 
 
 def _inputs() -> tuple[dict[str, Any], str, dict[str, Any]]:
@@ -42,11 +66,11 @@ def _ancestry() -> dict[str, Any]:
         "schema": SUBSTITUTION_SCHEMA,
         "mechanism_id": MECHANISM_ID,
         "layer_index": 15,
-        "tile_index": 2,
-        "source_start_frame": 9,
-        "destination_start_frame": 12,
-        "frame_count": 3,
-        "token_count": 4680,
+        "tile_index": 0,
+        "source_start_frame": 0,
+        "destination_start_frame": 2,
+        "frame_count": 1,
+        "token_count": 1560,
         "source_key_form": "raw-pre-rope",
         "candidate_key_form": "reroped-from-source-raw-key",
         "value_policy": "reuse-source-value",
@@ -60,7 +84,16 @@ def _ancestry() -> dict[str, Any]:
 
 def _result(manifest: dict[str, Any]) -> dict[str, Any]:
     job = next(job for job in manifest["jobs"] if job["horizon_seconds"] == 15)
-    window_count = job["latent_frames"] // 3 + 3
+    window_count = job["latent_frames"]
+    def point(window: int) -> dict[str, float | int]:
+        return {
+            "window_index": window,
+            "playback_seconds": float(window),
+            "cosine": 1.0,
+            "rmse": 0.0,
+            "max_abs": 0.0,
+        }
+
     return {
         "schema": RESULT_SCHEMA,
         "manifest_digest": manifest["manifest_digest"],
@@ -76,25 +109,75 @@ def _result(manifest: dict[str, Any]) -> dict[str, Any]:
             )
         },
         "drift_curves": {
-            "future_latent": [
-                {"window_index": window} for window in range(window_count)
-            ],
-            "decoded-pixel": [
-                {"window_index": window} for window in range(window_count)
-            ],
+            "future_latent": [point(window) for window in range(window_count)],
+            "decoded-pixel": [point(window) for window in range(window_count)],
             "per-layer-key": [
-                {"window_index": window, "layer_index": layer}
+                {**point(window), "layer_index": layer}
                 for window in range(window_count)
                 for layer in range(30)
             ],
             "per-layer-value": [
-                {"window_index": window, "layer_index": layer}
+                {**point(window), "layer_index": layer}
                 for window in range(window_count)
                 for layer in range(30)
             ],
         },
-        "substitutions": [_ancestry()],
+        "substitutions": [
+            {
+                **_ancestry(),
+                "layer_index": layer,
+                "tile_index": source_frame_for_destination(destination),
+                "source_start_frame": source_frame_for_destination(destination),
+                "destination_start_frame": destination,
+            }
+            for destination in range(1, window_count)
+            if not is_full_refresh_frame(destination)
+            for layer in range(30)
+        ],
     }
+
+
+def _captured_result(root: Path, manifest: dict[str, Any]) -> dict[str, Any]:
+    result = _result(manifest)
+    artifacts = []
+    for name in sorted(REQUIRED_ARTIFACTS):
+        path = root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(name.encode())
+        artifacts.append(
+            {
+                "path": name,
+                "bytes": path.stat().st_size,
+                "sha256": sha256_file(path),
+            }
+        )
+    stochastic_digest = next(
+        row["sha256"] for row in artifacts if row["path"] == "stochastic.bf16"
+    )
+    result.update(
+        {
+            "status": "completed",
+            "evidence_class": SYNTHETIC_EVIDENCE,
+            "stochastic_pairing": {
+                "identity": "same-seed-same-bytes",
+                "reference_sha256": stochastic_digest,
+                "candidate_sha256": stochastic_digest,
+            },
+            "intrinsic_metrics": dict.fromkeys(QUALITY_METRICS, 0.0),
+            "identity_metrics": dict.fromkeys(IDENTITY_METRICS, 0.0),
+            "runtime": {
+                "evidence_class": SYNTHETIC_EVIDENCE,
+                "harness_sha256": "sha256:" + "0" * 64,
+            },
+            "timing": dict.fromkeys(TIMING_FIELDS, 0.0),
+            "artifacts": artifacts,
+        }
+    )
+    result["eligibility"] = evidence_eligibility(
+        result["evidence_class"], result["runtime"]
+    )
+    result["result_digest"] = canonical_digest(result)
+    return result
 
 
 def test_manifest_is_deterministic_complete_and_prospective() -> None:
@@ -174,10 +257,216 @@ def test_result_requires_complete_drift_curves_and_substitution_ancestry() -> No
     with pytest.raises(ValueError, match="requires substitution ancestry"):
         validate_refresh_proof_result(missing_ancestry, manifest)
 
+    incomplete_ancestry = copy.deepcopy(result)
+    incomplete_ancestry["substitutions"].pop()
+    with pytest.raises(ValueError, match="substitution ancestry is incomplete"):
+        validate_refresh_proof_result(incomplete_ancestry, manifest)
+
     invalid = copy.deepcopy(_ancestry())
     invalid["destination_start_frame"] = invalid["source_start_frame"]
     with pytest.raises(ValueError, match="destination must follow"):
         validate_substitution_ancestry(invalid)
+
+    wrong_anchor = copy.deepcopy(_ancestry())
+    wrong_anchor["source_start_frame"] = 1
+    wrong_anchor["tile_index"] = 1
+    with pytest.raises(ValueError, match="latest periodic anchor"):
+        validate_substitution_ancestry(wrong_anchor)
+
+    scheduled_refresh = copy.deepcopy(_ancestry())
+    scheduled_refresh["destination_start_frame"] = 3
+    with pytest.raises(ValueError, match="scheduled full refresh"):
+        validate_substitution_ancestry(scheduled_refresh)
+
+
+def test_capture_result_round_trip_is_byte_bound_and_not_claim_eligible(
+    tmp_path: Path,
+) -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+    result_dir = tmp_path / str(_result(manifest)["run_id"])
+    result = _captured_result(result_dir, manifest)
+    path = result_dir / "result.json"
+
+    publish_capture_result(path, result, manifest)
+    loaded = load_capture_results([path], manifest)
+
+    assert loaded == [result]
+    with pytest.raises(ValueError, match="not numerically eligible"):
+        load_capture_results([path], manifest, require_numerical_eligible=True)
+
+
+def test_capture_result_rejects_tampering_and_duplicate_results(tmp_path: Path) -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+    result_dir = tmp_path / str(_result(manifest)["run_id"])
+    result = _captured_result(result_dir, manifest)
+    path = result_dir / "result.json"
+    publish_capture_result(path, result, manifest)
+
+    (result_dir / "candidate-latents.bf16").write_bytes(b"tampered")
+    with pytest.raises(ValueError, match="artifact mismatch"):
+        load_capture_results([path], manifest)
+
+    (result_dir / "candidate-latents.bf16").write_bytes(b"candidate-latents.bf16")
+    with pytest.raises(ValueError, match="duplicate refresh result"):
+        load_capture_results([path, path], manifest)
+
+
+def test_capture_result_requires_stochastic_byte_identity(tmp_path: Path) -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+    result_dir = tmp_path / str(_result(manifest)["run_id"])
+    result = _captured_result(result_dir, manifest)
+    result["stochastic_pairing"]["candidate_sha256"] = "sha256:" + "f" * 64
+    result["result_digest"] = canonical_digest(
+        {key: value for key, value in result.items() if key != "result_digest"}
+    )
+
+    with pytest.raises(ValueError, match="stochastic bytes differ"):
+        validate_capture_result(result, manifest, root=result_dir)
+
+
+def test_capture_result_builder_binds_job_and_artifact_bytes(tmp_path: Path) -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+    job = next(job for job in manifest["jobs"] if job["horizon_seconds"] == 15)
+    result_dir = tmp_path / str(job["run_id"])
+    seed_result = _captured_result(result_dir, manifest)
+
+    built = build_capture_result(
+        job,
+        manifest,
+        evidence_class=SYNTHETIC_EVIDENCE,
+        drift_curves=seed_result["drift_curves"],
+        substitutions=seed_result["substitutions"],
+        intrinsic_metrics=seed_result["intrinsic_metrics"],
+        identity_metrics=seed_result["identity_metrics"],
+        timing=seed_result["timing"],
+        runtime={"harness_sha256": "sha256:" + "0" * 64},
+        artifact_root=result_dir,
+    )
+
+    assert built["run_id"] == job["run_id"]
+    assert built["prompt"] == job["prompt"]
+    assert built["result_digest"].startswith("sha256:")
+
+
+def test_h100_batch_is_digest_bound_and_preserves_literal_jobs(tmp_path: Path) -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+    batch = prepare_capture_batch(manifest, Path("artifacts/refresh-results"), limit=2)
+    path = tmp_path / "batch.json"
+    path.write_text(json.dumps(batch), encoding="utf-8")
+
+    loaded = load_capture_batch(path, manifest)
+
+    assert loaded == batch
+    assert loaded["evidence_class"] == "h100-prospective"
+    assert loaded["jobs"] == manifest["jobs"][:2]
+
+
+def test_h100_batch_rejects_tampering_duplicates_and_unknown_ids(tmp_path: Path) -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+    batch = prepare_capture_batch(manifest, tmp_path, limit=2)
+
+    altered = copy.deepcopy(batch)
+    altered["jobs"][0]["prompt"] = "changed after freeze"
+    path = tmp_path / "altered.json"
+    path.write_text(json.dumps(altered), encoding="utf-8")
+    with pytest.raises(ValueError, match="batch digest mismatch"):
+        load_capture_batch(path, manifest)
+
+    duplicated = copy.deepcopy(batch)
+    duplicated["jobs"] = [duplicated["jobs"][0], duplicated["jobs"][0]]
+    duplicated["batch_digest"] = canonical_digest(
+        {key: value for key, value in duplicated.items() if key != "batch_digest"}
+    )
+    path.write_text(json.dumps(duplicated), encoding="utf-8")
+    with pytest.raises(ValueError, match="duplicates job"):
+        load_capture_batch(path, manifest)
+
+    with pytest.raises(ValueError, match="unknown run IDs"):
+        prepare_capture_batch(manifest, tmp_path, run_ids={"unknown"})
+
+
+def test_frozen_h100_batch_matches_all_manifest_jobs() -> None:
+    protocol, digest, bundle = _inputs()
+    manifest = build_refresh_proof_manifest(protocol, digest, bundle)
+
+    batch = load_capture_batch(H100_BATCH_PATH, manifest)
+
+    assert batch == prepare_capture_batch(
+        manifest,
+        Path("artifacts/h100-refresh-proof-results-v2"),
+        include_completed=True,
+    )
+    assert len(batch["jobs"]) == 64
+
+
+def test_frozen_evidence_policy_matches_code() -> None:
+    policy = json.loads(EVIDENCE_POLICY_PATH.read_text(encoding="utf-8"))
+
+    assert policy == EVIDENCE_POLICY
+    assert canonical_digest(policy) == EVIDENCE_POLICY_DIGEST
+
+
+def test_driver_mismatch_preserves_numerical_but_rejects_timing_eligibility() -> None:
+    runtime = {
+        **EVIDENCE_POLICY["numerical"],
+        "harness_sha256": "sha256:" + "a" * 64,
+        "identity_anchor_report_sha256": "sha256:" + "b" * 64,
+        "driver": "570.124.06",
+        "torch": EVIDENCE_POLICY["timing"]["torch"],
+        "cuda": EVIDENCE_POLICY["timing"]["cuda"],
+        "timing_protocol": EVIDENCE_POLICY["timing"]["timing_protocol"],
+        "denominator_sha256": EVIDENCE_POLICY["timing"]["denominator_sha256"],
+    }
+
+    eligibility = evidence_eligibility(H100_EVIDENCE, runtime)
+
+    assert eligibility["numerical_eligible"] is True
+    assert eligibility["timing_eligible"] is False
+    assert eligibility["timing_failures"] == [
+        "runtime driver does not match timing policy"
+    ]
+
+
+def test_exact_denominator_runtime_is_timing_eligible() -> None:
+    runtime = {
+        **EVIDENCE_POLICY["numerical"],
+        "harness_sha256": "sha256:" + "a" * 64,
+        "identity_anchor_report_sha256": "sha256:" + "b" * 64,
+        **{
+            name: EVIDENCE_POLICY["timing"][name]
+            for name in (
+                "driver",
+                "torch",
+                "cuda",
+                "timing_protocol",
+                "denominator_sha256",
+            )
+        },
+    }
+
+    eligibility = evidence_eligibility(H100_EVIDENCE, runtime)
+
+    assert eligibility["numerical_eligible"] is True
+    assert eligibility["timing_eligible"] is True
+
+
+def test_causal_source_contract_requires_cache_and_rerope_surfaces() -> None:
+    source = (
+        "class CausalWanSelfAttention causal_rope_apply cache_start "
+        "global_end_index local_end_index"
+    )
+    validate_causal_source_contract(source)
+
+    with pytest.raises(ValueError, match="causal_rope_apply"):
+        validate_causal_source_contract(
+            "class CausalWanSelfAttention cache_start global_end_index local_end_index"
+        )
 
     invalid = copy.deepcopy(_ancestry())
     invalid["source_value_sha256"] = "missing"

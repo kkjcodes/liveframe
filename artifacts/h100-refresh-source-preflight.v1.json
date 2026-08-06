@@ -1,0 +1,38 @@
+{
+  "claim_eligible": false,
+  "proof_results_generated": false,
+  "runtime": {
+    "checkpoint_sha256": "sha256:bdb1b475fc88d528f510158a0990cd457f02c661b527ceb11ca9e4728533e2d0",
+    "cuda": "12.8",
+    "denominator_driver": "580.159.04",
+    "denominator_driver_match": false,
+    "driver": "570.124.06",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "preflight_harness_sha256": "sha256:6c3a1039b2dbb9415c51e321f229c2b9a9c09df718c42f04b588853af37ffb4f",
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128"
+  },
+  "schema": "liveframe.h100-refresh-source-preflight.v1",
+  "signatures": {
+    "CausalWanSelfAttention.forward": "(self, x, seq_lens, grid_sizes, freqs, block_mask, kv_cache=None, current_start=0, cache_start=None)",
+    "causal_rope_apply": "(x, grid_sizes, freqs, start_frame=0)"
+  },
+  "source_files": {
+    "utils/wan_wrapper.py": "sha256:5120536c7d58fabc75187245a007f0a1486889372386b698d640fb80b280331d",
+    "wan/modules/causal_model.py": "sha256:0566a17f867a7c8ea8ad80d8b79bdfe17aaa4c7859873ffde881a6cdc12c9edd"
+  },
+  "source_git_blobs": {
+    "utils/wan_wrapper.py": "77f530d87fb10ed8b58f20a076fca8ecb8371288",
+    "wan/modules/causal_model.py": "4b33c771aff2ee94f5f11df5be4c825a15235abb"
+  },
+  "source_revision": "8db419e341e5fc52542c0b2c4542728420ddfb4a",
+  "tracked_changes_outside_source_files": [
+    "M long_video/pipeline/rolling_forcing_inference.py",
+    " M long_video/utils/wan_wrapper.py",
+    " D long_video/wan/configs/__pycache__/__init__.cpython-310.pyc",
+    " D long_video/wan/configs/__pycache__/shared_config.cpython-310.pyc",
+    " D long_video/wan/configs/__pycache__/wan_i2v_14B.cpython-310.pyc",
+    " D long_video/wan/configs/__pycache__/wan_t2v_14B.cpython-310.pyc",
+    " D long_video/wan/configs/__pycache__/wan_t2v_1_3B.cpython-310.pyc"
+  ]
+}

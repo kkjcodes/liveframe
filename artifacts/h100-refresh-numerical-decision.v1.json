@@ -1,0 +1,2128 @@
+{
+  "all_cells_must_pass": true,
+  "cells": [
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_01",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-81b086eb9ca2b3773989",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0030897057662575933 must be >= 0.005779145547235419",
+              "quality: motion_lpips_mean=0.015360928108023827 must be >= 0.06184888633635617",
+              "identity: pairwise_lpips_mean=0.13084397856381874 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.859042057495217 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.13084397856381874 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.859042057495217 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0030897057662575933 must be >= 0.005779145547235419",
+                "quality: motion_lpips_mean=0.015360928108023827 must be >= 0.06184888633635617"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-c16050cf43dea033065d",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.002539960004515567 must be >= 0.005779145547235419",
+              "quality: motion_lpips_mean=0.016822923575646354 must be >= 0.06184888633635617",
+              "identity: pairwise_lpips_mean=0.22246506410937772 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.902633222522435 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.22246506410937772 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.902633222522435 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.002539960004515567 must be >= 0.005779145547235419",
+                "quality: motion_lpips_mean=0.016822923575646354 must be >= 0.06184888633635617"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-c279eb55fb8f32c23c90",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.004929142988334268 must be >= 0.005779145547235419",
+              "quality: motion_lpips_mean=0.022455696805806485 must be >= 0.06184888633635617",
+              "identity: pairwise_lpips_mean=0.1936387974171573 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8912696187715914 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.1936387974171573 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8912696187715914 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.004929142988334268 must be >= 0.005779145547235419",
+                "quality: motion_lpips_mean=0.022455696805806485 must be >= 0.06184888633635617"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-cc57cb514f904153bf2e",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.004070819687035124 must be >= 0.005779145547235419",
+              "quality: motion_lpips_mean=0.013159519641549659 must be >= 0.06184888633635617",
+              "identity: pairwise_lpips_mean=0.14979902782206295 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8763941336320555 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.14979902782206295 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8763941336320555 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.004070819687035124 must be >= 0.005779145547235419",
+                "quality: motion_lpips_mean=0.013159519641549659 must be >= 0.06184888633635617"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_01",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-09acf215a96e758015a6",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.004916530379579087 must be >= 0.010468850306560277",
+              "quality: motion_lpips_mean=0.013585637398843445 must be >= 0.056120105897566636",
+              "identity: pairwise_clip_distance_mean=0.07283907452111889 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.32144225162710566 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9376304747112488 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.07283907452111889 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.32144225162710566 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9376304747112488 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.004916530379579087 must be >= 0.010468850306560277",
+                "quality: motion_lpips_mean=0.013585637398843445 must be >= 0.056120105897566636"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-27e1c85a5cb47774a6ae",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.005354024777727679 must be >= 0.010468850306560277",
+              "quality: motion_lpips_mean=0.014460973635586249 must be >= 0.056120105897566636",
+              "identity: pairwise_clip_distance_mean=0.08744395744935893 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.36393964818272245 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9549531597011022 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.08744395744935893 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.36393964818272245 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9549531597011022 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.005354024777727679 must be >= 0.010468850306560277",
+                "quality: motion_lpips_mean=0.014460973635586249 must be >= 0.056120105897566636"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-7a1b645f784ba3c86778",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.007376025900367863 must be >= 0.010468850306560277",
+              "quality: motion_lpips_mean=0.025532340060838706 must be >= 0.056120105897566636",
+              "quality: temporal_delta_cosine_mean=-0.25931327090615014 must be >= -0.23174374603580067",
+              "identity: pairwise_clip_distance_mean=0.0651302932462702 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.33066969172273625 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9192945127652512 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.0651302932462702 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.33066969172273625 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9192945127652512 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.007376025900367863 must be >= 0.010468850306560277",
+                "quality: motion_lpips_mean=0.025532340060838706 must be >= 0.056120105897566636",
+                "quality: temporal_delta_cosine_mean=-0.25931327090615014 must be >= -0.23174374603580067"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-eb7895451fa20fde8d5b",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0070692794012629295 must be >= 0.010468850306560277",
+              "quality: motion_lpips_mean=0.021999621769297418 must be >= 0.056120105897566636",
+              "quality: temporal_delta_cosine_mean=-0.23717025060865415 must be >= -0.23174374603580067",
+              "identity: pairwise_clip_distance_mean=0.07188977779372681 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.35064513488865856 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.954125151782362 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.07188977779372681 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.35064513488865856 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.954125151782362 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0070692794012629295 must be >= 0.010468850306560277",
+                "quality: motion_lpips_mean=0.021999621769297418 must be >= 0.056120105897566636",
+                "quality: temporal_delta_cosine_mean=-0.23717025060865415 must be >= -0.23174374603580067"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_02",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-330f6191e9c18070db29",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.004509350253363787 must be >= 0.005611881586244802",
+              "quality: motion_lpips_mean=0.028153998476366307 must be >= 0.08918806718233288",
+              "quality: temporal_delta_cosine_mean=-0.2612425060942769 must be >= -0.2032576882111049",
+              "identity: pairwise_lpips_mean=0.2828285067424744 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8897061960384944 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.2828285067424744 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8897061960384944 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.004509350253363787 must be >= 0.005611881586244802",
+                "quality: motion_lpips_mean=0.028153998476366307 must be >= 0.08918806718233288",
+                "quality: temporal_delta_cosine_mean=-0.2612425060942769 must be >= -0.2032576882111049"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-bba46ac0c08359d3ca9d",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0031402654061883184 must be >= 0.005611881586244802",
+              "quality: motion_lpips_mean=0.011536855896800693 must be >= 0.08918806718233288",
+              "identity: pairwise_temporal_clip_distance_mean=0.7773609313940218 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_temporal_clip_distance_mean=0.7773609313940218 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0031402654061883184 must be >= 0.005611881586244802",
+                "quality: motion_lpips_mean=0.011536855896800693 must be >= 0.08918806718233288"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-c7a18f21685634bcd581",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0035147426997200917 must be >= 0.005611881586244802",
+              "quality: motion_lpips_mean=0.01454902540841061 must be >= 0.08918806718233288",
+              "identity: pairwise_lpips_mean=0.2818003236807348 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8916349353829115 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.2818003236807348 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8916349353829115 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0035147426997200917 must be >= 0.005611881586244802",
+                "quality: motion_lpips_mean=0.01454902540841061 must be >= 0.08918806718233288"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-e7545c6d7bb1ca396f62",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.00246397544771938 must be >= 0.005611881586244802",
+              "quality: motion_lpips_mean=0.014439546575639554 must be >= 0.08918806718233288",
+              "quality: temporal_delta_cosine_mean=-0.22923180548711977 must be >= -0.2032576882111049",
+              "identity: pairwise_temporal_clip_distance_mean=0.7324524669892202 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_temporal_clip_distance_mean=0.7324524669892202 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.00246397544771938 must be >= 0.005611881586244802",
+                "quality: motion_lpips_mean=0.014439546575639554 must be >= 0.08918806718233288",
+                "quality: temporal_delta_cosine_mean=-0.22923180548711977 must be >= -0.2032576882111049"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_02",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-93bcd1611ee608c88183",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.004309467293999412 must be >= 0.007613238325898065",
+              "quality: motion_lpips_mean=0.01553167250574555 must be >= 0.07251738643997274",
+              "identity: pairwise_clip_distance_mean=0.09944649974136037 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.33170780951255247 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9445767957084111 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.09944649974136037 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.33170780951255247 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9445767957084111 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.004309467293999412 must be >= 0.007613238325898065",
+                "quality: motion_lpips_mean=0.01553167250574555 must be >= 0.07251738643997274"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-e73e539d3dda8dd6352b",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.004012248240226556 must be >= 0.007613238325898065",
+              "quality: motion_lpips_mean=0.016050566852281317 must be >= 0.07251738643997274",
+              "identity: pairwise_clip_distance_mean=0.10118103088855251 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.4083676976146959 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9688493930672157 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.10118103088855251 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.4083676976146959 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9688493930672157 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.004012248240226556 must be >= 0.007613238325898065",
+                "quality: motion_lpips_mean=0.016050566852281317 must be >= 0.07251738643997274"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-e9d82134aa4854c97cb1",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0038208833410720193 must be >= 0.007613238325898065",
+              "quality: motion_lpips_mean=0.013574529704813411 must be >= 0.07251738643997274",
+              "identity: pairwise_lpips_mean=0.25880152320391253 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9034360941328216 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.25880152320391253 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9034360941328216 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0038208833410720193 must be >= 0.007613238325898065",
+                "quality: motion_lpips_mean=0.013574529704813411 must be >= 0.07251738643997274"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-ff2c22549420c258a170",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.005806304452833065 must be >= 0.007613238325898065",
+              "quality: motion_lpips_mean=0.016062917292740078 must be >= 0.07251738643997274",
+              "identity: pairwise_clip_distance_mean=0.07917263288862073 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.24894749768408952 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9079712421728552 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.07917263288862073 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.24894749768408952 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9079712421728552 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.005806304452833065 must be >= 0.007613238325898065",
+                "quality: motion_lpips_mean=0.016062917292740078 must be >= 0.07251738643997274"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_03",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-4ded3df5c16043c600aa",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0010005202838930033 must be >= 0.0019461495923665112",
+              "quality: motion_lpips_mean=0.005609289811572881 must be >= 0.03194833912589265",
+              "identity: pairwise_lpips_mean=0.12699820439209414 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8907976982388961 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.12699820439209414 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8907976982388961 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0010005202838930033 must be >= 0.0019461495923665112",
+                "quality: motion_lpips_mean=0.005609289811572881 must be >= 0.03194833912589265"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-a1662bbbe2afdab76567",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.001892068881099507 must be >= 0.0019461495923665112",
+              "quality: motion_lpips_mean=0.00548854871787194 must be >= 0.03194833912589265",
+              "identity: pairwise_lpips_mean=0.10005771813576232 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8609781059736418 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.10005771813576232 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8609781059736418 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.001892068881099507 must be >= 0.0019461495923665112",
+                "quality: motion_lpips_mean=0.00548854871787194 must be >= 0.03194833912589265"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-a46c0e558e1cb35658c7",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.008739888143698069 must be >= 0.03194833912589265",
+              "identity: pairwise_lpips_mean=0.1491570279222249 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.863357644240072 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.1491570279222249 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.863357644240072 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.008739888143698069 must be >= 0.03194833912589265"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-b8a65e73babb25ca4a31",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0019258596634460707 must be >= 0.0019461495923665112",
+              "quality: motion_lpips_mean=0.004612988728232745 must be >= 0.03194833912589265",
+              "identity: pairwise_lpips_mean=0.11237971228449153 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8414616236735483 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.11237971228449153 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8414616236735483 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0019258596634460707 must be >= 0.0019461495923665112",
+                "quality: motion_lpips_mean=0.004612988728232745 must be >= 0.03194833912589265"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_03",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-46ba2bbf98a539ee2c94",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.007405141724128284 must be >= 0.05814620678642558",
+              "identity: pairwise_clip_distance_mean=0.09608014836768985 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.27880370703797835 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9241785500833596 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.09608014836768985 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.27880370703797835 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9241785500833596 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.007405141724128284 must be >= 0.05814620678642558"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-4e5690f20c38557a0772",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.006872985421579854 must be >= 0.05814620678642558",
+              "identity: pairwise_clip_distance_mean=0.11367655175635197 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3189696802981621 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.957149088243215 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.11367655175635197 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3189696802981621 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.957149088243215 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.006872985421579854 must be >= 0.05814620678642558"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-64ad9b4384a6c645b6c8",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.0055668344953307145 must be >= 0.05814620678642558",
+              "identity: pairwise_clip_distance_mean=0.1054390452348534 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.23659021756635792 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9347545947082926 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.1054390452348534 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.23659021756635792 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9347545947082926 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.0055668344953307145 must be >= 0.05814620678642558"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-e3480235fa2d25d91268",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.004545602820835784 must be >= 0.05814620678642558",
+              "identity: pairwise_clip_distance_mean=0.0886480166693098 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.22632344656646006 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9561144449090978 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.0886480166693098 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.22632344656646006 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9561144449090978 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.004545602820835784 must be >= 0.05814620678642558"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_04",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-48989f4ea4d9f4eb5327",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "identity: pairwise_lpips_mean=0.1335859507133689 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8723379113569351 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.1335859507133689 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8723379113569351 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [],
+              "passed": true
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-635d705c339abbe418ce",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "identity: pairwise_lpips_mean=0.13437685764980214 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.892198086917495 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.13437685764980214 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.892198086917495 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [],
+              "passed": true
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-6bef0d1268f48b755272",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: clip_prompt_mean=0.3155637799687526 must be >= 0.31882944977346805",
+              "identity: pairwise_lpips_mean=0.12593724393140415 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8100035085532246 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.12593724393140415 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8100035085532246 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: clip_prompt_mean=0.3155637799687526 must be >= 0.31882944977346805"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-a54ec15d6735d87dafad",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "identity: pairwise_lpips_mean=0.14135461654278297 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.8426393258772096 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.14135461654278297 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.8426393258772096 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [],
+              "passed": true
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "dialogue_04",
+      "stratum": "dialogue-minimal-motion",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-1dabfce39c5bcb6a406b",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: temporal_delta_cosine_mean=-0.1965194003513967 must be >= -0.14222683913224932",
+              "identity: pairwise_clip_distance_mean=0.06417024867576465 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2517098444518782 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9472906777201305 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.06417024867576465 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2517098444518782 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9472906777201305 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: temporal_delta_cosine_mean=-0.1965194003513967 must be >= -0.14222683913224932"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-2af10b32cdd7524edad1",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: temporal_delta_cosine_mean=-0.1986503179657977 must be >= -0.14222683913224932",
+              "identity: pairwise_clip_distance_mean=0.08993291836404949 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3295290377971373 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9499581062397535 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.08993291836404949 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3295290377971373 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9499581062397535 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: temporal_delta_cosine_mean=-0.1986503179657977 must be >= -0.14222683913224932"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-3799cc3979d320af3931",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.003693437219158677 must be >= 0.004189238808264633",
+              "quality: temporal_delta_cosine_mean=-0.1972534909021907 must be >= -0.14222683913224932",
+              "identity: pairwise_clip_distance_mean=0.05946303693379657 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3032640196898158 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9472886505541546 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.05946303693379657 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3032640196898158 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9472886505541546 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.003693437219158677 must be >= 0.004189238808264633",
+                "quality: temporal_delta_cosine_mean=-0.1972534909021907 must be >= -0.14222683913224932"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-9737a4879cdbca8ff0e7",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: temporal_delta_cosine_mean=-0.2357242629278717 must be >= -0.14222683913224932",
+              "identity: pairwise_clip_distance_mean=0.0810511727328148 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.32199094745919676 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9350925734322442 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.0810511727328148 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.32199094745919676 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9350925734322442 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: temporal_delta_cosine_mean=-0.2357242629278717 must be >= -0.14222683913224932"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_01",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-17b5231f629e60662599",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.006766078028318835 must be >= 0.016418971499420183",
+              "identity: pairwise_lpips_mean=0.12222239005729116 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9388764125089777 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.12222239005729116 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9388764125089777 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.006766078028318835 must be >= 0.016418971499420183"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-79b8169403a27f010ca0",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.01040676617240178 must be >= 0.016418971499420183",
+              "identity: pairwise_lpips_mean=0.14529092245998512 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9179175978692217 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.14529092245998512 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9179175978692217 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.01040676617240178 must be >= 0.016418971499420183"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-b5fc0fdc9f208f8b0cf3",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.006220209000630194 must be >= 0.016418971499420183",
+              "identity: pairwise_temporal_clip_distance_mean=0.9271764872177362 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_temporal_clip_distance_mean=0.9271764872177362 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.006220209000630194 must be >= 0.016418971499420183"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-c476f3f0c6f296cb47ba",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.014219521817660464 must be >= 0.016418971499420183",
+              "identity: pairwise_lpips_mean=0.15138258098109866 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9160173235942562 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.15138258098109866 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9160173235942562 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.014219521817660464 must be >= 0.016418971499420183"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_01",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-2fce818c678c42ba4554",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.01839383584965542 must be >= 0.0702552859262841",
+              "identity: pairwise_clip_distance_mean=0.10426380464536118 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.30705154628730286 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9800659483808578 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.10426380464536118 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.30705154628730286 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9800659483808578 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.01839383584965542 must be >= 0.0702552859262841"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-5904d7cefd7833afb9da",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.01651763262784961 must be >= 0.0702552859262841",
+              "identity: pairwise_clip_distance_mean=0.06324199718587539 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2516777934929427 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9555425450772486 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.06324199718587539 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2516777934929427 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9555425450772486 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.01651763262784961 must be >= 0.0702552859262841"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-945b1414f07ba59c8260",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.014413671605438109 must be >= 0.0702552859262841",
+              "identity: pairwise_clip_distance_mean=0.07799127565694913 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2819187354730871 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9831441479214574 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.07799127565694913 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2819187354730871 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9831441479214574 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.014413671605438109 must be >= 0.0702552859262841"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-e5357f097b3153939915",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.014714523060305029 must be >= 0.0702552859262841",
+              "identity: pairwise_clip_distance_mean=0.08426362036182415 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.34226354181966423 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9730002488965007 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.08426362036182415 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.34226354181966423 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9730002488965007 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.014714523060305029 must be >= 0.0702552859262841"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_02",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-1980d192b0bdb58c4f99",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: clip_prompt_mean=0.28485005100568134 must be >= 0.29261445434376715",
+              "quality: motion_clip_distance_mean=0.004930404535794662 must be >= 0.0057657372189044214",
+              "quality: motion_lpips_mean=0.01942723275604263 must be >= 0.09660627694453465",
+              "identity: pairwise_lpips_mean=0.170584841949653 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9175639212135447 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.170584841949653 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9175639212135447 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: clip_prompt_mean=0.28485005100568134 must be >= 0.29261445434376715",
+                "quality: motion_clip_distance_mean=0.004930404535794662 must be >= 0.0057657372189044214",
+                "quality: motion_lpips_mean=0.01942723275604263 must be >= 0.09660627694453465"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-2bb143826e0aaab2e491",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.02260816439007551 must be >= 0.09660627694453465",
+              "identity: pairwise_lpips_mean=0.12122163409170722 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9065433370809749 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.12122163409170722 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9065433370809749 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.02260816439007551 must be >= 0.09660627694453465"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-5ea2f209e80e2e38f328",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.005189692822553344 must be >= 0.0057657372189044214",
+              "quality: motion_lpips_mean=0.017012680596593072 must be >= 0.09660627694453465",
+              "identity: pairwise_lpips_mean=0.12973622232675552 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9211804995104134 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.12973622232675552 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9211804995104134 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.005189692822553344 must be >= 0.0057657372189044214",
+                "quality: motion_lpips_mean=0.017012680596593072 must be >= 0.09660627694453465"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-a6682268a000d79bb0cf",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: clip_prompt_mean=0.27584031199101156 must be >= 0.29261445434376715",
+              "quality: motion_clip_distance_mean=0.002282005750526816 must be >= 0.0057657372189044214",
+              "quality: motion_lpips_mean=0.0109101521824013 must be >= 0.09660627694453465",
+              "quality: temporal_delta_cosine_mean=-0.3326536291199637 must be >= -0.2511764650489272",
+              "identity: pairwise_temporal_clip_distance_mean=0.9477739891558254 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_temporal_clip_distance_mean=0.9477739891558254 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: clip_prompt_mean=0.27584031199101156 must be >= 0.29261445434376715",
+                "quality: motion_clip_distance_mean=0.002282005750526816 must be >= 0.0057657372189044214",
+                "quality: motion_lpips_mean=0.0109101521824013 must be >= 0.09660627694453465",
+                "quality: temporal_delta_cosine_mean=-0.3326536291199637 must be >= -0.2511764650489272"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_02",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-1382d7178c7b0a91a948",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.006512601082482613 must be >= 0.008791557775821815",
+              "quality: motion_lpips_mean=0.02468018061943229 must be >= 0.10670169159334406",
+              "quality: temporal_delta_cosine_mean=-0.31730013200916896 must be >= -0.26375024895165394",
+              "identity: pairwise_clip_distance_mean=0.13457556178080163 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2843628047712693 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9348513367633944 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.13457556178080163 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2843628047712693 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9348513367633944 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.006512601082482613 must be >= 0.008791557775821815",
+                "quality: motion_lpips_mean=0.02468018061943229 must be >= 0.10670169159334406",
+                "quality: temporal_delta_cosine_mean=-0.31730013200916896 must be >= -0.26375024895165394"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-3a80e093111d8231aade",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.030965854812120972 must be >= 0.10670169159334406",
+              "quality: temporal_delta_cosine_mean=-0.30420208203143057 must be >= -0.26375024895165394",
+              "identity: pairwise_clip_distance_mean=0.10724509248300479 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3716671251921585 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9597297804074146 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.10724509248300479 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3716671251921585 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9597297804074146 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.030965854812120972 must be >= 0.10670169159334406",
+                "quality: temporal_delta_cosine_mean=-0.30420208203143057 must be >= -0.26375024895165394"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-63722d238e4af1b1b0de",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: clip_prompt_p10=0.2421514391899109 must be >= 0.26407825750407576",
+              "quality: motion_clip_distance_mean=0.007109343820859578 must be >= 0.008791557775821815",
+              "quality: motion_lpips_mean=0.02440965318285537 must be >= 0.10670169159334406",
+              "quality: temporal_delta_cosine_mean=-0.3551277750255511 must be >= -0.26375024895165394",
+              "identity: pairwise_clip_distance_mean=0.08061115765104107 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2902152388365276 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9440926120093107 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.08061115765104107 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2902152388365276 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9440926120093107 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: clip_prompt_p10=0.2421514391899109 must be >= 0.26407825750407576",
+                "quality: motion_clip_distance_mean=0.007109343820859578 must be >= 0.008791557775821815",
+                "quality: motion_lpips_mean=0.02440965318285537 must be >= 0.10670169159334406",
+                "quality: temporal_delta_cosine_mean=-0.3551277750255511 must be >= -0.26375024895165394"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-a1ba1ff1ba0dd5d133d0",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: clip_prompt_mean=0.2639026336594878 must be >= 0.293170758458528",
+              "quality: clip_prompt_p10=0.21707963943481445 must be >= 0.26407825750407576",
+              "quality: motion_clip_distance_mean=0.008580282145787863 must be >= 0.008791557775821815",
+              "quality: motion_lpips_mean=0.01971812832336642 must be >= 0.10670169159334406",
+              "identity: pairwise_clip_distance_mean=0.11340563874249611 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.40075236011077375 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9442943848673377 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.11340563874249611 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.40075236011077375 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9442943848673377 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: clip_prompt_mean=0.2639026336594878 must be >= 0.293170758458528",
+                "quality: clip_prompt_p10=0.21707963943481445 must be >= 0.26407825750407576",
+                "quality: motion_clip_distance_mean=0.008580282145787863 must be >= 0.008791557775821815",
+                "quality: motion_lpips_mean=0.01971812832336642 must be >= 0.10670169159334406"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_03",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-0102227d6c088daba83e",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.008418244630358798 must be >= 0.05345700607885685",
+              "identity: pairwise_lpips_mean=0.18941070989780284 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9272488010494765 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.18941070989780284 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9272488010494765 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.008418244630358798 must be >= 0.05345700607885685"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-2af9d42a13a97360342c",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0019624248399572855 must be >= 0.002263691055298862",
+              "quality: motion_lpips_mean=0.006201541783550549 must be >= 0.05345700607885685",
+              "identity: pairwise_temporal_clip_distance_mean=0.8923732145646018 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_temporal_clip_distance_mean=0.8923732145646018 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0019624248399572855 must be >= 0.002263691055298862",
+                "quality: motion_lpips_mean=0.006201541783550549 must be >= 0.05345700607885685"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-43ac535eca7fb66a1ca1",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.012973261330675303 must be >= 0.05345700607885685",
+              "identity: pairwise_lpips_mean=0.17735567025620222 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9202401408081148 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.17735567025620222 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9202401408081148 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.012973261330675303 must be >= 0.05345700607885685"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-d7052eb7d6a088df6acf",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.011614427645789396 must be >= 0.05345700607885685",
+              "identity: pairwise_lpips_mean=0.16941376821479842 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9473779580883398 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.16941376821479842 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9473779580883398 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.011614427645789396 must be >= 0.05345700607885685"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_03",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-348cafff35fcf31c470c",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.008435701486745498 must be >= 0.10943424996816553",
+              "identity: pairwise_clip_distance_mean=0.0736656855749518 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3523080796695346 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9644018032285963 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.0736656855749518 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3523080796695346 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9644018032285963 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.008435701486745498 must be >= 0.10943424996816553"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-3bf46cbf29bf4e1e331a",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.009379119050704916 must be >= 0.10943424996816553",
+              "identity: pairwise_clip_distance_mean=0.06273211518800419 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2120631831497246 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9637873844885313 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.06273211518800419 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2120631831497246 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9637873844885313 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.009379119050704916 must be >= 0.10943424996816553"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-b32e1037e0ae1906943c",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.013303093484834737 must be >= 0.10943424996816553",
+              "identity: pairwise_clip_distance_mean=0.061930400668282995 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.24621861572574413 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9273701431470238 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.061930400668282995 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.24621861572574413 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9273701431470238 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.013303093484834737 must be >= 0.10943424996816553"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-bfa21bfd85bfa21facda",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: clip_prompt_mean=0.3707041861595138 must be >= 0.37113089611575384",
+              "quality: motion_lpips_mean=0.015099218199755958 must be >= 0.10943424996816553",
+              "identity: pairwise_clip_distance_mean=0.08336630811140142 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3406861057626112 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9625318629861028 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.08336630811140142 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3406861057626112 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9625318629861028 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: clip_prompt_mean=0.3707041861595138 must be >= 0.37113089611575384",
+                "quality: motion_lpips_mean=0.015099218199755958 must be >= 0.10943424996816553"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 15,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_04",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-22519984edea94ae6700",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.00229504653962992 must be >= 0.009685096082720845",
+              "quality: motion_lpips_mean=0.01258553878080605 must be >= 0.05798354716590715",
+              "identity: pairwise_lpips_mean=0.253049337332636 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9288993379598389 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.253049337332636 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9288993379598389 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.00229504653962992 must be >= 0.009685096082720845",
+                "quality: motion_lpips_mean=0.01258553878080605 must be >= 0.05798354716590715"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-2511801597d3722bebb1",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.002194557654655586 must be >= 0.009685096082720845",
+              "quality: motion_lpips_mean=0.007854906869243231 must be >= 0.05798354716590715",
+              "identity: pairwise_lpips_mean=0.20617474390798984 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9382757310325406 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.20617474390798984 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9382757310325406 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.002194557654655586 must be >= 0.009685096082720845",
+                "quality: motion_lpips_mean=0.007854906869243231 must be >= 0.05798354716590715"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-5596aaa4a06d3a5c0f10",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.0068494243136907025 must be >= 0.009685096082720845",
+              "quality: motion_lpips_mean=0.05133151416114326 must be >= 0.05798354716590715",
+              "identity: pairwise_lpips_mean=0.22183163522227908 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9474560806973664 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_lpips_mean=0.22183163522227908 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9474560806973664 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.0068494243136907025 must be >= 0.009685096082720845",
+                "quality: motion_lpips_mean=0.05133151416114326 must be >= 0.05798354716590715"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-f16229d2deca14de2b44",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_lpips_mean=0.023405194197686673 must be >= 0.05798354716590715",
+              "identity: pairwise_clip_distance_mean=0.09623232823383959 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.2343326908092207 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9720053509966928 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.09623232823383959 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.2343326908092207 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9720053509966928 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_lpips_mean=0.023405194197686673 must be >= 0.05798354716590715"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    },
+    {
+      "horizon_seconds": 60,
+      "pass_fraction": 0.0,
+      "passed": false,
+      "passed_videos": 0,
+      "prompt_id": "limited_hold_04",
+      "stratum": "limited-animation-held-frames",
+      "video_results": [
+        {
+          "passed": false,
+          "run_id": "refresh-proof-2b8abc1c70b252bd65e5",
+          "seed": 150011,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.007702912858202438 must be >= 0.017227548403689185",
+              "quality: motion_lpips_mean=0.04828125087367294 must be >= 0.09167307472202443",
+              "identity: pairwise_clip_distance_mean=0.1272500846285077 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.37893849136874896 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9702958546488446 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.1272500846285077 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.37893849136874896 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9702958546488446 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.007702912858202438 must be >= 0.017227548403689185",
+                "quality: motion_lpips_mean=0.04828125087367294 must be >= 0.09167307472202443"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-45aca390574452bb9ea8",
+          "seed": 130003,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.005914876837868336 must be >= 0.017227548403689185",
+              "quality: motion_lpips_mean=0.016069256453313058 must be >= 0.09167307472202443",
+              "quality: temporal_delta_cosine_mean=-0.2990129274954671 must be >= -0.2796651250841849",
+              "identity: pairwise_clip_distance_mean=0.06757879281806749 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3245821700184399 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9519985649164204 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.06757879281806749 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3245821700184399 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9519985649164204 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.005914876837868336 must be >= 0.017227548403689185",
+                "quality: motion_lpips_mean=0.016069256453313058 must be >= 0.09167307472202443",
+                "quality: temporal_delta_cosine_mean=-0.2990129274954671 must be >= -0.2796651250841849"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-999d17719383beaff5bd",
+          "seed": 140009,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.005233255607530105 must be >= 0.017227548403689185",
+              "quality: motion_lpips_mean=0.017354804761746268 must be >= 0.09167307472202443",
+              "quality: temporal_delta_cosine_mean=-0.3060306142827818 must be >= -0.2796651250841849",
+              "identity: pairwise_clip_distance_mean=0.09258920950786248 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.3807596919137381 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9760347683509919 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.09258920950786248 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.3807596919137381 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9760347683509919 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.005233255607530105 must be >= 0.017227548403689185",
+                "quality: motion_lpips_mean=0.017354804761746268 must be >= 0.09167307472202443",
+                "quality: temporal_delta_cosine_mean=-0.3060306142827818 must be >= -0.2796651250841849"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        },
+        {
+          "passed": false,
+          "run_id": "refresh-proof-a5d351f1f3e4f2e17757",
+          "seed": 160001,
+          "verdict": {
+            "authoritative": true,
+            "failures": [
+              "quality: motion_clip_distance_mean=0.003944435888085483 must be >= 0.017227548403689185",
+              "quality: motion_lpips_mean=0.022465246539054948 must be >= 0.09167307472202443",
+              "quality: temporal_delta_cosine_mean=-0.2882321337825448 must be >= -0.2796651250841849",
+              "identity: pairwise_clip_distance_mean=0.07082586963848433 must be <= 0.05",
+              "identity: pairwise_lpips_mean=0.34037153354400945 must be <= 0.1",
+              "identity: pairwise_temporal_clip_distance_mean=0.9823154965468514 must be <= 0.35"
+            ],
+            "identity": {
+              "failures": [
+                "identity: pairwise_clip_distance_mean=0.07082586963848433 must be <= 0.05",
+                "identity: pairwise_lpips_mean=0.34037153354400945 must be <= 0.1",
+                "identity: pairwise_temporal_clip_distance_mean=0.9823154965468514 must be <= 0.35"
+              ],
+              "passed": false
+            },
+            "passed": false,
+            "quality": {
+              "failures": [
+                "quality: motion_clip_distance_mean=0.003944435888085483 must be >= 0.017227548403689185",
+                "quality: motion_lpips_mean=0.022465246539054948 must be >= 0.09167307472202443",
+                "quality: temporal_delta_cosine_mean=-0.2882321337825448 must be >= -0.2796651250841849"
+              ],
+              "passed": false
+            },
+            "status": "failed"
+          }
+        }
+      ],
+      "videos": 4
+    }
+  ],
+  "decision_digest": "sha256:51b1146027c6213336d9e9eaf2c9bbd404e3b517ab78aad80370510f4e8624bb",
+  "manifest_digest": "sha256:c97a6fc1f042a7f56eab08273f0f6bd2f343b938498907c267a7d7ab3334d59b",
+  "minimum_pass_fraction": 0.75,
+  "minimum_videos_per_cell": 4,
+  "passed": false,
+  "policy_bundle_digest": "sha256:41a228ceac16a026c7771d2e2c496714e5476c8e9287d3da3d15a78e993a9870",
+  "result_count": 64,
+  "schema": "liveframe.refresh-numerical-decision.v1"
+}

@@ -5,7 +5,7 @@ from pathlib import Path
 
 import torch
 
-from liveframe.quality_artifacts import StochasticWriter, write_tensor
+from liveframe.quality_artifacts import StochasticWriter, TensorStreamWriter, write_tensor
 from liveframe.quality_capture import sha256_file
 
 
@@ -47,3 +47,42 @@ def test_stochastic_writer_abort_removes_partial_payload(tmp_path: Path) -> None
     writer.abort()
 
     assert not (tmp_path / ".stochastic.bf16.tmp").exists()
+
+
+def test_stream_writer_matches_whole_tensor_artifact(tmp_path: Path) -> None:
+    pixels = torch.arange(72, dtype=torch.uint8).reshape(6, 2, 2, 3)
+    writer = TensorStreamWriter(
+        tmp_path / "pixels.rgb",
+        layout="T,H,W,C",
+        schema="liveframe.decoded-pixels.v1",
+    )
+    writer.append(pixels[:1])
+    writer.append(pixels[1:5])
+    writer.append(pixels[5:])
+
+    payload_path, metadata_path = writer.finish()
+
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    assert payload_path.read_bytes() == pixels.numpy().tobytes()
+    assert metadata["shape"] == [6, 2, 2, 3]
+    assert metadata["sha256"] == sha256_file(payload_path)
+
+
+def test_stream_writer_concatenates_singleton_batch_time_axis(tmp_path: Path) -> None:
+    latents = torch.arange(24, dtype=torch.float32).reshape(1, 3, 2, 2, 2).to(
+        torch.bfloat16
+    )
+    writer = TensorStreamWriter(
+        tmp_path / "latents.bf16",
+        layout="B,T,C,H,W",
+        schema="liveframe.refresh-latents.v2",
+        concat_dim=1,
+    )
+    for frame in range(latents.shape[1]):
+        writer.append(latents[:, frame : frame + 1])
+
+    payload_path, metadata_path = writer.finish()
+
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    assert payload_path.read_bytes() == latents.view(torch.uint16).numpy().tobytes()
+    assert metadata["shape"] == [1, 3, 2, 2, 2]

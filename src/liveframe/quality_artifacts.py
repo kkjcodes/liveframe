@@ -105,3 +105,72 @@ class StochasticWriter:
         if not self.stream.closed:
             self.stream.close()
         self.temporary.unlink(missing_ok=True)
+
+
+class TensorStreamWriter:
+    """Atomically serialize tensors concatenated along their leading dimension."""
+
+    def __init__(
+        self, path: Path, *, layout: str, schema: str, concat_dim: int = 0
+    ) -> None:
+        if concat_dim < 0:
+            raise ValueError("streamed tensor concat dimension must be nonnegative")
+        self.path = path
+        self.temporary = path.with_name(f".{path.name}.tmp")
+        self.metadata_path = path.with_suffix(path.suffix + ".json")
+        self.layout = layout
+        self.schema = schema
+        self.concat_dim = concat_dim
+        self.stream = self.temporary.open("wb")
+        self.dtype: str | None = None
+        self.chunk_shape: tuple[int, ...] | None = None
+        self.concat_size = 0
+
+    def append(self, value: Any) -> None:
+        if not hasattr(value, "shape") or len(value.shape) <= self.concat_dim:
+            raise ValueError("streamed tensor chunk does not contain concat dimension")
+        payload, dtype = tensor_payload(value)
+        chunk_shape = tuple(int(size) for size in value.shape)
+        if any(size != 1 for size in chunk_shape[: self.concat_dim]):
+            raise ValueError("dimensions before streamed concat axis must be singleton")
+        if self.dtype is None:
+            self.dtype = dtype
+            self.chunk_shape = chunk_shape
+        else:
+            expected_shape = self.chunk_shape
+            if expected_shape is None or dtype != self.dtype or any(
+                size != expected
+                for index, (size, expected) in enumerate(
+                    zip(chunk_shape, expected_shape, strict=True)
+                )
+                if index != self.concat_dim
+            ):
+                raise ValueError("streamed tensor chunks must have matching dtype and shape")
+        self.stream.write(payload)
+        self.concat_size += chunk_shape[self.concat_dim]
+
+    def finish(self) -> list[Path]:
+        if self.dtype is None or self.chunk_shape is None:
+            raise ValueError("cannot finish an empty streamed tensor")
+        self.stream.flush()
+        os.fsync(self.stream.fileno())
+        self.stream.close()
+        os.replace(self.temporary, self.path)
+        shape = list(self.chunk_shape)
+        shape[self.concat_dim] = self.concat_size
+        atomic_json(
+            self.metadata_path,
+            {
+                "schema": self.schema,
+                "dtype": self.dtype,
+                "layout": self.layout,
+                "shape": shape,
+                "sha256": sha256_file(self.path),
+            },
+        )
+        return [self.path, self.metadata_path]
+
+    def abort(self) -> None:
+        if not self.stream.closed:
+            self.stream.close()
+        self.temporary.unlink(missing_ok=True)

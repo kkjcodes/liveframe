@@ -1,0 +1,16 @@
+{
+  "batch_digest": "sha256:d9541d8a7e77f0495bf80ed8b8536bed4b56ea0974e48ed1b8732d045d3e4934",
+  "checkpoint_sha256": "sha256:bdb1b475fc88d528f510158a0990cd457f02c661b527ceb11ca9e4728533e2d0",
+  "manifest_digest": "sha256:c97a6fc1f042a7f56eab08273f0f6bd2f343b938498907c267a7d7ab3334d59b",
+  "proof_results_generated": false,
+  "refresh_hook_sha256": "sha256:5934282adbe9ec36ac08fc8ea738158ffa5091054f7c97e30460b3017d18eb63",
+  "runner_core_sha256": "sha256:5c19b0924a2c87e87c94f0fb87280dea3a567bb95d38e3ba5c38fdbe4eb5d8d7",
+  "runner_sha256": "sha256:087b235bdf92b77756e22116127735337388c96950a8f053470c7f1d7b673258",
+  "schema": "liveframe.h100-refresh-runner-preflight.v2",
+  "selected_jobs": 64,
+  "source_files": {
+    "utils/wan_wrapper.py": "sha256:5120536c7d58fabc75187245a007f0a1486889372386b698d640fb80b280331d",
+    "wan/modules/causal_model.py": "sha256:0566a17f867a7c8ea8ad80d8b79bdfe17aaa4c7859873ffde881a6cdc12c9edd"
+  },
+  "source_revision": "8db419e341e5fc52542c0b2c4542728420ddfb4a"
+}

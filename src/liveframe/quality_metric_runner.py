@@ -93,6 +93,12 @@ class PerceptualMetricRunner:
         if torch_module_sha256(self.lpips_model) != lpips_spec["state_sha256"]:
             raise ValueError("LPIPS state does not match frozen provenance")
 
+    def to(self, device: str) -> PerceptualMetricRunner:
+        self.clip_model.to(device)
+        self.lpips_model.to(device)
+        self.device = device
+        return self
+
     def _frames(self, array: np.ndarray[Any, Any]) -> Any:
         import torch
 

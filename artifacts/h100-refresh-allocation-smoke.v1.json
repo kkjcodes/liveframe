@@ -1,0 +1,55 @@
+{
+  "cuda_memory_checkpoints": [
+    {
+      "allocated_bytes": 15193239552,
+      "peak_allocated_bytes": 15274963968,
+      "peak_reserved_bytes": 15311306752,
+      "reserved_bytes": 15311306752,
+      "stage": "maximum-context-generation"
+    },
+    {
+      "allocated_bytes": 2380998656,
+      "peak_allocated_bytes": 15274963968,
+      "peak_reserved_bytes": 15311306752,
+      "reserved_bytes": 6610223104,
+      "stage": "full-sequence-vae-cache"
+    },
+    {
+      "allocated_bytes": 2741680128,
+      "peak_allocated_bytes": 15274963968,
+      "peak_reserved_bytes": 15311306752,
+      "reserved_bytes": 3800039424,
+      "stage": "metric-batch"
+    }
+  ],
+  "latent_frames": 243,
+  "memory_protocol": "phase-exclusive-streamed-v1",
+  "metric_batch_size": 8,
+  "peak_cuda_allocated_bytes": 15274963968,
+  "peak_cuda_reserved_bytes": 15311306752,
+  "pixel_frames": 969,
+  "proof_inputs_loaded": false,
+  "proof_results_generated": false,
+  "runtime": {
+    "causal_model_sha256": "sha256:0566a17f867a7c8ea8ad80d8b79bdfe17aaa4c7859873ffde881a6cdc12c9edd",
+    "checkpoint_sha256": "sha256:bdb1b475fc88d528f510158a0990cd457f02c661b527ceb11ca9e4728533e2d0",
+    "cuda": "12.8",
+    "denominator_sha256": "sha256:82394c2bad77718668c8fbe7b42dd568de5a607679737312a8004321e740f766",
+    "driver": "570.124.06",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "harness_sha256": "sha256:cb47246f6f6c30f16634c749797afd8d36bdad9b05f1e8f77f2a237d54693cc7",
+    "identity_anchor_passed": true,
+    "identity_anchor_report_sha256": "sha256:82394c2bad77718668c8fbe7b42dd568de5a607679737312a8004321e740f766",
+    "python": "3.12.3",
+    "refresh_contract_sha256": "sha256:be16eaf242a7738ae572eed2069f204c997317710b1b0d80e98593afea57050a",
+    "refresh_hook_sha256": "sha256:5934282adbe9ec36ac08fc8ea738158ffa5091054f7c97e30460b3017d18eb63",
+    "runner_core_sha256": "sha256:5c19b0924a2c87e87c94f0fb87280dea3a567bb95d38e3ba5c38fdbe4eb5d8d7",
+    "source_revision": "8db419e341e5fc52542c0b2c4542728420ddfb4a",
+    "tf32": false,
+    "timing_protocol": "paired-interleaved-instrumented-numerical-only",
+    "torch": "2.8.0+cu128",
+    "wan_wrapper_sha256": "sha256:5120536c7d58fabc75187245a007f0a1486889372386b698d640fb80b280331d"
+  },
+  "schema": "liveframe.h100-refresh-allocation-smoke.v1",
+  "synthetic_prompt": true
+}
