@@ -1,0 +1,193 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.72in]{geometry}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\newcommand{\system}{LiveFrame}
+\newcommand{\fps}{\,FPS}
+\newcommand{\todoauthor}{Independent Researcher}
+
+\title{\system: Evidence-First Measurement of Real-Time\\Autoregressive Diffusion Video Across CUDA and Apple MLX}
+\author{Kumar K. Jha\\\todoauthor\\\texttt{kumar.krishnanand@gmail.com}}
+\date{6 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Claims of real-time video generation often combine unlike quantities: short-burst transformer throughput, interpolated display rate, intrinsic visual quality, and reproducibility across runtimes. We present \system, an evidence-first evaluation framework that separates four claim layers: numerical trajectory, intrinsic quality, same-seed identity, and complete-wall performance. The framework pre-registers prompts, seeds, horizons, thresholds, and aggregation; serializes stochastic inputs for literal byte-identity checks; binds model, runtime, metric, and output provenance by digest; and evaluates 15- and 60-second autoregressive horizons.
+
+We apply this methodology to Wan2.1-T2V-1.3B derivatives on NVIDIA H100 CUDA and Apple M5 Max MLX. First, increasing the bounded MLX free-buffer cache from 1 to 4\,GiB reduces complete wall time for an 81-frame, 480$\times$832 one-step Causal Forcing++ fixture from 69.167 to 57.127 seconds, a 1.2108$\times$ speedup, while all trials record the same pre-encode RGB digest and zero swap. The optimized 1.418 native generated FPS remains 11.28$\times$ below our declared 16-FPS real-time target and is not a 60-second result. Second, a sealed CUDA-to-MLX Rolling Forcing holdout with byte-identical stochastic inputs passes same-seed identity for 0/128 videos, although intrinsic quality passes for 90/128. Third, a prospective 64-video H100 campaign rejects a specific periodic clean-refresh optimization: substituting re-positioned anchor keys and values for two frames after every third-frame anchor passes 0/16 aggregate quality cells. These are configuration- and mechanism-specific findings, not hardware impossibility results. Together they show why speed, quality, identity, and provenance must be reported independently in autoregressive video systems.
+\end{abstract}
+
+\section{Introduction}
+Few-step autoregressive video diffusion has moved interactive generation from a model-design aspiration toward a systems problem \cite{wan,causalforcing,causalforcingpp,rollingforcing}. Yet ``real time'' remains underspecified. A paper may report denoiser throughput while excluding mandatory cache refresh, decoder, synchronization, materialization, and encoding. A port may produce plausible videos while failing to reproduce a reference trajectory under the same seed. A cache optimization may be fast but unsafe over long rollouts.
+
+We define real time prospectively as at least 16 \emph{native generated} frames per second for a continuous 60-second stream. Interpolated or duplicated presentation frames do not count. A complete claim must also disclose time to first frame, p95 chunk latency, memory and thermal state, intrinsic quality, same-seed identity, and long-horizon drift. No experiment in this paper meets that complete target.
+
+Our contribution is claim discipline backed by frozen evidence:
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+  \item A methodology that separates numerical trajectory, intrinsic quality, same-seed identity, and complete-wall performance, with pre-registered thresholds and digest-bound provenance.
+  \item A measured exact-output systems optimization on Apple M5 Max: a bounded MLX allocator-policy change yields a 17.41\% complete-wall reduction on a clean 81-frame fixture.
+  \item Three quantified negative results: failure of a tested CUDA/MLX autoregressive portability contract; an 11.28$\times$ gap to the declared native-FPS target; and failure of a specific periodic refresh K/V substitution mechanism.
+\end{enumerate}
+
+Negative results are useful only when bounded. We do not claim that all CUDA and MLX implementations diverge, that Apple Silicon cannot reach real time, or that cross-frame cache reuse generally fails.
+
+\section{Related Work}
+\paragraph{Autoregressive video diffusion.}
+Wan provides the 1.3B video foundation model and causal VAE used by the tested descendants \cite{wan}. Causal Forcing aligns autoregressive teacher and student initialization, while Causal Forcing++ targets frame-wise one- and two-step generation \cite{causalforcing,causalforcingpp}. Rolling Forcing uses joint rolling-window denoising and persistent context to improve long-horizon streaming \cite{rollingforcing}. Our work does not propose a replacement generator; it audits complete-system claims around these models.
+
+\paragraph{Cache reuse and persistent state.}
+Ca2-VDM reuses causal historical-frame caches and shares them across denoising steps \cite{ca2vdm}. X-Cache reuses cross-chunk block residuals but forces full computation when clean K/V are written, explicitly limiting contamination of persistent cache state \cite{xcache}. Causal-rCM studies autoregressive distillation and noisy-context training rather than copying an older frame's raw K/V into a current-frame projection site \cite{causalrcm}. These works establish substantial prior art for causal video caching. We therefore claim novelty only for the exact intervention and prospective negative evaluation in Sec.~\ref{sec:refresh}, not for cross-frame caching or RoPE-aware memory generally.
+
+\paragraph{Numerical reproducibility.}
+Cross-framework differential testing has long exposed implementation inconsistencies \cite{cradle}. Recent LLM work shows that hardware, batch size, topology, precision, and reduction order can alter generated responses \cite{yuan2025}. Diffusion models can also produce similar outputs from the same initial noise across separately trained models, a distinct model-level phenomenon \cite{diffrepro}. We found no primary study combining byte-identical serialized stochastic inputs, CUDA versus MLX/Metal execution of a frozen visual generator, autoregressive video rollouts at two horizons, and separate intrinsic and same-seed identity decisions. This is a novelty-of-combination statement, not a claim that hardware-sensitive inference is new.
+
+\paragraph{Video decoder acceleration.}
+As transformers accelerate, VAE decoding can dominate end-to-end latency. Flash-VAED uses pruning, operator replacement, and distillation to accelerate Wan and LTX decoders, reporting roughly 6$\times$ decoder speedup and up to 36\% end-to-end acceleration with reconstruction tradeoffs \cite{flashvaed}. Our allocator result changes neither weights nor declared execution graph and uses a repeated pre-encode RGB digest as the preservation criterion. It complements, rather than precedes, output-changing decoder redesign.
+
+\section{Claim and Evidence Protocol}
+\subsection{Four independent claim layers}
+For a reference execution $R$ and candidate $C$, \system{} evaluates:
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+  \item \textbf{Numerical trajectory}: latent and selected internal-state drift under identical declared inputs.
+  \item \textbf{Intrinsic quality}: prompt alignment, motion, flicker, and temporal behavior against prompt-specific teacher distributions.
+  \item \textbf{Same-seed identity}: whether $R$ and $C$ remain recognizably the same generated trajectory.
+  \item \textbf{Complete-wall performance}: end-to-end time including denoise, mandatory refresh, VAE, materialization, synchronization, and encoding.
+\end{enumerate}
+A candidate cannot inherit one claim from another. Plausible intrinsic quality does not imply trajectory identity, and numerical eligibility does not imply a quality or timing GO.
+
+\subsection{Prospective contracts}
+Before holdout visibility, the protocol freezes prompts, seeds, content strata, 15- and 60-second horizons, metric bounds, aggregation, model and metric identities, and stop rules. Stochastic BF16 tensors are serialized once; each runtime republishes payload digests before perceptual metrics initialize. A prompt/horizon cell passes only when at least three of four seeds pass, and a campaign-level claim requires every declared cell.
+
+Artifacts are atomically published and validated fail-closed. Digests bind source revisions, checkpoints, policy bundles, runtime identity, metric weights, and outputs. Numerical and timing eligibility are separate; the H100 refresh campaign, for example, prohibited authoritative timing unless numerical quality first passed.
+
+\subsection{Metrics and horizons}
+Intrinsic metrics include CLIP prompt alignment, LPIPS and CLIP motion, temporal-delta cosine, and luma flicker. Pairwise identity uses framewise CLIP distance, LPIPS, and temporal CLIP distance. Bounds are horizon-indexed rather than extrapolated from a native training window. This matters because autoregressive errors can remain visually mild at 15 seconds and become trajectory-defining at 60 seconds.
+
+\section{Experimental Setup}
+\begin{table}[t]
+\centering
+\caption{Principal experimental configurations.}
+\label{tab:setup}
+\small
+\begin{tabular}{@{}p{0.21\columnwidth}p{0.73\columnwidth}@{}}
+\toprule
+Experiment & Configuration \\
+\midrule
+M5 timing & Apple M5 Max, 36\,GiB unified memory; MLX/MLX Metal 0.32.0; Wan2.1-T2V-1.3B one-step Causal Forcing++; BF16; 21 latent/81 pixel frames; 480$\times$832; one warmup and three measured trials. \\
+Cross-runtime & Frozen Rolling Forcing checkpoint; NVIDIA H100 CUDA reference and Apple M5 Max MLX candidate; 16 prompts, four seeds, four content strata; 15 and 60 seconds; 128 paired videos. \\
+Refresh reuse & NVIDIA H100 80\,GB HBM3; frame-wise one-step Causal Forcing++; 30 layers; 21-frame rolling context; two high-redundancy strata, eight prompts, four seeds, two horizons; 64 paired runs. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The M5 complete-wall interval excludes model loading and prompt encoding but includes generation, incremental causal VAE decoding, pixel materialization, and H.264 encoding. It is a 5.0625-second fixture, not sustained 60-second evidence. The cross-runtime campaign uses the long-video Rolling Forcing model; the clean M5 timing row uses one-step Causal Forcing++ and is intentionally a separate claim surface.
+
+\section{Exact-Output M5 Systems Result}
+\begin{table}[t]
+\centering
+\caption{M5 medians for the bounded MLX free-buffer cache policy. Shares use complete wall.}
+\label{tab:m5}
+\small
+\begin{tabular}{lrr}
+\toprule
+Metric & 1\,GiB & 4\,GiB \\
+\midrule
+Complete wall (s) & 69.167 & 57.127 \\
+Native generated FPS & 1.171 & 1.418 \\
+Denoise (s) & 7.218 & --- \\
+Mandatory refresh (s) & 6.709 & --- \\
+Causal VAE (s) & 54.431 & 41.319 \\
+VAE share & 78.69\% & 72.33\% \\
+Swap delta (MiB) & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The baseline limits MLX to Metal's 28.080\,GiB recommended working set and a 1\,GiB free-buffer cache. It reaches 1.171\fps, with VAE decode consuming 78.69\% of complete wall. Raising only the bounded free-buffer cache to 4\,GiB reduces VAE time by 24.09\% and complete wall by 17.41\%:
+\begin{equation}
+S_{\mathrm{wall}}=\frac{69.1667}{57.1265}=1.2108.
+\end{equation}
+All measured candidate trials report zero added swap, pass the pinned latent anchor, and record the same 97,044,480-byte pre-encode RGB digest as the baseline trials.
+
+The raw RGB payload itself was not retained. Therefore exact-output evidence means repeated immutable trial records of the same pre-encode digest, not independent re-decoding of redistributed raw bytes. The retained lossy H.264 file and its decoded RGB have separate hashes.
+
+The optimized row remains
+\begin{equation}
+\frac{16}{1.4179056}=11.2842
+\end{equation}
+times below the declared target. Quantization, lower resolution, different models, custom Metal kernels, decoder redesign, overlap, and disclosed interpolation remain open. This is not an Apple Silicon impossibility result.
+
+\section{Cross-Runtime Autoregressive Divergence}
+The sealed holdout contains 128 H100 references and 128 M5 candidates. Before metric initialization, every pair passes literal byte identity for the serialized stochastic stream. The policy and instrument remain frozen after holdout visibility.
+
+\begin{table}[t]
+\centering
+\caption{Sealed CUDA/MLX holdout outcome. A cell requires at least three of four seeds.}
+\label{tab:crossruntime}
+\small
+\begin{tabular}{lrr}
+\toprule
+Layer & Videos passed & Cells passed \\
+\midrule
+Intrinsic quality & 90/128 & 19/32 \\
+Same-seed identity & 0/128 & 0/32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Identity failure is broad. Pairwise temporal CLIP distance fails 128/128 videos; pairwise LPIPS passes only 2/128; and mean pairwise CLIP distance passes 29/128. Every video fails at least one frozen identity tripwire. Intrinsic failure is milder and horizon-sensitive: 15/64 videos fail at 15 seconds versus 23/64 at 60 seconds.
+
+This separates two notions often collapsed under ``seed reproducibility.'' The runtimes can consume byte-identical stochastic inputs and still produce different autoregressive trajectories, while many candidate videos remain independently acceptable. The result rejects the tested checkpoint and implementation pair under the frozen contract. It neither assigns the divergence to one kernel nor proves universal CUDA/MLX non-portability.
+
+\section{Periodic Refresh K/V Reuse}\label{sec:refresh}
+Frame-wise Causal Forcing++ performs one clean-cache refresh per generated latent frame. The tested candidate computes a full anchor every third frame. At each of 30 layers it captures raw post-normalization keys $K_a$ and values $V_a$, then substitutes them for the next two destination frames. Keys are moved to destination temporal position $t$ by
+\begin{equation}
+K_{a\rightarrow t}=R(t)R(a)^{-1}K_a,\qquad V_{a\rightarrow t}=V_a,
+\end{equation}
+where $R$ is temporal RoPE. Destination K projection, K normalization, and V projection are skipped; queries, attention, output projection, and downstream computation remain current. Reference and candidate maintain independent mutable state and identical serialized stochastic inputs.
+
+All 64 runs are complete and numerically eligible. The mechanism passes 0/4 videos in each of 16 prompt/horizon cells. Pairwise temporal CLIP fails 64/64 videos, pairwise LPIPS fails 59/64, intrinsic motion LPIPS fails 56/64, and intrinsic motion CLIP distance fails 34/64. Representative failures suppress candidate motion and alter same-seed temporal trajectories.
+
+No authoritative timing replay was run because numerical GO was a prerequisite. Even an overhead-free elimination of two in three refresh forwards has a 13.04\% complete-wall ceiling on the frozen H100 denominator, below the separate 17\% wall gate. The broader denoise-side oracle was never run. Denoising represented 24.1592\% of that denominator, implying at least 70.3667\% denoise reclaim before overhead to meet the wall gate; this is an untested feasibility requirement, not observed performance.
+
+Related work preserves historical K/V as context, recomputes each new chunk's cache, or trains an adaptive state \cite{ca2vdm,xcache,causalrcm}. Our intervention instead makes anchor content stand in for current-frame projections. Reapplying RoPE repairs positional phase but not frame- and context-conditioned content. That is a plausible explanation, not a causal identification: stale K, stale V, skipped projection, skipped normalization, reuse depth, and period were not separately ablated.
+
+\section{Discussion}
+\paragraph{What the evidence changes.}
+The M5 profile redirects optimization attention from the already-distilled transformer to causal 3D VAE decode. Flash-VAED independently confirms that decoder cost rises in importance as DiTs accelerate \cite{flashvaed}; our result adds a measured Apple/MLX configuration and a no-model-change allocator intervention. The portability result warns that a seed and scheduler are insufficient provenance for long autoregressive rollouts. The refresh result supplies experimental support for a design pattern visible in X-Cache: approximate computation should not silently contaminate persistent clean-cache writes \cite{xcache}.
+
+\paragraph{Why the negatives are publishable.}
+Each negative closes a pre-specified decision, exposes its denominator, and states what remains open. The cross-runtime result has practical value for regression testing and reproducible visual benchmarks. The target-gap result prevents a short fixture from being marketed as sustained real time. The refresh result avoids an authoritative timing campaign for a mechanism that already fails quality.
+
+\paragraph{Impact expectations.}
+The likely impact is methodological and infrastructural rather than a new state-of-the-art generator. The strongest reusable artifact is the four-layer claim model and its fail-closed evidence workflow. The most distinctive empirical result is the controlled CUDA/MLX video divergence campaign; adjacent reproducibility literature is mostly text generation or cross-model diffusion. The M5 characterization fills a sparse public benchmark surface but is only one hardware/model point. The refresh negative is useful design evidence in a rapidly developing cache-acceleration literature, but related methods already establish that the broad research area is crowded.
+
+\section{Limitations}
+The study uses one principal backbone family and two hardware ecosystems. The clean M5 row is short and excludes load and prompt encoding. The contaminated 60-second M5 timing is not used as a performance denominator. The raw pre-encode RGB payload for the allocator experiment was not retained, so exact identity is supported by repeated digest records rather than a redistributed raw file. Perceptual policies inherit limitations from CLIP and LPIPS. The cross-runtime experiment does not isolate the first divergent operator. The refresh campaign tests one all-layer, fixed-period mechanism and cannot reject adaptive, partial-layer, corrected, trained, or denoise-side reuse. A compiled VAE observation is excluded because no quality threshold was frozen before output visibility. The denoise-side oracle was not run. Finally, literature non-discovery cannot establish patent-grade or absolute priority; our novelty statements are bounded to the primary-source review completed 6 August 2026.
+
+\section{Reproducibility and Artifact Plan}
+The frozen evidence revision is Git tag \texttt{evidence-freeze-2026-08-06}, resolving to commit \texttt{ea742ee2ea438b6d9ff2d1bca0b4053f9eeaeb44}. A follow-up publication-closeout commit records the audited ledger and release manifest. Tier A contains source, tests, schemas, compact metrics, manifests, and reports. Tier B contains 64 pre-registered CUDA/MLX preview pairs (128 H.264 files) and all 256 compact per-video metric records. Tier C contains raw pixel, latent, stochastic, and refresh corpora in checksummed cold storage. Upstream source and model weights are not redistributed; pinned revisions and expected hashes are provided separately.
+
+The public release should make Tier A and Tier B available together, after preview content review and hash verification. Tier C is not required to validate the compact arithmetic and campaign verdicts.
+
+\section{Conclusion}
+\system{} does not achieve the declared real-time target. It does establish that careful systems tuning can yield a 1.2108$\times$ exact-output speedup, that byte-identical stochastic inputs do not guarantee cross-runtime autoregressive video identity, and that a specific temporal re-RoPE anchor-substitution mechanism is not quality-safe. More broadly, the study argues that real-time diffusion video should be evaluated as a layered evidence claim: native generation rate, complete-wall accounting, intrinsic quality, trajectory identity, and provenance must remain separate until each is supported.
+
+\section*{Acknowledgments}
+This independent study builds on the open Wan, Causal Forcing, Causal Forcing++, Rolling Forcing, MLX, and mlx-video ecosystems. Compute providers and upstream authors did not participate in the experiments or manuscript.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

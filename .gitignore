@@ -10,6 +10,12 @@ build/
 *.egg-info/
 release/
 
+# LaTeX build scratch files
+paper/arxiv/*.aux
+paper/arxiv/*.blg
+paper/arxiv/*.log
+paper/arxiv/*.out
+
 # Large or machine-local artifacts
 outputs/
 weights/

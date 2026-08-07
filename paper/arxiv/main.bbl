@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{ca2vdm}
+Kaifeng Gao, Jiaxin Shi, Hanwang Zhang, Chunping Wang, Jun Xiao, and Long Chen.
+\newblock Ca2-vdm: Efficient autoregressive video diffusion model with causal
+  generation and cache sharing.
+\newblock {\em arXiv preprint arXiv:2411.16375}, 2024.
+
+\bibitem{rollingforcing}
+Kunhao Liu, Wenbo Hu, Jiale Xu, Ying Shan, and Shijian Lu.
+\newblock Rolling forcing: Autoregressive long video diffusion in real time.
+\newblock {\em arXiv preprint arXiv:2509.25161}, 2025.
+
+\bibitem{cradle}
+Hung~Viet Pham, Thibaud Lutellier, Weizhen Qi, and Lin Tan.
+\newblock Cradle: Cross-backend validation to detect and localize bugs in deep
+  learning libraries.
+\newblock In {\em Proceedings of the 41st International Conference on Software
+  Engineering}, pages 1027--1038, 2019.
+
+\bibitem{wan}
+{Wan Team}, Ang Wang, Baole Ai, Bin Wen, Chaojie Mao, et~al.
+\newblock Wan: Open and advanced large-scale video generative models.
+\newblock {\em arXiv preprint arXiv:2503.20314}, 2025.
+
+\bibitem{yuan2025}
+Jiayi Yuan, Hao Li, Xinheng Ding, Wenya Xie, Yu-Jhe Li, Wentian Zhao, Kun Wan,
+  Jing Shi, Xia Hu, et~al.
+\newblock Understanding and mitigating numerical sources of nondeterminism in
+  llm inference.
+\newblock {\em arXiv preprint arXiv:2506.09501}, 2025.
+
+\bibitem{xcache}
+Yixiao Zeng, Jianlei Zheng, Chaoda Zheng, Shijia Chen, Mingdian Liu, Tongping
+  Liu, Tengwei Luo, Yu~Zhang, Boyang Wang, et~al.
+\newblock X-cache: Cross-chunk block caching for few-step autoregressive world
+  models inference.
+\newblock {\em arXiv preprint arXiv:2604.20289}, 2026.
+
+\bibitem{diffrepro}
+Huijie Zhang, Jinfan Zhou, Yifu Lu, Minzhe Guo, Peng Wang, Liyue Shen, and Qing
+  Qu.
+\newblock The emergence of reproducibility and generalizability in diffusion
+  models.
+\newblock In {\em Proceedings of the 41st International Conference on Machine
+  Learning}, 2024.
+
+\bibitem{causalforcingpp}
+Min Zhao, Hongzhou Zhu, Kaiwen Zheng, Zihan Zhou, Bokai Yan, Xinyuan Li, Xiao
+  Yang, Chongxuan Li, and Jun Zhu.
+\newblock Causal forcing++: Scalable few-step autoregressive diffusion
+  distillation for real-time interactive video generation.
+\newblock {\em arXiv preprint arXiv:2605.15141}, 2026.
+
+\bibitem{causalrcm}
+Kaiwen Zheng, Guande He, Min Zhao, Jintao Zhang, Huayu Chen, Jianfei Chen,
+  Chen-Hsuan Lin, Ming-Yu Liu, et~al.
+\newblock Causal-rcm: A unified teacher-forcing and self-forcing open recipe
+  for autoregressive diffusion distillation in streaming video generation and
+  interactive world models.
+\newblock {\em arXiv preprint arXiv:2606.25473}, 2026.
+
+\bibitem{causalforcing}
+Hongzhou Zhu, Min Zhao, Guande He, Hang Su, Chongxuan Li, and Jun Zhu.
+\newblock Causal forcing: Autoregressive diffusion distillation done right for
+  high-quality real-time interactive video generation.
+\newblock {\em arXiv preprint arXiv:2602.02214}, 2026.
+
+\bibitem{flashvaed}
+Lunjie Zhu, Yushi Huang, Xingtong Ge, Yufei Xue, Zhening Liu, Yumeng Zhang,
+  Zehong Lin, and Jun Zhang.
+\newblock Flash-vaed: Plug-and-play vae decoders for efficient video
+  generation.
+\newblock {\em arXiv preprint arXiv:2602.19161}, 2026.
+
+\end{thebibliography}
