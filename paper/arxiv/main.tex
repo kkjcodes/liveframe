@@ -25,7 +25,7 @@
 \begin{abstract}
 Claims of real-time video generation often combine unlike quantities: short-burst transformer throughput, interpolated display rate, intrinsic visual quality, and reproducibility across runtimes. We present \system, an evidence-first evaluation framework that separates four claim layers: numerical trajectory, intrinsic quality, same-seed identity, and complete-wall performance. The framework pre-registers prompts, seeds, horizons, thresholds, and aggregation; serializes stochastic inputs for literal byte-identity checks; binds model, runtime, metric, and output provenance by digest; and evaluates 15- and 60-second autoregressive horizons.
 
-We apply this methodology to Wan2.1-T2V-1.3B derivatives on NVIDIA H100 CUDA and Apple M5 Max MLX. First, increasing the bounded MLX free-buffer cache from 1 to 4\,GiB reduces complete wall time for an 81-frame, 480$\times$832 one-step Causal Forcing++ fixture from 69.167 to 57.127 seconds, a 1.2108$\times$ speedup, while all trials record the same pre-encode RGB digest and zero swap. The optimized 1.418 native generated FPS remains 11.28$\times$ below our declared 16-FPS real-time target and is not a 60-second result. Second, a sealed CUDA-to-MLX Rolling Forcing holdout with byte-identical stochastic inputs passes same-seed identity for 0/128 videos, although intrinsic quality passes for 90/128. Third, a prospective 64-video H100 campaign rejects a specific periodic clean-refresh optimization: substituting re-positioned anchor keys and values for two frames after every third-frame anchor passes 0/16 aggregate quality cells. These are configuration- and mechanism-specific findings, not hardware impossibility results. Together they show why speed, quality, identity, and provenance must be reported independently in autoregressive video systems.
+We apply this methodology to Wan2.1-T2V-1.3B derivatives on NVIDIA H100 CUDA and Apple M5 Max MLX. First, increasing the bounded MLX free-buffer cache from 1 to 4\,GiB reduces complete wall time for an 81-frame, 480$\times$832 one-step Causal Forcing++ fixture from 69.167 to 57.127 seconds, a 1.2108$\times$ speedup, while candidate and diagnostic trials reproduce the recorded pre-encode RGB anchor with zero swap. The optimized 1.418 fixture FPS remains 11.28$\times$ below our declared 16-FPS real-time target and is not a 60-second result. Second, a sealed CUDA-to-MLX Rolling Forcing holdout with byte-identical stochastic inputs passes same-seed identity for 0/128 videos, although intrinsic quality passes for 90/128. Third, a prospective 64-video H100 campaign rejects a specific periodic clean-refresh optimization: substituting re-positioned anchor keys and values for two frames after every third-frame anchor passes 0/16 aggregate quality cells. These are configuration- and mechanism-specific findings, not hardware impossibility results. Together they show why speed, quality, identity, and provenance must be reported independently in autoregressive video systems.
 \end{abstract}
 
 \section{Introduction}
@@ -104,9 +104,9 @@ The M5 complete-wall interval excludes model loading and prompt encoding but inc
 Metric & 1\,GiB & 4\,GiB \\
 \midrule
 Complete wall (s) & 69.167 & 57.127 \\
-Native generated FPS & 1.171 & 1.418 \\
-Denoise (s) & 7.218 & --- \\
-Mandatory refresh (s) & 6.709 & --- \\
+Fixture FPS & 1.171 & 1.418 \\
+Denoise (s) & 7.218 & 7.928 \\
+Mandatory refresh (s) & 6.709 & 6.874 \\
 Causal VAE (s) & 54.431 & 41.319 \\
 VAE share & 78.69\% & 72.33\% \\
 Swap delta (MiB) & 0 & 0 \\
@@ -114,11 +114,13 @@ Swap delta (MiB) & 0 & 0 \\
 \end{tabular}
 \end{table}
 
-The baseline limits MLX to Metal's 28.080\,GiB recommended working set and a 1\,GiB free-buffer cache. It reaches 1.171\fps, with VAE decode consuming 78.69\% of complete wall. Raising only the bounded free-buffer cache to 4\,GiB reduces VAE time by 24.09\% and complete wall by 17.41\%:
+The baseline limits MLX to Metal's 28.080\,GiB recommended working set and a 1\,GiB free-buffer cache. It reaches 1.171 fixture FPS, with VAE decode consuming 78.69\% of complete wall. Raising only the bounded free-buffer cache to 4\,GiB reduces VAE time by 24.09\% and complete wall by 17.41\%:
 \begin{equation}
 S_{\mathrm{wall}}=\frac{69.1667}{57.1265}=1.2108.
 \end{equation}
-All measured candidate trials report zero added swap, pass the pinned latent anchor, and record the same 97,044,480-byte pre-encode RGB digest as the baseline trials.
+All measured candidate trials report zero added swap, pass the pinned latent anchor, and record the same 97,044,480-byte pre-encode RGB digest as the recorded baseline anchor.
+
+The gain concentrates in VAE decode because incremental causal decoding repeatedly creates large intermediate buffers across decoded chunks and decoder stages. The 4\,GiB policy retains 3.586\,GiB of free MLX buffers for reuse, reducing allocator churn without increasing the 26.669\,GiB peak or creating swap. A separate claim-ineligible interleaved VAE-only diagnostic reduces median decode wall from 52.214 to 40.330 seconds (1.295$\times$); both repeats in each arm reproduce the RGB anchor. Deferred materialization does not reproduce the gain. This supports allocator reuse as the mechanism without identifying a specific kernel-level cause.
 
 The raw RGB payload itself was not retained. Therefore exact-output evidence means repeated immutable trial records of the same pre-encode digest, not independent re-decoding of redistributed raw bytes. The retained lossy H.264 file and its decoded RGB have separate hashes.
 
@@ -159,7 +161,15 @@ where $R$ is temporal RoPE. Destination K projection, K normalization, and V pro
 
 All 64 runs are complete and numerically eligible. The mechanism passes 0/4 videos in each of 16 prompt/horizon cells. Pairwise temporal CLIP fails 64/64 videos, pairwise LPIPS fails 59/64, intrinsic motion LPIPS fails 56/64, and intrinsic motion CLIP distance fails 34/64. Representative failures suppress candidate motion and alter same-seed temporal trajectories.
 
-No authoritative timing replay was run because numerical GO was a prerequisite. Even an overhead-free elimination of two in three refresh forwards has a 13.04\% complete-wall ceiling on the frozen H100 denominator, below the separate 17\% wall gate. The broader denoise-side oracle was never run. Denoising represented 24.1592\% of that denominator, implying at least 70.3667\% denoise reclaim before overhead to meet the wall gate; this is an untested feasibility requirement, not observed performance.
+No authoritative timing replay was run because numerical GO was a prerequisite. On the frozen H100 denominator, refresh takes 1.165517 of 5.960916 seconds. Therefore even overhead-free elimination of two in three refresh forwards has ceiling
+\begin{equation}
+\frac{2}{3}\frac{1.165517}{5.960916}=0.13035\approx13.04\%.
+\end{equation}
+The separate 17\% complete-wall gate was pre-registered as the rounded reduction corresponding to the project's immediate 1.2$\times$ wall-speedup class:
+\begin{equation}
+1-\frac{1}{1.2}=0.1667\approx17\%.
+\end{equation}
+The refresh-only ceiling is therefore insufficient before overhead. The broader denoise-side oracle was never run. Denoising represented 24.1592\% of the denominator, implying at least $0.17/0.241592=70.3667\%$ denoise reclaim before overhead to meet the gate; this is an untested feasibility requirement, not observed performance.
 
 Related work preserves historical K/V as context, recomputes each new chunk's cache, or trains an adaptive state \cite{ca2vdm,xcache,causalrcm}. Our intervention instead makes anchor content stand in for current-frame projections. Reapplying RoPE repairs positional phase but not frame- and context-conditioned content. That is a plausible explanation, not a causal identification: stale K, stale V, skipped projection, skipped normalization, reuse depth, and period were not separately ablated.
 
