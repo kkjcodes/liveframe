@@ -42,7 +42,7 @@ video diffusion; autoregressive generation; reproducibility; numerical divergenc
 
 - Confirm `Independent Researcher` as the final affiliation.
 - Select an arXiv distribution license.
-- Add durable Tier A and Tier B artifact URLs to the manuscript before submission.
+- Confirm the durable frozen-evidence URL resolves without authentication.
 - Complete content review of the 128 representative preview clips.
 - Re-run the literature search on the submission date.
 - Upload `paper/liveframe-arxiv-source-2026-08-06.tar.gz` and inspect arXiv's generated PDF.

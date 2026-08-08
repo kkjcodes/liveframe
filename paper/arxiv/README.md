@@ -5,7 +5,7 @@ This directory is the self-contained manuscript source for the LiveFrame publica
 ## Before submission
 
 1. Confirm the affiliation line, title, author order, and arXiv license selection.
-2. Publish Tier A and Tier B evidence at durable URLs, complete preview content review, and add the URLs to the reproducibility section.
+2. Confirm the public frozen-evidence URL resolves and complete preview content review.
 3. Re-run the literature search immediately before submission, especially for CUDA/MLX reproducibility, Apple-Silicon video benchmarks, video VAE acceleration, and causal-cache reuse.
 4. Verify every citation against its primary source. Venue labels in this package are conservative; an arXiv comment is not treated as independent venue confirmation.
 5. Compile from a clean directory and inspect every page of `main.pdf`.

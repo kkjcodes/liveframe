@@ -15,6 +15,7 @@ paper/arxiv/*.aux
 paper/arxiv/*.blg
 paper/arxiv/*.log
 paper/arxiv/*.out
+paper/arxiv_submission_runbook.local.md
 
 # Large or machine-local artifacts
 outputs/
