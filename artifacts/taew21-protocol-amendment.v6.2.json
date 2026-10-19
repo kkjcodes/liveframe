@@ -1,0 +1,32 @@
+{
+  "amendment_digest": "sha256:e20ef137952a4bec2776995d2d2a6156eb0fea56e24739cf0aff97aea964d480",
+  "bindings": {
+    "amendment_v6_1_sha256": "sha256:5d3fcc3219415ef416f5917cbf312e107b3195a54364aa79d64c7a6ea8488ba4",
+    "amendment_v6_sha256": "sha256:899d0e68e2174a4bc06b860a4d515709282545d3e54ad11213c7a5227f4b17e7",
+    "power_v1_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+    "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce"
+  },
+  "collection_routing": {
+    "rule": "the QC tool reports collection_complete = all primaries accounted AND usable >= target AND policy_violations empty; the runbook routes response freezing exclusively on collection_complete, never on raw target_met"
+  },
+  "empirical_power": {
+    "correction": "v6.1 called the unchanged v1 simulation a mild lower bound for the executed design; that claim was asserted, not demonstrated, and is RETRACTED",
+    "rule": "tools/simulate_taew21_study_power_v2.py, frozen before its values are visible, executes the actual collection state machine (30 primaries with exclusion, sequential necessity-gated replacement activation in ID order, stop at first usable >= 486, exhaustion -> no authority) with the identical heterogeneity model and two-way cluster-robust analysis, and applies the analyzer's exact two-gate verdict (target met AND UCB <= 0.55); its empirical pass probabilities are recorded in artifacts/taew21-study-power.v2.json BEFORE recruitment; the operative usable-judgment target (486) and the verdict rule are unchanged"
+  },
+  "execution_binding": {
+    "rule": "the bundle builder validates this amendment (schema, protocol and power-v1 binding digests) and embeds its file digest in bundle-manifest.json as amendment_sha256; the QC tool and the analyzer require the supplied amendment file to match that manifest digest, making the bundle and every authoritative decision cryptographically attributable to the v6/v6.1/v6.2 chain"
+  },
+  "primary_completeness": {
+    "defect_corrected": "the all-primaries-first check ran only when replacements were present, so a response set with 27 of 30 primaries could reach 486 usable judgments and receive an authoritative GO, contradicting the v6.1 rule that the primary cohort is always collected in full",
+    "rule": "authoritative analysis requires every primary slot P00-P29 to be accounted for: a submitted session, or an entry in withdrawn_participants or duplicate_participants; the analyzer hard-errors otherwise, independent of replacement presence or the usable-judgment count",
+    "slot_semantics": "P-slots and R-slots are schedule slots, not people: a recruit who never starts is re-slotted to the same ID; withdrawn/duplicate entries account for a slot without contributing judgments"
+  },
+  "schema": "liveframe.taew21-protocol-amendment.v6.2",
+  "status": "frozen-before-any-participant-response",
+  "title": "Primary-cohort completeness enforcement, fail-closed collection routing, amendment execution binding, empirical state-machine power",
+  "visibility_at_freeze": {
+    "participant_responses": "none exist",
+    "recruitment": "not started",
+    "v2_power_simulation_values": "not computed"
+  }
+}

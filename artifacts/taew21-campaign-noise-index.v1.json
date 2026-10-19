@@ -1,0 +1,232 @@
+{
+  "authorization_sha256": "sha256:ae3d2bba082dcaf4d36f837365bd5b4cee95ca5fb7bd5f3b4e548094bd9b05aa",
+  "builder_sha256": "sha256:0a363d87da312f8625b537ac59d3d6b1294c1d09cf4654b46304fb8dd3c6ced5",
+  "plans": [
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-170003-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:b38c47fee880d78f1e7fbd96a8eb515a4a8fc3bac944aa3d8af04742a981ef12",
+      "payload_sha256": "sha256:b314be40037c8139d89b8abe7969b8cb866e235fded8695a2fe742142043397d",
+      "seed": 170003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-170003-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:24dbc3e792d367c5362ead51eb5e47dea7f4f9b5329c2053515ad357bf877aa8",
+      "payload_sha256": "sha256:3518390580d1798d820678869b672b46779a299cf13715dd8e6efeca0db8d052",
+      "seed": 170003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-180001-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:8c951a0788844c18ce3b19a599c224e637e64de106695851700858a732214fb2",
+      "payload_sha256": "sha256:99ac327e4b759e0aa3a36a88eedffa7dffa869c7ab2cf0c43d1b5e415aad4dfb",
+      "seed": 180001
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-180001-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:a2786903efec1f0a49574c94c1fefcab3f2702f3853634db67bc2d7deb76e839",
+      "payload_sha256": "sha256:35be23bd0311cae4e87089aff4a2e9510e70e5cd4da584a267320e993cf59072",
+      "seed": 180001
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-190027-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:8ebafc60056867782208c7cdbf0e6d6684e46af40d14bb3f71e06ca144c5e3ac",
+      "payload_sha256": "sha256:c82c7f057f516bfaa6ecb025b603f21851bc592b3b440fed09090adfc8926c04",
+      "seed": 190027
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-190027-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:3bdf758c9c045a5f058a54d1d5c0bdff58476a39810bc433e805c35d659be296",
+      "payload_sha256": "sha256:82c2d56c6ff2f68c8d8bc4285e06b3304d81434ada491efc64a98d776a6652ea",
+      "seed": 190027
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-200003-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:ed451c4affd14417e838317a0004cb712b1c7da9d2db6ed462ee475ba7016a47",
+      "payload_sha256": "sha256:f19ee32040b2b598aa8ee084f136295af3eaf144aae357d0e92c6edb1655f0ba",
+      "seed": 200003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-200003-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:f64072b06e84a4198536ba11fe82e2c83918ae8b9d7a39c1fc70dcd3b91e8462",
+      "payload_sha256": "sha256:6b3446c72313dbcac6344ad44d89b4115b2c48d1db3084e45c87537dc5201210",
+      "seed": 200003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-210011-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:50f9b71527ca856c51698f124c8ffb63f6afeba26636b6dffc36d4f884ef97bd",
+      "payload_sha256": "sha256:428b8755737d30139c984086d5e9c64ca7ba9d9522bd3461abe8097cfc598131",
+      "seed": 210011
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-210011-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:4fbce4ed8ada5cddfd01401387f2f7c70864be959645c4240a7a18118962907d",
+      "payload_sha256": "sha256:f72b76ab597cae88d90f9c7e4c6a3481d9a73e502853d9283cb2b0c5084365d9",
+      "seed": 210011
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-220009-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:1ffcc3696e5cd53788bf3c85b87ce20dc89b2bb3aad8774a63a699cad535c6c1",
+      "payload_sha256": "sha256:cc168644ebe13944e7485bf28ef4b826b6308cba763ea736f22265956cf57f70",
+      "seed": 220009
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-220009-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:86546f2b364d7c537a3c5d4134eef2eb8f02ec8415f8f8b793fcc0f8c1364e57",
+      "payload_sha256": "sha256:3591b0d4c441ec8eef7db7b1e552651c56877df79865a35803e819348a98f408",
+      "seed": 220009
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-230003-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:7f818264bd58eb6f86ea58efde1748137781b70644d0ac92eb12950b9f2e5082",
+      "payload_sha256": "sha256:1a94cc015769373aee92644cf5e1e124cd240304975f3c3715e9178aa6bfb660",
+      "seed": 230003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-230003-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:bb166ca90aded184764be5ddd471e1e368ad277ba683d4378687d2c30b4d779b",
+      "payload_sha256": "sha256:2147e47756ad742438c32b0ad3f68a0197e19e18cd5a2b2bf899b3818629c03e",
+      "seed": 230003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-240007-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:a1f28b76e827bd0228fa66c21218680add95787c09300f2088beff838b53232e",
+      "payload_sha256": "sha256:c6389cc02c2dc9f187da6d0e90f25c5f46e4019eea5feb978fa768e82265bd08",
+      "seed": 240007
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-240007-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:50b26311aafadefb83493499f9b58a9fcb5a4c9ef4161b6eba0b3872204ddad0",
+      "payload_sha256": "sha256:bd6e955ae42a8aef344adb71bed521fcbade4baeb8388a978ee267742828c262",
+      "seed": 240007
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-250013-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:d948a055cc0ea45dab939ca479a6d7ec961a72f535823a5acb7f0674e4870939",
+      "payload_sha256": "sha256:cbbcc45ed1d2676a178e2100296684d2b7792368792b89592259e8eab09e5e0f",
+      "seed": 250013
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-250013-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:46d438dff6949719b8afdc9883341d79efe26f89871d652411fe588ce68f68f7",
+      "payload_sha256": "sha256:e205127af402744e427f686175d2a98d5b1e5b42f1014121f65b275f8e27a206",
+      "seed": 250013
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-260003-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:db82d1220b8cc0e4afccc08bbcec33ea0e822790c8287b7340a46b02019c7248",
+      "payload_sha256": "sha256:114f09991286b25f7741de5e875a99bf9bf424cd666049a3a6032f8064de21ef",
+      "seed": 260003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-260003-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:863cbdc692ff807e0760c2d4217b779eab9e83f58dff8071845254585dc74e21",
+      "payload_sha256": "sha256:7b6c965704f60c2597020712cec594a98bdf9412e0d43a778690f8bae116bd32",
+      "seed": 260003
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-270001-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:33a5bb27ff7f5c5faa91657a94a9d93b18af79fa9bdb7990027f08b1363dc506",
+      "payload_sha256": "sha256:df9b202024a496096f66028131f4544d86a995d597bb533ac57f6de26aa59f01",
+      "seed": 270001
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-270001-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:5e131719586c1c6d412e809fa754edbbd64bc4bb85d6208b584dd1a1d48e8d17",
+      "payload_sha256": "sha256:643cbeba05a3f9356983d3cd141579e522b63caf4f5cd5715995ac8b1a12f17d",
+      "seed": 270001
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-280001-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:42ff4c98beb422ddcbd14363010d3ca210e90e14514396bb235802882e0b8c71",
+      "payload_sha256": "sha256:9b4a6b45c54d5229c6451fdf5ed5eafce409a1a0dd64151fac35dc0f3484c154",
+      "seed": 280001
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-280001-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:07026c4f8c1d1d7a010f019c0c3d212bb80613f0ccf8908bec8cdf3d901af11e",
+      "payload_sha256": "sha256:df5627d82d4679fe3696239124347766001ffca8565d4f36f79016e94076f79e",
+      "seed": 280001
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-290011-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:806c0fb5f60495d6c3211b8260fcc2e74839be5cecd20be0bd4cf92d0c913393",
+      "payload_sha256": "sha256:96166a402586f4dc77a6b7fed5181b7b6b1b9b9dacc6cde55961ad6c315b9966",
+      "seed": 290011
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-290011-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:c6dfd11e68c3038a2149a063c06ca3ebd91c3a7e5e961876d6f02e23e0ecbbca",
+      "payload_sha256": "sha256:a66344b84ced4fb1d318fdc2707b6ea59735b29682c8ba88a3acf77c31c67438",
+      "seed": 290011
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-300007-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:eaa785500ff0e542b34dd531660f1245012edc13ee9c93e65b7768d3b038b538",
+      "payload_sha256": "sha256:625f5ba23edf841dbe33c6c038a4ef54b654941665d56ed36c539bc0ed983a60",
+      "seed": 300007
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-300007-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:57c8b5d841bea382163c0d7b9cccd94beb3fff44b2e12a1c045c9fe37522b4d0",
+      "payload_sha256": "sha256:469e8937cb54877eae73a91547b1e0d49a82990d4749733625b5da3f463656ff",
+      "seed": 300007
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-310019-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:62b8e5c9405d84aaf330f6737afbd19b3460b498dab3f6335cd8e5d29903122c",
+      "payload_sha256": "sha256:754423a535566b9d726c43ef272de4161670ca04149f570bfb4c665ccfb5cf1f",
+      "seed": 310019
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-310019-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:7a30b84870bec4e5914e9132ba6b6ff2c25657758d424842ed627c9d437d9b22",
+      "payload_sha256": "sha256:c5353d9fb63fdc7395e09a7f1cb56cb6b57c5f569138fe562dd9e54b11ebcbdf",
+      "seed": 310019
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-320009-latent-60",
+      "latent_frames": 60,
+      "metadata_sha256": "sha256:b8c5fbe355ee3b1d79d3e7239da9c4c8c642d9149e06176c3c8c532557b9d919",
+      "payload_sha256": "sha256:655d9bec98f50c7387a8d78f24deb012e4dfde2fc8f82be42d36c6999cdae2f3",
+      "seed": 320009
+    },
+    {
+      "directory": "artifacts/taew21-campaign-noise.v1/seed-320009-latent-243",
+      "latent_frames": 243,
+      "metadata_sha256": "sha256:2904e5af07ef1b606468e3be58a0edbf34fd5f8ae61d899e96e9d79924517024",
+      "payload_sha256": "sha256:b8998a0dd685b39c486ec500788ccc64232eb278fd12b90d47c015c1bf601f8e",
+      "seed": 320009
+    }
+  ],
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "schema": "liveframe.taew21-campaign-noise-index.v1"
+}

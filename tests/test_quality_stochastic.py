@@ -15,6 +15,7 @@ from liveframe.quality_stochastic import (
 
 
 def test_shared_plan_round_trips_identical_torch_and_mlx_bytes(tmp_path: Path) -> None:
+    pytest.importorskip("torch")
     first = tmp_path / "first"
     second = tmp_path / "second"
     create_stochastic_plan(first, seed=42, latent_frames=12)
@@ -43,6 +44,7 @@ def test_shared_plan_round_trips_identical_torch_and_mlx_bytes(tmp_path: Path) -
 
 
 def test_shared_plan_rejects_tensor_tampering(tmp_path: Path) -> None:
+    pytest.importorskip("torch")
     create_stochastic_plan(tmp_path, seed=42, latent_frames=12)
     payload = tmp_path / "stochastic.bf16"
     altered = bytearray(payload.read_bytes())
@@ -60,6 +62,7 @@ def test_shared_plan_rejects_tensor_tampering(tmp_path: Path) -> None:
 
 
 def test_shared_plan_fails_closed_on_order_and_completeness(tmp_path: Path) -> None:
+    pytest.importorskip("torch")
     create_stochastic_plan(tmp_path, seed=42, latent_frames=12)
     reader = StochasticPlanReader(
         tmp_path / "stochastic.bf16.json", seed=42, latent_frames=12

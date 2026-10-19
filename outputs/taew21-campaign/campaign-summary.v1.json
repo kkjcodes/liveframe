@@ -1,0 +1,267 @@
+{
+  "all_swap_clean": false,
+  "authorization_sha256": "sha256:ae3d2bba082dcaf4d36f837365bd5b4cee95ca5fb7bd5f3b4e548094bd9b05aa",
+  "job_count": 32,
+  "jobs": [
+    {
+      "full_pixels_sha256": "sha256:0b51ded12a0dcc1a651d92ea03c8d237ecf596355f9dbf7d17bd13f4a94c26ce",
+      "job_id": "taew21-limited_hold_01-15s",
+      "latents_sha256": "sha256:9f8036f69c3bb58363fda9463b68defa2410dc2f29b7be3359ee2fab88fcc345",
+      "result_sha256": "sha256:fb981699dbeac1bcf284fda891e45060422168fc0a6ec96a2c37af599470b9e8",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:82b1550e9a25f35a33d5cf8863aa3d19dd82708021ad224e418baf0cd65829ef"
+    },
+    {
+      "full_pixels_sha256": "sha256:a94dadbbd8b7cdb223a293d6d9a27452cd53727dd5e2b8774361c2e9c3c29381",
+      "job_id": "taew21-limited_hold_01-60s",
+      "latents_sha256": "sha256:185a8e9afa078363914d948cecd99cd22c30245497290317c12bcccc8291137d",
+      "result_sha256": "sha256:88180851350806f9643d234e7c7734580f5e049a14dc2ba0161efb3b6a2d1c01",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:f2bfb76dd810b8a608bb55d7972e36576b0354c9c6cee57353dd8a6b81f3e573"
+    },
+    {
+      "full_pixels_sha256": "sha256:7866df5ad4e3ab09c47a7f50e4147f17740d17e45aeee57f85ef8238844bcadc",
+      "job_id": "taew21-limited_hold_02-15s",
+      "latents_sha256": "sha256:b56baa7f310dd184aa56716812edb5cfc54eff44b102f2777ff15c646be347d7",
+      "result_sha256": "sha256:e10eea76c7838b40a8944098298554c5900b0d8da95182a3c3f132557b1a5d16",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:d5f0ffb9cdbbd966cc74aba4696e2fb158bbcd1f5000e8cedaf479da290e438b"
+    },
+    {
+      "full_pixels_sha256": "sha256:751e733a79e6c648927df1656c0def42c4daef3e5ccf2391e4dc49eab1bc0d10",
+      "job_id": "taew21-limited_hold_02-60s",
+      "latents_sha256": "sha256:718c56b02dc9e95104a5426e908fa7555f59b636000ad5fcf23efe187b8ee065",
+      "result_sha256": "sha256:1d096ff0e9ae7579029cdc4c01295cb4326126b91eb75aaeb75ae6abdd38dd47",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:74a7b56322e56d56f4499c08e841407352e9b54d565719ba66699002f875094c"
+    },
+    {
+      "full_pixels_sha256": "sha256:04473814026ca2590a6dd16f86a4bcb06628c5297f6aa303ef25c6379809844c",
+      "job_id": "taew21-limited_hold_03-15s",
+      "latents_sha256": "sha256:90c5e2f57008f9933a5a72159f1644ea90094e5d1418f4bac8016ffef26eb1e0",
+      "result_sha256": "sha256:5da5af4f6f532e5346b2f0d1e2500a6ebf553809a681285e7f50cc23948d97c2",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:0f541ea3ce499ca4e9ee7b890285b8e0c4f61984988c8f6f34a39542da9d990c"
+    },
+    {
+      "full_pixels_sha256": "sha256:e649e42985419462bdfd0f28fce12528ba5c663070694a57dcbe343f78b9e497",
+      "job_id": "taew21-limited_hold_03-60s",
+      "latents_sha256": "sha256:9a755cd00c39d8f372f7e5540e36d604e85882dc557303e396bf2c0c6ec715ae",
+      "result_sha256": "sha256:52e94d97655c9a36fd225de74b21f13ec6d02aae91c6c35808d8d37438b744c5",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:c6b4daec5fffcbb570264179c629cc71bfb2cad75f40e1fd22c416245c48a1f9"
+    },
+    {
+      "full_pixels_sha256": "sha256:b8add3ceae4653cb3f69beac0166284a2d923631602832d46ac6aeb5c04b40a1",
+      "job_id": "taew21-limited_hold_04-15s",
+      "latents_sha256": "sha256:a082c3cd2ab25cfb92403f607e9aaad9c33dd454d29b3720ae7e5597f7712fcc",
+      "result_sha256": "sha256:6cce8c7c278978a5a86649af07f790926b6042f2ef045e08ad327bdeb1ee764d",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:de49a28ec289c4e17e1f5b06877f28f7cd74acb400549faffb9d5c491e778c03"
+    },
+    {
+      "full_pixels_sha256": "sha256:31c6ada19c26beda446b3cfb7352d516ef22634b1ca631295fbc3efa1e932204",
+      "job_id": "taew21-limited_hold_04-60s",
+      "latents_sha256": "sha256:096fa8fa1a874eb7759ebb68cfb967b23840acb4d224b1187a5812ea0e0ff742",
+      "result_sha256": "sha256:6180911815edde8859d6c8337a676e36ff1c25ef0ae633949b074d408517bf05",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:2536b4a2e31bb2adde7cb1536ec98d17a0a50d0343b9f21f5569484b793dcc09"
+    },
+    {
+      "full_pixels_sha256": "sha256:090946e9fbcdaec9b9f1f0cf748f628531448a76e2a89cc5a609348ce106cf3e",
+      "job_id": "taew21-dialogue_01-15s",
+      "latents_sha256": "sha256:b805b6ad9e561f75ee18a64089ab6426cf2449ec2804452e589b0dac2d5e7cb3",
+      "result_sha256": "sha256:f378a289ead67eaad9d76069c1590246f96d82c175d88bb0cd7413017ca301af",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:9759bc610e80fcba635afeb915e716a902df8df8e2c8d38eb9a0cc5c4a40d7c2"
+    },
+    {
+      "full_pixels_sha256": "sha256:11c366a0217c7fe2727a0ea350e171b9b82598dbd40ec3075698b405ce2bd37b",
+      "job_id": "taew21-dialogue_01-60s",
+      "latents_sha256": "sha256:01806ded74a50597d083f127447e8497b2377ab001e4eaaf4d697e32b407816a",
+      "result_sha256": "sha256:7c442ba11b8d2fe37a04f0fb6d7a998ccd9b488b07778664b4e078a69cc8c649",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:285eec2095c812e63b21010dacfb0675820159a70616dea39a0baf0cce4e449c"
+    },
+    {
+      "full_pixels_sha256": "sha256:9d4f62736da2320db85888fc5358448f72b6ea3e1a273e8fc976f57c2ca976be",
+      "job_id": "taew21-dialogue_02-15s",
+      "latents_sha256": "sha256:49fa48c6297719a48215071eeddf0aff0e2dc7a030c0d0848aa7cc6d72628dab",
+      "result_sha256": "sha256:70458c7f32175e7e12f726f6ef5f74f8e78535c75bdb95da3a1aa65ac66f042e",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:01e8f5d75e6249bf38cc8e3bd96a979118a7e046955eda33db83453182a651c4"
+    },
+    {
+      "full_pixels_sha256": "sha256:74ed2a1604e3049c4cf1e7721b47bb481301c6f2617c0b62142deafd16cf31e7",
+      "job_id": "taew21-dialogue_02-60s",
+      "latents_sha256": "sha256:3f79ccedb94fd7e2e0cd63b5aeef07c45413e6f84070c9d8c677475131897a88",
+      "result_sha256": "sha256:9082b60e5157359ae87d10f97e5954c03aa1131c9d63d6d6c48290ce3c7500e5",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:5a5c5f843a0bd10cbf678f46df77945be37847cd4967b49b500427b173047256"
+    },
+    {
+      "full_pixels_sha256": "sha256:f6a8f21662422a0a9a01a69dfc5120236f9d90127db95d6e9f444d2af9c9e105",
+      "job_id": "taew21-dialogue_03-15s",
+      "latents_sha256": "sha256:5a7d19b2f471104b425f30366b275af625b512f285045a53f8ff66af1e3847bf",
+      "result_sha256": "sha256:9171959beabe17376b319fe5d2182464873dd41f72e05de713581f4c8c4bc35f",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:b9762c3c30a0b6e7dc2206ddef03dafcc2d235fae12985cbf34b03a17c8464e8"
+    },
+    {
+      "full_pixels_sha256": "sha256:9903661cc9a49378648d15425a338c70fc865018b30ffe4dcd8448b12aca48fe",
+      "job_id": "taew21-dialogue_03-60s",
+      "latents_sha256": "sha256:8461f37d5b30cef910e1e24de28f6d45a772707e5954ba8bf297562eca4053e4",
+      "result_sha256": "sha256:cbf37ef5941be93d282c5dc02cdcf01fa90d248e9363d2e446a20c1fcbb0fe3a",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:e43514b6fb3046d6156ec3d45a17548c50d5ca2b8d01eb1b11b1682e16afa113"
+    },
+    {
+      "full_pixels_sha256": "sha256:8f428a9fecc77580e6c0c8fa3b0b4cd19831f8ae79f0fe71e5699eb6809364df",
+      "job_id": "taew21-dialogue_04-15s",
+      "latents_sha256": "sha256:b83c18e6f1718ff80a517986ac2f76791cc015283c05bb10fe67f4ac83ebe5b4",
+      "result_sha256": "sha256:9c359d41d9382ed390cfb94948a62807d05df2f1d988816628c37865c0315551",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:49db27b019fa64ab57c3cd7d1925557369ea356bd2e027034a08912831336cab"
+    },
+    {
+      "full_pixels_sha256": "sha256:0ce33b94ae13e83eaf70f1e0cfd07a3301acdc9d2de39006dc009b45ca5f9f53",
+      "job_id": "taew21-dialogue_04-60s",
+      "latents_sha256": "sha256:37581371201f1a49ff42739e40ff154023cb0c14646a22ec255a1e449467c7bc",
+      "result_sha256": "sha256:8d277a6e0a319037251ec81c9d2f51c8839c72cfe74c346d7d640fc4b7ccedb2",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:f3dc57ce88676aa7e5224e064e71fe5baa380154bc8f33a0df04db4d033ebf07"
+    },
+    {
+      "full_pixels_sha256": "sha256:57fbb97000362ae87edaaf33477a4081eb01ddd9d67501f7bbf4880a2d2e6d79",
+      "job_id": "taew21-cyclic_01-15s",
+      "latents_sha256": "sha256:8e7260da251011e2a31a8bb102a1566911dd8eaac15398d6afb014fea590edbc",
+      "result_sha256": "sha256:c269cdb7ba14057661ba95c89db1b28c137bc0cf9ffb81810fe2deee48976cad",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:5b3eb9ce24692f70b43f498d5a19c489a39d45f0abfb8258614039cda46a8e46"
+    },
+    {
+      "full_pixels_sha256": "sha256:a0d27493d01a0de51be549d53eae98ac04f20462198d24509db9655f811c8bcf",
+      "job_id": "taew21-cyclic_01-60s",
+      "latents_sha256": "sha256:e1946bf2cdc681efa6a6bbdda2b617b5c5efb8f7b26d0fa6fb17e29854613502",
+      "result_sha256": "sha256:eca9c763cd968daaad755029425e58ecec9327a7bc1887afd0a7cf40d3b19296",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:052a7b33e61814ce3dd4692593d6b668a39ee4a7ec92505faa6aaf6472e6579c"
+    },
+    {
+      "full_pixels_sha256": "sha256:19b3d98b8f733b311d698119d804fe4a12f2cc3e4a51ca525ba63526c6f17fec",
+      "job_id": "taew21-cyclic_02-15s",
+      "latents_sha256": "sha256:9a770a1d6588df131c618f44f609b57f6ee62e227aceba3e06229a66be765d37",
+      "result_sha256": "sha256:762217faaf03822fbe4451d53ba49021e3446642ec23167722f749e45954efdb",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:dd7fc9a433bb1fbab67719a11db70b44034d0097a6bc6d78e44e1296308ca721"
+    },
+    {
+      "full_pixels_sha256": "sha256:ba908f43f82aeb344ef027806e51080b96fc76012bafee7d2a0aabc3bfa524f9",
+      "job_id": "taew21-cyclic_02-60s",
+      "latents_sha256": "sha256:89ea742c0a3a2dc38730582bca2c830a727ec9eb0857e03912ea812e002b1689",
+      "result_sha256": "sha256:5b62350726152c05a15b6ca24cec964db4cea1b342632eb4104861534921627a",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:4c00b05ce98b2bd7dc2e5e2cf5d2bcc5a786099cca6b8f2fa81a31900932a854"
+    },
+    {
+      "full_pixels_sha256": "sha256:983e9d60945cd7eac6afc3de46da899dd76ca439f4672c11b838aff9fccb392e",
+      "job_id": "taew21-cyclic_03-15s",
+      "latents_sha256": "sha256:40e6ef020539857dd7696db34ed5b4b2cdedce44e02b9212338cb490e49a2793",
+      "result_sha256": "sha256:0a3a60a30b2b8919e89ad6067e7c2c3c1e85d4423bba79bf120bb71e50845d42",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:122bc288a183846a0b5bf9b0d1c5b486c623c30488c2d2202143450f96815fbd"
+    },
+    {
+      "full_pixels_sha256": "sha256:f69d89b85a6224e4cd992ea81cc23605c77cd96f627657ac20e8224188719b50",
+      "job_id": "taew21-cyclic_03-60s",
+      "latents_sha256": "sha256:3bc17fa6c53a74f580968ea461b4f49ef5eecb33202b083be202cccb0e087c16",
+      "result_sha256": "sha256:88377069d1d4bc42dd295076a4d488b056f5afdc6c3a726bd8879d3ddeb171d3",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:a8249d429c88331053bccbd484d95b605ea9b00350e624100fa14c6cfd9b9726"
+    },
+    {
+      "full_pixels_sha256": "sha256:8768b30884541b379c018ef65b0b5fa96dd9ae34041a3c24748f00802024ab70",
+      "job_id": "taew21-cyclic_04-15s",
+      "latents_sha256": "sha256:9a8ffd2d6e195dac954f170d0d448cf0fe7ed918329e1d77108807a4af5a43f2",
+      "result_sha256": "sha256:69a8b23c4781ae75689c07653fcce52fb0cdc40c79ce40871c7eafb380b6b75b",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:ebf778fe27eb9e4086ea0fbc18e80e0597789885e91dff5e9771cffba0b70b22"
+    },
+    {
+      "full_pixels_sha256": "sha256:3274c4bf521f2f130e6d5ba3f1bd1125b4107f6d91c4d844f30ed0154dc99421",
+      "job_id": "taew21-cyclic_04-60s",
+      "latents_sha256": "sha256:2e87b20292997ed40d76e6bcc7ef5d4541043edd6d2a889d0b54908a1b93eeab",
+      "result_sha256": "sha256:470b810183b483bf2eed0bec5b56b8c66cc236f15d120146a2bf48e4badc59f9",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:6f2449f3d42ff6e5c58bef4010846e40ec5025ff1d04f22425b3c64e31ea60d1"
+    },
+    {
+      "full_pixels_sha256": "sha256:e050656d9d40efdc48ddce0f33ce5c778c780d5d8c476ceb094c795aace1463c",
+      "job_id": "taew21-dense_motion_01-15s",
+      "latents_sha256": "sha256:edef4b5ecc0f69c62494b0290b1b3b75e1be3834438089f0ee7590b5da9f3808",
+      "result_sha256": "sha256:821e24866a3bdf1f24b446735026889430589d612bce5395df941f0065704f06",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:05d7255374cc4d90fed7c2d7e093822ae86bbb73e60a320fb7ddc83552edca42"
+    },
+    {
+      "full_pixels_sha256": "sha256:ef4a197bcc2858a74b736082a7d103182e6869a34e22158449d1cd0427d78178",
+      "job_id": "taew21-dense_motion_01-60s",
+      "latents_sha256": "sha256:bd5af04bc386e7aa48ebd5165b11fc337041216d72010028a2471d2679c555e3",
+      "result_sha256": "sha256:bfcac3760f421aafff36931f2e456fe65d5ca88ab157b2f08874d9db87519d2d",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:651fe95b36c9043164817ef8abfd41229c052890002aa26e36cb55da8a52bcfd"
+    },
+    {
+      "full_pixels_sha256": "sha256:e002db7bad2795b3395c3388fd1aaadc9b1a929ac6a2740d66ed4744f2df06b7",
+      "job_id": "taew21-dense_motion_02-15s",
+      "latents_sha256": "sha256:d3b920da06fcb9aeac7758702620da8825eab84638a5342984856bbed9271e33",
+      "result_sha256": "sha256:851d69be79d14b0d27dc09f02e84b2de9cb7ef99d247e23af162f55032642634",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:351f23b77ee9ec0e4c5a3e456114a848c1dd11c2bea4bd69c34f7cf5703fa47b"
+    },
+    {
+      "full_pixels_sha256": "sha256:cdeda128144fce9fc0a1ca3d9be66932a8e79a2c05e1c023ed820bfef45e7c2d",
+      "job_id": "taew21-dense_motion_02-60s",
+      "latents_sha256": "sha256:cff2bb34fc65dc2fa86df52edc32d7101730fb405558068c51da66ce01734efd",
+      "result_sha256": "sha256:a81533af01e53a60af1635ee10fc57caa116714a6f5af356d63b3fe68c589cb0",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:765a52e389910206a90827005f559711ecbb2c4bfe283764c327b19c71c387f7"
+    },
+    {
+      "full_pixels_sha256": "sha256:46d6373a80685359e71752782403da61805cb1db45eeaa1db808735fc6b604c0",
+      "job_id": "taew21-dense_motion_03-15s",
+      "latents_sha256": "sha256:9fa8de821c03507e503a324f51e28bd1207672bdc937639d1815b1fa8d9c6c6f",
+      "result_sha256": "sha256:95ed6e5a2724a463e081ad728d7f50596debbaaca6b6c102e6eb46a29c28ddac",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:ee928796683091cb2de954f4cea9e35e27e98a2d4c1a013b9cac3d0b5841b617"
+    },
+    {
+      "full_pixels_sha256": "sha256:4df9fb63432039b16f5d91b909dfa035565f285dd31d2bdf9767834e8f2f424f",
+      "job_id": "taew21-dense_motion_03-60s",
+      "latents_sha256": "sha256:b1c68e5421e82e29bf231174baa626889a59573ca250f467562bf403a78d1583",
+      "result_sha256": "sha256:12b5a603eb9ff0044b4b690f7d962247d5e6db0f1d3661431a188f0f02300fda",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:80dbe958b6559ba36ce3d0d553c990ef769559135577511d9b7735955eb9a486"
+    },
+    {
+      "full_pixels_sha256": "sha256:c700b806adbdb81dabc23ddcd10331e52309eab84a189ed9109f9634a0a979b0",
+      "job_id": "taew21-dense_motion_04-15s",
+      "latents_sha256": "sha256:d24a3a9a3f718c40be78f4e5097a46b0305119fb195ad886995bd4bf3b6d6bb8",
+      "result_sha256": "sha256:e94bba63263de072a6d72b9f39d2b214976b9d448853caabd24a78436309ce79",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:b624a3f2dc1dab0fa9a04b6160ff8882cd9f0169f37e867ecd2c1d10fcd68c81"
+    },
+    {
+      "full_pixels_sha256": "sha256:3d0e78dc999607accb22af0e7159ce211b98731bd6ab6a0bb9a62348bad75aea",
+      "job_id": "taew21-dense_motion_04-60s",
+      "latents_sha256": "sha256:ec11e6d038a936a812374350564f530edb3a99b8be62c9b7b3ddb7a5b0d0a8ae",
+      "result_sha256": "sha256:3abb376d91105401e8b76b7e7a033f1fb8a0b83e2323d022765a86a177498c74",
+      "swap_clean": false,
+      "tiny_pixels_sha256": "sha256:295521fa88c79e08e68b41d0cd4e1c541266336d6eb63e6a776ffd10f0f9719e"
+    }
+  ],
+  "noise_index_sha256": "sha256:7edbf9679cc7739c1b283371c82014bce23655c34b5fffc1f0e75d70203f27ab",
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "runner_sha256": "sha256:9a39ea94fff905d09eb3f42f9c5258eec5a93a4e2c2ffb98c40226c5901f3a46",
+  "schema": "liveframe.taew21-campaign-summary.v1"
+}

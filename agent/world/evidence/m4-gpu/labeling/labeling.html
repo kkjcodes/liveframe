@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiveFrame motion labeling</title>
+<style>
+:root{color-scheme:light dark;font-family:-apple-system,system-ui,sans-serif}
+body{margin:0;background:#15151a;color:#e8e8e4;display:flex;flex-direction:column;
+     align-items:center;min-height:100vh}
+main{width:min(640px,94vw);padding:1.25rem}
+h1{font-size:1.1rem;font-weight:600}
+.bar{height:6px;background:#2a2a30;border-radius:3px;overflow:hidden;margin:.5rem 0 1rem}
+.bar>i{display:block;height:100%;background:#4c9e5f;width:0;transition:width .2s}
+video{width:100%;border-radius:10px;background:#000;aspect-ratio:16/9}
+.meta{display:flex;justify-content:space-between;color:#9a9a94;font-size:.85rem;margin:.4rem 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin:.75rem 0}
+button{display:flex;flex-direction:column;align-items:flex-start;gap:.15rem;
+       padding:.55rem .8rem;border:1px solid #3a3a42;border-radius:9px;background:#1f1f26;
+       color:inherit;cursor:pointer;text-align:left;font:inherit}
+button:hover{border-color:#4c7fb8}
+button.chosen{border-color:#4c9e5f;background:#1d2b21}
+button b{font-size:1.1rem}button span{font-size:.78rem;color:#9a9a94}
+.nav{display:flex;gap:.5rem;margin-top:.5rem}
+.nav button{flex-direction:row;justify-content:center}
+.done{background:#4c9e5f;border-color:#4c9e5f;color:#06220e;font-weight:600}
+.hint{color:#6b6b66;font-size:.78rem;margin-top:1rem;line-height:1.5}
+textarea{width:100%;margin-top:.5rem;background:#1f1f26;color:inherit;border:1px solid #3a3a42;
+         border-radius:8px;padding:.4rem;font:inherit;resize:vertical;min-height:2.2rem}
+</style></head><body><main>
+<h1>LiveFrame motion labeling</h1>
+<div class="bar"><i id="prog"></i></div>
+<video id="vid" autoplay loop muted playsinline></video>
+<div class="meta"><span id="count"></span><span id="status"></span></div>
+<p style="margin:.3rem 0;color:#9a9a94;font-size:.9rem">What motion do you OBSERVE in this clip?</p>
+<div class="grid"><button data-label="W"><b>W</b><span>camera/agent moves forward</span></button><button data-label="S"><b>S</b><span>camera/agent moves backward</span></button><button data-label="A"><b>A</b><span>strafes left</span></button><button data-label="D"><b>D</b><span>strafes right</span></button><button data-label="L"><b>L</b><span>turns (yaws) left</span></button><button data-label="R"><b>R</b><span>turns (yaws) right</span></button><button data-label="0"><b>0</b><span>no motion / standing still</span></button><button data-label="?"><b>?</b><span>cannot tell / none of the above</span></button></div>
+<textarea id="notes" placeholder="optional note"></textarea>
+<div class="nav">
+  <button id="prev">&larr; Prev</button>
+  <button id="next">Next &rarr;</button>
+  <button id="reset">Reset all</button>
+  <button id="save" class="done">Download labels.csv</button>
+</div>
+<p class="hint">Keys: W/A/S/D move, Q = turn left, E = turn right, 0 or space = no motion,
+/ = unsure. Label every clip, then Download and send the CSV back. Your answers are the
+ground truth; the clips do not reveal the commanded action on purpose.</p>
+</main><script>
+const CLIPS = ["clip-000", "clip-001", "clip-002", "clip-003", "clip-004", "clip-005", "clip-006", "clip-007", "clip-008", "clip-009", "clip-010", "clip-011", "clip-012", "clip-013", "clip-014", "clip-015", "clip-016", "clip-017", "clip-018", "clip-019", "clip-020", "clip-021", "clip-022", "clip-023", "clip-024", "clip-025", "clip-026", "clip-027", "clip-028", "clip-029", "clip-030", "clip-031", "clip-032", "clip-033", "clip-034", "clip-035", "clip-036", "clip-037", "clip-038", "clip-039", "clip-040", "clip-041", "clip-042", "clip-043", "clip-044", "clip-045", "clip-046", "clip-047", "clip-048", "clip-049", "clip-050", "clip-051", "clip-052", "clip-053", "clip-054", "clip-055", "clip-056", "clip-057", "clip-058", "clip-059", "clip-060", "clip-061", "clip-062", "clip-063"];
+const KEYMAP = {w:"W",s:"S",a:"A",d:"D",q:"L",e:"R",0:"0"," ":"0","/":"?"};
+const answers = {}, notes = {};
+let i = 0;
+const vid=document.getElementById("vid"), prog=document.getElementById("prog"),
+      count=document.getElementById("count"), status=document.getElementById("status"),
+      notesEl=document.getElementById("notes"),
+      btns=[...document.querySelectorAll(".grid button")];
+function render(){
+  const id=CLIPS[i];
+  vid.src="clips/"+id+".mp4";
+  count.textContent=(i+1)+" / "+CLIPS.length+"  ("+id+")";
+  const n=Object.keys(answers).length;
+  status.textContent=n+" labeled";
+  prog.style.width=(100*n/CLIPS.length)+"%";
+  notesEl.value=notes[id]||"";
+  btns.forEach(b=>b.classList.toggle("chosen",answers[id]===b.dataset.label));
+}
+function choose(label){ answers[CLIPS[i]]=label; render(); if(i<CLIPS.length-1){i++;render();} }
+btns.forEach(b=>b.onclick=()=>choose(b.dataset.label));
+document.onkeydown=e=>{
+  if(e.target===notesEl)return;
+  const k=e.key.toLowerCase();
+  if(k in KEYMAP){e.preventDefault();choose(KEYMAP[k]);}
+  else if(e.key==="ArrowRight"){i=Math.min(i+1,CLIPS.length-1);render();}
+  else if(e.key==="ArrowLeft"){i=Math.max(i-1,0);render();}
+};
+notesEl.oninput=()=>{notes[CLIPS[i]]=notesEl.value;};
+document.getElementById("prev").onclick=()=>{i=Math.max(i-1,0);render();};
+document.getElementById("next").onclick=()=>{i=Math.min(i+1,CLIPS.length-1);render();};
+document.getElementById("reset").onclick=()=>{
+  if(!confirm("Clear every label and start over?"))return;
+  for(const k in answers)delete answers[k];
+  for(const k in notes)delete notes[k];
+  i=0; render();
+};
+document.getElementById("save").onclick=()=>{
+  const rows=[["clip_id","observed_motion","notes"]];
+  for(const id of CLIPS) rows.push([id,answers[id]||"",(notes[id]||"").replace(/[\n",]/g," ")]);
+  const esc=c=>/[",]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c;
+  const csv=rows.map(r=>r.map(esc).join(",")).join("\n");
+  const miss=CLIPS.length-Object.keys(answers).length;
+  if(miss>0 && !confirm(miss+" clip(s) still unlabeled. Download anyway?"))return;
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+  a.download="labels.csv"; a.click();
+};
+render();
+</script></body></html>

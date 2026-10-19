@@ -1,0 +1,19 @@
+{
+  "amendment_v4_1_sha256": "sha256:b3ccd5a9a35bfc784d17f8a81b34fc83c2d7be8b7d57c53e585bcc33b0b72a0a",
+  "amendment_v4_sha256": "sha256:4dd7b080d6cc3dde403f72136d4d21d08bcacb76af63648a577cd9e40cf0e319",
+  "amendment_v5_sha256": "sha256:c7081e0d226147049d392b4d7f13794d79514bf1b92cc40ab85166517f2c7555",
+  "capture_tool_sha256": "sha256:5e5a1cf31a748b2ebe36aa1fcb37ea4ca152877f058b676c9d97253fa79a42fe",
+  "comparison_engine_sha256": "sha256:39ef19505b1434835f95b96f30df4529ac036b087b585c1ba968812641435814",
+  "conversion_manifest_sha256": "sha256:9c14765b6019fdf07de6a61b2d221be63531b44cbae51600acb8646cd035e5d3",
+  "converter_sha256": "sha256:30586001e8ee2a60b72c8761d3c7dd2cc32caa3ae88532ad6ded6545eca980d2",
+  "decoder_sha256": "sha256:96d03eb60ebeecc5863de2ded49fe80b4500677e3116d4f269fa7016cd2a296a",
+  "diagnostic_runner_sha256": "sha256:ebe6fa84563e0d636bf07b0d336bd8425bd21002ee05efc8620d565cef4b2250",
+  "fixture_sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+  "fp32_reference_manifest_sha256": "sha256:90217913d5b62a56b137ab485a375f796d51df2b2ea8cadb6f1141a5a948865f",
+  "fp32_reference_tensors_sha256": "sha256:2fa57e329437c23c0416e8094311cf5c108349aa0226fd49bd45ffe63733755c",
+  "output": "outputs/taew21-port-parity.v5.json",
+  "policy_v2_sha256": "sha256:92219705c499983758e06fe28b3a8a659c8ab619ddc5b1b4f400e26b0edc197e",
+  "schema": "liveframe.taew21-fp32-fix1-execution-binding.v1",
+  "status": "frozen-before-mlx-fp32-im2col-candidate-execution",
+  "weights_sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461"
+}

@@ -1,0 +1,67 @@
+{
+  "captured_files": [
+    "/workspace/runs/matrix-game-2/smoke/20261013T164544Z/cases/smoke-000/frames_256/chunk-0000.npz"
+  ],
+  "case_id": "smoke-000",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 3,
+        "frames": 10
+      },
+      {
+        "chunk": 7,
+        "frames": 5
+      }
+    ],
+    "control_latency": {
+      "max": 0.9546557031571865,
+      "p50": 0.9349725916981697,
+      "p95": 0.9546557031571865,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 10,
+      "jitter": 0.1306216288357973,
+      "max": 1.1890756040811539,
+      "p50": 1.0584539752453566,
+      "p95": 1.1890756040811539,
+      "p99": 1.1890756040811539
+    },
+    "generated_fps": 10.731797313906599,
+    "interaction_mode": "interactive",
+    "native_frames": 129,
+    "realtime": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 12.020s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.8943164428255499,
+    "realtime_vs_model": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 12.020s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 12.0
+    },
+    "reset_seconds": 4.060550887137651,
+    "stalls": {
+      "count": 0,
+      "threshold_seconds": 2.0,
+      "total_seconds": 0.0
+    },
+    "sustained_fps": {
+      "median": 10.8,
+      "min": 10.5,
+      "p5": 10.5,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 3
+    },
+    "time_to_first_frame_seconds": 1.1240238286554813,
+    "wall_seconds": 12.020353741943836
+  },
+  "status": "ok"
+}

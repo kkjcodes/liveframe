@@ -3,10 +3,11 @@ from __future__ import annotations
 from types import SimpleNamespace
 
 import pytest
-import torch
 
-from liveframe.refresh_proof import MODEL_LAYERS, TOKENS_PER_FRAME
-from liveframe.torch_refresh_rerope import (
+torch = pytest.importorskip("torch")
+
+from liveframe.refresh_proof import MODEL_LAYERS, TOKENS_PER_FRAME  # noqa: E402
+from liveframe.torch_refresh_rerope import (  # noqa: E402
     FramewiseRefreshHarness,
     build_pinned_framewise_refresh_harness,
 )

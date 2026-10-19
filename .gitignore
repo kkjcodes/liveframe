@@ -25,6 +25,7 @@ third_party/
 artifacts/h100-holdout-results/
 artifacts/mlx-holdout-results/
 artifacts/shared-rolling-noise.v1/
+artifacts/taew21-campaign-noise.v1/
 *.pt
 *.pth
 *.safetensors
@@ -35,3 +36,23 @@ artifacts/shared-rolling-noise.v1/
 # Runtime state
 .liveframe/
 .claude/settings.local.json
+
+# World-harness run outputs (never committed; evidence bundles go under agent/world/evidence/)
+runs/
+.hf_token.env
+*.env.local
+.env
+
+# Stray legacy package artifacts (not part of the build)
+liveframe-0.1.0-package.zip
+liveframe-0.1.0-package/
+
+# World evidence: keep small receipts (json/html/jsonl); never the frame payloads (GBs of .npz)
+agent/world/evidence/**/*.npz
+agent/world/evidence/**/frames_*/
+
+# Internal world planning / process notes (not part of the public release)
+/liveframe-world-handoff.md
+/liveframe-world-addendum-flywheel.md
+agent/world/flywheel/
+agent/world/*.md

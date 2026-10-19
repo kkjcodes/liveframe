@@ -1,0 +1,61 @@
+{
+  "aggregate": {
+    "maximum_absolute_error": 0.0009765625,
+    "maximum_mean_absolute_error": 6.968180338541666e-05,
+    "minimum_cosine_similarity": 0.999999935045315
+  },
+  "cases": {
+    "clamp": {
+      "cosine_similarity": 0.9999999999999999,
+      "element_count": 140,
+      "maximum_absolute_error": 0.0,
+      "mean_absolute_error": 0.0
+    },
+    "conv2d": {
+      "cosine_similarity": 0.9999999509181029,
+      "element_count": 378,
+      "maximum_absolute_error": 0.0009765625,
+      "mean_absolute_error": 5.184027253004609e-05
+    },
+    "memory_block_three_steps": {
+      "cosine_similarity": 0.999999935045315,
+      "element_count": 360,
+      "maximum_absolute_error": 0.0009765625,
+      "mean_absolute_error": 6.968180338541666e-05
+    },
+    "nearest_upsample": {
+      "cosine_similarity": 0.9999999999999999,
+      "element_count": 1008,
+      "maximum_absolute_error": 0.0,
+      "mean_absolute_error": 0.0
+    },
+    "temporal_growth": {
+      "cosine_similarity": 0.9999999999999999,
+      "element_count": 160,
+      "maximum_absolute_error": 0.0,
+      "mean_absolute_error": 0.0
+    }
+  },
+  "dtype": "float16",
+  "environment": {
+    "mlx": "0.32.0",
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13",
+    "pytorch": "2.13.0"
+  },
+  "limit_derivation": {
+    "accumulation_headroom": 1.25,
+    "longest_path_convolutions": 35,
+    "rounding": "outward-to-simple-conservative-limits",
+    "unrounded_maximum_absolute_error": 0.042724609375,
+    "unrounded_mean_absolute_error": 0.0030485788981119786
+  },
+  "prospective_limits": {
+    "maximum_absolute_error": 0.05,
+    "mean_absolute_error": 0.005,
+    "minimum_cosine_similarity": 0.999
+  },
+  "schema": "liveframe.taew21-mlx-primitive-calibration.v1",
+  "seed": 20260320,
+  "status": "synthetic-before-pytorch-golden-capture"
+}

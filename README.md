@@ -1,5 +1,75 @@
 # LiveFrame
 
+LiveFrame helps engineers determine whether a streaming video-generation system works for a real
+workload, understand why it fails, and verify that an optimization improves complete-wall
+performance without silently weakening quality or deployment eligibility. The active product
+mission is documented in [agent/liveframe_product_mission.md](agent/liveframe_product_mission.md).
+
+## LiveFrame World: runtime truth for interactive world models
+
+Point the harness at an action-conditioned world model and get a verified
+runtime + control + stability report — one command, one GPU, minutes:
+
+```bash
+# From a source checkout:
+pip install -e ".[world]"
+# (PyPI: `pip install "liveframe[world]"` once 0.3.0 is published.)
+
+# Prove the loop end to end on CPU first (~seconds):
+liveframe world run synthetic --suite smoke
+
+# Bring your own model: any FILE.py:ClassName implementing the adapter
+# protocol, in-process. pip users write their own file (see QUICKSTART.md for a
+# complete paste-and-run adapter); source checkouts can start from the template
+# in examples/byo_adapter/drift_world.py. Declare every action the suites
+# command (W S A D L R U N 0) or the case fails with a clear contract error.
+liveframe world run my_world.py:MyWorld --suite quick
+
+# Same adapter file, running inside your model's own environment:
+liveframe world run my_model.py:MyWorld --suite quick \
+    --python /path/to/model-env/bin/python
+
+# Matrix-Game 2.0 reference adapter (weights + checkout required; run
+# `liveframe world doctor matrix-game-2 --python ...` first — every failed
+# check prints its exact fix):
+liveframe world run matrix-game-2 --suite quick --python /opt/envs/mg2/bin/python
+```
+
+Each run writes a self-contained `report.html` (no scripts, no network), a
+machine-readable `report.json`, and a digest-bound ledger; the command prints
+the `report.html` path when it finishes, and
+`liveframe world verify <run>/ledger.json` re-checks every artifact byte.
+(`smoke` and `quick` are deliberately short, so `realtime_pass` reports `null`
+— the real-time rule needs a continuous 60-second stream; use `soak` for it.)
+Generated FPS counts decoded native frames only — interpolated or duplicated
+frames never count, cold start is reported as context rather than blended into
+generation numbers, and vendor claims are compared with neutral verdicts
+(`different configuration` when the claim names a setup, else `config not
+stated`) — the builder never says "reproduced". Suites: `smoke`,
+`quick`, `standard`, `soak`, `memory` (`liveframe world suites`). Also:
+`world compare A B` (config differences listed before any numbers) and
+`world export --format worldmark|wbench|raw` for interop with quality-focused
+benchmarks. Start at [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide —
+install, a paste-and-run adapter, reading the report, and verifying the ledger —
+or the template in [examples/byo_adapter/](examples/byo_adapter/).
+
+### Measured references (single GPU, with receipts)
+
+We ran three published interactive world models through the harness on one GPU.
+Each vendor number assumes a very different machine; the harness reports what a
+single GPU actually delivers and labels the gap as a configuration difference,
+not a failure:
+
+| Model | Vendor claim | Claim's setup | One GPU (measured) |
+|---|---|---|---|
+| Matrix-Game 2.0 | 25 fps | single H100 | **11.2 fps** (24 cases) |
+| Matrix-Game 3.0 | 40 fps | 8 DiT + 1 VAE GPUs | **2.04 fps** (8 trials) |
+| HY-World 1.5 | 24 fps | 8-GPU sequence-parallel | **0.616 fps** (8 trials) |
+
+The harness times frames as they are delivered, so it errs low rather than
+inflating; every number reproduces from a digest-bound ledger
+(`liveframe world verify`).
+
 LiveFrame defines **real-time** as at least **16 native generated frames per second for a continuous 60-second stream**, with time-to-first-frame, p95 chunk latency, thermal state, memory, intrinsic quality, same-seed identity, and long-horizon drift disclosed. Interpolated or duplicated presentation frames never count as generated FPS.
 
 The strongest clean Apple result in this repository is **1.418 native generated FPS**, measured on an Apple M5 Max with MLX/MLX Metal 0.32.0, Wan2.1-T2V-1.3B Causal-Forcing++ one-step generation, and 480x832 output over an 81-frame fixture. It is **11.28x short of 16 FPS** and is not a 60-second sustained-streaming result.
@@ -98,8 +168,16 @@ Useful verification commands:
 ```bash
 liveframe gate verify
 liveframe doctor
+liveframe qualify --backend synthetic --profile interactive-480p \
+	--output artifacts/synthetic-qualification.v1.json
+liveframe qualification verify artifacts/synthetic-qualification.v1.json
 python tools/prepare_publication_release.py --help
 ```
+
+The synthetic qualification exercises request construction, native-frame accounting, timing, and
+profile gates without a GPU. Its overall verdict is intentionally `incomplete` until required
+quality, long-horizon, memory, and thermal evidence is attached; passing FPS alone never qualifies
+a deployment.
 
 ## Repository Layout
 

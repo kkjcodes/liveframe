@@ -1,0 +1,11 @@
+{
+  "checker_sha256": "sha256:39ef19505b1434835f95b96f30df4529ac036b087b585c1ba968812641435814",
+  "decoder_sha256": "sha256:a213f6f7203d66184d853fc35a28db2b6859bf37e82956e4e2dc16b562032052",
+  "fp32_amendment_sha256": "sha256:6a17338795d9b2f43ec809726b3feb8f92a5785d061e24dd3f2dbb77046c5c72",
+  "golden_sha256": "sha256:08880bd8129a8f3145a9f9a071870076951def12ffd13b0917f1e4a65b5c79bc",
+  "output": "outputs/taew21-port-parity.v3.json",
+  "policy_v2_sha256": "sha256:92219705c499983758e06fe28b3a8a659c8ab619ddc5b1b4f400e26b0edc197e",
+  "schema": "liveframe.taew21-execution-amendment.v1",
+  "status": "frozen-before-fp32-candidate-execution",
+  "weights_sha256": "sha256:6fb5b1810a3f81a2ee9f2380bd2f961d1b8c9735db1db9fe9046a65e04efe324"
+}

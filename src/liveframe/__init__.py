@@ -1,6 +1,64 @@
 """LiveFrame benchmark and streaming runtime."""
 
+from liveframe.engine import (
+	BenchmarkResult,
+	ClipMetrics,
+	ClipResult,
+	EngineError,
+	FrameSink,
+	GenerationRequest,
+	NativeFrame,
+	StreamEvent,
+	StreamingBackend,
+	benchmark,
+	clip,
+	stream,
+)
 from liveframe.gates import GateArtifact, GateError, load_bundled_gate
+from liveframe.qualification import (
+	CREATIVE_PREVIEW,
+	INTERACTIVE_480P,
+	OFFLINE_STREAMING,
+	WORKLOAD_PROFILES,
+	GateStatus,
+	QualificationEvidence,
+	QualificationGate,
+	QualificationResult,
+	QualificationRun,
+	QualificationVerdict,
+	WorkloadProfile,
+	evaluate_qualification,
+	qualify,
+)
 
-__all__ = ["GateArtifact", "GateError", "load_bundled_gate"]
-__version__ = "0.1.0.dev0"
+__all__ = [
+	"CREATIVE_PREVIEW",
+	"INTERACTIVE_480P",
+	"OFFLINE_STREAMING",
+	"WORKLOAD_PROFILES",
+	"BenchmarkResult",
+	"ClipMetrics",
+	"ClipResult",
+	"EngineError",
+	"FrameSink",
+	"GateArtifact",
+	"GateError",
+	"GateStatus",
+	"GenerationRequest",
+	"NativeFrame",
+	"QualificationEvidence",
+	"QualificationGate",
+	"QualificationResult",
+	"QualificationRun",
+	"QualificationVerdict",
+	"StreamEvent",
+	"StreamingBackend",
+	"WorkloadProfile",
+	"benchmark",
+	"clip",
+	"evaluate_qualification",
+	"load_bundled_gate",
+	"qualify",
+	"stream",
+]
+__version__ = "0.3.0"

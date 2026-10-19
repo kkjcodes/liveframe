@@ -5,10 +5,10 @@ from liveframe.backends.base import (
     BackendCapabilities,
     BackendError,
     BackendUnavailableError,
-    GenerationRequest,
     TensorDescriptor,
 )
 from liveframe.backends.registry import available_backends, create_backend
+from liveframe.engine import GenerationRequest, NativeFrame
 
 __all__ = [
     "Backend",
@@ -16,6 +16,7 @@ __all__ = [
     "BackendError",
     "BackendUnavailableError",
     "GenerationRequest",
+    "NativeFrame",
     "TensorDescriptor",
     "available_backends",
     "create_backend",

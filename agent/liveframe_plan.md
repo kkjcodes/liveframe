@@ -1,5 +1,9 @@
 # LiveFrame — Real-Time Video Generation: Project Plan (v2)
 
+> **Superseded on 2026-10-06.** The active end goal and delivery order are defined in
+> `liveframe_product_mission.md`. This document remains as historical planning context; publication
+> and an undifferentiated real-time demonstration are no longer project success criteria.
+
 **Project name:** **LiveFrame** · `pip install liveframe` · repo: `kkjcodes/liveframe` · tagline: *"Real-time video generation, honestly measured."*
 
 **Author basis:** kkjcodes / m5-flux-block-cache-benchmark · dev.to post "A 1.125x FLUX speedup was real..."

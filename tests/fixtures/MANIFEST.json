@@ -1,0 +1,74 @@
+{
+  "schema": "liveframe.fixtures-manifest.v1",
+  "note": "Every file under tests/fixtures/, src/liveframe/world/suites/scenes/ and examples/ must be listed here with provenance. Allowed origins: procedural | self-made | cc0. contains_people must be false.",
+  "entries": [
+    {
+      "path": "examples/byo_adapter/README.md",
+      "sha256": "sha256:8c216b8def83265227b29d85ca303cfe5bcc4b2af5848f3230ebccb3cd022a9a",
+      "origin": "self-made",
+      "contains_people": false
+    },
+    {
+      "path": "examples/byo_adapter/drift_world.py",
+      "sha256": "sha256:09a4a7a6a1440e4b17543910d891ca65926902a9dfa71f0be8e5d308b09f6beb",
+      "origin": "self-made",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/indoor-depot.npy",
+      "sha256": "sha256:15acf8a8d313b94452f288b30ebb6cef1e33c916387bebaf028126a436951f53",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/indoor-hall.npy",
+      "sha256": "sha256:fe1761935a7f56e34b749a070dd719e26c1a0c61e1a8eda9178b8b164232aa09",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/outdoor-dunes.npy",
+      "sha256": "sha256:11827b4751d364c09278c79237d45d7903d427c810bc1d2a176e4f4272fb2e5d",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/outdoor-meadow.npy",
+      "sha256": "sha256:5761125f51ef51b974377f39732557387487f10176bee5d96343608a507555c4",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/stylized-blocks.npy",
+      "sha256": "sha256:4863631f07d12de332b6d94a0de5171bb5d2d98375a7221dab1fc0c1119b49af",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/stylized-night.npy",
+      "sha256": "sha256:05d5d23167fdd5c9261fcf830ff5c6d95ff401b61f9a36eeac47714e9db322ce",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/thirdperson-court.npy",
+      "sha256": "sha256:ef8d0dd81326e1b6625cbd5eaf64a7ee854c590198ebf43866aca8e5f8685d07",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    },
+    {
+      "path": "src/liveframe/world/suites/scenes/thirdperson-yard.npy",
+      "sha256": "sha256:c3692a0570b131319304b52e8b6c6281466ff3e1eaff1776472a55b40d53e786",
+      "origin": "procedural",
+      "generator": "tools/generate_suite_scenes.py",
+      "contains_people": false
+    }
+  ]
+}

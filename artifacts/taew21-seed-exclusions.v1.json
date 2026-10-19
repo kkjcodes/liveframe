@@ -1,0 +1,79 @@
+{
+  "excluded_seeds": [
+    42,
+    11003,
+    17389,
+    25111,
+    33941,
+    42073,
+    50821,
+    60101,
+    70937,
+    81131,
+    90001,
+    101111,
+    120011,
+    130003,
+    140009,
+    150011,
+    160001
+  ],
+  "exclusions_digest": "sha256:5dece3d6e5052e8809b65f1187dbff4bb084a9d5b642a07bbc3cd9d611d956a1",
+  "schema": "liveframe.taew21-seed-exclusions.v1",
+  "sources": [
+    {
+      "already_excluded_by_prior_sources": [],
+      "artifact": "artifacts/perceptual-protocol.v1.json",
+      "artifact_sha256": "sha256:08799bda26ba9afb718b6fde42df6a7af015a08af53cf52e8fac8a602c102afa",
+      "name": "quality-calibration",
+      "seeds": [
+        11003,
+        17389,
+        25111,
+        33941,
+        42073,
+        50821,
+        60101,
+        70937
+      ],
+      "selector": "sampling.calibration_seeds"
+    },
+    {
+      "already_excluded_by_prior_sources": [],
+      "artifact": "artifacts/perceptual-protocol.v1.json",
+      "artifact_sha256": "sha256:08799bda26ba9afb718b6fde42df6a7af015a08af53cf52e8fac8a602c102afa",
+      "name": "quality-opened-holdout",
+      "seeds": [
+        81131,
+        90001,
+        101111,
+        120011
+      ],
+      "selector": "sampling.holdout_seeds"
+    },
+    {
+      "already_excluded_by_prior_sources": [],
+      "artifact": "artifacts/refresh-addressability-manifest.v2.json",
+      "artifact_sha256": "sha256:e3a5fa70a127ed7338d1fc4d0fb3999db2d55edfc060c7c13fa8b0bc40b43bbf",
+      "name": "refresh-proof",
+      "seeds": [
+        130003,
+        140009,
+        150011,
+        160001
+      ],
+      "selector": "sampling.seeds"
+    },
+    {
+      "already_excluded_by_prior_sources": [],
+      "artifact": "artifacts/mlx-stock-wan.v1.json",
+      "artifact_sha256": "sha256:c4be66a6d89272063b28012379e09d8c5055e176b7f053f2ab482d777739693a",
+      "name": "stock-wan-diagnostic",
+      "seeds": [
+        42
+      ],
+      "selector": "smoke.seed"
+    }
+  ],
+  "status": "frozen-before-taew21-campaign-seed-selection"
+}

@@ -1,0 +1,246 @@
+{
+  "bindings": {
+    "/Users/kumarjha/.vscode/tmp/tmp_vscode_1/liveframe-taehv-upstream/safetensors/taew2_1.safetensors": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f",
+    "/Users/kumarjha/.vscode/tmp/tmp_vscode_1/liveframe-taehv-upstream/taehv.py": "sha256:28b452ad74f924d2d0922d6b3e805dfa7f504c523ced240435fefad5f6f650a7",
+    "artifacts/taew21-mlx-weights.v4-fp32/taew2_1-mlx.safetensors": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461",
+    "outputs/golden/cfpp-1step-native-21block-h100/output_latents.bin": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512"
+  },
+  "execution_dtype": "float32",
+  "first_nonzero_stage": "input",
+  "schema": "liveframe.taew21-block11-call000-bisection.v1",
+  "scope": "block-11-call-000-only",
+  "stages": {
+    "concatenated": {
+      "metrics": {
+        "cosine_similarity": 0.9999960814770377,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.06989642977714539,
+        "mean_absolute_error": 0.0002029392078335772
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "conv0": {
+      "metrics": {
+        "cosine_similarity": 0.9999957987958941,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.10224944353103638,
+        "mean_absolute_error": 0.002074239133085167
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "conv2": {
+      "metrics": {
+        "cosine_similarity": 0.999991074499463,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.08448708057403564,
+        "mean_absolute_error": 0.0013142685344229132
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "conv4": {
+      "metrics": {
+        "cosine_similarity": 0.9999920443014221,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.033271193504333496,
+        "mean_absolute_error": 0.0011584132081277573
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "input": {
+      "metrics": {
+        "cosine_similarity": 0.9999960814770377,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.06989642977714539,
+        "mean_absolute_error": 0.0004058784156671544
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "memory": {
+      "metrics": {
+        "cosine_similarity": 1.0,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0,
+        "mean_absolute_error": 0.0
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "output": {
+      "metrics": {
+        "cosine_similarity": 0.999996276155009,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.07853871583938599,
+        "mean_absolute_error": 0.00037941781236982744
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "relu0": {
+      "metrics": {
+        "cosine_similarity": 0.9999757632424111,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.038905322551727295,
+        "mean_absolute_error": 0.0002827939017887022
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "relu2": {
+      "metrics": {
+        "cosine_similarity": 0.9999562418475504,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.03636932373046875,
+        "mean_absolute_error": 0.00019130746708037748
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "residual_sum": {
+      "metrics": {
+        "cosine_similarity": 0.9999928024874153,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.07853871583938599,
+        "mean_absolute_error": 0.001359745562868205
+      },
+      "mlx_dtype": "float32",
+      "pytorch_dtype": "float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    }
+  },
+  "upstream_stages": {
+    "decoder.10.output": {
+      "metrics": {
+        "cosine_similarity": 0.9999960814770377,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.06989642977714539,
+        "mean_absolute_error": 0.0004058784156671544
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.6.output": {
+      "metrics": {
+        "cosine_similarity": 0.999999801101889,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.005288273096084595,
+        "mean_absolute_error": 4.5888718052290545e-05
+      },
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "decoder.7.output": {
+      "metrics": {
+        "cosine_similarity": 0.9999995265467163,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.002132222056388855,
+        "mean_absolute_error": 4.2505325913343866e-05
+      },
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "decoder.8.output": {
+      "metrics": {
+        "cosine_similarity": 0.9999981304279932,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.009512200951576233,
+        "mean_absolute_error": 0.0003082945383516337
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.9.output": {
+      "metrics": {
+        "cosine_similarity": 0.9999962200383334,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.06479153037071228,
+        "mean_absolute_error": 0.0004557641926578818
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    }
+  }
+}

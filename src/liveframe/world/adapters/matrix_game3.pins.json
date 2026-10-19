@@ -1,0 +1,17 @@
+{
+  "schema": "liveframe.world.adapter-pins.v1",
+  "adapter": "matrix-game-3",
+  "verified": "2026-10-15",
+  "verified_on": "RunPod A100 80GB, cu128 image, python 3.12; int8 + SDPA attention path",
+  "pins": {
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "diffusers": "0.39.0",
+    "transformers": "4.57.3",
+    "numpy": "2.2.6",
+    "safetensors": "0.8.0"
+  },
+  "extra_imports": ["scipy", "pandas", "trimesh", "easydict", "ftfy", "decord", "opencv-python-headless"],
+  "repo_patch": "wan/modules/model.py: route the 2 direct flash_attention() self/cross-attn calls through attention() so fa_version='0' uses SDPA (no flash-attn needed on single GPU). Record: measured with attention=SDPA.",
+  "forbidden": {}
+}

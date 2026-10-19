@@ -1,0 +1,22 @@
+{
+  "bindings": {
+    "amendment_v6_3_sha256": "sha256:ab9de1c1b137bdad03b992a495e913e15e3f8519b4086ac6a5d34fb0c991712f",
+    "bundle_manifest_sha256": "sha256:2d99b2fcfc1ebb8243685732e9cccf925d6f2490a64dac580dfa37d509c9adb2",
+    "metric_screen_v2_sha256": "sha256:0a0e46c2c0b69e5682a01d61177bb17d2aa68990c2e51b72a8229574ad1d848e",
+    "metric_verdict_v1_sha256": "sha256:967bee1781bbabe14e2949884fc56de94ded37418aa4a2a9783c9318ab077a7e",
+    "power_v1_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+    "power_v2_sha256": "sha256:bb5cd5e2d98fd4b8e2f75ccbdae3f4f39c1c4c3981b7d9c0eb2e64cb9c52877c",
+    "runbook": "agent/taew21_study_launch_runbook.md"
+  },
+  "closed": "2026-10-09",
+  "closure_digest": "sha256:3312425c5941d22f873133291ce20c332941111c18372fb0f30b992fa05f28ac",
+  "consequences": {
+    "qualification_mapping": "under the product mission's schema this configuration passes performance gates with quality evidence not_evaluated - the exact case the fail-closed qualification verdict was designed to express",
+    "speed_claim_status": "unaffected: 2.6083x complete-wall speedup (95% bootstrap LCB 2.5818) with 5.5222x decoder-only remains claim-eligible per the formal benchmark",
+    "tier_quality_status": "taew2_1 fp32-im2col remains quality-NOT-ESTABLISHED: the v1 metric screen FAIL stands, the v2 screen's routing PASS was routing-only, and the sole quality-claim authority (the human study) was never exercised"
+  },
+  "decision": "cancelled-unlaunched-strategic-pivot",
+  "reason": "2026-10-06 strategic pivot to the qualification-and-optimization product mission (agent/liveframe_product_mission.md) after the arXiv v2 submission was rejected by moderation; the study's ~$250-300 recruitment spend no longer serves the governing direction",
+  "schema": "liveframe.taew21-study-closure.v1",
+  "statement": "The pre-registered TAEW2.1 blinded discrimination study is closed WITHOUT launch. Zero participants were recruited, zero responses exist, no money was spent, and assignments.sealed.json was never opened outside the frozen analysis tooling's QA dry-runs on synthetic data. The study bundle, amendments v6-v6.3, power artifacts, QC tool, and analyzer remain frozen and launch-ready as recorded at commit d0d3dc8; reopening requires only following agent/taew21_study_launch_runbook.md with the artifacts bound below."
+}

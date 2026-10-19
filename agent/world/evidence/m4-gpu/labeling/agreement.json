@@ -1,0 +1,25 @@
+{
+  "classifier_vs_human_by_commanded_class": {
+    "0": {
+      "agreement": 0.875,
+      "n": 16,
+      "unsure": 0
+    },
+    "L": {
+      "agreement": 0.6875,
+      "n": 16,
+      "unsure": 0
+    },
+    "W": {
+      "agreement": 0.8709677419354839,
+      "n": 31,
+      "unsure": 1
+    }
+  },
+  "classifier_vs_human_overall": 0.8253968253968254,
+  "human_vs_commanded_overall_context_only": 0.9206349206349206,
+  "labeled_clips": 64,
+  "schema": "liveframe.world.label-agreement.v2",
+  "scored_clips": 63,
+  "unsure_clips": 1
+}

@@ -1,0 +1,158 @@
+{
+  "assumptions": {
+    "analysis": "two-way-cluster-robust-CGM-one-sided-95-UCB",
+    "attention_failure_rate": 0.1,
+    "derivation": "frozen-before-any-response-visibility",
+    "power_target_at_chance": 0.7,
+    "power_target_rationale": "0.90 is arithmetically unreachable inside the protocol's frozen 400-600 planning envelope even for independent judgments; the envelope implicitly accepts roughly one-in-four inconclusive-fail risk at true chance, reported in the sensitivity grid",
+    "replicates": 2000,
+    "seed": 20260818,
+    "sigma_participant_logit": 0.5,
+    "sigma_video_logit": 0.5
+  },
+  "designs": [
+    {
+      "cells": [
+        {
+          "expected_usable_judgments": 431.624,
+          "p_true": 0.5,
+          "pass_probability": 0.688,
+          "realized_mean_accuracy": 0.5
+        },
+        {
+          "expected_usable_judgments": 431.648,
+          "p_true": 0.53,
+          "pass_probability": 0.151,
+          "realized_mean_accuracy": 0.5380842773086796
+        },
+        {
+          "expected_usable_judgments": 431.048,
+          "p_true": 0.55,
+          "pass_probability": 0.027,
+          "realized_mean_accuracy": 0.5628069785910155
+        },
+        {
+          "expected_usable_judgments": 432.2,
+          "p_true": 0.58,
+          "pass_probability": 0.0005,
+          "realized_mean_accuracy": 0.5986353943053894
+        }
+      ],
+      "expected_usable_judgments": 431.624,
+      "nominal_judgments": 480,
+      "participants": 30,
+      "pass_probability_at_chance": 0.688,
+      "trials": 16
+    },
+    {
+      "cells": [
+        {
+          "expected_usable_judgments": 486.0,
+          "p_true": 0.5,
+          "pass_probability": 0.7485,
+          "realized_mean_accuracy": 0.5
+        },
+        {
+          "expected_usable_judgments": 486.315,
+          "p_true": 0.53,
+          "pass_probability": 0.157,
+          "realized_mean_accuracy": 0.5382769220212763
+        },
+        {
+          "expected_usable_judgments": 484.452,
+          "p_true": 0.55,
+          "pass_probability": 0.021,
+          "realized_mean_accuracy": 0.563110380191717
+        },
+        {
+          "expected_usable_judgments": 485.811,
+          "p_true": 0.58,
+          "pass_probability": 0.0,
+          "realized_mean_accuracy": 0.5986351598528435
+        }
+      ],
+      "expected_usable_judgments": 486.0,
+      "nominal_judgments": 540,
+      "participants": 30,
+      "pass_probability_at_chance": 0.7485,
+      "trials": 18
+    },
+    {
+      "cells": [
+        {
+          "expected_usable_judgments": 538.98,
+          "p_true": 0.5,
+          "pass_probability": 0.7765,
+          "realized_mean_accuracy": 0.5
+        },
+        {
+          "expected_usable_judgments": 540.76,
+          "p_true": 0.53,
+          "pass_probability": 0.157,
+          "realized_mean_accuracy": 0.5383218911908041
+        },
+        {
+          "expected_usable_judgments": 540.11,
+          "p_true": 0.55,
+          "pass_probability": 0.0165,
+          "realized_mean_accuracy": 0.5633761690448308
+        },
+        {
+          "expected_usable_judgments": 539.02,
+          "p_true": 0.58,
+          "pass_probability": 0.0,
+          "realized_mean_accuracy": 0.5984596378277727
+        }
+      ],
+      "expected_usable_judgments": 538.98,
+      "nominal_judgments": 600,
+      "participants": 30,
+      "pass_probability_at_chance": 0.7765,
+      "trials": 20
+    },
+    {
+      "cells": [
+        {
+          "expected_usable_judgments": 583.632,
+          "p_true": 0.5,
+          "pass_probability": 0.803,
+          "realized_mean_accuracy": 0.5
+        },
+        {
+          "expected_usable_judgments": 582.462,
+          "p_true": 0.53,
+          "pass_probability": 0.1595,
+          "realized_mean_accuracy": 0.5381824039257549
+        },
+        {
+          "expected_usable_judgments": 584.136,
+          "p_true": 0.55,
+          "pass_probability": 0.0165,
+          "realized_mean_accuracy": 0.5626722226010097
+        },
+        {
+          "expected_usable_judgments": 581.589,
+          "p_true": 0.58,
+          "pass_probability": 0.0005,
+          "realized_mean_accuracy": 0.5983092188507626
+        }
+      ],
+      "expected_usable_judgments": 583.632,
+      "nominal_judgments": 648,
+      "participants": 36,
+      "pass_probability_at_chance": 0.803,
+      "trials": 18
+    }
+  ],
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "schema": "liveframe.taew21-study-power.v1",
+  "selected_design": {
+    "nominal_judgments": 540,
+    "participants": 30,
+    "pass_probability_at_chance": 0.7485,
+    "trials_per_participant": 18,
+    "usable_judgment_target": 486
+  },
+  "simulator_sha256": "sha256:78d596c8854b218d1e366c65e48f6c406886aaad59e1dadb3f13152e6c3937e4",
+  "stopping_rule": "stop at the usable_judgment_target above; no sequential peeking; excluded judgments are replaced only by pre-registered replacement participants"
+}

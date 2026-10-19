@@ -1,0 +1,58 @@
+{
+  "amendment_digest": "sha256:bbc6d917fcb45871740602a7f11bdf70c81aa333994c1b416d638474e464fb0f",
+  "authorized_reference": {
+    "activation_anchors": "unchanged-from-policy-v2",
+    "execution_dtype": "float32",
+    "fixture": "outputs/golden/cfpp-1step-native-21block-h100/output_latents.bin",
+    "fixture_cast": "bfloat16-to-float32",
+    "output": "outputs/golden/taew21-pytorch-fp32-reference.v1",
+    "overwrite_existing_fp16_golden": false,
+    "purpose": "diagnostic-only-same-precision-reference",
+    "source_weight_values": "pinned-float16-values-upcast-to-float32"
+  },
+  "bindings": {
+    "existing_fp16_golden_manifest_sha256": "sha256:2ac1a07fcb329e3fc1fb499e51552b4afdadd131a984d02638e52e9a8754a11c",
+    "existing_fp16_golden_tensors_sha256": "sha256:08880bd8129a8f3145a9f9a071870076951def12ffd13b0917f1e4a65b5c79bc",
+    "fixture_sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+    "pre_change_capture_tool_sha256": "sha256:c23b156dc0a793adc22e9ab88a20c39140353689f2158ad6f6097fabfe9b7052",
+    "previous_amendment_digest": "sha256:c637317030e4a5666738963a48b3ace0c4206ad028efa0f1c47ed4f899b240db",
+    "previous_amendment_sha256": "sha256:4dd7b080d6cc3dde403f72136d4d21d08bcacb76af63648a577cd9e40cf0e319",
+    "source_implementation_sha256": "sha256:28b452ad74f924d2d0922d6b3e805dfa7f504c523ced240435fefad5f6f650a7",
+    "source_revision": "e589fddc076e77f5ba8cd6baabe4ba3260b261cd",
+    "source_weights_sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f",
+    "source_weights_storage_dtype": "float16"
+  },
+  "corrected_decision_rules": {
+    "all_fp32_probes_and_final_outputs_pass": "same-precision-port-parity-confirmed-enter-branch-a-precision-policy-only",
+    "any_fp32_probe_or_final_output_fails": "same-precision-port-parity-unresolved-enter-branch-b-block-11-call-000-bisection-only",
+    "downstream_authority": "none-until-authorized-by-branch-a-precision-policy",
+    "threshold_changes": "forbidden"
+  },
+  "correction": {
+    "discovery": "Pinned source decoder tensors and the existing PyTorch golden both use float16; MLX FP32 versus PyTorch FP16 cannot isolate semantics from precision.",
+    "required_comparison": "PyTorch FP32 versus MLX FP32 using identical pinned source values and fixture",
+    "superseded_v4_interpretation": "The v4 decision-rule wording applies only after same-precision FP32 reference capture, not against the existing FP16 golden."
+  },
+  "execution_binding_requirement": {
+    "artifact": "artifacts/taew21-fp32-execution-binding.v1.json",
+    "must_bind": [
+      "amendment_v4",
+      "amendment_v4_1",
+      "capture_tool",
+      "diagnostic_runner",
+      "comparison_engine",
+      "decoder",
+      "converter",
+      "fp32_weights",
+      "conversion_manifest",
+      "fp32_reference_manifest",
+      "fp32_reference_tensors",
+      "policy_v2",
+      "output"
+    ],
+    "status": "must-be-frozen-and-committed-before-mlx-fp32-candidate-execution"
+  },
+  "schema": "liveframe.taew21-protocol-amendment.v4.1",
+  "status": "frozen-before-same-precision-full-fp32-diagnostic-implementation",
+  "visibility_at_freeze": "v1-v3-results-visible-v4-provenance-error-detected-no-pytorch-or-mlx-fp32-reference-or-candidate-executed"
+}

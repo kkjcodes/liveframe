@@ -1,0 +1,535 @@
+{
+  "benchmark": {
+    "allocator_cache_limit_bytes": 4294967296,
+    "allocator_memory_limit_bytes": 30150672384,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20260809,
+    "confidence_rule": "one-sided-95%-lower-confidence-bound-on-complete-wall-speedup>=1.5",
+    "maximum_swap_delta_mib": 0.0,
+    "maximum_target_wall_seconds": 38.08434066666632,
+    "minimum_complete_wall_speedup": 1.5,
+    "model_loading": "excluded-steady-state",
+    "thermal_capture": "required-before-and-after-each-trial",
+    "timing_boundaries": [
+      "decoder",
+      "pixel_materialization",
+      "complete-wall"
+    ],
+    "trials": 5,
+    "warmups": 1
+  },
+  "campaign": {
+    "horizons": {
+      "15": {
+        "latent_frames": 60,
+        "pixel_frames": 237,
+        "playback_seconds": 14.8125
+      },
+      "60": {
+        "latent_frames": 243,
+        "pixel_frames": 969,
+        "playback_seconds": 60.5625
+      }
+    },
+    "jobs": [
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-limited_hold_01-15s",
+        "output": "outputs/taew21-campaign/limited_hold_01/15s",
+        "prompt_id": "limited_hold_01",
+        "seed": 170003,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-limited_hold_01-60s",
+        "output": "outputs/taew21-campaign/limited_hold_01/60s",
+        "prompt_id": "limited_hold_01",
+        "seed": 170003,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-limited_hold_02-15s",
+        "output": "outputs/taew21-campaign/limited_hold_02/15s",
+        "prompt_id": "limited_hold_02",
+        "seed": 180001,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-limited_hold_02-60s",
+        "output": "outputs/taew21-campaign/limited_hold_02/60s",
+        "prompt_id": "limited_hold_02",
+        "seed": 180001,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-limited_hold_03-15s",
+        "output": "outputs/taew21-campaign/limited_hold_03/15s",
+        "prompt_id": "limited_hold_03",
+        "seed": 190027,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-limited_hold_03-60s",
+        "output": "outputs/taew21-campaign/limited_hold_03/60s",
+        "prompt_id": "limited_hold_03",
+        "seed": 190027,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-limited_hold_04-15s",
+        "output": "outputs/taew21-campaign/limited_hold_04/15s",
+        "prompt_id": "limited_hold_04",
+        "seed": 200003,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-limited_hold_04-60s",
+        "output": "outputs/taew21-campaign/limited_hold_04/60s",
+        "prompt_id": "limited_hold_04",
+        "seed": 200003,
+        "stratum": "limited-animation-held-frames"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dialogue_01-15s",
+        "output": "outputs/taew21-campaign/dialogue_01/15s",
+        "prompt_id": "dialogue_01",
+        "seed": 210011,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dialogue_01-60s",
+        "output": "outputs/taew21-campaign/dialogue_01/60s",
+        "prompt_id": "dialogue_01",
+        "seed": 210011,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dialogue_02-15s",
+        "output": "outputs/taew21-campaign/dialogue_02/15s",
+        "prompt_id": "dialogue_02",
+        "seed": 220009,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dialogue_02-60s",
+        "output": "outputs/taew21-campaign/dialogue_02/60s",
+        "prompt_id": "dialogue_02",
+        "seed": 220009,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dialogue_03-15s",
+        "output": "outputs/taew21-campaign/dialogue_03/15s",
+        "prompt_id": "dialogue_03",
+        "seed": 230003,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dialogue_03-60s",
+        "output": "outputs/taew21-campaign/dialogue_03/60s",
+        "prompt_id": "dialogue_03",
+        "seed": 230003,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dialogue_04-15s",
+        "output": "outputs/taew21-campaign/dialogue_04/15s",
+        "prompt_id": "dialogue_04",
+        "seed": 240007,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dialogue_04-60s",
+        "output": "outputs/taew21-campaign/dialogue_04/60s",
+        "prompt_id": "dialogue_04",
+        "seed": 240007,
+        "stratum": "dialogue-minimal-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-cyclic_01-15s",
+        "output": "outputs/taew21-campaign/cyclic_01/15s",
+        "prompt_id": "cyclic_01",
+        "seed": 250013,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-cyclic_01-60s",
+        "output": "outputs/taew21-campaign/cyclic_01/60s",
+        "prompt_id": "cyclic_01",
+        "seed": 250013,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-cyclic_02-15s",
+        "output": "outputs/taew21-campaign/cyclic_02/15s",
+        "prompt_id": "cyclic_02",
+        "seed": 260003,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-cyclic_02-60s",
+        "output": "outputs/taew21-campaign/cyclic_02/60s",
+        "prompt_id": "cyclic_02",
+        "seed": 260003,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-cyclic_03-15s",
+        "output": "outputs/taew21-campaign/cyclic_03/15s",
+        "prompt_id": "cyclic_03",
+        "seed": 270001,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-cyclic_03-60s",
+        "output": "outputs/taew21-campaign/cyclic_03/60s",
+        "prompt_id": "cyclic_03",
+        "seed": 270001,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-cyclic_04-15s",
+        "output": "outputs/taew21-campaign/cyclic_04/15s",
+        "prompt_id": "cyclic_04",
+        "seed": 280001,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-cyclic_04-60s",
+        "output": "outputs/taew21-campaign/cyclic_04/60s",
+        "prompt_id": "cyclic_04",
+        "seed": 280001,
+        "stratum": "cyclic-motion"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dense_motion_01-15s",
+        "output": "outputs/taew21-campaign/dense_motion_01/15s",
+        "prompt_id": "dense_motion_01",
+        "seed": 290011,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dense_motion_01-60s",
+        "output": "outputs/taew21-campaign/dense_motion_01/60s",
+        "prompt_id": "dense_motion_01",
+        "seed": 290011,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dense_motion_02-15s",
+        "output": "outputs/taew21-campaign/dense_motion_02/15s",
+        "prompt_id": "dense_motion_02",
+        "seed": 300007,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dense_motion_02-60s",
+        "output": "outputs/taew21-campaign/dense_motion_02/60s",
+        "prompt_id": "dense_motion_02",
+        "seed": 300007,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dense_motion_03-15s",
+        "output": "outputs/taew21-campaign/dense_motion_03/15s",
+        "prompt_id": "dense_motion_03",
+        "seed": 310019,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dense_motion_03-60s",
+        "output": "outputs/taew21-campaign/dense_motion_03/60s",
+        "prompt_id": "dense_motion_03",
+        "seed": 310019,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 15,
+        "job_id": "taew21-dense_motion_04-15s",
+        "output": "outputs/taew21-campaign/dense_motion_04/15s",
+        "prompt_id": "dense_motion_04",
+        "seed": 320009,
+        "stratum": "high-motion-dense-scenes"
+      },
+      {
+        "horizon_seconds": 60,
+        "job_id": "taew21-dense_motion_04-60s",
+        "output": "outputs/taew21-campaign/dense_motion_04/60s",
+        "prompt_id": "dense_motion_04",
+        "seed": 320009,
+        "stratum": "high-motion-dense-scenes"
+      }
+    ],
+    "output_root": "outputs/taew21-campaign",
+    "prompt_catalog": {
+      "cyclic_01": "Side-view 2D animation of a traveler walking in a clean repeating cycle past a painted countryside, consistent limb lengths, steady lateral motion, no cuts.",
+      "cyclic_02": "Hand-drawn cyclist pedaling in a smooth loop along a riverside path, repeating wheel and leg motion, stable character design, gentle background parallax.",
+      "cyclic_03": "Anime character standing on a balcony while hair, scarf, and hanging flags sway in repeating wind cycles, fixed camera and stable flat colors.",
+      "cyclic_04": "2D workshop scene with a large fan and belt mechanism rotating cyclically while a technician watches, locked composition, clean repeated mechanical motion.",
+      "dense_motion_01": "Energetic 2D chase through a crowded night market, multiple running characters, cloth and signs moving, lateral camera tracking, dense painted details and no cuts.",
+      "dense_motion_02": "Hand-drawn fantasy duel with fast body motion, sparks, cloth, and crossing weapons, dynamic camera pan, consistent character identities in a dense scene.",
+      "dense_motion_03": "Anime city intersection in heavy rain, camera pans across moving crowds, umbrellas, vehicles, reflections, and layered parallax, high motion throughout.",
+      "dense_motion_04": "2D aerial scene following a flock of birds through trees and clouds, rapid camera movement, overlapping subjects, detailed parallax, stable silhouettes without cuts.",
+      "dialogue_01": "Hand-drawn 2D dialogue scene, two characters seated across a cafe table, fixed medium shot, alternating mouth shapes and natural blinks only, stable faces and background.",
+      "dialogue_02": "Anime close-up of a mechanic speaking calmly to someone off camera, subtle lip movement, one blink and slight head motion, fixed camera, consistent facial identity.",
+      "dialogue_03": "Traditional 2D over-the-shoulder conversation in a library, restrained mouth and eye motion, no camera movement, bookshelves and clothing remain stable.",
+      "dialogue_04": "Cel-animated radio host delivering a line at a desk microphone, small mouth shapes and hand gesture, locked camera, flat-shaded studio background remains unchanged.",
+      "limited_hold_01": "Hand-drawn 2D animation, locked camera, a young astronomer holds a telescope pose on a quiet painted rooftop, only breathing, blinking, and a few strands of hair move, stable flat colors.",
+      "limited_hold_02": "Traditional cel animation, a cook pauses beside a simmering pot in a painted kitchen, held body pose with subtle steam and eye movement, static background, clean color regions.",
+      "limited_hold_03": "2D anime style, a passenger sits by a train window reading a letter, nearly held pose with a small blink and page tremble, fixed interior composition, restrained motion.",
+      "limited_hold_04": "Limited animation, a guard stands under a streetlamp at night, locked-off shot, only coat hem and lamp moths move, painted background and stable character silhouette."
+    },
+    "seeds": {
+      "cyclic_01": 250013,
+      "cyclic_02": 260003,
+      "cyclic_03": 270001,
+      "cyclic_04": 280001,
+      "dense_motion_01": 290011,
+      "dense_motion_02": 300007,
+      "dense_motion_03": 310019,
+      "dense_motion_04": 320009,
+      "dialogue_01": 210011,
+      "dialogue_02": 220009,
+      "dialogue_03": 230003,
+      "dialogue_04": 240007,
+      "limited_hold_01": 170003,
+      "limited_hold_02": 180001,
+      "limited_hold_03": 190027,
+      "limited_hold_04": 200003
+    },
+    "strata": [
+      {
+        "description": "Static-heavy limited animation with held poses and sparse local motion.",
+        "ds_gate_class": true,
+        "id": "limited-animation-held-frames",
+        "prompt_ids": [
+          "limited_hold_01",
+          "limited_hold_02",
+          "limited_hold_03",
+          "limited_hold_04"
+        ]
+      },
+      {
+        "description": "Dialogue shots dominated by mouth, blink, and small gesture motion.",
+        "ds_gate_class": true,
+        "id": "dialogue-minimal-motion",
+        "prompt_ids": [
+          "dialogue_01",
+          "dialogue_02",
+          "dialogue_03",
+          "dialogue_04"
+        ]
+      },
+      {
+        "description": "Repeated locomotion, wind, and mechanical cycles with moderate temporal change.",
+        "ds_gate_class": false,
+        "id": "cyclic-motion",
+        "prompt_ids": [
+          "cyclic_01",
+          "cyclic_02",
+          "cyclic_03",
+          "cyclic_04"
+        ]
+      },
+      {
+        "description": "Camera motion, many subjects, occlusion, and dense temporal change.",
+        "ds_gate_class": false,
+        "id": "high-motion-dense-scenes",
+        "prompt_ids": [
+          "dense_motion_01",
+          "dense_motion_02",
+          "dense_motion_03",
+          "dense_motion_04"
+        ]
+      }
+    ]
+  },
+  "decoder_contract": {
+    "color_conversion": "clamp-[0,1]-multiply-255-round-nearest",
+    "latent_channels": 16,
+    "latent_dtype": "bfloat16-cast-to-float16",
+    "latent_layout": "B,F,C,H,W",
+    "latent_scaling": "no-additional-scaling",
+    "output_dtype": "uint8",
+    "output_layout": "T,H,W,C",
+    "output_range": [
+      0,
+      255
+    ],
+    "resolution": [
+      480,
+      832
+    ],
+    "startup_frames_trimmed": 3,
+    "temporal_upscale": 4
+  },
+  "human_study": {
+    "blinding": "decoder-identity-hidden-from-participants-and-analysis-labels",
+    "chance_accuracy": 0.5,
+    "clustering": [
+      "participant",
+      "video"
+    ],
+    "exclusions": [
+      "withdrawn-consent",
+      "duplicate-participant",
+      "incomplete-session",
+      "failed-predeclared-attention-check"
+    ],
+    "minimum_usable_judgments": 271,
+    "noticeability_ceiling": 0.55,
+    "planned_participants": 30,
+    "planning_judgments": [
+      400,
+      600
+    ],
+    "primary_rule": "one-sided-95%-upper-confidence-bound-on-discrimination-accuracy<=0.55",
+    "sample_size": "fixed-by-clustered-simulation-before-recruitment",
+    "secondary_analysis": "bootstrap-metric-correlation-with-leave-one-prompt-out-stability",
+    "stopping_rule": "stop-at-simulation-fixed-usable-judgment-target-no-sequential-peeking",
+    "task": "reference-then-randomized-A-B-source-matching",
+    "trials_per_participant": [
+      16,
+      20
+    ]
+  },
+  "metrics": {
+    "authority": "screening-only-not-a-human-noticeability-threshold",
+    "decision_rule": "all-intrinsic-bands-and-all-identity-tripwires-must-pass",
+    "identity_tripwires": {
+      "pairwise_clip_distance_mean": {
+        "rationale": "Rejects gross same-seed semantic trajectory changes without borrowing a cross-seed content-distance scale.",
+        "upper": 0.05
+      },
+      "pairwise_lpips_mean": {
+        "rationale": "Loose same-seed identity tripwire, deliberately separate from intrinsic quality and ineligible to rescue a quality failure.",
+        "upper": 0.1
+      },
+      "pairwise_temporal_clip_distance_mean": {
+        "rationale": "Loose temporal identity sanity bound intended to catch changed motion trajectories rather than BF16-scale drift.",
+        "upper": 0.35
+      }
+    },
+    "intrinsic_metrics": {
+      "clip_prompt_mean": {
+        "aggregation": "mean",
+        "band_sigma": 1.645,
+        "direction": "higher",
+        "margin_sigma": 0.5,
+        "scale_epsilon": 0.002
+      },
+      "clip_prompt_p10": {
+        "aggregation": "p10",
+        "band_sigma": 1.645,
+        "direction": "higher",
+        "margin_sigma": 0.5,
+        "scale_epsilon": 0.002
+      },
+      "luma_flicker_mean": {
+        "aggregation": "mean",
+        "band_sigma": 1.645,
+        "direction": "lower",
+        "margin_sigma": 0.5,
+        "scale_epsilon": 0.25
+      },
+      "motion_clip_distance_mean": {
+        "aggregation": "mean",
+        "band_sigma": 1.645,
+        "direction": "two-sided",
+        "margin_sigma": 0.5,
+        "scale_epsilon": 0.001
+      },
+      "motion_lpips_mean": {
+        "aggregation": "mean",
+        "band_sigma": 1.645,
+        "direction": "two-sided",
+        "margin_sigma": 0.5,
+        "scale_epsilon": 0.002
+      },
+      "temporal_delta_cosine_mean": {
+        "aggregation": "mean",
+        "band_sigma": 1.645,
+        "direction": "higher",
+        "margin_sigma": 0.5,
+        "scale_epsilon": 0.01
+      }
+    },
+    "provenance_artifact": "artifacts/perceptual-metrics.v1.json",
+    "provenance_sha256": "sha256:2133979749da2bcf603b498cd68f057ca63f6def26d5febb8a9366c02eba3d06",
+    "retuning": "forbidden-after-candidate-visibility",
+    "source_protocol": "artifacts/perceptual-protocol.v2.json",
+    "source_protocol_sha256": "sha256:a180f1710daf84c56fe72a5eb403abc550f4410a0f166966e3f7275563dec559"
+  },
+  "protocol_digest": "sha256:ad0c4b7eed88bff8f6cf66cc33eb2aa1eadea61a97ddebb68eead782c59626f7",
+  "provenance": {
+    "baseline": {
+      "artifact": "artifacts/m5-cfpp-1step-cache4-baseline.v1.json",
+      "artifact_sha256": "sha256:5bdc9fdbae59842158f278163d738656d1e4c05996ccf7495cf4d074009e3ce1",
+      "complete_wall_seconds": 57.12651099999948,
+      "vae_wall_seconds": 41.31944479000049
+    },
+    "conversion": {
+      "converter_sha256": "sha256:b00c6dd903fa9e71767f258a94958fa35c23120d0c57c6810650e98e3562e6dd",
+      "manifest_sha256": "sha256:418ccf72d6b9100de1afd9fb3ef702d62ded03b509d043e84d1915ae0f458466",
+      "mlx_decoder_sha256": "sha256:b63b777d391f7af09f5a2d45e7ba0c4ee1cbe2558a391a115cfb5dbbdb43d668",
+      "parity_checker_sha256": "sha256:ae65423652dd918bd273675eb58588932f900b331efadbef197f2d03f77b8ec9",
+      "weights_sha256": "sha256:74a54bff71547f6f26f3a121ef68274b99f88d5cced38a2becef8918fe1b06da"
+    },
+    "full_vae": {
+      "artifact": "weights/Wan2.1-T2V-1.3B-MLX/vae.safetensors",
+      "weights_sha256": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414"
+    },
+    "parity": {
+      "calibration_sha256": "sha256:92e877498b70d768643300f9ae2ab5936dac3f8c2e54b6005669106212fd45ee",
+      "fixture_sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+      "golden_manifest_sha256": "sha256:2ac1a07fcb329e3fc1fb499e51552b4afdadd131a984d02638e52e9a8754a11c",
+      "golden_tensors_sha256": "sha256:08880bd8129a8f3145a9f9a071870076951def12ffd13b0917f1e4a65b5c79bc",
+      "policy_digest": "sha256:13d8f692ae5e2620d98cb5e8fa7c9268e9abea185aa4cd32d543c4aeba4a26e5",
+      "policy_sha256": "sha256:3a5b5f39cb5de2e4c94d5e7a18b66a3e7a4b568dc58c22ba2894393d5741ada0"
+    },
+    "seed_exclusions": {
+      "artifact": "artifacts/taew21-seed-exclusions.v1.json",
+      "artifact_sha256": "sha256:4510235cd2d65b8d6bdbe90c3d87e1b9deb0fbf05d979895f585317034f04e08",
+      "exclusions_digest": "sha256:5dece3d6e5052e8809b65f1187dbff4bb084a9d5b642a07bbc3cd9d611d956a1"
+    },
+    "upstream": {
+      "implementation_sha256": "sha256:28b452ad74f924d2d0922d6b3e805dfa7f504c523ced240435fefad5f6f650a7",
+      "license": "MIT",
+      "license_sha256": "sha256:532f9e394518ffddecd294a517d5b41d79d3d3866c3fb95a6cb0e8bcc02370bf",
+      "repository": "https://github.com/madebyollin/taehv",
+      "revision": "e589fddc076e77f5ba8cd6baabe4ba3260b261cd",
+      "weights_sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f"
+    }
+  },
+  "schema": "liveframe.taew21-protocol.v1",
+  "status": "frozen-before-first-mlx-taew21-output"
+}

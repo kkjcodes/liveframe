@@ -1,0 +1,46 @@
+{
+  "allowed_fix_iteration_1": {
+    "affected_configuration": "full-fp32-diagnostic-only",
+    "convolution_scope": {
+      "kernel": [3, 3],
+      "padding": 1,
+      "replacement": "explicit-padded-im2col-plus-matmul",
+      "flatten_order": "kernel-y-kernel-x-input-channel"
+    },
+    "default_decoder_mode": "native-conv2d-unchanged",
+    "one_by_one_convolutions": "native-conv2d-unchanged",
+    "operation_order_outside_convolution": "unchanged",
+    "shipping_authority": "none"
+  },
+  "amendment_digest": "sha256:802a43afe718fe303771c911333ce396186be1e4ee74239233ca33e5ee4bcc7d",
+  "bindings": {
+    "amendment_v4_1_sha256": "sha256:b3ccd5a9a35bfc784d17f8a81b34fc83c2d7be8b7d57c53e585bcc33b0b72a0a",
+    "bisection_v2_sha256": "sha256:33ec1f2851ec56e972714a76653bfbae57b29efc87b755b524bfd6f9bb933c69",
+    "execution_binding_v4_sha256": "sha256:7bed9593a7d4cc1e147e0dc020ae3664c555223242812cc7e7f801e4225b6bbf",
+    "fp32_reference_tensors_sha256": "sha256:2fa57e329437c23c0416e8094311cf5c108349aa0226fd49bd45ffe63733755c",
+    "isolation_v2_sha256": "sha256:3159ca3b9d856942511efd5a2140fe6c45b4176db7e774fb7e0cf397f00891cd",
+    "policy_v2_sha256": "sha256:92219705c499983758e06fe28b3a8a659c8ab619ddc5b1b4f400e26b0edc197e",
+    "pre_fix_decoder_sha256": "sha256:a213f6f7203d66184d853fc35a28db2b6859bf37e82956e4e2dc16b562032052",
+    "pre_fix_diagnostic_runner_sha256": "sha256:e0855968d5c8113a110e95b36bfa9683b1f433d84a822ac043a13d928ec8982d",
+    "previous_result_sha256": "sha256:c50a7ea0cae1ab63d3539821edaa292487c650c642915990852a452a02a1c161"
+  },
+  "decision_rule": {
+    "all_probes_and_final_outputs_pass": "fix-iteration-1-parity-go-enter-branch-a-precision-policy",
+    "any_failure": "fix-iteration-1-no-go-authorize-at-most-one-final-fix-iteration",
+    "limits_or_anchor_changes": "forbidden",
+    "output": "outputs/taew21-port-parity.v5.json"
+  },
+  "evidence": {
+    "first_threshold_crossing": "decoder.9.call.000",
+    "native_shared_input_output_max_error": 0.08547142148,
+    "im2col_shared_input_output_max_error": 0.00143134594,
+    "finding": "native-mlx-3x3-convolution-accumulation-order-drift"
+  },
+  "execution_binding": {
+    "artifact": "artifacts/taew21-fp32-fix1-execution-binding.v1.json",
+    "status": "must-be-frozen-and-committed-after-implementation-before-v5-execution"
+  },
+  "schema": "liveframe.taew21-protocol-amendment.v5",
+  "status": "frozen-before-fp32-im2col-fix-iteration-1-implementation",
+  "visibility_at_freeze": "v1-v4-and-bisection-visible-no-im2col-full-candidate-executed"
+}

@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import pytest
-import torch
 
-from liveframe.refresh_proof import TOKENS_PER_FRAME
-from liveframe.torch_refresh_rerope import (
+torch = pytest.importorskip("torch")
+
+from liveframe.refresh_proof import TOKENS_PER_FRAME  # noqa: E402
+from liveframe.torch_refresh_rerope import (  # noqa: E402
     build_refresh_substitution,
     capture_raw_kv_source,
     overwrite_full_attention_cache,

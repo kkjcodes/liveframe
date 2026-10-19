@@ -9,6 +9,7 @@ from liveframe.backends import (
     BackendCapabilities,
     BackendUnavailableError,
     GenerationRequest,
+    NativeFrame,
     TensorDescriptor,
     create_backend,
 )
@@ -25,15 +26,25 @@ class FakeBackend:
         return (TensorDescriptor("weight", (2, 2), "float32"),)
 
     def stream(self, request: GenerationRequest) -> Iterator[Any]:
-        yield request.pixel_frames
+        yield NativeFrame(
+            index=0,
+            payload=request.native_frames,
+            native_frame_count=request.native_frames,
+        )
 
 
 def test_generation_request_preserves_native_frame_semantics() -> None:
-    request = GenerationRequest("a painted animation cel")
+    request = GenerationRequest("a painted animation cel", seed=42)
+    positional_metadata = GenerationRequest("prompt", 81, 16.0, 832, 480, {"source": "test"})
 
-    assert request.pixel_frames == 81
-    with pytest.raises(ValueError, match="native 16 FPS"):
-        GenerationRequest("prompt", native_pixel_fps=12)
+    assert request.native_frames == 81
+    assert request.playback_seconds == pytest.approx(81 / 16)
+    assert request.seed == 42
+    assert positional_metadata.metadata == {"source": "test"}
+    with pytest.raises(ValueError, match="finite and positive"):
+        GenerationRequest("prompt", native_fps=0)
+    with pytest.raises(ValueError, match="unsigned 64-bit"):
+        GenerationRequest("prompt", seed=-1)
 
 
 def test_tensor_descriptor_rejects_invalid_shape() -> None:
@@ -47,7 +58,21 @@ def test_registry_supports_test_backend_without_optional_runtimes() -> None:
     backend = create_backend("fake-test")
 
     assert backend.capabilities.supports_serialized_noise
-    assert tuple(backend.stream(GenerationRequest("prompt"))) == (81,)
+    frames = tuple(backend.stream(GenerationRequest("prompt")))
+    assert frames[0].native_frame_count == 81
+
+
+def test_synthetic_backend_is_deterministic_and_exact() -> None:
+    backend = create_backend("synthetic")
+    request = GenerationRequest("prompt", native_frames=9, seed=7)
+
+    first = tuple(backend.stream(request))
+    second = tuple(backend.stream(request))
+
+    assert backend.capabilities.device == "cpu"
+    assert first == second
+    assert sum(frame.native_frame_count for frame in first) == 9
+    assert all(frame.metadata and frame.metadata["materialized"] for frame in first)
 
 
 def test_unknown_backend_fails_clearly() -> None:

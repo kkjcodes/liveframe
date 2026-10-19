@@ -1,0 +1,251 @@
+{
+  "bindings": {
+    "fixture_sha256": {
+      "artifact": "outputs/golden/cfpp-1step-native-21block-h100/output_latents.bin",
+      "sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512"
+    },
+    "mlx_weights_sha256": {
+      "artifact": "artifacts/taew21-mlx-weights.v4-fp32/taew2_1-mlx.safetensors",
+      "sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461"
+    },
+    "source_weights_sha256": {
+      "artifact": "/Users/kumarjha/.vscode/tmp/tmp_vscode_1/liveframe-taehv-upstream/safetensors/taew2_1.safetensors",
+      "sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f"
+    },
+    "upstream_source_sha256": {
+      "artifact": "/Users/kumarjha/.vscode/tmp/tmp_vscode_1/liveframe-taehv-upstream/taehv.py",
+      "sha256": "sha256:28b452ad74f924d2d0922d6b3e805dfa7f504c523ced240435fefad5f6f650a7"
+    }
+  },
+  "execution_dtype": "float32",
+  "im2col_matmul_stages": {
+    "conv0": {
+      "metrics": {
+        "cosine_similarity": 0.9999999951284134,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0016603469848632812,
+        "mean_absolute_error": 0.00018940432700814848
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "conv2": {
+      "metrics": {
+        "cosine_similarity": 0.9999999924927521,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.005072116851806641,
+        "mean_absolute_error": 0.0006508099592292975
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "conv4": {
+      "metrics": {
+        "cosine_similarity": 0.9999999859420876,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.022052764892578125,
+        "mean_absolute_error": 0.00044066067229082707
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "input": {
+      "metrics": {
+        "cosine_similarity": 1.0,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0,
+        "mean_absolute_error": 0.0
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "output": {
+      "metrics": {
+        "cosine_similarity": 0.9999999410263029,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0014313459396362305,
+        "mean_absolute_error": 7.236388884245242e-05
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "relu0": {
+      "metrics": {
+        "cosine_similarity": 0.999999982652527,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0016603469848632812,
+        "mean_absolute_error": 2.7077815399045073e-05
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "relu2": {
+      "metrics": {
+        "cosine_similarity": 0.9999999418903315,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0016807317733764648,
+        "mean_absolute_error": 1.3369512228424106e-05
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "residual_sum": {
+      "metrics": {
+        "cosine_similarity": 0.9999999630002452,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.022052764892578125,
+        "mean_absolute_error": 0.0004406606723298896
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    }
+  },
+  "native_conv2d_stages": {
+    "conv0": {
+      "metrics": {
+        "cosine_similarity": 0.9999979985670426,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.02897745370864868,
+        "mean_absolute_error": 0.0010284852931795516
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "conv2": {
+      "metrics": {
+        "cosine_similarity": 0.9999977976760599,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.06912422180175781,
+        "mean_absolute_error": 0.0017950510720419071
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "conv4": {
+      "metrics": {
+        "cosine_similarity": 0.9999950409921998,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.1840801239013672,
+        "mean_absolute_error": 0.0014394936939641587
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "input": {
+      "metrics": {
+        "cosine_similarity": 1.0,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.0,
+        "mean_absolute_error": 0.0
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "output": {
+      "metrics": {
+        "cosine_similarity": 0.9999969070429918,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.08547142148017883,
+        "mean_absolute_error": 0.0003601848740166347
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "relu0": {
+      "metrics": {
+        "cosine_similarity": 0.9999928575194732,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.023314177989959717,
+        "mean_absolute_error": 0.0001938497151211677
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "relu2": {
+      "metrics": {
+        "cosine_similarity": 0.9999824256372083,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.02951735258102417,
+        "mean_absolute_error": 9.555274181804869e-05
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "residual_sum": {
+      "metrics": {
+        "cosine_similarity": 0.9999951312039156,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.1840801239013672,
+        "mean_absolute_error": 0.001439493685945519
+      },
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    }
+  },
+  "schema": "liveframe.taew21-layer9-call000-shared-input-isolation.v1",
+  "scope": "layer-9-call-000-shared-pytorch-input"
+}

@@ -3,10 +3,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import torch
+import pytest
 
-from liveframe.quality_artifacts import StochasticWriter, TensorStreamWriter, write_tensor
-from liveframe.quality_capture import sha256_file
+torch = pytest.importorskip("torch")
+
+from liveframe.quality_artifacts import (  # noqa: E402
+    StochasticWriter,
+    TensorStreamWriter,
+    write_tensor,
+)
+from liveframe.quality_capture import sha256_file  # noqa: E402
 
 
 def test_tensor_writer_publishes_lossless_payload_and_metadata(tmp_path: Path) -> None:

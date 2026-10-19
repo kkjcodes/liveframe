@@ -10,9 +10,9 @@ from typing import Any
 from liveframe.backends.base import (
     BackendCapabilities,
     BackendError,
-    GenerationRequest,
     TensorDescriptor,
 )
+from liveframe.engine import GenerationRequest, NativeFrame
 
 
 class PyTorchBackend:
@@ -52,7 +52,7 @@ class PyTorchBackend:
             raise BackendError("checkpoint contains no tensor state dictionary")
         return tuple(sorted(descriptors, key=lambda item: item.name))
 
-    def stream(self, request: GenerationRequest) -> Iterator[Any]:
+    def stream(self, request: GenerationRequest) -> Iterator[NativeFrame]:
         del request
         raise BackendError("CF++ PyTorch streaming integration is not implemented yet")
         yield

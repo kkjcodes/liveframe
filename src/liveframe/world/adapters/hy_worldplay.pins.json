@@ -1,0 +1,25 @@
+{
+  "schema": "liveframe.world.adapter-pins.v1",
+  "adapter": "hy-worldplay",
+  "verified": "source-2026-10-15 (GPU run pending capacity)",
+  "verified_on": "API confirmed vs Tencent-Hunyuan/HY-WorldPlay source; weights staged on RunPod volume 8fui4m52a0 (US-IL-1); end-to-end GPU run outstanding",
+  "pins": {
+    "torch": "2.6.0",
+    "torchvision": "0.21.0",
+    "diffusers": "0.35.0",
+    "transformers": "4.56.0",
+    "numpy": "1.26.4",
+    "safetensors": "0.4.5"
+  },
+  "forbidden": {},
+  "extra_imports": [
+    "modelscope",
+    "scipy",
+    "opencv-python-headless",
+    "qwen-vl-utils",
+    "moviepy",
+    "loguru",
+    "ftfy",
+    "peft"
+  ]
+}

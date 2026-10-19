@@ -1,0 +1,288 @@
+{
+  "call_counts": {
+    "decoder.0": 21,
+    "decoder.11": 21,
+    "decoder.13": 21,
+    "decoder.17": 42,
+    "decoder.19": 42,
+    "decoder.22": 84,
+    "decoder.5": 21,
+    "decoder.7": 21
+  },
+  "fixture": {
+    "artifact": "outputs/golden/cfpp-1step-native-21block-h100/output_latents.bin",
+    "dtype": "bfloat16",
+    "input_cast": "bfloat16-to-float32",
+    "layout": "B,F,C,H,W",
+    "manifest_sha256": "sha256:d621037dc84c416dd7182991fc8e3f10a0245894cf5fd74002a517dc65862eb9",
+    "sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+    "shape": [
+      1,
+      21,
+      16,
+      60,
+      104
+    ]
+  },
+  "policy": {
+    "artifact": "artifacts/taew21-port-parity-policy.v1.json",
+    "canonical_digest": "sha256:13d8f692ae5e2620d98cb5e8fa7c9268e9abea185aa4cd32d543c4aeba4a26e5",
+    "sha256": "sha256:3a5b5f39cb5de2e4c94d5e7a18b66a3e7a4b568dc58c22ba2894393d5741ada0"
+  },
+  "runtime": {
+    "capture_tool_sha256": "sha256:5e5a1cf31a748b2ebe36aa1fcb37ea4ca152877f058b676c9d97253fa79a42fe",
+    "device": "cpu",
+    "execution_dtype": "float32",
+    "python": "3.13.13",
+    "pytorch": "2.13.0"
+  },
+  "schema": "liveframe.taew21-pytorch-golden.v1",
+  "source": {
+    "implementation_sha256": "sha256:28b452ad74f924d2d0922d6b3e805dfa7f504c523ced240435fefad5f6f650a7",
+    "repository": "https://github.com/madebyollin/taehv",
+    "revision": "e589fddc076e77f5ba8cd6baabe4ba3260b261cd",
+    "weights_sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f"
+  },
+  "status": "captured-under-frozen-port-parity-policy",
+  "tensor_artifact": {
+    "file": "taew21-pytorch-golden.safetensors",
+    "sha256": "sha256:2fa57e329437c23c0416e8094311cf5c108349aa0226fd49bd45ffe63733755c"
+  },
+  "tensors": {
+    "decoder.0.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        16,
+        60,
+        104
+      ]
+    },
+    "decoder.0.call.010": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        16,
+        60,
+        104
+      ]
+    },
+    "decoder.0.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        16,
+        60,
+        104
+      ]
+    },
+    "decoder.11.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.11.call.010": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.11.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.13.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        240,
+        416
+      ]
+    },
+    "decoder.13.call.010": {
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        240,
+        416
+      ]
+    },
+    "decoder.13.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        240,
+        416
+      ]
+    },
+    "decoder.17.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        64,
+        240,
+        416
+      ]
+    },
+    "decoder.17.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        64,
+        240,
+        416
+      ]
+    },
+    "decoder.17.call.041": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        64,
+        240,
+        416
+      ]
+    },
+    "decoder.19.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        64,
+        480,
+        832
+      ]
+    },
+    "decoder.19.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        64,
+        480,
+        832
+      ]
+    },
+    "decoder.19.call.041": {
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        64,
+        480,
+        832
+      ]
+    },
+    "decoder.22.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        3,
+        480,
+        832
+      ]
+    },
+    "decoder.22.call.041": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        3,
+        480,
+        832
+      ]
+    },
+    "decoder.22.call.083": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        3,
+        480,
+        832
+      ]
+    },
+    "decoder.5.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        256,
+        60,
+        104
+      ]
+    },
+    "decoder.5.call.010": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        256,
+        60,
+        104
+      ]
+    },
+    "decoder.5.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        256,
+        60,
+        104
+      ]
+    },
+    "decoder.7.call.000": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "decoder.7.call.010": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "decoder.7.call.020": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "float_decoder_output": {
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        81,
+        3,
+        480,
+        832
+      ]
+    },
+    "rgb_uint8": {
+      "dtype": "torch.uint8",
+      "shape": [
+        81,
+        480,
+        832,
+        3
+      ]
+    }
+  }
+}

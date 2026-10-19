@@ -1,0 +1,20 @@
+{
+  "amendment_digest": "sha256:5fe9a6ce34e021ca9d990704865b49a8123535f8941ea151124af2fc852c3345",
+  "bindings": {
+    "amendment_v6_2_sha256": "sha256:39d187a1b6b895cb539a246186ae539a31807c2d296ea45e7b5dbaad0565ea77",
+    "power_v1_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+    "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce"
+  },
+  "collection_complete_formula": "collection_complete = all primaries accounted AND policy_violations empty AND (usable >= target OR valid exhaustion); this supersedes the v6.2 wording, which omitted the exhaustion clause",
+  "defect_corrected": "the analyzer accepted --responses-frozen in a non-terminal collection state (under target with unused replacement slots remaining), allowing a premature freeze to bypass the frozen replacement procedure and reach a no-authority verdict; separately, commit fa6f2e9 extended the v6.2 collection_complete formula with an exhaustion clause AFTER v6.2 was frozen instead of amending prospectively - that extension is ratified here and its post-hoc introduction is disclosed",
+  "execution_binding": "this amendment becomes the manifest-bound amendment: the builder validates its schema and chain (v6.2 digest, protocol, power-v1) and embeds THIS file's digest in bundle-manifest.json amendment_sha256; QC and analyzer verify the supplied amendment file against the manifest exactly as before",
+  "qc_accounting_parity": "the QC status table lists absent-row withdrawn/duplicate scheduled slots as excluded (matching the analyzer's exclusion report) so blinded operational accounting and final analysis accounting are consistent",
+  "schema": "liveframe.taew21-protocol-amendment.v6.3",
+  "status": "frozen-before-any-participant-response",
+  "terminal_state_rule": "authoritative analysis (and therefore response freezing) is permitted ONLY in a terminal collection state: (a) usable judgments from included submitted sessions >= target, or (b) every replacement slot R30-R35 is accounted for (submitted session or withdrawn/duplicate entry) while usable remains below target - valid exhaustion, which authorizes freezing SOLELY for the no-authority-insufficient-usable-judgments verdict; in any other state the analyzer hard-errors and collection must continue",
+  "title": "Terminal-state enforcement for response freezing; exhaustion clarification",
+  "visibility_at_freeze": {
+    "participant_responses": "none exist",
+    "recruitment": "not started"
+  }
+}

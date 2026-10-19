@@ -55,6 +55,7 @@ def test_load_pixels_rejects_checksum_mismatch(tmp_path: Path) -> None:
 def test_pairwise_measurement_rejects_shape_mismatch(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
+    pytest.importorskip("torch")
     runner = object.__new__(PerceptualMetricRunner)
     arrays: Any = iter(
         (

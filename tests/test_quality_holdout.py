@@ -5,19 +5,20 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-import torch
 
-from liveframe.quality_artifacts import StochasticWriter
-from liveframe.quality_calibration import HOLDOUT_SCHEMA, load_protocol
-from liveframe.quality_capture import RESULT_SCHEMA, load_run_manifest, sha256_file
-from liveframe.quality_holdout import (
+torch = pytest.importorskip("torch")
+
+from liveframe.quality_artifacts import StochasticWriter  # noqa: E402
+from liveframe.quality_calibration import HOLDOUT_SCHEMA, load_protocol  # noqa: E402
+from liveframe.quality_capture import RESULT_SCHEMA, load_run_manifest, sha256_file  # noqa: E402
+from liveframe.quality_holdout import (  # noqa: E402
     IDENTITY_METRICS,
     PAIRWISE_REPORT_SCHEMA,
     _payloads_equal,
     build_holdout_input,
     pair_holdout_results,
 )
-from liveframe.quality_stochastic import STOCHASTIC_CONTRACT
+from liveframe.quality_stochastic import STOCHASTIC_CONTRACT  # noqa: E402
 
 ROOT = Path(__file__).parents[1]
 

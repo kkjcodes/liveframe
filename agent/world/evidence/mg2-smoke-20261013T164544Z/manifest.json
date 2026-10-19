@@ -1,0 +1,49 @@
+{
+  "capabilities": {
+    "action_magnitudes": {
+      "keyboard_one_hot": 1.0,
+      "mouse_pitch_yaw_value": 0.1
+    },
+    "actions": [
+      "0",
+      "A",
+      "D",
+      "L",
+      "N",
+      "R",
+      "S",
+      "U",
+      "W"
+    ],
+    "chunk_frames": 12,
+    "chunk_frames_first": 9,
+    "interaction_mode": "interactive",
+    "license_notice": "MIT (SkyworkAI/Matrix-Game)",
+    "min_vram_gb": 24.0,
+    "name": "matrix-game-2",
+    "native_fps": 12.0,
+    "resolution": [
+      352,
+      640
+    ],
+    "supports_seed": true
+  },
+  "cold_start_seconds": 837.7246718946844,
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090, 49140 MiB, 580.126.20, 8.9",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-107-generic-x86_64-with-glibc2.39",
+    "python": "3.10.18",
+    "timestamp_utc": "2026-10-13T16:59:59.153782+00:00"
+  },
+  "extra": {
+    "backend": "bridged",
+    "worker_python": "3.10.18"
+  },
+  "model": "matrix-game-2",
+  "schema": "liveframe.world.manifest.v1",
+  "script_digest": "sha256:65ceacbb55dd59bab09c21aa73100dfc865296ed99916846a54904f12b7d1aa2",
+  "script_total_frames": 129,
+  "seed": 0,
+  "suite": "smoke"
+}

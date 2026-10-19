@@ -1,0 +1,61 @@
+{
+  "amendment_digest": "sha256:47a543eb552e2f2b07061f672a2447291e5bd489b976915c380f99e7b6811e5d",
+  "bindings": {
+    "campaign_summary_sha256": "sha256:3253859ebaaac3aa3e6855512164a88bf5a1c9542f0f025a46e9d2e2391109dc",
+    "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+    "review_document": "agent/liveframe_progress_review_2026-08-20.md",
+    "study_power_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+    "v1_evaluator_sha256": "sha256:0136049e823ea04c316c033b2921cce4c09a7077334fd718048aaa6cfdfd8ce9",
+    "v1_metric_verdict_sha256": "sha256:967bee1781bbabe14e2949884fc56de94ded37418aa4a2a9783c9318ab077a7e"
+  },
+  "decision_rule": "v2-screen-PASS -> human study -> study-UCB<=0.55 => tier GO (integrate + publish); study-UCB>0.55 => tier quality NO-GO (publish negative); v2-screen-FAIL => stop now and publish speed-GO/quality-screen-STOP",
+  "demotions": {
+    "v1_intrinsic_bands": "diagnostic-only for the tier decision",
+    "v1_lpips_and_clip_tripwires": "retained as diagnostics; reported alongside v2",
+    "v1_temporal_clip_tripwire": "diagnostic-only for the tier decision"
+  },
+  "diagnosis": {
+    "band_narrowness": "intrinsic bands were calibrated from n=4 full-decoder videos per cell (MAD scale near epsilon floors)",
+    "temporal_clip_degeneracy": "temporal-CLIP distance is 1-cos between consecutive-frame CLIP feature deltas; for low-motion content these deltas are near-zero and direction is noise-dominated, so the 0.35 bound is not loose for this feature; violations appeared in ALL strata including near-static ones",
+    "texture_amplification": "the tiny decoder's high-frequency texture differences perturb every frame-difference feature while LPIPS/CLIP identity remain clean"
+  },
+  "honesty_disclosure": "Because v1 metric values are visible, NO redesigned metric rule chosen now can certify perceptual quality: any threshold is chosen with knowledge of the candidate's scores. The v2 screen therefore carries ROUTING authority only (whether the human study proceeds). The sole quality-claim authority for this tier is the pre-registered human study, whose data does not yet exist and whose analysis is frozen before any response. The v1 FAIL verdict remains permanently on record and citable.",
+  "human_study": {
+    "analysis_tool": "tools/analyze_taew21_study_responses.py (frozen before any response)",
+    "authority": "sole quality-claim authority for this tier",
+    "bundle_gate_amendment": "tools/build_taew21_study_bundle.py accepts a v2 routing PASS (liveframe.taew21-metric-screen.v2 with passed=true) in place of a v1 verdict PASS",
+    "design_source": "protocol human_study section + artifacts/taew21-study-power.v1.json (30 participants x 18 study trials + 2 attention + 2 repeat, 486 usable-judgment target)",
+    "primary_rule": "one-sided 95% two-way cluster-robust upper confidence bound on discrimination accuracy <= 0.55"
+  },
+  "null_control": {
+    "design": "for each of the 32 campaign jobs, decode the job's full.mp4 (H.264 videotoolbox 8M, the exact medium study participants watch) back to raw uint8 frames and measure the three frozen pairwise instruments between pixels.full.bin and its own round-trip",
+    "output": "artifacts/taew21-null-control.v1.json",
+    "purpose": "a manipulation that is perceptually null AND identically present in both arms of the study; if it violates the v1 temporal bound, the v1 instrument is invalid by demonstration, independent of any tiny-decoder data",
+    "tool": "tools/diagnose_taew21_null_control.py"
+  },
+  "schema": "liveframe.taew21-protocol-amendment.v6",
+  "status": "frozen-before-null-control-or-v2-screen-visibility",
+  "title": "Metric-screen addendum v2: instrument diagnosis, null control, scale-referenced routing screen, human study as sole quality authority",
+  "v2_screen": {
+    "authority": "routing-only-to-human-study-not-a-quality-claim",
+    "ceiling": "cross-content value: full video of job j vs full video of the next prompt in the same stratum and horizon (deterministic rotation over the 4 prompts per stratum), truncated to the shorter frame count when horizons pair unequal lengths (they do not: partner shares the horizon)",
+    "floor": "same-job null-control value (full vs its own h264 round-trip)",
+    "instruments": [
+      "pairwise_lpips_mean",
+      "pairwise_clip_distance_mean",
+      "pairwise_temporal_clip_distance_mean"
+    ],
+    "on_fail": "tier remains stopped; publish speed-GO/quality-screen-STOP as-is",
+    "on_pass": "render the blinded study bundle and launch the pre-registered human study",
+    "output": "artifacts/taew21-metric-screen.v2.json",
+    "rule": "normalized position (d_tiny_full - floor_j) / (ceiling_j - floor_j) <= 0.5 for all three instruments on all 32 pairs; floor clipped below ceiling; a pair passes when the tiny decode is closer to the perceptually-null manipulation than to genuinely different content",
+    "rule_rationale": "0.5 is the midpoint principle (closer to null than to different-content), chosen as a structural constant rather than tuned to observed values; observed v1 raw values were visible when it was chosen, which is why this screen routes rather than claims",
+    "tool": "tools/screen_taew21_metrics_v2.py"
+  },
+  "visibility_at_freeze": {
+    "human_responses": "none exist",
+    "null_control_values": "not computed",
+    "v1_metric_values": "fully visible (tripwires 0.28-0.62 temporal-CLIP, LPIPS 0.016-0.116, CLIP 0.006-0.035; intrinsic band failures in all cells)",
+    "v2_normalized_positions": "not computed"
+  }
+}

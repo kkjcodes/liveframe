@@ -1,0 +1,263 @@
+{
+  "chunks": [
+    {
+      "maximum": 255.0,
+      "minimum": 2.0,
+      "shape": [
+        1,
+        480,
+        832,
+        3
+      ],
+      "start_index": 0
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 39.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 1
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 51.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 5
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 34.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 9
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 22.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 13
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 5.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 17
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 21
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 25
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 29
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 33
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 37
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 41
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 45
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 49
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 53
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 57
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 61
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 65
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 69
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 73
+    },
+    {
+      "maximum": 255.0,
+      "minimum": 0.0,
+      "shape": [
+        4,
+        480,
+        832,
+        3
+      ],
+      "start_index": 77
+    }
+  ],
+  "configuration": "float32-explicit-im2col",
+  "emitted_frames": 81,
+  "end_swap": {
+    "free_mib": 0.0,
+    "total_mib": 0.0,
+    "used_mib": 0.0
+  },
+  "fixture_sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+  "parity_result_sha256": "sha256:8c7819711f76a640931974ff5a2497d31c27ec3b3862c6e546eaa748b4d38647",
+  "passed": true,
+  "pixel_sha256": "sha256:338554214102a281597416b62df4b84e2107913100503b7901e9bda0e4e163b0",
+  "policy_digest": "sha256:30bb35c09671fe0575953d818a9d23d6ead0ddee8cfdc7b1ee0138f2e43116b2",
+  "policy_sha256": "sha256:8825a0d93d942aeb814bb3ba34f62d0857dd2b405d95b92c504c851cf3daca0e",
+  "request": {
+    "height": 480,
+    "latent_frames": 21,
+    "native_frames": 81,
+    "width": 832
+  },
+  "schema": "liveframe.taew21-fp32-im2col-smoke.v1",
+  "start_swap": {
+    "free_mib": 0.0,
+    "total_mib": 0.0,
+    "used_mib": 0.0
+  },
+  "swap_delta_mib": 0.0,
+  "timing_authority": "none-smoke-only",
+  "weights_sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461"
+}

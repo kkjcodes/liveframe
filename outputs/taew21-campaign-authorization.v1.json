@@ -1,0 +1,23 @@
+{
+  "exclusions_digest": "sha256:5dece3d6e5052e8809b65f1187dbff4bb084a9d5b642a07bbc3cd9d611d956a1",
+  "exclusions_sha256": "sha256:4510235cd2d65b8d6bdbe90c3d87e1b9deb0fbf05d979895f585317034f04e08",
+  "formal_result_sha256": "sha256:af26dee0ddf92e5c7ec99912ed26f3d148431187ab038242aed265ed298e5ce6",
+  "job_count": 32,
+  "model_assets": {
+    "model.safetensors": "sha256:1f15d166a8a60bed70c2a8ab2923f40bd2b6b53ed2e0be87905bf45d0666d971",
+    "t5_encoder.safetensors": "sha256:e86ee4199903e00a88dcd43583a43a6eb898cef600e38670f222d7e37d163787",
+    "vae.safetensors": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414"
+  },
+  "model_dir": "weights/Rolling-Forcing-longvideo-MLX",
+  "parity_result_sha256": "sha256:8c7819711f76a640931974ff5a2497d31c27ec3b3862c6e546eaa748b4d38647",
+  "passed": true,
+  "policy_digest": "sha256:30bb35c09671fe0575953d818a9d23d6ead0ddee8cfdc7b1ee0138f2e43116b2",
+  "policy_sha256": "sha256:8825a0d93d942aeb814bb3ba34f62d0857dd2b405d95b92c504c851cf3daca0e",
+  "protocol_digest": "sha256:ad0c4b7eed88bff8f6cf66cc33eb2aa1eadea61a97ddebb68eead782c59626f7",
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "schema": "liveframe.taew21-campaign-authorization.v1",
+  "screen_result_sha256": "sha256:395bf1a16751ee9fce56dd4890c7d8f735b3d1be6b07bbab0be022d51f89861e",
+  "smoke_result_sha256": "sha256:a0f9a6c8d311fcff91bf3c289868afae8b9bea64fe3461e3644e1c2b1469df35",
+  "tiny_weights_sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461",
+  "validator_sha256": "sha256:d3609824503482191b7a7a66c090b1365192bac6b34441ffcd9a784d4e5c24e1"
+}

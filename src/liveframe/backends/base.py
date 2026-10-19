@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterator, Mapping
+from collections.abc import Iterator
 from dataclasses import dataclass
-from typing import Any, Protocol, runtime_checkable
+from typing import Protocol, runtime_checkable
+
+from liveframe.engine import GenerationRequest, NativeFrame
 
 
 class BackendError(RuntimeError):
@@ -40,33 +42,6 @@ class TensorDescriptor:
             raise ValueError("tensor dtype must not be empty")
 
 
-@dataclass(frozen=True, slots=True)
-class GenerationRequest:
-    prompt: str
-    latent_frames: int = 21
-    width: int = 832
-    height: int = 480
-    native_pixel_fps: int = 16
-    student_steps: int = 2
-    metadata: Mapping[str, Any] | None = None
-
-    def __post_init__(self) -> None:
-        if not self.prompt.strip():
-            raise ValueError("prompt must not be empty")
-        if self.latent_frames < 1:
-            raise ValueError("latent_frames must be positive")
-        if self.width < 1 or self.height < 1:
-            raise ValueError("resolution must be positive")
-        if self.native_pixel_fps != 16:
-            raise ValueError("released gates.v1 checkpoint semantics require native 16 FPS")
-        if self.student_steps not in {1, 2}:
-            raise ValueError("frame-wise CF++ supports a 1-step or 2-step student mode")
-
-    @property
-    def pixel_frames(self) -> int:
-        return 4 * (self.latent_frames - 1) + 1
-
-
 @runtime_checkable
 class Backend(Protocol):
     @property
@@ -74,4 +49,4 @@ class Backend(Protocol):
 
     def tensor_inventory(self) -> tuple[TensorDescriptor, ...]: ...
 
-    def stream(self, request: GenerationRequest) -> Iterator[Any]: ...
+    def stream(self, request: GenerationRequest) -> Iterator[NativeFrame]: ...

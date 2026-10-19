@@ -1,0 +1,353 @@
+{
+  "amendment_sha256": "sha256:ab9de1c1b137bdad03b992a495e913e15e3f8519b4086ac6a5d34fb0c991712f",
+  "attention_key_sha256": "sha256:754a9124681f1c82ccf78b2bf91539530e5e81f05759078118a5ed36d5380f1c",
+  "blinding": "decoder labels appear ONLY in assignments.sealed.json, pre-registered closed until the response freeze; participant materials and analysis labels use item/side identifiers only; every bundle video is a distinct encode (verified unique digests) so hash-matching cannot recover the answer key",
+  "builder_sha256": "sha256:3e0380a0cbb8d8cfe91f65ea3d56244aca3a8c6ad3c2a020789389193ebe884f",
+  "candidate_encoding": "both A/B candidates are uniform second-generation h264_videotoolbox 8M transcodes (identical command for both sides); the extra generation is symmetric across arms",
+  "distribution_rule": "participants receive item directories and their own trial order ONLY; manifests, schedules, the attention key, and sealed files are never participant-accessible",
+  "items": [
+    {
+      "a_sha256": "sha256:5538113756c0a7ba09555d4467344ca473d789ab80787c57e6e9f85591952f98",
+      "b_sha256": "sha256:a818265d7dab47fc726acc9b56bd2ebdc7fef250daca14d61ffe210531b99152",
+      "horizon_seconds": 15,
+      "item_id": "item-00",
+      "job_id": "taew21-limited_hold_01-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:fabacdc61aae75561b4ede210fe81c98a0eb24dd8c316a02cf71c85a25df9036",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:f24ad4621a80e3ab9486b5fdff24cc5093b4dda9c504c6680c6c1d2cc126b0a7",
+      "b_sha256": "sha256:a685066d0fab7b552ed670bc40ea7c50a8889d388cdfda7c1ec0dfa57751061c",
+      "horizon_seconds": 60,
+      "item_id": "item-01",
+      "job_id": "taew21-limited_hold_01-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:a94c0059b1e0b1f212998841a73a85fcc90e19b5c93405a85a00d96c1390ef66",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:a7a71239d36a6a9c0f4d8e8994debe4a2f0fb5cf66759698054e8b73fffeb372",
+      "b_sha256": "sha256:7cef71e25c0e6f9e91082aefa2418d2fecb21fe4e4341e5978350f0c8b611723",
+      "horizon_seconds": 15,
+      "item_id": "item-02",
+      "job_id": "taew21-limited_hold_02-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:83e725d25b1c083d7189a66ed34ef09a675388d5f63b5ba96895db82e2faba92",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:c10d0ed579dcf24c6f1c637e466196a989bf78e91ffc6151ac6f45d8af99f755",
+      "b_sha256": "sha256:f56b4029afd83c2729396fcffe4323990a306d5a144e424527810279748e44c5",
+      "horizon_seconds": 60,
+      "item_id": "item-03",
+      "job_id": "taew21-limited_hold_02-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:eba09147f40bba5f22ed52cecce430e082e622592cacfb77a0dee9516336c2cd",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:3b568f0d683e4f20ba6ede74d34b8076b9681654416248091c7a79a163f6dd72",
+      "b_sha256": "sha256:0fea75e53dce6e295b3fe73b7b46aa21ac1639a55d4a8904508c21ec34611e4a",
+      "horizon_seconds": 15,
+      "item_id": "item-04",
+      "job_id": "taew21-limited_hold_03-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:160893bc4cb8247eb369edbf97b8373bd6b1b49fae53e4bcb5bcce272a9151d2",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:286e0775f9b8a4baed9269eba768796541dd5cddcdc258fa1153d683a82dd297",
+      "b_sha256": "sha256:cf8610c4d543073b4be9c0d999da80b6ca4e6f642ce7ec4bbb697f2be657cac1",
+      "horizon_seconds": 60,
+      "item_id": "item-05",
+      "job_id": "taew21-limited_hold_03-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:18412efb240b27d0c22d8c50a1e56fb5a41aec1837b34a8ffdf448586e21a4a4",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:4d61131512c44a3d50ee0e91a32221128f7db55434cb120e154448665062bba0",
+      "b_sha256": "sha256:4769eadac641bfbe6f7a9d8976ded9cb4dc54f843e3a1856cb105702cd439772",
+      "horizon_seconds": 15,
+      "item_id": "item-06",
+      "job_id": "taew21-limited_hold_04-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:e2cea2c791483d779aa0adb7f5d64134d1836408cd8ccd59c28ba6cd2acd44b5",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:c84a8dae82bf4bf78d94149de01f0d70bce3bc91ea3af2a32568a929a6e98a65",
+      "b_sha256": "sha256:e8fdacd2333a022f57257417f15bd579cbea5adcb701a87225d8eef6708326b5",
+      "horizon_seconds": 60,
+      "item_id": "item-07",
+      "job_id": "taew21-limited_hold_04-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:7f4672837e556f76e568dd5458635b86ae0d9695b28b26f2261ae7ec8fa7c4de",
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "a_sha256": "sha256:05103cf31f7fcc95a9d840dd1fe494df3789fa6597dfb0af932152dd05fdfced",
+      "b_sha256": "sha256:8bb026af110c44b53ea0167a855ce588a4e6bb83f260d116144c0f85fdf4b9b7",
+      "horizon_seconds": 15,
+      "item_id": "item-08",
+      "job_id": "taew21-dialogue_01-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:15e78a5542af846cf1022e37c9c710038f14123f6dafbd284f3b3444bfc42c16",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:51b315f66759f04f0ea164c36cea681e979b5bebe753efa1f9e7ef5c585e4d90",
+      "b_sha256": "sha256:51c488a73dd2bf4d3b1fc4ea10dd0e7063dd070b269a0fd4de259aedf868f694",
+      "horizon_seconds": 60,
+      "item_id": "item-09",
+      "job_id": "taew21-dialogue_01-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:6427cc0dee87a0e4215cea02477ab2c47a978a7877e4a5716d0ff2dcd26161d4",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:9e0574c3904acf8e1286ee5aa53651031956b8ef7ce9e3eb618f2aeff28878a8",
+      "b_sha256": "sha256:4bce0459f1e682af1071cdf42dcabe73716689feb02f6c421b8b3bf36baf4145",
+      "horizon_seconds": 15,
+      "item_id": "item-10",
+      "job_id": "taew21-dialogue_02-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:efc4dc2af5460c6efdab0ad9ea752db4f45b66015904ca364d6c99ae66ba8e10",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:57c32f9853dfd954b21771852ef07be30d97ddd11165c5cc43897f849f7bf1b6",
+      "b_sha256": "sha256:6b8ebe54077b455af8953b1e1c8adeefbff7cfdbda3b7c34132dbeba0f613711",
+      "horizon_seconds": 60,
+      "item_id": "item-11",
+      "job_id": "taew21-dialogue_02-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:b7b0092bb5a7c82c15cc7802c37359c6887a6280c127cac779bc9e31fed2294a",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:26ccb2660ed5ef837ceaa6bef48a0dd9902d0dae5515258cd170819c1d6b9df9",
+      "b_sha256": "sha256:c6f45a28466b0b2f1ae3f2d50bd2ce1865fffd68d4e9eb2b2531024d82bf911e",
+      "horizon_seconds": 15,
+      "item_id": "item-12",
+      "job_id": "taew21-dialogue_03-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:28c1267b03840083bbcfd3ea5019c4e3c2d7a8212b03d8c8ab931cd76bcf10b7",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:a2ee9f48ef7d3ce05b15ef2e85694f726e82962d112d3fcad0cb21ca96085da6",
+      "b_sha256": "sha256:8ff8fdb4ae3a822ed04a5fbbdeb2c73c11100f74a9f08d35bb6d3d89994db417",
+      "horizon_seconds": 60,
+      "item_id": "item-13",
+      "job_id": "taew21-dialogue_03-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:22f4671e834f7645ab47100ac812b70503a5696e64f50e50912ee92c5967e358",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:b07f39403c1b38e3b0f7db8028becc4eb9016acff3aca4512df3d7b0604bae53",
+      "b_sha256": "sha256:6a821d82079a75c5e82566a2deb22811f3001e2bb437d257153b6c69a3654a33",
+      "horizon_seconds": 15,
+      "item_id": "item-14",
+      "job_id": "taew21-dialogue_04-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:77802f5b586d63e7af8c9c92b9e141be9ea536acffc30ee99dde19af879bb224",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:fa52f001bb2fe1f4e0df8316ec6f88b266140470e0ff47defea3273eaa0a0926",
+      "b_sha256": "sha256:907b3fa95cebd891bec486c0672aa9d1928c70c65e903ebc3eb22cd3644ae9d2",
+      "horizon_seconds": 60,
+      "item_id": "item-15",
+      "job_id": "taew21-dialogue_04-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:a7f6105dc06e24a5b3444da7ff20e66b9b75348ab903ad56586087eb7400e9b2",
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "a_sha256": "sha256:a268a019bab33c19d6972e78c2fdcf6859815b6cec55c1c51279d430fcd4c473",
+      "b_sha256": "sha256:9f20452dfde8c9496cb3e60d1c58d1c049b65f501cb2677ed9f3f20cd44211e1",
+      "horizon_seconds": 15,
+      "item_id": "item-16",
+      "job_id": "taew21-cyclic_01-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:633ec5bd22809e661d2d79122bce1ad5289382a45e0c0d76e4a264c5e927d769",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:698115291196a23e1823900f398d90f18886ff88460fa223fb4f46e2b9de4cfb",
+      "b_sha256": "sha256:bb7939173465a31ffd907424e4f619e428471908fe50f2ad00c8203def1797db",
+      "horizon_seconds": 60,
+      "item_id": "item-17",
+      "job_id": "taew21-cyclic_01-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:582ff9ec4387567582583624b9e12d4317fc19a99dd278c6aad9ea39b0d3399e",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:3537bd19444b2f4fb4a1921b024fd14770653aa2faac2dcd3df78373d5efd280",
+      "b_sha256": "sha256:2160c473a4af95c81a3142510b517230eb47d757c88eaa163ec732d4acea8acd",
+      "horizon_seconds": 15,
+      "item_id": "item-18",
+      "job_id": "taew21-cyclic_02-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:f116ca2003fea58fe758449b01132303c13e79725c61ca9d8cb6affd86e90ecb",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:5fbf448f33414d2d42b108a44a95dd6050a970a7ea72d1a0504bc5106b670786",
+      "b_sha256": "sha256:06deddb8444ca51e7a68c1dc2534622721a2eebd4c49e1d03ccc7988c00344c7",
+      "horizon_seconds": 60,
+      "item_id": "item-19",
+      "job_id": "taew21-cyclic_02-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:48d922eed896c2abf7a35cf6b21def2a8e53d3e2e63798b9db9ec471116d96ef",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:f712d8ee930779ea651e83b47b7267867782068bd42de94b03d73035aca6ce0f",
+      "b_sha256": "sha256:6197bab402202898c55f313591dacad44b19982075e6773f6317e6c808535e4b",
+      "horizon_seconds": 15,
+      "item_id": "item-20",
+      "job_id": "taew21-cyclic_03-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:8952aa24c9e84f1e1d9c7855065b66eddb7e9b2a202f73346eb07889e58bf100",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:44f3abe48fc75ab746f703d7979c0391dec2ccf8c9de4756eadd20a00e839aae",
+      "b_sha256": "sha256:c6111d9efabdbfa5c79447c0a9994b2f03af45e7fc591ea3fa75978c35d1f011",
+      "horizon_seconds": 60,
+      "item_id": "item-21",
+      "job_id": "taew21-cyclic_03-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:0369923c079d7dadbaf6cc2773eaa94d76b6abf80f0150cc7fde0add50a9741e",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:4e0bf0ac37f4637ecacd688277d70e3fbe8be939e8862ca355fb2bd2c8a201c9",
+      "b_sha256": "sha256:0bc2635993188dc55aac4d4519c7fad6fd5d66a8d1be773c2b573aea4b75a7cc",
+      "horizon_seconds": 15,
+      "item_id": "item-22",
+      "job_id": "taew21-cyclic_04-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:a9b4c03f9d1d6ddb1b7211bdd5df8273c4ec47085edbdb9e7812480e827dfd86",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:0a91adc578bbb71361c5029794a3104d40883bb52a3c54c1115e9bc82980fca6",
+      "b_sha256": "sha256:15ae94cf6dec9ef7859454b8dccf18dcd92b1a6b83e8a62700b4c8868774c448",
+      "horizon_seconds": 60,
+      "item_id": "item-23",
+      "job_id": "taew21-cyclic_04-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:72b1bfba5690718fa6db1a40e635978551d628fa1f7bfdc525499b9d9312ab81",
+      "stratum": "cyclic-motion"
+    },
+    {
+      "a_sha256": "sha256:182687e78ae1f832a65acf2c1fc07a44979c47e8db6a000ea0be3742148c11fc",
+      "b_sha256": "sha256:27fa760b98a2091363fe7e8283645508f3dccaadd5247bdbf97684732d85d8b3",
+      "horizon_seconds": 15,
+      "item_id": "item-24",
+      "job_id": "taew21-dense_motion_01-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:df0401b56b3253ea5d5893fd7d525d6467f15d09746c1b894113d2ab539db5f5",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:0882b6fcceba58056c0ed1a1a4fe2b92ce0aa121928f08f420ed8eb35f63534e",
+      "b_sha256": "sha256:04e11de6ed5e4f680cdce0ee8a24f7b777054cbfdf1b6c42111e7360b9c8f4ce",
+      "horizon_seconds": 60,
+      "item_id": "item-25",
+      "job_id": "taew21-dense_motion_01-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:7a03bdce0e462a10db2591fae6185b338935fb207ac0965601a865c137bd6821",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:92250aa6a5fa71be506696200519683a823bfd321d87da6d23f2c0da43ab42e4",
+      "b_sha256": "sha256:c81d3920aec85474fbd617571a0823be612b3090003d163dd7bfa54a4fc157df",
+      "horizon_seconds": 15,
+      "item_id": "item-26",
+      "job_id": "taew21-dense_motion_02-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:938765a039e4390921ec23dcd43a5c46f46693c4d34ae80fafe1cfab24884d18",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:1f392a07c96e1ae5ee382aae88e03dce50e7add52177b8dfda0909773d25c3c2",
+      "b_sha256": "sha256:fc2ee86751e9029783c971a571355eb8e2802ee2fb391549732964271f00c3bf",
+      "horizon_seconds": 60,
+      "item_id": "item-27",
+      "job_id": "taew21-dense_motion_02-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:bc3ccb05933dc97d8f938b4ff886ca7b9667c4c074cd58b7c200f7e083669abc",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:48a5ef808b962beacfd28b7201c2c14aa2157fe86ec1cadca65d172ba3ea3b99",
+      "b_sha256": "sha256:cf619bfa52c18bae1a2d6784b749b60aeb5803abb19d67fbbdabdbb2d335e56f",
+      "horizon_seconds": 15,
+      "item_id": "item-28",
+      "job_id": "taew21-dense_motion_03-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:2f084bf78fbee3d36c5424bfc36f59b37882f5b16a45b2a4a6bc5efa72941daa",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:d34f00728efbdfc7ad7654096b181c197819b6f9a3578f0bae03d2ec86638c5c",
+      "b_sha256": "sha256:91daf40e39f53dbb0f611865483d4232430f4a49c4a862139f365b78764e5cd0",
+      "horizon_seconds": 60,
+      "item_id": "item-29",
+      "job_id": "taew21-dense_motion_03-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:a70bc61fced3bade44d04a0c0bc88e91ce7d2951a81d19db8cc883dbc70ada3d",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:6715362e032bf22a476f5afe11b6414a52932e97c949f65a4136c0b7dc234147",
+      "b_sha256": "sha256:b56129ebe23c273b4fc9466cf38d43692e99d2068724196a3f48815efee503d5",
+      "horizon_seconds": 15,
+      "item_id": "item-30",
+      "job_id": "taew21-dense_motion_04-15s",
+      "kind": "study",
+      "reference_sha256": "sha256:22863f534d6843432568a73dec058ab413362ab711a629b6df5b872d437af1dd",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:4963c1152c84397811e82b5425a9f59b78eba3cef510bad9cd9825600b042994",
+      "b_sha256": "sha256:f7a56894d1a07ed8844e9946e13f4453c3a29248f54334e0439faa9bd9e89019",
+      "horizon_seconds": 60,
+      "item_id": "item-31",
+      "job_id": "taew21-dense_motion_04-60s",
+      "kind": "study",
+      "reference_sha256": "sha256:eddbb1988f1aa12039e86d9cb01ea69dbff332aacb2513dad638179f50c93c3f",
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "a_sha256": "sha256:31f259ddfa2d53da04e5267fd2a4532b67a74ff8997664e557f20020f5839743",
+      "b_sha256": "sha256:f90fcbcd86668c75235cc1cb8c42c39272e611907525093184c571626e473248",
+      "item_id": "attention-00",
+      "kind": "attention",
+      "reference_sha256": "sha256:d7e93ca28327331d3afa56da718031d606cb81f5e2aa1dd3e61927954b889763",
+      "source_job_id": "taew21-dialogue_01-60s"
+    },
+    {
+      "a_sha256": "sha256:39fa39e7fb9857915d52b44c0db0417558265873d10c29b40ff8b964044dde94",
+      "b_sha256": "sha256:4e41bb799a31c2b1f2ad9dbcc0e974f6ac784a85cbe48554b6d6510a4c8a826d",
+      "item_id": "attention-01",
+      "kind": "attention",
+      "reference_sha256": "sha256:902393b72d164d467da00eecd9b5facf2e74724a860e19cc838bf156f45be85c",
+      "source_job_id": "taew21-cyclic_04-15s"
+    }
+  ],
+  "metric_verdict_sha256": "sha256:0a0e46c2c0b69e5682a01d61177bb17d2aa68990c2e51b72a8229574ad1d848e",
+  "power_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "schedules_sha256": "sha256:a6c66f4bef73ff36dc0c9668b0f15a551018056ce1a2c224019a24591039eb67",
+  "schema": "liveframe.taew21-study-bundle.v1",
+  "sealed_assignments_sha256": "sha256:54174f0641fc66fcb4a4041862f56ae67cece2927eb581cfe93757cd8ca887ae",
+  "seed": 20260819
+}

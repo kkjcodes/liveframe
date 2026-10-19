@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "liveframe"
-version = "0.1.0"
-description = "Evidence-first measurement of real-time autoregressive diffusion video. Verifier CLI for LiveFrame claim ledgers and digest-bound artifacts."
+version = "0.2.0"
+description = "Runtime-neutral streaming measurement APIs and evidence verification for autoregressive diffusion video."
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]

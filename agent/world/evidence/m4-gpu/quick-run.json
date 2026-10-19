@@ -1,0 +1,29 @@
+{
+  "cases": 8,
+  "failures": 0,
+  "headline": {
+    "cases_failed": 0,
+    "cases_ok": 8,
+    "cases_total": 8,
+    "control_latency_p50_median": 0.9459065487608314,
+    "control_latency_p95_max": 0.9678271114826202,
+    "cost_per_generated_minute_usd_median": 0.015777641603446392,
+    "generated_fps_median": 11.28180525359942,
+    "gpu_price_usd_per_hour": 0.89,
+    "interaction_mode": "interactive",
+    "metric_throughput_fps_median": 33.012968580951835,
+    "model": "matrix-game-2",
+    "realtime_pass": null,
+    "resolution": [
+      352,
+      640
+    ],
+    "suite": "quick",
+    "sustained_fps_min": 10.5,
+    "time_to_first_frame_p50": 0.8674820652231574
+  },
+  "run_dir": "runs/matrix-game-2/quick/20261014T141505Z",
+  "skipped": 0,
+  "suite": "quick",
+  "time_to_first_report_seconds": 502.7549669723958
+}

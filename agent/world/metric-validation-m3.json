@@ -1,0 +1,533 @@
+{
+  "calibration_sweep": {
+    "0@0.5": {
+      "divergence": -5.580576994294762e-06,
+      "mean_dx": -3.031779224826047e-05,
+      "median_flow": 1.4959550608457529e-06,
+      "row_variation_ratio": 57.77647111920859
+    },
+    "0@1.0": {
+      "divergence": -5.580576994294762e-06,
+      "mean_dx": -3.031779224826047e-05,
+      "median_flow": 1.4959550608457529e-06,
+      "row_variation_ratio": 57.77647111920859
+    },
+    "0@2.0": {
+      "divergence": -5.580576994294762e-06,
+      "mean_dx": -3.031779224826047e-05,
+      "median_flow": 1.4959550608457529e-06,
+      "row_variation_ratio": 57.77647111920859
+    },
+    "A@0.5": {
+      "divergence": -0.0014191414227988277,
+      "mean_dx": 1.7712173045055042,
+      "median_flow": 1.4020458019584592,
+      "row_variation_ratio": 5.596892379645176
+    },
+    "A@1.0": {
+      "divergence": -0.0026963235621130927,
+      "mean_dx": 3.5879295734440206,
+      "median_flow": 2.812940179496457,
+      "row_variation_ratio": 5.454185760050927
+    },
+    "A@2.0": {
+      "divergence": -0.005060339210026925,
+      "mean_dx": 7.160367361369376,
+      "median_flow": 5.674162794740122,
+      "row_variation_ratio": 5.281863042465743
+    },
+    "D@0.5": {
+      "divergence": -0.0002597637943554563,
+      "mean_dx": -1.7674058742099932,
+      "median_flow": 1.4002241543231575,
+      "row_variation_ratio": 5.5373728786202125
+    },
+    "D@1.0": {
+      "divergence": 0.00010515036489534531,
+      "mean_dx": -3.5339847352085476,
+      "median_flow": 2.821127949431424,
+      "row_variation_ratio": 5.436163205934597
+    },
+    "D@2.0": {
+      "divergence": 0.0007286994749327875,
+      "mean_dx": -7.085269509096862,
+      "median_flow": 5.703170742276662,
+      "row_variation_ratio": 5.233769196605523
+    },
+    "L@0.5": {
+      "divergence": 0.01076690818931352,
+      "mean_dx": 3.297505849808021,
+      "median_flow": 2.744504634422189,
+      "row_variation_ratio": 1.1338460071456358
+    },
+    "L@1.0": {
+      "divergence": 0.014393887394590459,
+      "mean_dx": 7.431074004944692,
+      "median_flow": 7.097254358014958,
+      "row_variation_ratio": 0.2319278425261756
+    },
+    "L@2.0": {
+      "divergence": 0.014317010625873433,
+      "mean_dx": 13.539454772680857,
+      "median_flow": 12.676564835231282,
+      "row_variation_ratio": 0.2670488329128099
+    },
+    "R@0.5": {
+      "divergence": 0.008989874400373375,
+      "mean_dx": -3.3870360193574105,
+      "median_flow": 2.8239215832646156,
+      "row_variation_ratio": 1.1724062899473686
+    },
+    "R@1.0": {
+      "divergence": 0.01928904236153729,
+      "mean_dx": -6.828258289439703,
+      "median_flow": 5.893263027501369,
+      "row_variation_ratio": 0.2452234862451362
+    },
+    "R@2.0": {
+      "divergence": 0.014033643314563204,
+      "mean_dx": -13.485145308943594,
+      "median_flow": 12.011236922243471,
+      "row_variation_ratio": 0.35605912579944793
+    },
+    "S@0.5": {
+      "divergence": -0.06546231748164205,
+      "mean_dx": -0.011072688226632078,
+      "median_flow": 0.7198159875035367,
+      "row_variation_ratio": 15.591233169205754
+    },
+    "S@1.0": {
+      "divergence": -0.12925424140050695,
+      "mean_dx": 0.06390235128562125,
+      "median_flow": 1.5607199287653977,
+      "row_variation_ratio": 2.461984277895439
+    },
+    "S@2.0": {
+      "divergence": -0.267718232393214,
+      "mean_dx": -0.05085374112102109,
+      "median_flow": 6.361075196406393,
+      "row_variation_ratio": 14.048182637055746
+    },
+    "W@0.5": {
+      "divergence": 0.07380493721013226,
+      "mean_dx": -0.051847278514864106,
+      "median_flow": 0.8646259828697709,
+      "row_variation_ratio": 11.4939525749002
+    },
+    "W@1.0": {
+      "divergence": 0.14598227448075482,
+      "mean_dx": -0.1704511221317232,
+      "median_flow": 2.4277884824290945,
+      "row_variation_ratio": 12.861490933383775
+    },
+    "W@2.0": {
+      "divergence": 0.30312976656575896,
+      "mean_dx": 0.4786250255571604,
+      "median_flow": 8.406937364373649,
+      "row_variation_ratio": 10.25805071491885
+    }
+  },
+  "control": {
+    "accuracy": 1.0,
+    "cells": [
+      {
+        "action": "W",
+        "correct": true,
+        "noise": 0,
+        "predicted": "W",
+        "speed": 0.5
+      },
+      {
+        "action": "W",
+        "correct": true,
+        "noise": 8,
+        "predicted": "W",
+        "speed": 0.5
+      },
+      {
+        "action": "W",
+        "correct": true,
+        "noise": 0,
+        "predicted": "W",
+        "speed": 1.0
+      },
+      {
+        "action": "W",
+        "correct": true,
+        "noise": 8,
+        "predicted": "W",
+        "speed": 1.0
+      },
+      {
+        "action": "W",
+        "correct": true,
+        "noise": 0,
+        "predicted": "W",
+        "speed": 2.0
+      },
+      {
+        "action": "W",
+        "correct": true,
+        "noise": 8,
+        "predicted": "W",
+        "speed": 2.0
+      },
+      {
+        "action": "S",
+        "correct": true,
+        "noise": 0,
+        "predicted": "S",
+        "speed": 0.5
+      },
+      {
+        "action": "S",
+        "correct": true,
+        "noise": 8,
+        "predicted": "S",
+        "speed": 0.5
+      },
+      {
+        "action": "S",
+        "correct": true,
+        "noise": 0,
+        "predicted": "S",
+        "speed": 1.0
+      },
+      {
+        "action": "S",
+        "correct": true,
+        "noise": 8,
+        "predicted": "S",
+        "speed": 1.0
+      },
+      {
+        "action": "S",
+        "correct": true,
+        "noise": 0,
+        "predicted": "S",
+        "speed": 2.0
+      },
+      {
+        "action": "S",
+        "correct": true,
+        "noise": 8,
+        "predicted": "S",
+        "speed": 2.0
+      },
+      {
+        "action": "A",
+        "correct": true,
+        "noise": 0,
+        "predicted": "A",
+        "speed": 0.5
+      },
+      {
+        "action": "A",
+        "correct": true,
+        "noise": 8,
+        "predicted": "A",
+        "speed": 0.5
+      },
+      {
+        "action": "A",
+        "correct": true,
+        "noise": 0,
+        "predicted": "A",
+        "speed": 1.0
+      },
+      {
+        "action": "A",
+        "correct": true,
+        "noise": 8,
+        "predicted": "A",
+        "speed": 1.0
+      },
+      {
+        "action": "A",
+        "correct": true,
+        "noise": 0,
+        "predicted": "A",
+        "speed": 2.0
+      },
+      {
+        "action": "A",
+        "correct": true,
+        "noise": 8,
+        "predicted": "A",
+        "speed": 2.0
+      },
+      {
+        "action": "D",
+        "correct": true,
+        "noise": 0,
+        "predicted": "D",
+        "speed": 0.5
+      },
+      {
+        "action": "D",
+        "correct": true,
+        "noise": 8,
+        "predicted": "D",
+        "speed": 0.5
+      },
+      {
+        "action": "D",
+        "correct": true,
+        "noise": 0,
+        "predicted": "D",
+        "speed": 1.0
+      },
+      {
+        "action": "D",
+        "correct": true,
+        "noise": 8,
+        "predicted": "D",
+        "speed": 1.0
+      },
+      {
+        "action": "D",
+        "correct": true,
+        "noise": 0,
+        "predicted": "D",
+        "speed": 2.0
+      },
+      {
+        "action": "D",
+        "correct": true,
+        "noise": 8,
+        "predicted": "D",
+        "speed": 2.0
+      },
+      {
+        "action": "L",
+        "correct": true,
+        "noise": 0,
+        "predicted": "L",
+        "speed": 0.5
+      },
+      {
+        "action": "L",
+        "correct": true,
+        "noise": 8,
+        "predicted": "L",
+        "speed": 0.5
+      },
+      {
+        "action": "L",
+        "correct": true,
+        "noise": 0,
+        "predicted": "L",
+        "speed": 1.0
+      },
+      {
+        "action": "L",
+        "correct": true,
+        "noise": 8,
+        "predicted": "L",
+        "speed": 1.0
+      },
+      {
+        "action": "L",
+        "correct": true,
+        "noise": 0,
+        "predicted": "L",
+        "speed": 2.0
+      },
+      {
+        "action": "L",
+        "correct": true,
+        "noise": 8,
+        "predicted": "L",
+        "speed": 2.0
+      },
+      {
+        "action": "R",
+        "correct": true,
+        "noise": 0,
+        "predicted": "R",
+        "speed": 0.5
+      },
+      {
+        "action": "R",
+        "correct": true,
+        "noise": 8,
+        "predicted": "R",
+        "speed": 0.5
+      },
+      {
+        "action": "R",
+        "correct": true,
+        "noise": 0,
+        "predicted": "R",
+        "speed": 1.0
+      },
+      {
+        "action": "R",
+        "correct": true,
+        "noise": 8,
+        "predicted": "R",
+        "speed": 1.0
+      },
+      {
+        "action": "R",
+        "correct": true,
+        "noise": 0,
+        "predicted": "R",
+        "speed": 2.0
+      },
+      {
+        "action": "R",
+        "correct": true,
+        "noise": 8,
+        "predicted": "R",
+        "speed": 2.0
+      },
+      {
+        "action": "0",
+        "correct": true,
+        "noise": 0,
+        "predicted": "0",
+        "speed": 0.5
+      },
+      {
+        "action": "0",
+        "correct": true,
+        "noise": 8,
+        "predicted": "0",
+        "speed": 0.5
+      },
+      {
+        "action": "0",
+        "correct": true,
+        "noise": 0,
+        "predicted": "0",
+        "speed": 1.0
+      },
+      {
+        "action": "0",
+        "correct": true,
+        "noise": 8,
+        "predicted": "0",
+        "speed": 1.0
+      },
+      {
+        "action": "0",
+        "correct": true,
+        "noise": 0,
+        "predicted": "0",
+        "speed": 2.0
+      },
+      {
+        "action": "0",
+        "correct": true,
+        "noise": 8,
+        "predicted": "0",
+        "speed": 2.0
+      }
+    ],
+    "per_class": {
+      "0": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      },
+      "A": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      },
+      "D": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      },
+      "L": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      },
+      "R": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      },
+      "S": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      },
+      "W": {
+        "accuracy": 1.0,
+        "cells": 6.0
+      }
+    },
+    "total": 42
+  },
+  "cost": {
+    "frames": 240,
+    "metric_pass_seconds": 2.038767750142142,
+    "projected_generation_wall_seconds": 22.36344882222109,
+    "ratio": 0.0911651761027285
+  },
+  "gate": {
+    "all": true,
+    "control_accuracy_ge_95": true,
+    "defects_detected_clean_zero": true,
+    "metric_cost_le_25pct_projected": true,
+    "onset_within_one_frame": true
+  },
+  "onset": {
+    "all_within_one": true,
+    "rows": [
+      {
+        "injected_delay": 0,
+        "measured_onset_pairs": 0,
+        "within_one_frame": true
+      },
+      {
+        "injected_delay": 4,
+        "measured_onset_pairs": 4,
+        "within_one_frame": true
+      },
+      {
+        "injected_delay": 8,
+        "measured_onset_pairs": 8,
+        "within_one_frame": true
+      },
+      {
+        "injected_delay": 16,
+        "measured_onset_pairs": 16,
+        "within_one_frame": true
+      }
+    ]
+  },
+  "schema": "liveframe.world.metric-validation.v1",
+  "stability": {
+    "all_passed": true,
+    "black": {
+      "count": 24,
+      "flag": "black_frames",
+      "passed": true
+    },
+    "blur_drift": {
+      "passed": true,
+      "slope": -0.4884831602805851
+    },
+    "brightness_drift": {
+      "passed": true,
+      "slope": 0.1402752014698899
+    },
+    "clean": {
+      "collapse_flag_count": 0,
+      "passed": true
+    },
+    "freeze": {
+      "count": 1,
+      "flag": "frozen_runs",
+      "passed": true
+    },
+    "repeat_loop": {
+      "count": 12,
+      "passed": true
+    },
+    "wrong_direction": {
+      "passed": true,
+      "predicted": "S"
+    }
+  },
+  "wall_seconds": 12.111792583018541
+}

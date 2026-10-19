@@ -1,0 +1,72 @@
+{
+  "change_control": {
+    "changed_surface": "rgb_uint8-limits-only",
+    "float_limits_unchanged": true,
+    "rationale": "The v1 float-domain limits were incorrectly applied directly to integer RGB units. The v2 RGB bounds are deterministic consequences of the unchanged accepted float-domain errors and round-to-nearest uint8 conversion.",
+    "rgb_limit_derivation": {
+      "maximum_absolute_error": "ceil(255 * 0.05) = 13",
+      "mean_absolute_error": "255 * 0.005 + 1 = 2.275",
+      "minimum_cosine_similarity": "unchanged at 0.999"
+    },
+    "timing": "frozen-before-fp32-block-11-and-17-candidate-execution"
+  },
+  "comparison": {
+    "activation_anchors": [
+      "decoder.0.calls[0,10,20]",
+      "decoder.5.calls[0,10,20]",
+      "decoder.7.calls[0,10,20]",
+      "decoder.11.calls[0,10,20]",
+      "decoder.13.calls[0,10,20]",
+      "decoder.17.calls[0,20,41]",
+      "decoder.19.calls[0,20,41]",
+      "decoder.22.calls[0,41,83]"
+    ],
+    "final_outputs": [
+      "float_decoder_output",
+      "rgb_uint8"
+    ],
+    "metrics": [
+      "maximum_absolute_error",
+      "mean_absolute_error",
+      "cosine_similarity"
+    ]
+  },
+  "fixture": {
+    "artifact": "outputs/golden/cfpp-1step-native-21block-h100/output_latents.bin",
+    "dtype": "bfloat16",
+    "layout": "B,F,C,H,W",
+    "sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+    "shape": [
+      1,
+      21,
+      16,
+      60,
+      104
+    ]
+  },
+  "limits": {
+    "float": {
+      "maximum_absolute_error": 0.05,
+      "mean_absolute_error": 0.005,
+      "minimum_cosine_similarity": 0.999
+    },
+    "rgb_uint8": {
+      "maximum_absolute_error": 13.0,
+      "mean_absolute_error": 2.275,
+      "minimum_cosine_similarity": 0.999
+    }
+  },
+  "schema": "liveframe.taew21-port-parity-policy.v2",
+  "source": {
+    "implementation_sha256": "sha256:28b452ad74f924d2d0922d6b3e805dfa7f504c523ced240435fefad5f6f650a7",
+    "pytorch_version": "2.13.0",
+    "repository": "https://github.com/madebyollin/taehv",
+    "revision": "e589fddc076e77f5ba8cd6baabe4ba3260b261cd",
+    "weights_sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f"
+  },
+  "status": "frozen-before-fp32-block-11-and-17-candidate-execution",
+  "supersedes": {
+    "artifact": "artifacts/taew21-port-parity-policy.v1.json",
+    "sha256": "sha256:3a5b5f39cb5de2e4c94d5e7a18b66a3e7a4b568dc58c22ba2894393d5741ada0"
+  }
+}

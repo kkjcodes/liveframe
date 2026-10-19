@@ -1,0 +1,32 @@
+{
+  "attempt": {
+    "caffeinate": true,
+    "decoder_contract_completed_before_postcheck": true,
+    "end_swap_used_mib": 19404.44,
+    "failure": "zero-start-swap-precondition-violated",
+    "observed_swap_delta_mib": -8.0,
+    "start_swap_used_mib": 19412.44
+  },
+  "bindings": {
+    "fixture_sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+    "parity_v5_sha256": "sha256:8c7819711f76a640931974ff5a2497d31c27ec3b3862c6e546eaa748b4d38647",
+    "precision_policy_sha256": "sha256:8825a0d93d942aeb814bb3ba34f62d0857dd2b405d95b92c504c851cf3daca0e",
+    "smoke_runner_after_preflight_fix_sha256": "sha256:6d0a496408f15b62210b1593dc9bd350ecbecc98e49d4ac8c2b422497be0d9cf",
+    "weights_sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461"
+  },
+  "current_state_after_attempt": {
+    "captured_separately": true,
+    "swap_free_mib": 1227.62,
+    "swap_total_mib": 20480.0,
+    "swap_used_mib": 19252.38
+  },
+  "decision": {
+    "candidate_correctness": "not-falsified-parity-v5-remains-go",
+    "formal_smoke_authority": "none-invalid-host-precondition",
+    "next_action": "rerun-smoke-after-host-restart-and-confirmed-zero-swap",
+    "timing_authorized": false
+  },
+  "passed": false,
+  "schema": "liveframe.taew21-fp32-im2col-smoke-attempt.v1",
+  "status": "blocked-by-nonzero-start-swap"
+}

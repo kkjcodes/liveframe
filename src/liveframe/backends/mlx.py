@@ -4,14 +4,13 @@ from __future__ import annotations
 
 import importlib
 from collections.abc import Iterator
-from typing import Any
 
 from liveframe.backends.base import (
     BackendCapabilities,
     BackendError,
-    GenerationRequest,
     TensorDescriptor,
 )
+from liveframe.engine import GenerationRequest, NativeFrame
 
 
 class MLXBackend:
@@ -35,7 +34,7 @@ class MLXBackend:
     def tensor_inventory(self) -> tuple[TensorDescriptor, ...]:
         raise BackendError("CF++ MLX weights have not been converted yet")
 
-    def stream(self, request: GenerationRequest) -> Iterator[Any]:
+    def stream(self, request: GenerationRequest) -> Iterator[NativeFrame]:
         del request
         raise BackendError("CF++ MLX streaming is not implemented yet")
         yield

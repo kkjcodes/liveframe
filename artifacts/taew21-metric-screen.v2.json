@@ -1,0 +1,976 @@
+{
+  "amendment_sha256": "sha256:899d0e68e2174a4bc06b860a4d515709282545d3e54ad11213c7a5227f4b17e7",
+  "authority": "routing-only-to-human-study-not-a-quality-claim",
+  "failing_jobs": [],
+  "null_control_sha256": "sha256:84a6c3508d2a00e43dbc0f326dc9a238b18aae6f9de4b1bed140afcac142ab88",
+  "passed": true,
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "records": [
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.37433792065970506,
+          "floor_null_control": 0.005844119983383372,
+          "normalized_position": 2.447370643608327e-05,
+          "passed": true,
+          "tiny_vs_full": 0.005853138392484641
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7764976975284045,
+          "floor_null_control": 0.0027041417867817645,
+          "normalized_position": 0.017728212201100147,
+          "passed": true,
+          "tiny_vs_full": 0.016422118142813066
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9969224375751564,
+          "floor_null_control": 0.24619222841209779,
+          "normalized_position": 0.1476933147530985,
+          "passed": true,
+          "tiny_vs_full": 0.35707006148867687
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_01-15s",
+      "partner_job_id": "taew21-limited_hold_02-15s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3348784786874911,
+          "floor_null_control": 0.01088641320957857,
+          "normalized_position": 0.01470762781803918,
+          "passed": true,
+          "tiny_vs_full": 0.01565156792462549
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.725335441998776,
+          "floor_null_control": 0.0026933861602293817,
+          "normalized_position": 0.049725133492414454,
+          "passed": true,
+          "tiny_vs_full": 0.038626858854033934
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9937159711363233,
+          "floor_null_control": 0.22235083577708026,
+          "normalized_position": 0.33874793240750495,
+          "passed": true,
+          "tiny_vs_full": 0.483649180511259
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_01-60s",
+      "partner_job_id": "taew21-limited_hold_02-60s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4295603803944487,
+          "floor_null_control": 0.01177124433879611,
+          "normalized_position": 0.01131812491817464,
+          "passed": true,
+          "tiny_vs_full": 0.016499833970130245
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7950419831376538,
+          "floor_null_control": 0.0029043218151387222,
+          "normalized_position": 0.06682023443841235,
+          "passed": true,
+          "tiny_vs_full": 0.05583514605220486
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9957279710245114,
+          "floor_null_control": 0.21084471678329728,
+          "normalized_position": 0.33011911319254444,
+          "passed": true,
+          "tiny_vs_full": 0.46994968063308523
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_02-15s",
+      "partner_job_id": "taew21-limited_hold_03-15s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4097762006355144,
+          "floor_null_control": 0.015179681519605796,
+          "normalized_position": 0.02361670484117208,
+          "passed": true,
+          "tiny_vs_full": 0.024498751042920125
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7690292616500697,
+          "floor_null_control": 0.0031844359352584963,
+          "normalized_position": 0.07172336094698009,
+          "passed": true,
+          "tiny_vs_full": 0.058113400799378954
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.003320258848219,
+          "floor_null_control": 0.20242641884679638,
+          "normalized_position": 0.402591892081654,
+          "passed": true,
+          "tiny_vs_full": 0.5248597852495106
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_02-60s",
+      "partner_job_id": "taew21-limited_hold_03-60s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3715162853148416,
+          "floor_null_control": 0.010724727363023073,
+          "normalized_position": -0.0020391739025188956,
+          "passed": true,
+          "tiny_vs_full": 0.009989010633798591
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8325978502442565,
+          "floor_null_control": 0.004590834404502991,
+          "normalized_position": 0.059788672030706695,
+          "passed": true,
+          "tiny_vs_full": 0.05409627431367017
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9835504443301835,
+          "floor_null_control": 0.241284457808834,
+          "normalized_position": 0.29130860384792157,
+          "passed": true,
+          "tiny_vs_full": 0.4575129260261685
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_03-15s",
+      "partner_job_id": "taew21-limited_hold_04-15s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3960170270980819,
+          "floor_null_control": 0.014080103644399574,
+          "normalized_position": 0.0029832055803774966,
+          "passed": true,
+          "tiny_vs_full": 0.015219500005798811
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8597636210537055,
+          "floor_null_control": 0.004389431852351401,
+          "normalized_position": 0.06702922829750124,
+          "passed": true,
+          "tiny_vs_full": 0.06172450366011899
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9972613009360565,
+          "floor_null_control": 0.21582803664313369,
+          "normalized_position": 0.4002242408126914,
+          "passed": true,
+          "tiny_vs_full": 0.5285765715905519
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_03-60s",
+      "partner_job_id": "taew21-limited_hold_04-60s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4078864031451664,
+          "floor_null_control": 0.010304403707447937,
+          "normalized_position": 0.005730365611767867,
+          "passed": true,
+          "tiny_vs_full": 0.01258269392488375
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8466121670063035,
+          "floor_null_control": 0.00481519908133407,
+          "normalized_position": 0.05246350824038657,
+          "passed": true,
+          "tiny_vs_full": 0.04897882124479813
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.0001083291688209,
+          "floor_null_control": 0.155414713704485,
+          "normalized_position": 0.23498443756405812,
+          "passed": true,
+          "tiny_vs_full": 0.35390456784832275
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_04-15s",
+      "partner_job_id": "taew21-limited_hold_01-15s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.29860184860672373,
+          "floor_null_control": 0.01261590877922696,
+          "normalized_position": 0.018620002489269157,
+          "passed": true,
+          "tiny_vs_full": 0.017940967690710928
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8296723352866276,
+          "floor_null_control": 0.005232605507926029,
+          "normalized_position": 0.07691027870164575,
+          "passed": true,
+          "tiny_vs_full": 0.06864049489791549
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9979725871749862,
+          "floor_null_control": 0.17745312483411682,
+          "normalized_position": 0.3002862355318051,
+          "passed": true,
+          "tiny_vs_full": 0.4238438253610372
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_04-60s",
+      "partner_job_id": "taew21-limited_hold_01-60s",
+      "passed": true,
+      "stratum": "limited-animation-held-frames"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3639625367484515,
+          "floor_null_control": 0.008627204703882273,
+          "normalized_position": 0.009532756432332524,
+          "passed": true,
+          "tiny_vs_full": 0.012014529876065154
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8249980973292,
+          "floor_null_control": 0.003143485798598719,
+          "normalized_position": 0.059752669267880004,
+          "passed": true,
+          "tiny_vs_full": 0.05225149258766874
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9986982862030993,
+          "floor_null_control": 0.2040000539588726,
+          "normalized_position": 0.21154594985095532,
+          "passed": true,
+          "tiny_vs_full": 0.3721152463438526
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_01-15s",
+      "partner_job_id": "taew21-dialogue_02-15s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3309083066734613,
+          "floor_null_control": 0.01228768039414019,
+          "normalized_position": 0.021170583693365483,
+          "passed": true,
+          "tiny_vs_full": 0.019033065029219084
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8188327334367577,
+          "floor_null_control": 0.005373909266211931,
+          "normalized_position": 0.10152404664164347,
+          "passed": true,
+          "tiny_vs_full": 0.08795954087235887
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.002101152666271,
+          "floor_null_control": 0.1850210942851364,
+          "normalized_position": 0.3997633822971123,
+          "passed": true,
+          "tiny_vs_full": 0.5116597820311007
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_01-60s",
+      "partner_job_id": "taew21-dialogue_02-60s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4717195171092633,
+          "floor_null_control": 0.005966807216531617,
+          "normalized_position": 0.011369848922223239,
+          "passed": true,
+          "tiny_vs_full": 0.011262345163128044
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.803552002091951,
+          "floor_null_control": 0.003586622648125805,
+          "normalized_position": 0.03892172097261336,
+          "passed": true,
+          "tiny_vs_full": 0.034722651934589135
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.998557784448583,
+          "floor_null_control": 0.1390996795084517,
+          "normalized_position": 0.23607901910071857,
+          "passed": true,
+          "tiny_vs_full": 0.34199970588088036
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_02-15s",
+      "partner_job_id": "taew21-dialogue_03-15s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.46601367968646856,
+          "floor_null_control": 0.006178670500331127,
+          "normalized_position": 0.004146614177595229,
+          "passed": true,
+          "tiny_vs_full": 0.008085428868776997
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8212056236247406,
+          "floor_null_control": 0.003038381948880659,
+          "normalized_position": 0.02640758085196688,
+          "passed": true,
+          "tiny_vs_full": 0.024644199533866654
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9981589662368132,
+          "floor_null_control": 0.1735639890486544,
+          "normalized_position": 0.15027510012994585,
+          "passed": true,
+          "tiny_vs_full": 0.2974800818122554
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_02-60s",
+      "partner_job_id": "taew21-dialogue_03-60s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.34342478045934366,
+          "floor_null_control": 0.012668393583740363,
+          "normalized_position": 0.02798876325024022,
+          "passed": true,
+          "tiny_vs_full": 0.021925855789506486
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8826179358526625,
+          "floor_null_control": 0.004337912512833119,
+          "normalized_position": 0.06827379059571725,
+          "passed": true,
+          "tiny_vs_full": 0.06430141891073829
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.003833262314941,
+          "floor_null_control": 0.25655574865749703,
+          "normalized_position": 0.4394500725395644,
+          "passed": true,
+          "tiny_vs_full": 0.5849469062414462
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_03-15s",
+      "partner_job_id": "taew21-dialogue_04-15s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.35400230602829325,
+          "floor_null_control": 0.008152057204330177,
+          "normalized_position": 0.014707478667030788,
+          "passed": true,
+          "tiny_vs_full": 0.013238642360895904
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8913206112397098,
+          "floor_null_control": 0.0037231218503255654,
+          "normalized_position": 0.077404727340869,
+          "passed": true,
+          "tiny_vs_full": 0.07242736350495073
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.0033804161694433,
+          "floor_null_control": 0.3078923227096146,
+          "normalized_position": 0.45329203674261714,
+          "passed": true,
+          "tiny_vs_full": 0.62315153712426
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_03-60s",
+      "partner_job_id": "taew21-dialogue_04-60s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.2773220048675054,
+          "floor_null_control": 0.006601330348710973,
+          "normalized_position": -0.010627819732064519,
+          "passed": true,
+          "tiny_vs_full": 0.0037241598221823134
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.9142513682570639,
+          "floor_null_control": 0.01009659908460414,
+          "normalized_position": 0.006358504951793998,
+          "passed": true,
+          "tiny_vs_full": 0.015845671661575383
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.0004924508640385,
+          "floor_null_control": 0.22248342866867277,
+          "normalized_position": 0.07475034949194476,
+          "passed": true,
+          "tiny_vs_full": 0.28063987498566256
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_04-15s",
+      "partner_job_id": "taew21-dialogue_01-15s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3386017443963987,
+          "floor_null_control": 0.009341440087624501,
+          "normalized_position": -0.004686653837290364,
+          "passed": true,
+          "tiny_vs_full": 0.007798311018968392
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.9110117200973479,
+          "floor_null_control": 0.007441157573628383,
+          "normalized_position": 0.01396007107420453,
+          "passed": true,
+          "tiny_vs_full": 0.020055066847018476
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.0027655733788716,
+          "floor_null_control": 0.20190466917889607,
+          "normalized_position": 0.11220780427335943,
+          "passed": true,
+          "tiny_vs_full": 0.2917675127675526
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_04-60s",
+      "partner_job_id": "taew21-dialogue_01-60s",
+      "passed": true,
+      "stratum": "dialogue-minimal-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3192354611706633,
+          "floor_null_control": 0.020844074744212477,
+          "normalized_position": -0.0334620036914263,
+          "passed": true,
+          "tiny_vs_full": 0.010859301070120767
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8338299768383493,
+          "floor_null_control": 0.01240357545593494,
+          "normalized_position": 0.10006959996765193,
+          "passed": true,
+          "tiny_vs_full": 0.09460338684514102
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.995565664429628,
+          "floor_null_control": 0.214839835540723,
+          "normalized_position": 0.22452123440541308,
+          "passed": true,
+          "tiny_vs_full": 0.39012936237504925
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_01-15s",
+      "partner_job_id": "taew21-cyclic_02-15s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.26328177268783126,
+          "floor_null_control": 0.018494121307436034,
+          "normalized_position": -0.018603739917522337,
+          "passed": true,
+          "tiny_vs_full": 0.013940155506134033
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7629443814264855,
+          "floor_null_control": 0.006398987624279086,
+          "normalized_position": 0.08624547829293451,
+          "passed": true,
+          "tiny_vs_full": 0.07164760696306686
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.997400477405422,
+          "floor_null_control": 0.1889140073918114,
+          "normalized_position": 0.25784423326159756,
+          "passed": true,
+          "tiny_vs_full": 0.3973775813548464
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_01-60s",
+      "partner_job_id": "taew21-cyclic_02-60s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.5141782997026725,
+          "floor_null_control": 0.014616046022262252,
+          "normalized_position": 0.002263518227369198,
+          "passed": true,
+          "tiny_vs_full": 0.015746814289173496
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7856615208372285,
+          "floor_null_control": 0.0075293875501770136,
+          "normalized_position": 0.08038350703502889,
+          "passed": true,
+          "tiny_vs_full": 0.07007837736043875
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9972443718668389,
+          "floor_null_control": 0.3154641327021991,
+          "normalized_position": 0.25584738996335793,
+          "passed": true,
+          "tiny_vs_full": 0.48989582742106613
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_02-15s",
+      "partner_job_id": "taew21-cyclic_03-15s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3764991933408782,
+          "floor_null_control": 0.014547683752235122,
+          "normalized_position": -0.00036980451591901297,
+          "passed": true,
+          "tiny_vs_full": 0.014413832449445538
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7370113192820081,
+          "floor_null_control": 0.007592659736517337,
+          "normalized_position": 0.08908793982476895,
+          "passed": true,
+          "tiny_vs_full": 0.07257506538516965
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9924034929871829,
+          "floor_null_control": 0.25229435273222933,
+          "normalized_position": 0.2570805211664677,
+          "passed": true,
+          "tiny_vs_full": 0.44256199622903913
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_02-60s",
+      "partner_job_id": "taew21-cyclic_03-60s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.6318942995011052,
+          "floor_null_control": 0.014769166582244357,
+          "normalized_position": -0.0070914484882978876,
+          "passed": true,
+          "tiny_vs_full": 0.010392855491316268
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7524411776397801,
+          "floor_null_control": 0.004185980939373122,
+          "normalized_position": 0.07162997154804382,
+          "passed": true,
+          "tiny_vs_full": 0.0577834793896992
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9929252039795047,
+          "floor_null_control": 0.2227239924467216,
+          "normalized_position": 0.21192354194462223,
+          "passed": true,
+          "tiny_vs_full": 0.38594776120478824
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_03-15s",
+      "partner_job_id": "taew21-cyclic_04-15s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.5356005625828132,
+          "floor_null_control": 0.01567350612459291,
+          "normalized_position": 0.013564270131731707,
+          "passed": true,
+          "tiny_vs_full": 0.02272593716718833
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7590098534206119,
+          "floor_null_control": 0.005465645596199506,
+          "normalized_position": 0.09369821749211986,
+          "passed": true,
+          "tiny_vs_full": 0.07607139467085847
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.000254747219199,
+          "floor_null_control": 0.18446747556882948,
+          "normalized_position": 0.36336080537204635,
+          "passed": true,
+          "tiny_vs_full": 0.4808925956079721
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_03-60s",
+      "partner_job_id": "taew21-cyclic_04-60s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4687205947904144,
+          "floor_null_control": 0.012482141895133232,
+          "normalized_position": 0.01888458487176031,
+          "passed": true,
+          "tiny_vs_full": 0.021098015680594787
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8236532696691746,
+          "floor_null_control": 0.00521074641763158,
+          "normalized_position": 0.08508837540271277,
+          "passed": true,
+          "tiny_vs_full": 0.07485069108160236
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9982701261642278,
+          "floor_null_control": 0.17718488230543622,
+          "normalized_position": 0.4037803742984071,
+          "passed": true,
+          "tiny_vs_full": 0.508722989401638
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_04-15s",
+      "partner_job_id": "taew21-cyclic_01-15s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4489025396705289,
+          "floor_null_control": 0.015156014046801872,
+          "normalized_position": 0.009372724274260422,
+          "passed": true,
+          "tiny_vs_full": 0.019221400636391498
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8111496719044429,
+          "floor_null_control": 0.00446796752570122,
+          "normalized_position": 0.06876247532178911,
+          "passed": true,
+          "tiny_vs_full": 0.05993739831558322
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9987187107985508,
+          "floor_null_control": 0.09321928726247519,
+          "normalized_position": 0.22315164086446665,
+          "passed": true,
+          "tiny_vs_full": 0.2952829694263791
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_04-60s",
+      "partner_job_id": "taew21-cyclic_01-60s",
+      "passed": true,
+      "stratum": "cyclic-motion"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.48182688483709024,
+          "floor_null_control": 0.047434887554072123,
+          "normalized_position": -0.01989145631467466,
+          "passed": true,
+          "tiny_vs_full": 0.038794198116672694
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.791655202203662,
+          "floor_null_control": 0.01302062332795202,
+          "normalized_position": 0.11607285760343425,
+          "passed": true,
+          "tiny_vs_full": 0.1033989639269023
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9965420318905548,
+          "floor_null_control": 0.23014493412890677,
+          "normalized_position": 0.4281042260481691,
+          "passed": true,
+          "tiny_vs_full": 0.5582427705117201
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_01-15s",
+      "partner_job_id": "taew21-dense_motion_02-15s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.46900966443636594,
+          "floor_null_control": 0.036283549201992886,
+          "normalized_position": -0.003913075077600879,
+          "passed": true,
+          "tiny_vs_full": 0.034590259425042215
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.7780234443390948,
+          "floor_null_control": 0.00987036705091096,
+          "normalized_position": 0.10600091535004624,
+          "passed": true,
+          "tiny_vs_full": 0.09129529637241326
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.0003878753379754,
+          "floor_null_control": 0.23489129752659602,
+          "normalized_position": 0.41221258179950054,
+          "passed": true,
+          "tiny_vs_full": 0.5504386182249069
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_01-60s",
+      "partner_job_id": "taew21-dense_motion_02-60s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.46814006881371834,
+          "floor_null_control": 0.031753144183742345,
+          "normalized_position": -0.01744458670210556,
+          "passed": true,
+          "tiny_vs_full": 0.024140554641369525
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8058467882091989,
+          "floor_null_control": 0.007932371044342842,
+          "normalized_position": 0.061142988836700114,
+          "passed": true,
+          "tiny_vs_full": 0.05671924334569571
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9946333272205035,
+          "floor_null_control": 0.1512037298436892,
+          "normalized_position": 0.16598943076641595,
+          "passed": true,
+          "tiny_vs_full": 0.291204128603814
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_02-15s",
+      "partner_job_id": "taew21-dense_motion_03-15s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.4799484128922501,
+          "floor_null_control": 0.02989580190833754,
+          "normalized_position": -0.014575109483755035,
+          "passed": true,
+          "tiny_vs_full": 0.0233362358297972
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8091958453657704,
+          "floor_null_control": 0.008132034313448843,
+          "normalized_position": 0.06512368726937805,
+          "passed": true,
+          "tiny_vs_full": 0.06030026342723638
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9999426587961984,
+          "floor_null_control": 0.149602670468821,
+          "normalized_position": 0.1664421077492572,
+          "passed": true,
+          "tiny_vs_full": 0.29113505042950844
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_02-60s",
+      "partner_job_id": "taew21-dense_motion_03-60s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.36913510239074,
+          "floor_null_control": 0.03008443343488476,
+          "normalized_position": -0.005630503157909082,
+          "passed": true,
+          "tiny_vs_full": 0.02817540757263763
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8248847768276553,
+          "floor_null_control": 0.01362201215145237,
+          "normalized_position": 0.10894191907166564,
+          "passed": true,
+          "tiny_vs_full": 0.10200253460666299
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9855231489114052,
+          "floor_null_control": 0.34867905332880506,
+          "normalized_position": 0.3049376311960522,
+          "passed": true,
+          "tiny_vs_full": 0.5428767832769554
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_03-15s",
+      "partner_job_id": "taew21-dense_motion_04-15s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.3896497487099178,
+          "floor_null_control": 0.037282181475061626,
+          "normalized_position": -0.028702359670668087,
+          "passed": true,
+          "tiny_vs_full": 0.027168400824008464
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8199697653575578,
+          "floor_null_control": 0.014389047794662978,
+          "normalized_position": 0.11365967096661943,
+          "passed": true,
+          "tiny_vs_full": 0.10595108708991478
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 0.9983094782765266,
+          "floor_null_control": 0.35417016987950534,
+          "normalized_position": 0.28267681868876,
+          "passed": true,
+          "tiny_vs_full": 0.5362534203695534
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_03-60s",
+      "partner_job_id": "taew21-dense_motion_04-60s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.43809612101643397,
+          "floor_null_control": 0.023108586228849516,
+          "normalized_position": -0.006025903031954947,
+          "passed": true,
+          "tiny_vs_full": 0.020607911584749502
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8331486537486692,
+          "floor_null_control": 0.021815372326407376,
+          "normalized_position": 0.1158125089486638,
+          "passed": true,
+          "tiny_vs_full": 0.11577791524147182
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.002922294341754,
+          "floor_null_control": 0.22622068756717748,
+          "normalized_position": 0.2845801535210875,
+          "passed": true,
+          "tiny_vs_full": 0.4472545500631618
+        }
+      },
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_04-15s",
+      "partner_job_id": "taew21-dense_motion_01-15s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    },
+    {
+      "checks": {
+        "pairwise_clip_distance_mean": {
+          "ceiling_cross_content": 0.406317366350546,
+          "floor_null_control": 0.019706329940150275,
+          "normalized_position": -0.005930334021339147,
+          "passed": true,
+          "tiny_vs_full": 0.017413597357900518
+        },
+        "pairwise_lpips_mean": {
+          "ceiling_cross_content": 0.8136963434632718,
+          "floor_null_control": 0.016719579909783015,
+          "normalized_position": 0.11345525833355184,
+          "passed": true,
+          "tiny_vs_full": 0.10714078450458214
+        },
+        "pairwise_temporal_clip_distance_mean": {
+          "ceiling_cross_content": 1.0039195293302778,
+          "floor_null_control": 0.21663650518960573,
+          "normalized_position": 0.3068699757308047,
+          "passed": true,
+          "tiny_vs_full": 0.4582300277009283
+        }
+      },
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_04-60s",
+      "partner_job_id": "taew21-dense_motion_01-60s",
+      "passed": true,
+      "stratum": "high-motion-dense-scenes"
+    }
+  ],
+  "rule": "normalized position <= 0.5 for all instruments on all pairs",
+  "schema": "liveframe.taew21-metric-screen.v2",
+  "summary_sha256": "sha256:3253859ebaaac3aa3e6855512164a88bf5a1c9542f0f025a46e9d2e2391109dc",
+  "tool_sha256": "sha256:c0b180f4bf04ce09bc0647540674e3700c6cb60d817bba6a42aa3c5347439ef0",
+  "v1_verdict_sha256": "sha256:967bee1781bbabe14e2949884fc56de94ded37418aa4a2a9783c9318ab077a7e",
+  "verdict": "route-to-human-study"
+}

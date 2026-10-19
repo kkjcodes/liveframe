@@ -1,0 +1,25 @@
+{
+  "amendment_digest": "sha256:a3d6c4c296be94beae4fe71afc0fb12dc2a8d7396b4a4e3549cc453f38b4529a",
+  "bindings": {
+    "amendment_v6_sha256": "sha256:899d0e68e2174a4bc06b860a4d515709282545d3e54ad11213c7a5227f4b17e7",
+    "power_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+    "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce"
+  },
+  "bundle_metadata_parity": "the attention-item degraded foil now carries the same style of unique item/side metadata tag as every transcode, so no bundle video is distinguishable by presence or absence of container metadata; bundle rebuilt before any distribution",
+  "integrity_bindings_freeze": "both the QC tool and the analyzer must verify the supplied power artifact against bundle-manifest.json power_sha256, validate its schema, and require its usable_judgment_target to equal the schedules' pinned target; mismatches are hard errors",
+  "regression_coverage": "tests/test_taew21_study_tools.py pins: altered-power rejection, out-of-order and unnecessary replacement rejection, under-target no-authority verdict, target-based GO verdict, bundle digest uniqueness with zero reference/option equality, and attention-candidate metadata parity",
+  "schema": "liveframe.taew21-protocol-amendment.v6.1",
+  "status": "frozen-before-any-participant-response",
+  "stopping_rule_freeze": {
+    "enforcement": "the blinded QC tool reports policy_violations mid-collection; the response analyzer refuses authoritative analysis (hard error) on any of: replacements present before all 30 primaries responded, replacements not forming a contiguous ID-ordered prefix of R30-R35, or any replacement activated when usable judgments from prior participants already met the target",
+    "interpretation": "target-based",
+    "power_simulation_note": "the frozen simulation models 30 primaries with ~10% exclusion and no replacement (expected usable 486.4); target-based stopping delivers at least 486 usable judgments whenever it completes, so the simulated pass probability at chance (0.7485) is a mild lower-bound approximation for the executed design; the simulation is NOT rerun and its artifact digest above remains authoritative",
+    "rejected_alternative": "one-for-one replacement seeking 30 included participants (up to 540 judgments) - rejected because the protocol's frozen stopping rule is stop-at-simulation-fixed-usable-judgment-target-no-sequential-peeking",
+    "rule": "the primary cohort is fixed at 30 participants P00-P29 and is always collected in full; replacement participants R30-R35 are activated strictly one at a time in ID order, and a replacement may be activated ONLY while usable study judgments from all previously collected participants remain below the frozen target of 486; collection stops at the first count >= 486; if all six replacements are exhausted below target the study returns no-authority-insufficient-usable-judgments"
+  },
+  "title": "Stopping-rule interpretation freeze, replacement enforcement, bundle metadata parity, regression coverage",
+  "visibility_at_freeze": {
+    "participant_responses": "none exist",
+    "recruitment": "not started"
+  }
+}

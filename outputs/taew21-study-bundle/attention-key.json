@@ -1,0 +1,8 @@
+{
+  "answers": {
+    "attention-00": "B",
+    "attention-01": "B"
+  },
+  "note": "correct sides of the ATTENTION items only (copy vs degraded); reveals nothing about decoder identity; used by the sealed-free pre-freeze QC tool; never distributed to participants",
+  "schema": "liveframe.taew21-study-attention-key.v1"
+}

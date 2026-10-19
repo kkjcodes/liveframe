@@ -1,0 +1,1127 @@
+{
+  "ignored_source_prefixes": [
+    "encoder."
+  ],
+  "mappings": [
+    {
+      "dtype": "float16",
+      "source": "decoder.1.bias",
+      "source_sha256": "sha256:c23041f05307e966fd9f6e79daaddca9b160338084ae027bcaf526630aa738b2",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.1.bias",
+      "target_sha256": "sha256:c23041f05307e966fd9f6e79daaddca9b160338084ae027bcaf526630aa738b2",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.1.weight",
+      "source_sha256": "sha256:89ef9ea35faaf07326c85eb70853630d3b9e4b2309ebab8bdf6223284a095425",
+      "source_shape": [
+        256,
+        16,
+        3,
+        3
+      ],
+      "target": "decoder.1.weight",
+      "target_sha256": "sha256:72fe0ea37f0292087aeffc1d6ab0e368ad9a8d3fd874d2200b3a056b6bb1c088",
+      "target_shape": [
+        256,
+        3,
+        3,
+        16
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.10.conv.0.bias",
+      "source_sha256": "sha256:e47aad33854a7ed24938a5c1317ff5771a7df22d799623489635ac95047b2134",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.10.conv.0.bias",
+      "target_sha256": "sha256:e47aad33854a7ed24938a5c1317ff5771a7df22d799623489635ac95047b2134",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.10.conv.0.weight",
+      "source_sha256": "sha256:9f36e7129b79228900a9b8d99c4ca88cd440c4d00e0e3b984e3f558d096ae6d3",
+      "source_shape": [
+        128,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.10.conv.0.weight",
+      "target_sha256": "sha256:c92e73b533ea42320efa4739311e2901b224e657e669ebb952a6cde669694f15",
+      "target_shape": [
+        128,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.10.conv.2.bias",
+      "source_sha256": "sha256:ae36243dae6720591ff34546c02d69c55629e0532ae44405e56fe42e0cdf008b",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.10.conv.2.bias",
+      "target_sha256": "sha256:ae36243dae6720591ff34546c02d69c55629e0532ae44405e56fe42e0cdf008b",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.10.conv.2.weight",
+      "source_sha256": "sha256:1d446cddb708af71141c4985acce9afcc7874968a2f7525a29dba8b8629ad557",
+      "source_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.10.conv.2.weight",
+      "target_sha256": "sha256:32fe49be47e90d427893be12ab1b0271e9dd8644fad5c324a6edab2c597b1011",
+      "target_shape": [
+        128,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.10.conv.4.bias",
+      "source_sha256": "sha256:654ee78a96ae683ed2c9150744e25eb42c1191a543dad03f2121ff4571041adf",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.10.conv.4.bias",
+      "target_sha256": "sha256:654ee78a96ae683ed2c9150744e25eb42c1191a543dad03f2121ff4571041adf",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.10.conv.4.weight",
+      "source_sha256": "sha256:c127862a670487a853fba72f7d1bb2a3199b620a03507d8c1a4ce25f50abb337",
+      "source_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.10.conv.4.weight",
+      "target_sha256": "sha256:c7bbcb5688c2c39f934ae889ac322b65c3574a78e2eff7b77c416a73d473e66d",
+      "target_shape": [
+        128,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.11.conv.0.bias",
+      "source_sha256": "sha256:81bbad18b5adb1350cd39c403d6b5d6cd704d975eb31561dfcfbe6ae043b8da2",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.11.conv.0.bias",
+      "target_sha256": "sha256:81bbad18b5adb1350cd39c403d6b5d6cd704d975eb31561dfcfbe6ae043b8da2",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.11.conv.0.weight",
+      "source_sha256": "sha256:3a292f910f30d92b30236f753093d1066ab319d8c5c07bc7e716c93995e652fd",
+      "source_shape": [
+        128,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.11.conv.0.weight",
+      "target_sha256": "sha256:895388b303c686eb1590c7bc757aedfca264e666865c55b07bd0c0d7bbac7271",
+      "target_shape": [
+        128,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.11.conv.2.bias",
+      "source_sha256": "sha256:fa5717eab2cb2ed393e840d3ed73b1163eb3de7ac1ae54db6e1f6b9af73ac79c",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.11.conv.2.bias",
+      "target_sha256": "sha256:fa5717eab2cb2ed393e840d3ed73b1163eb3de7ac1ae54db6e1f6b9af73ac79c",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.11.conv.2.weight",
+      "source_sha256": "sha256:f0fb3456747bddb849ed5f0da381230ee2a146466606e91658a6e314edb44a18",
+      "source_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.11.conv.2.weight",
+      "target_sha256": "sha256:a0dfbc6a647dcf74910017568c5bf76a5af5714164c3e6e8159d13e8131de07c",
+      "target_shape": [
+        128,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.11.conv.4.bias",
+      "source_sha256": "sha256:897a84d41d9d2854172a49f77c3deb766595666d6363e8a74ff4720e298203d3",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.11.conv.4.bias",
+      "target_sha256": "sha256:897a84d41d9d2854172a49f77c3deb766595666d6363e8a74ff4720e298203d3",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.11.conv.4.weight",
+      "source_sha256": "sha256:fe1e92812613a71fa109ef5b37f4453463cc16ba3228bf5b822e4e5572b0c8c7",
+      "source_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.11.conv.4.weight",
+      "target_sha256": "sha256:38ed0acb7451d6848e7bc768421abdcfb515e0e7e5302b0be78675356042c6b3",
+      "target_shape": [
+        128,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.13.conv.weight",
+      "source_sha256": "sha256:ce8c750bce909533957922cae895a06b0660cc0ac819ef7673a2717d38200ef9",
+      "source_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "target": "decoder.13.conv.weight",
+      "target_sha256": "sha256:ce8c750bce909533957922cae895a06b0660cc0ac819ef7673a2717d38200ef9",
+      "target_shape": [
+        256,
+        1,
+        1,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.14.weight",
+      "source_sha256": "sha256:81f8f3e25ae27b7a519fcfc88bd70d12b68c10b6d9076b3d6775deb75457b2a6",
+      "source_shape": [
+        64,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.14.weight",
+      "target_sha256": "sha256:e33aec57b2cae8a3a2b1ee31fabc9f777a93ca27a29b02ac8d3bfc4aa9451831",
+      "target_shape": [
+        64,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.15.conv.0.bias",
+      "source_sha256": "sha256:aafde038f7721aa2be702176b6bfff9ccc9d30e528b682b82635e1e68225ea4a",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.15.conv.0.bias",
+      "target_sha256": "sha256:aafde038f7721aa2be702176b6bfff9ccc9d30e528b682b82635e1e68225ea4a",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.15.conv.0.weight",
+      "source_sha256": "sha256:7e01957589158bbbf76b39a394c667dc36878b3d2712fd7a2501563d13635c91",
+      "source_shape": [
+        64,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.15.conv.0.weight",
+      "target_sha256": "sha256:bd4b1ba2d189b71e5539bce7cb7857214eeb040d122412850437f0cfd02de1cc",
+      "target_shape": [
+        64,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.15.conv.2.bias",
+      "source_sha256": "sha256:cf414397f9ba36ed25c89865700d0bc10d8e0ef6621c2ba139766eff942cd4c7",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.15.conv.2.bias",
+      "target_sha256": "sha256:cf414397f9ba36ed25c89865700d0bc10d8e0ef6621c2ba139766eff942cd4c7",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.15.conv.2.weight",
+      "source_sha256": "sha256:ffc6bd15fc2c25ffb3f811b6ed1bf6e962458fe7ae88c1432bb1b542bec0c7e7",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.15.conv.2.weight",
+      "target_sha256": "sha256:457cc27e516c8aff8f84641a36532980439d53b596444a7e0191e74ec8bb9bce",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.15.conv.4.bias",
+      "source_sha256": "sha256:b841645e7a6bb1f9db0d2d85066623a9950b0ab6cdaa64b640655e4ddcbf791d",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.15.conv.4.bias",
+      "target_sha256": "sha256:b841645e7a6bb1f9db0d2d85066623a9950b0ab6cdaa64b640655e4ddcbf791d",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.15.conv.4.weight",
+      "source_sha256": "sha256:5581678d081ca15beeeb69acb68472433ed1431fe10c6b3f2570470b4613a4e8",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.15.conv.4.weight",
+      "target_sha256": "sha256:0632873bc14d9f9667e40008731a1a5a710a9f7104c682211b3ca7e8b7d7fa15",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.16.conv.0.bias",
+      "source_sha256": "sha256:ccf8505de753df9f2253460e739dce223939acf2d94a4d8325987c0d22bf8be1",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.16.conv.0.bias",
+      "target_sha256": "sha256:ccf8505de753df9f2253460e739dce223939acf2d94a4d8325987c0d22bf8be1",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.16.conv.0.weight",
+      "source_sha256": "sha256:3f38b75a31739ea47d76f6542821ce1bd70649878a53330758b6cef31e01bad9",
+      "source_shape": [
+        64,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.16.conv.0.weight",
+      "target_sha256": "sha256:30312831521d72cf5f6c42330cde345f543f49837461eb7baff9134205a3ea85",
+      "target_shape": [
+        64,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.16.conv.2.bias",
+      "source_sha256": "sha256:3bf705121f8f22857dbe51d808b7b3c5c80df21affb2e72021060d094369cb7a",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.16.conv.2.bias",
+      "target_sha256": "sha256:3bf705121f8f22857dbe51d808b7b3c5c80df21affb2e72021060d094369cb7a",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.16.conv.2.weight",
+      "source_sha256": "sha256:2d636e07b2989769f134b1d9d10a947e8287318009d0213fef706707f111cea2",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.16.conv.2.weight",
+      "target_sha256": "sha256:eebdd6eb66ad229b0c10a78c3473d3990ec6f6f351755f212b474b110d58762d",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.16.conv.4.bias",
+      "source_sha256": "sha256:e09e88d001a419d62b8aa98b71bd35472d6954816b010525a2fff14cfd44465c",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.16.conv.4.bias",
+      "target_sha256": "sha256:e09e88d001a419d62b8aa98b71bd35472d6954816b010525a2fff14cfd44465c",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.16.conv.4.weight",
+      "source_sha256": "sha256:3ba54d86a38b495de54ad0c29372ed5d9bee9ec91ea3e2616522dd104908ad06",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.16.conv.4.weight",
+      "target_sha256": "sha256:c50973c3bbe9fcfc9e3a389f3c7c042c163ef9a11230042ec20143f3fadad58d",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.17.conv.0.bias",
+      "source_sha256": "sha256:7d03a5504f1e58fa8a1d2216967e2e5b8cc8627ab76d4da3c1421efb0dedf576",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.17.conv.0.bias",
+      "target_sha256": "sha256:7d03a5504f1e58fa8a1d2216967e2e5b8cc8627ab76d4da3c1421efb0dedf576",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.17.conv.0.weight",
+      "source_sha256": "sha256:4aef6cb57d9854f6196054f278eeb7190e413d1afb0e07bee1fd9fee1ebefaaf",
+      "source_shape": [
+        64,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.17.conv.0.weight",
+      "target_sha256": "sha256:a5bb3dc1a81100f9ffe2495c40e1afd55321cc3f9947f3fa0e6ef46e3b0349c0",
+      "target_shape": [
+        64,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.17.conv.2.bias",
+      "source_sha256": "sha256:d54fc7bbfb13982fc6120f0522a99961c9648bb4ff93dd5d951d320001af8449",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.17.conv.2.bias",
+      "target_sha256": "sha256:d54fc7bbfb13982fc6120f0522a99961c9648bb4ff93dd5d951d320001af8449",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.17.conv.2.weight",
+      "source_sha256": "sha256:676e7562a4d8ab61f3f886f5b63a48dafc5c6e60a20a01ac58961362e6939943",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.17.conv.2.weight",
+      "target_sha256": "sha256:a880c8559ae7392f73c540712d29b82c6cf005388f2af9c9ee52725de82efb41",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.17.conv.4.bias",
+      "source_sha256": "sha256:81103e026aa045d0c494e0dc2ad4c27271090170f6f31bb45143f715ca8f8f62",
+      "source_shape": [
+        64
+      ],
+      "target": "decoder.17.conv.4.bias",
+      "target_sha256": "sha256:81103e026aa045d0c494e0dc2ad4c27271090170f6f31bb45143f715ca8f8f62",
+      "target_shape": [
+        64
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.17.conv.4.weight",
+      "source_sha256": "sha256:1537b697270ce9d904907183043edf0d4f2be04713413925ddd6767223fee01c",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.17.conv.4.weight",
+      "target_sha256": "sha256:af1a3f5589bfbb03ca178d18ca0479a7f3b8628b931f5fe7d91b63967593e176",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.19.conv.weight",
+      "source_sha256": "sha256:984fa7898b2270785efbf550b59c6c2b121096189860c989df2e5cfb3699c191",
+      "source_shape": [
+        128,
+        64,
+        1,
+        1
+      ],
+      "target": "decoder.19.conv.weight",
+      "target_sha256": "sha256:984fa7898b2270785efbf550b59c6c2b121096189860c989df2e5cfb3699c191",
+      "target_shape": [
+        128,
+        1,
+        1,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.20.weight",
+      "source_sha256": "sha256:678075fb514bea1da1e82b45277590ecc1f4162ea714e123fe72f9093f4ca425",
+      "source_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.20.weight",
+      "target_sha256": "sha256:7a5204632cdfdc4b0fe2403684ed719719ba309a58d1d8493e76016d6da130a5",
+      "target_shape": [
+        64,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.22.bias",
+      "source_sha256": "sha256:510ca218bddf6f3dba66561da41f5ef2430fbecf873edc5f55f822f71bfb5c91",
+      "source_shape": [
+        3
+      ],
+      "target": "decoder.22.bias",
+      "target_sha256": "sha256:510ca218bddf6f3dba66561da41f5ef2430fbecf873edc5f55f822f71bfb5c91",
+      "target_shape": [
+        3
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.22.weight",
+      "source_sha256": "sha256:5c27805344fbb771b35c2ef6785c1c4b917ee2041bd3b547ffc103b9914ba4e5",
+      "source_shape": [
+        3,
+        64,
+        3,
+        3
+      ],
+      "target": "decoder.22.weight",
+      "target_sha256": "sha256:f8866547052adbe60d05609d2cdcca74f15c37a6809a7d4ce8f43658ff6e6a3c",
+      "target_shape": [
+        3,
+        3,
+        3,
+        64
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.3.conv.0.bias",
+      "source_sha256": "sha256:306dcdf5c4b2cc97c4c1a69391300729f7b323ecbb91940c46be610a91053cb9",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.3.conv.0.bias",
+      "target_sha256": "sha256:306dcdf5c4b2cc97c4c1a69391300729f7b323ecbb91940c46be610a91053cb9",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.3.conv.0.weight",
+      "source_sha256": "sha256:f1866920a84666aa2cc5d4fdc4a4ec4b30fb31ba31d77efa0c8e8d701bdc16d3",
+      "source_shape": [
+        256,
+        512,
+        3,
+        3
+      ],
+      "target": "decoder.3.conv.0.weight",
+      "target_sha256": "sha256:7d33537809fa525ffb6a0a1df10f0e454db4ae953b4e2affb0d91180f70f0efd",
+      "target_shape": [
+        256,
+        3,
+        3,
+        512
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.3.conv.2.bias",
+      "source_sha256": "sha256:d630ba39e473e439001b2952184383001e0dc40fbb1013512bd304a3e2dd0797",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.3.conv.2.bias",
+      "target_sha256": "sha256:d630ba39e473e439001b2952184383001e0dc40fbb1013512bd304a3e2dd0797",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.3.conv.2.weight",
+      "source_sha256": "sha256:c333b47160916296c632a630de18b8b364045b6f1b72324ffeb6a9dee9430cbe",
+      "source_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.3.conv.2.weight",
+      "target_sha256": "sha256:266fdbae169dd0dd4529dcce64e67dc07772f5122451d64e30cddc24118f73c0",
+      "target_shape": [
+        256,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.3.conv.4.bias",
+      "source_sha256": "sha256:6c25486e8371722d8cbf5cb25524efa059f8765dc13d667b7e2470fc8728a76c",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.3.conv.4.bias",
+      "target_sha256": "sha256:6c25486e8371722d8cbf5cb25524efa059f8765dc13d667b7e2470fc8728a76c",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.3.conv.4.weight",
+      "source_sha256": "sha256:82025f6da16d43fbf0ee4f477cb410e94b90bf355c123602689a21bd607556e2",
+      "source_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.3.conv.4.weight",
+      "target_sha256": "sha256:7b89348f6c727b54f93bbc3075932605db7539e9be4568b929ff2533a5426ff3",
+      "target_shape": [
+        256,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.4.conv.0.bias",
+      "source_sha256": "sha256:50155204e3ae47cb05eea23f97de10e44f90937dadd2c89e58254acd6b7a88ec",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.4.conv.0.bias",
+      "target_sha256": "sha256:50155204e3ae47cb05eea23f97de10e44f90937dadd2c89e58254acd6b7a88ec",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.4.conv.0.weight",
+      "source_sha256": "sha256:2f6a9580b0df76e1ba1c575461e6be9abc39807d92fad99a4d0c23bb588f7510",
+      "source_shape": [
+        256,
+        512,
+        3,
+        3
+      ],
+      "target": "decoder.4.conv.0.weight",
+      "target_sha256": "sha256:c23863140f29e6fb7dabe2610d6966a2cadfed231cab08bc359618ff13712656",
+      "target_shape": [
+        256,
+        3,
+        3,
+        512
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.4.conv.2.bias",
+      "source_sha256": "sha256:50995b6cbc4f5d25454813b112e916f34429739dfe0f5b0fc6b769972d5452ef",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.4.conv.2.bias",
+      "target_sha256": "sha256:50995b6cbc4f5d25454813b112e916f34429739dfe0f5b0fc6b769972d5452ef",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.4.conv.2.weight",
+      "source_sha256": "sha256:05a731865165b9145d44e67cafe93063f3e78741de1a1aa831d5236cca4dcaea",
+      "source_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.4.conv.2.weight",
+      "target_sha256": "sha256:12f13e77cd51c5b6f472be5ca44b1bd9a0cfc56df5d49faf1b9297d17586739f",
+      "target_shape": [
+        256,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.4.conv.4.bias",
+      "source_sha256": "sha256:c6537feb319d0df4fff1370a1d856e2d4fcf47b409345275d50155d2f61e874f",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.4.conv.4.bias",
+      "target_sha256": "sha256:c6537feb319d0df4fff1370a1d856e2d4fcf47b409345275d50155d2f61e874f",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.4.conv.4.weight",
+      "source_sha256": "sha256:a60374435c97bcddab99c7a689b73a5f6ebc908fd45048731e9cc9611d07d7c6",
+      "source_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.4.conv.4.weight",
+      "target_sha256": "sha256:d21e9d6aa48cee8539a79cf658fdaf7bb404339ebfac18aeaf82293a591ef5f9",
+      "target_shape": [
+        256,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.5.conv.0.bias",
+      "source_sha256": "sha256:42aea8edd04018de1e591cc6ef148e6a76c6f8be2a7f3efe691122ce5fcbc34e",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.5.conv.0.bias",
+      "target_sha256": "sha256:42aea8edd04018de1e591cc6ef148e6a76c6f8be2a7f3efe691122ce5fcbc34e",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.5.conv.0.weight",
+      "source_sha256": "sha256:cb18bebd5c9f4f0fc82a56e5a0f7e965613b0de2da4450a864c741015fc02a96",
+      "source_shape": [
+        256,
+        512,
+        3,
+        3
+      ],
+      "target": "decoder.5.conv.0.weight",
+      "target_sha256": "sha256:e327287b11468444316d197fe76ca82c886ceab435696f5edddfdc6d007eabcf",
+      "target_shape": [
+        256,
+        3,
+        3,
+        512
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.5.conv.2.bias",
+      "source_sha256": "sha256:c0cca81a9c5f6ad224e18ee980cb3f61ce9cb4142082c372349a196414e8ae3d",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.5.conv.2.bias",
+      "target_sha256": "sha256:c0cca81a9c5f6ad224e18ee980cb3f61ce9cb4142082c372349a196414e8ae3d",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.5.conv.2.weight",
+      "source_sha256": "sha256:43c5caa6537d1e64789a01b6c7a264522fa8542af57d941ec79296ff8d5030bd",
+      "source_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.5.conv.2.weight",
+      "target_sha256": "sha256:3e5d4f8ed7fdbdd6ea77c4e6fc81f2e49de0d080d6abb0285f48f0beb11913e4",
+      "target_shape": [
+        256,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.5.conv.4.bias",
+      "source_sha256": "sha256:bd83a102faac7d0de58f7982820d0dab9c8f98bda8609b2df97d0ca61284c58f",
+      "source_shape": [
+        256
+      ],
+      "target": "decoder.5.conv.4.bias",
+      "target_sha256": "sha256:bd83a102faac7d0de58f7982820d0dab9c8f98bda8609b2df97d0ca61284c58f",
+      "target_shape": [
+        256
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.5.conv.4.weight",
+      "source_sha256": "sha256:90cf60b71c7d13273290d5dffcef34144a5672264347f1d9c5547cf35eccdc54",
+      "source_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.5.conv.4.weight",
+      "target_sha256": "sha256:9a91234d0f7a37d1875c95eb5a7af0ce1d3f6693702f0a8f1663010bdde6bc50",
+      "target_shape": [
+        256,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.7.conv.weight",
+      "source_sha256": "sha256:4ebfbf83fcca5d6881cc81ac4ee28cd7de1b1dba8e99588a0b5944027ad42e0b",
+      "source_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "target": "decoder.7.conv.weight",
+      "target_sha256": "sha256:4ebfbf83fcca5d6881cc81ac4ee28cd7de1b1dba8e99588a0b5944027ad42e0b",
+      "target_shape": [
+        256,
+        1,
+        1,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.8.weight",
+      "source_sha256": "sha256:996f51ea2dc098389b9a4367a9e819e2dbcbd1f4ceecae4ad9f7e474195946df",
+      "source_shape": [
+        128,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.8.weight",
+      "target_sha256": "sha256:cdcc0e8b9c14855260f8af47d672088bff9f770a4e787caf1b2afc05cec3da8e",
+      "target_shape": [
+        128,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.9.conv.0.bias",
+      "source_sha256": "sha256:50c2fcc47e2599035f06eaeab8a72b024c764c7a85cd78186c2483bde2228353",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.9.conv.0.bias",
+      "target_sha256": "sha256:50c2fcc47e2599035f06eaeab8a72b024c764c7a85cd78186c2483bde2228353",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.9.conv.0.weight",
+      "source_sha256": "sha256:2184f713a4c9cc300005e77d5ddf25c078e7e150e346b57f78d7452fe7d8a5dd",
+      "source_shape": [
+        128,
+        256,
+        3,
+        3
+      ],
+      "target": "decoder.9.conv.0.weight",
+      "target_sha256": "sha256:42d12ea544e3ac4cdade123ac5679b981a4b86fa88f9ea8d46c1dde59bf09247",
+      "target_shape": [
+        128,
+        3,
+        3,
+        256
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.9.conv.2.bias",
+      "source_sha256": "sha256:39b27d15276e3df82fcc136dba3da80335fdbdc710e122dad535cd189175aefb",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.9.conv.2.bias",
+      "target_sha256": "sha256:39b27d15276e3df82fcc136dba3da80335fdbdc710e122dad535cd189175aefb",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.9.conv.2.weight",
+      "source_sha256": "sha256:db828fea56ea3501ad2af118fef31fcb853cd835830bf65275f59c01c4ec7dbb",
+      "source_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.9.conv.2.weight",
+      "target_sha256": "sha256:c6f2c152b01293dcd1bce3c11e05e7997f4fdeb90b181a09f980617462dbbb27",
+      "target_shape": [
+        128,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.9.conv.4.bias",
+      "source_sha256": "sha256:f1852c9aad2279f7d4a0df2f6b72b359eef9f8cd48967c0235f74dbe6c0b9f94",
+      "source_shape": [
+        128
+      ],
+      "target": "decoder.9.conv.4.bias",
+      "target_sha256": "sha256:f1852c9aad2279f7d4a0df2f6b72b359eef9f8cd48967c0235f74dbe6c0b9f94",
+      "target_shape": [
+        128
+      ],
+      "transform": "identity"
+    },
+    {
+      "dtype": "float16",
+      "source": "decoder.9.conv.4.weight",
+      "source_sha256": "sha256:137c6920ddde3f5de550d67d6eb6b7811dfa5243cd91d7a86c72308ef19ebfbb",
+      "source_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "target": "decoder.9.conv.4.weight",
+      "target_sha256": "sha256:33b297225e3045c2eabb8b3fc5e36699fc5b62c0a8d6fa9faea9744d8cca42c1",
+      "target_shape": [
+        128,
+        3,
+        3,
+        128
+      ],
+      "transform": "oihw-to-ohwi"
+    }
+  ],
+  "schema": "liveframe.taew21-mlx-conversion.v1",
+  "source": {
+    "artifact": "taew2_1.safetensors",
+    "format": "safetensors",
+    "repository": "https://github.com/madebyollin/taehv",
+    "revision": "e589fddc076e77f5ba8cd6baabe4ba3260b261cd",
+    "sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f"
+  },
+  "target": {
+    "artifact": "taew2_1-mlx.safetensors",
+    "kernel_layout": "OHWI",
+    "sha256": "sha256:6fb5b1810a3f81a2ee9f2380bd2f961d1b8c9735db1db9fe9046a65e04efe324",
+    "tensor_count": 64
+  }
+}

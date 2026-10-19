@@ -1,0 +1,103 @@
+{
+  "authority": "branch-a-routing-only-not-a-performance-claim",
+  "baseline_vae_median_seconds": 41.31944479000049,
+  "configuration": "float32-explicit-im2col",
+  "fixture_sha256": "sha256:966be57aebc4369ba9c197168dddc5c587cd9c891ba73ce613e5956d4e598512",
+  "maximum_candidate_median_seconds": 13.773148263333496,
+  "median_wall_seconds": 3.514485458001218,
+  "parity_result_sha256": "sha256:8c7819711f76a640931974ff5a2497d31c27ec3b3862c6e546eaa748b4d38647",
+  "passed": true,
+  "policy_digest": "sha256:30bb35c09671fe0575953d818a9d23d6ead0ddee8cfdc7b1ee0138f2e43116b2",
+  "policy_sha256": "sha256:8825a0d93d942aeb814bb3ba34f62d0857dd2b405d95b92c504c851cf3daca0e",
+  "request": {
+    "height": 480,
+    "latent_frames": 21,
+    "native_frames": 81,
+    "width": 832
+  },
+  "schema": "liveframe.taew21-fp32-im2col-screen.v1",
+  "smoke_result_sha256": "sha256:a0f9a6c8d311fcff91bf3c289868afae8b9bea64fe3461e3644e1c2b1469df35",
+  "timed_trials": 3,
+  "timed_wall_seconds": [
+    3.5490122080009314,
+    3.507282375001523,
+    3.514485458001218
+  ],
+  "trials": [
+    {
+      "emitted_frames": 81,
+      "end_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "index": 0,
+      "pixel_sha256": "sha256:338554214102a281597416b62df4b84e2107913100503b7901e9bda0e4e163b0",
+      "role": "warmup",
+      "start_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "swap_delta_mib": 0.0,
+      "wall_seconds": 4.085471790998781
+    },
+    {
+      "emitted_frames": 81,
+      "end_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "index": 1,
+      "pixel_sha256": "sha256:338554214102a281597416b62df4b84e2107913100503b7901e9bda0e4e163b0",
+      "role": "timed",
+      "start_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "swap_delta_mib": 0.0,
+      "wall_seconds": 3.5490122080009314
+    },
+    {
+      "emitted_frames": 81,
+      "end_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "index": 2,
+      "pixel_sha256": "sha256:338554214102a281597416b62df4b84e2107913100503b7901e9bda0e4e163b0",
+      "role": "timed",
+      "start_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "swap_delta_mib": 0.0,
+      "wall_seconds": 3.507282375001523
+    },
+    {
+      "emitted_frames": 81,
+      "end_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "index": 3,
+      "pixel_sha256": "sha256:338554214102a281597416b62df4b84e2107913100503b7901e9bda0e4e163b0",
+      "role": "timed",
+      "start_swap": {
+        "free_mib": 0.0,
+        "total_mib": 0.0,
+        "used_mib": 0.0
+      },
+      "swap_delta_mib": 0.0,
+      "wall_seconds": 3.514485458001218
+    }
+  ],
+  "verdict": "proceed-to-original-five-trial-formal-decoder-and-complete-wall-benchmark",
+  "warmups": 1,
+  "weights_sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461"
+}

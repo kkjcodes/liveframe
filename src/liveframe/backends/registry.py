@@ -23,6 +23,7 @@ def register_backend(name: str, factory: BackendFactory) -> None:
 
 def available_backends() -> dict[str, bool]:
     return {
+        "synthetic": True,
         "mlx": platform.system() == "Darwin" and importlib.util.find_spec("mlx") is not None,
         "pytorch": importlib.util.find_spec("torch") is not None,
         **{name: True for name in _FACTORIES},
@@ -33,6 +34,10 @@ def create_backend(name: str) -> Backend:
     normalized = name.strip().lower()
     if normalized in _FACTORIES:
         return _FACTORIES[normalized]()
+    if normalized == "synthetic":
+        from liveframe.backends.synthetic import SyntheticBackend
+
+        return SyntheticBackend()
     if normalized == "mlx":
         if not available_backends()["mlx"]:
             raise BackendUnavailableError("MLX backend requires macOS, Apple Silicon, and mlx")

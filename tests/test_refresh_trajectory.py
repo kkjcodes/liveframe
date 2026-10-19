@@ -4,15 +4,16 @@ from dataclasses import dataclass
 from typing import Any
 
 import pytest
-import torch
 
-from liveframe.refresh_proof import MODEL_LAYERS, TOKENS_PER_FRAME
-from liveframe.refresh_trajectory import (
+torch = pytest.importorskip("torch")
+
+from liveframe.refresh_proof import MODEL_LAYERS, TOKENS_PER_FRAME  # noqa: E402
+from liveframe.refresh_trajectory import (  # noqa: E402
     PairedStochasticFrame,
     TimedRefresh,
     run_paired_refresh_trajectory,
 )
-from liveframe.torch_refresh_rerope import FramewiseRefreshHarness
+from liveframe.torch_refresh_rerope import FramewiseRefreshHarness  # noqa: E402
 
 DIGEST = "sha256:" + "a" * 64
 

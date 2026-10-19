@@ -1,0 +1,50 @@
+{
+  "candidate_priority": [
+    {
+      "configuration": "float32-explicit-im2col",
+      "convolution_mode": "fp32-im2col",
+      "status": "first-shipping-candidate"
+    },
+    {
+      "configuration": "float16-native",
+      "status": "deferred-requires-new-prospective-addendum-and-quality-authority"
+    }
+  ],
+  "decision_rules": {
+    "screening_pass": "proceed-to-original-five-trial-formal-decoder-and-complete-wall-benchmark",
+    "screening_fail": "stop-fp32-im2col-shipping-track-no-timing-claim",
+    "smoke_fail": "stop-candidate-before-timing",
+    "timing_visibility_retuning": "forbidden"
+  },
+  "policy_digest": "sha256:30bb35c09671fe0575953d818a9d23d6ead0ddee8cfdc7b1ee0138f2e43116b2",
+  "provenance": {
+    "amendment_v5_sha256": "sha256:c7081e0d226147049d392b4d7f13794d79514bf1b92cc40ab85166517f2c7555",
+    "baseline_artifact": "artifacts/m5-cfpp-1step-cache4-baseline.v1.json",
+    "baseline_sha256": "sha256:5bdc9fdbae59842158f278163d738656d1e4c05996ccf7495cf4d074009e3ce1",
+    "decoder_sha256": "sha256:96d03eb60ebeecc5863de2ded49fe80b4500677e3116d4f269fa7016cd2a296a",
+    "parity_v5_sha256": "sha256:8c7819711f76a640931974ff5a2497d31c27ec3b3862c6e546eaa748b4d38647",
+    "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce"
+  },
+  "schema": "liveframe.taew21-precision-policy.v1",
+  "screening": {
+    "authority": "branch-a-routing-only-not-a-performance-claim",
+    "baseline_vae_median_seconds": 41.31944479000049,
+    "maximum_candidate_median_seconds": 13.773148263333496,
+    "minimum_decoder_speedup": 3.0,
+    "swap_rule": "zero-start-swap-and-zero-delta-every-trial",
+    "timed_trials": 3,
+    "warmups": 1
+  },
+  "smoke": {
+    "dtype": "uint8",
+    "finite": true,
+    "frames": 81,
+    "layout": "T,H,W,C",
+    "maximum_swap_delta_mib": 0.0,
+    "resolution": [
+      480,
+      832
+    ]
+  },
+  "status": "frozen-before-fp32-im2col-smoke-or-timing-visibility"
+}

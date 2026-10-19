@@ -194,6 +194,13 @@ KV state: the claim-eligible one-warmup/three-trial baseline measures 57.127 sec
 24.09% less VAE wall than the authoritative 1 GiB baseline, with exact raw RGB, all latent
 quality anchors passing, and zero swap. See `agent/m5_cfpp_vae_profile_report.md`.
 
+**Next decoder acceleration track (2026-08-08):** proceed with the prospective taew2_1
+out-of-loop decoder substitution and blinded discrimination gate in
+`agent/taew21_acceleration_implementation_plan.md`. This merges perceptual-budget evaluation into
+the existing sequence without reopening training-free recurrent approximations. KV reuse, refresh
+skipping, and denoiser layer skipping remain deferred to a training/adaptation track because their
+errors enter the autoregressive state and can compound across the horizon.
+
 “Runs on any machine” means portable algorithm semantics and reproducible behavior on declared
 supported backends. It does not mean every machine reaches the same latency. Initial support is
 CUDA/NVIDIA and MLX/Apple Silicon; additional backends require their own parity and budget rows.

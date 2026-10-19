@@ -1,0 +1,69 @@
+{
+  "allowed_implementation_change": {
+    "comparison_engine": {
+      "artifact": "tools/check_taew21_port_parity.py",
+      "sha256": "sha256:39ef19505b1434835f95b96f30df4529ac036b087b585c1ba968812641435814",
+      "usage": "import-unchanged-metrics-verdict-and-call-count-logic"
+    },
+    "converter": {
+      "new_target_dtype": "float32",
+      "output_directory": "artifacts/taew21-mlx-weights.v4-fp32",
+      "overwrite_prior_versions": false
+    },
+    "decoder": {
+      "compute_dtype": "float32-end-to-end",
+      "input_dtype": "float32",
+      "op_order": "unchanged",
+      "preserve_fp32_memory_layers": true,
+      "weights_dtype": "float32"
+    },
+    "diagnostic_runner": "new-fail-closed-v4-authorization-wrapper-only",
+    "execution_binding": {
+      "artifact": "artifacts/taew21-fp32-execution-binding.v1.json",
+      "must_bind": [
+        "amendment_v4",
+        "diagnostic_runner",
+        "comparison_engine",
+        "decoder",
+        "converter",
+        "weights",
+        "conversion_manifest",
+        "golden",
+        "policy_v2",
+        "output"
+      ],
+      "status": "must-be-frozen-and-committed-before-candidate-execution"
+    }
+  },
+  "amendment_digest": "sha256:c637317030e4a5666738963a48b3ace0c4206ad028efa0f1c47ed4f899b240db",
+  "bindings": {
+    "base_protocol_digest": "sha256:ad0c4b7eed88bff8f6cf66cc33eb2aa1eadea61a97ddebb68eead782c59626f7",
+    "base_protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+    "policy_v2_sha256": "sha256:92219705c499983758e06fe28b3a8a659c8ab619ddc5b1b4f400e26b0edc197e",
+    "pre_diagnostic_checker_sha256": "sha256:39ef19505b1434835f95b96f30df4529ac036b087b585c1ba968812641435814",
+    "pre_diagnostic_converter_sha256": "sha256:fa7880e4442f7890f49f0cb626b7c1155af8522c2ba67a26c96115266df191e9",
+    "pre_diagnostic_decoder_sha256": "sha256:a213f6f7203d66184d853fc35a28db2b6859bf37e82956e4e2dc16b562032052",
+    "previous_amendment_sha256": "sha256:6a17338795d9b2f43ec809726b3feb8f92a5785d061e24dd3f2dbb77046c5c72",
+    "previous_result_sha256": "sha256:a558c27208c3a78d28a7166ef24499d881c3fcb7ea61505122ff4b5a8295791c",
+    "source_revision": "e589fddc076e77f5ba8cd6baabe4ba3260b261cd",
+    "source_weights_sha256": "sha256:04766eac0221b5390b985ae3fdcca652cbb4b1e8b82b28ea7ff89dfad1b1a93f"
+  },
+  "decision_rules": {
+    "all_probes_and_final_outputs_pass": "port-semantics-confirmed-enter-branch-a-precision-policy-only",
+    "any_probe_or_final_output_fails": "op-semantics-bug-confirmed-enter-branch-b-block-11-call-000-bisection-only",
+    "fp16_probe_limit_relaxation": "forbidden",
+    "threshold_changes": "forbidden"
+  },
+  "purpose": "Full-FP32 diagnostic candidate only; not a shipping configuration and not authority for smoke, timing, campaign, metrics, or human study. The v3 FP16 verdict remains NO-GO.",
+  "schema": "liveframe.taew21-protocol-amendment.v4",
+  "status": "frozen-before-full-fp32-diagnostic-execution",
+  "unchanged_constraints": {
+    "activation_anchors": true,
+    "comparison_math": true,
+    "fixture": true,
+    "golden": true,
+    "operation_order": true,
+    "policy_v2_limits": true
+  },
+  "visibility_at_freeze": "v1-v3-results-visible-no-full-fp32-conversion-or-candidate-execution-performed"
+}

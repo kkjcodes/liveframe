@@ -6,7 +6,7 @@ LiveFrame: Evidence-First Measurement of Real-Time Autoregressive Diffusion Vide
 
 ## Authors
 
-Kumar K. Jha
+Kumar K. Jha (Independent Researcher)
 
 ## Affiliation
 
@@ -18,11 +18,11 @@ kumar.krishnanand@gmail.com
 
 ## Primary category
 
-`cs.CV` — Computer Vision and Pattern Recognition
+`cs.CV` - Computer Vision and Pattern Recognition
 
 ## Suggested cross-list
 
-`cs.LG` — Machine Learning
+`cs.LG` - Machine Learning
 
 ## Abstract
 
@@ -32,7 +32,7 @@ We apply this methodology to Wan2.1-T2V-1.3B derivatives on NVIDIA H100 CUDA and
 
 ## Suggested comments
 
-5 pages, 3 tables. Evidence-first systems study with one exact-output Apple MLX optimization and three bounded negative results. Artifact release links will accompany the public repository release.
+6 pages, 3 tables. Evidence-first systems study with one exact-output Apple MLX optimization and three bounded negative results. Code and evidence: https://github.com/kkjcodes/liveframe
 
 ## Suggested keywords
 
@@ -42,8 +42,8 @@ video diffusion; autoregressive generation; reproducibility; numerical divergenc
 
 - Confirm `Independent Researcher` as the final affiliation.
 - Select an arXiv distribution license.
-- Confirm the durable frozen-evidence URL resolves without authentication.
+- Confirm the durable frozen-evidence URL resolves without authentication: https://github.com/kkjcodes/liveframe/tree/evidence-freeze-2026-08-06
 - Complete content review of the 128 representative preview clips.
-- Re-run the literature search on the submission date.
-- Upload `paper/liveframe-arxiv-source-2026-08-06.tar.gz` and inspect arXiv's generated PDF.
+- Literature search refreshed on 17 September 2026; repeat only if submitting later.
+- Upload `paper/liveframe-arxiv-source-2026-09-17.tar.gz` and inspect arXiv's generated PDF.
 - Compare arXiv's PDF against `paper/arxiv/main.pdf` page by page.

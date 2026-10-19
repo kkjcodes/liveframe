@@ -45,7 +45,10 @@ Upload the contents of this directory, not the directory itself. The source pack
 
 - `main.tex`
 - `references.bib`
+- `main.bbl`
 - `README.md` (optional for arXiv, useful in the release archive)
+
+Do not include `main.pdf`, `.aux`, `.log`, `.out`, or `.blg` files. arXiv will use the matching `main.bbl` when it is present.
 
 No model weights, private paths, raw evidence corpora, generated videos, or third-party source are included. The manuscript uses only standard TeX packages available in current TeX Live distributions and has no external figure dependency.
 

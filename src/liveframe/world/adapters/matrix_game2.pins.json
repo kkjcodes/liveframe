@@ -1,0 +1,16 @@
+{
+  "schema": "liveframe.world.adapter-pins.v1",
+  "adapter": "matrix-game-2",
+  "verified": "2026-10-11",
+  "verified_on": "RunPod RTX 4090, driver 580.126.20, python 3.11",
+  "pins": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "diffusers": "0.32.2",
+    "transformers": "4.49.0",
+    "flash-attn": "2.7.4.post1"
+  },
+  "forbidden": {
+    "torchao": "breaks diffusers import on torch 2.6 (F-0004); uninstall"
+  }
+}

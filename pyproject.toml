@@ -4,13 +4,32 @@ build-backend = "hatchling.build"
 
 [project]
 name = "liveframe"
-version = "0.1.0.dev0"
-description = "Real-time diffusion video generation, honestly measured."
+version = "0.3.0"
+description = "Honest runtime qualification for streaming and interactive video generation."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
 authors = [{ name = "kkjcodes" }]
+keywords = ["video-generation", "world-models", "benchmark", "runtime", "evaluation", "streaming"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Testing",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/kkjcodes/liveframe"
+Repository = "https://github.com/kkjcodes/liveframe"
+Issues = "https://github.com/kkjcodes/liveframe/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -32,15 +51,74 @@ metrics = [
   "torchvision>=0.21",
   "transformers>=5.0",
 ]
+world = [
+  "numpy>=1.26",
+  "opencv-python-headless>=4.9",
+  "jsonschema>=4.21",
+]
+world-gpu = [
+  "liveframe[world]",
+  "torch>=2.4",
+  "pynvml>=11.5",
+]
+world-quality = [
+  "liveframe[world-gpu]",
+  "lpips>=0.1.4",
+  "transformers>=5.0",
+]
 
 [project.scripts]
 liveframe = "liveframe.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/liveframe"]
+# The published wheel ships the dependency-free core only (M0 decision:
+# excluding research modules needs fewer edits than moving them, and frozen
+# evidence keeps its paths). Research modules stay importable from the
+# repository checkout; research-only CLI commands degrade with a clear error.
+sources = ["src"]
+only-include = [
+  "src/liveframe/__init__.py",
+  "src/liveframe/engine.py",
+  "src/liveframe/cli.py",
+  "src/liveframe/claims.py",
+  "src/liveframe/events.py",
+  "src/liveframe/gates.py",
+  "src/liveframe/host.py",
+  "src/liveframe/qualification.py",
+  "src/liveframe/qualification_ledger.py",
+  "src/liveframe/backends/__init__.py",
+  "src/liveframe/backends/base.py",
+  "src/liveframe/backends/registry.py",
+  "src/liveframe/backends/synthetic.py",
+  "src/liveframe/data",
+  # The world harness ships in the wheel; importing liveframe.world requires
+  # the [world] extra (numpy), while `import liveframe` stays dependency-free.
+  "src/liveframe/world",
+]
 
-[tool.hatch.build.targets.wheel.force-include]
-"src/liveframe/data" = "liveframe/data"
+[tool.hatch.build.targets.sdist]
+# By default hatchling sweeps everything not gitignored into the sdist, which
+# pulls in agent/ (118 MB of frozen evidence frames) and artifacts/ (bound
+# evidence). Those are repository receipts, not package content, and the
+# agent/ frames alone blow past PyPI's 100 MB per-file limit. Scope the sdist
+# to what a source install/build/test actually needs.
+include = [
+  "src/liveframe",
+  "tests",
+  "examples",
+  "docs",
+  "pyproject.toml",
+  "README.md",
+  "QUICKSTART.md",
+  "LICENSE",
+  "THIRD_PARTY.md",
+]
+# Hatchling otherwise auto-sweeps nested README.md files from the receipt dirs.
+exclude = [
+  "agent",
+  "paper",
+  "artifacts",
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -48,21 +126,33 @@ allow-direct-references = true
 [tool.pytest.ini_options]
 addopts = "-ra"
 testpaths = ["tests"]
+markers = [
+  "gpu: requires a CUDA device and/or a model environment; runs at GPU-session start",
+]
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py310"
 line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.10"
 strict = true
 files = ["src/liveframe"]
 
 [[tool.mypy.overrides]]
 module = [
+  # taew21 modules are digest-frozen evidence (decoder_sha256 is bound into
+  # artifacts/taew21-precision-policy.v1.json); fix typing nits only via a new
+  # prospective amendment, never in place.
+  "liveframe.converters.taew21_to_mlx",
+  "liveframe.decoders.taew21_mlx",
+  # Bridge adapters execute inside model environments (torch untyped there).
+  "liveframe.world.adapters.matrix_game2",
+  "liveframe.world.adapters.matrix_game3",
+  "liveframe.world.adapters.hy_worldplay",
   "liveframe.backends.mlx_causal",
   "liveframe.mlx_causal_smoke",
   "liveframe.mlx_parity",

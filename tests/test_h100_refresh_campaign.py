@@ -123,8 +123,8 @@ def test_allocation_smoke_is_proof_blind_by_construction() -> None:
 
 
 def test_drift_cosine_is_clamped_to_its_mathematical_range(monkeypatch: pytest.MonkeyPatch) -> None:
-    import torch
-    import torch.nn.functional as functional
+    torch = pytest.importorskip("torch")
+    functional = pytest.importorskip("torch.nn.functional")
 
     monkeypatch.setattr(
         functional,

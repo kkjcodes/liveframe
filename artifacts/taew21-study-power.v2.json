@@ -1,0 +1,50 @@
+{
+  "amendment_sha256": "sha256:39d187a1b6b895cb539a246186ae539a31807c2d296ea45e7b5dbaad0565ea77",
+  "assumptions": {
+    "attention_failure_rate": 0.1,
+    "heterogeneity_and_analysis": "imported from frozen v1 simulator",
+    "replicates": 2000,
+    "seed": 20260823,
+    "sigma_participant_logit": 0.5,
+    "sigma_video_logit": 0.5,
+    "usable_judgment_target": 486
+  },
+  "authority": "transparency evidence for the executed v6.1/v6.2 design; the operative target (486) and the analyzer verdict rule come from the frozen v1 artifact and are unchanged",
+  "cells": [
+    {
+      "exhaustion_probability": 0.002,
+      "expected_usable_judgments": 497.061,
+      "mean_replacements_activated": 0.697,
+      "p_true": 0.5,
+      "pass_probability": 0.719
+    },
+    {
+      "exhaustion_probability": 0.001,
+      "expected_usable_judgments": 496.827,
+      "mean_replacements_activated": 0.7325,
+      "p_true": 0.53,
+      "pass_probability": 0.1425
+    },
+    {
+      "exhaustion_probability": 0.0025,
+      "expected_usable_judgments": 497.763,
+      "mean_replacements_activated": 0.7305,
+      "p_true": 0.55,
+      "pass_probability": 0.0185
+    },
+    {
+      "exhaustion_probability": 0.0025,
+      "expected_usable_judgments": 497.628,
+      "mean_replacements_activated": 0.6795,
+      "p_true": 0.58,
+      "pass_probability": 0.0
+    }
+  ],
+  "pass_probability_at_chance": 0.719,
+  "power_v1_sha256": "sha256:f409a8ca1c770b51266eb9e16d71f96898fdd242d59d5d4777eec29290691de5",
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "schema": "liveframe.taew21-study-power.v2",
+  "simulator_sha256": "sha256:4411bf80079ef88fc8816b66b1398f956a1f3c1c168f7a22ea6fee7c085bdee8",
+  "state_machine": "collect 30 primaries -> sequential necessity-gated replacement activation in ID order (max 6) -> stop at first usable >= target -> two-gate verdict (target met AND two-way clustered UCB <= 0.55)",
+  "supersedes": "the RETRACTED v6.1 claim that the v1 value 0.7485 lower-bounds the executed design"
+}

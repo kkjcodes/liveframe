@@ -1,0 +1,15 @@
+{
+  "canonicalization": "rfc8785-compatible-json-v1",
+  "files": {
+    "cases/smoke-000/case.json": "sha256:558c85e82d44284eeec0507f809969e3b5da7650e07b59e3372181d4dda24a4a",
+    "cases/smoke-000/frames_256/chunk-0000.npz": "sha256:2751bc5320e80ba77999408c7cd9a82eba29ffe605584ca7997084f1718e9ae9",
+    "cases/smoke-000/timing.jsonl": "sha256:2d05fa83ce3a3e860a44ae12db87388af4da6ea2f451bde96cd4f2f82854b066",
+    "manifest.json": "sha256:304bbd187278c27691f547214b6648a26b95e372f3d54d1b02f408c66d28d8b1"
+  },
+  "ledger_digest": "sha256:685d569219fbc3a00c60b861907eec8a807e5ef5c211999a9d479a90cf6e30d0",
+  "metadata": {
+    "model": "matrix-game-2",
+    "suite": "smoke"
+  },
+  "schema": "liveframe.world.ledger.v1"
+}

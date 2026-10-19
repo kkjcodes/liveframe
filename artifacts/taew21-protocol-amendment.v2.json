@@ -1,0 +1,19 @@
+{
+  "amended_checker_sha256": "sha256:1b706e372ae9a8b7b43d7af4f4e3b0ae6b37b0b9df6780fd9a36b9ff87c68154",
+  "failed_result_sha256": "sha256:36e20d1f15810015ba675e1763cb9a7e73f444c32e0751614c61d8345cd81880",
+  "failure_class": "noncontiguous-numpy-transpose-serialized-with-incorrect-element-order",
+  "limits_unchanged": true,
+  "original_converter_sha256": "sha256:b00c6dd903fa9e71767f258a94958fa35c23120d0c57c6810650e98e3562e6dd",
+  "original_weights_sha256": "sha256:74a54bff71547f6f26f3a121ef68274b99f88d5cced38a2becef8918fe1b06da",
+  "policy_sha256": "sha256:3a5b5f39cb5de2e4c94d5e7a18b66a3e7a4b568dc58c22ba2894393d5741ada0",
+  "previous_amendment_sha256": "sha256:7aac38b40a7eef2de61665b95a985d7c4c6ed4e12c61a6fec807ad29c7a27411",
+  "previous_checker_sha256": "sha256:f44db53519420d7e8af777a9ed735111b4c932fa95e9b664882acfe24d001b65",
+  "protocol_digest": "sha256:ad0c4b7eed88bff8f6cf66cc33eb2aa1eadea61a97ddebb68eead782c59626f7",
+  "repaired_converter_sha256": "sha256:fa7880e4442f7890f49f0cb626b7c1155af8522c2ba67a26c96115266df191e9",
+  "repaired_manifest_sha256": "sha256:32314c7e57de02808fbb4575e5b8c68c328c13ebb4c0912cbc5975d49eb0df00",
+  "repaired_weights_sha256": "sha256:6fb5b1810a3f81a2ee9f2380bd2f961d1b8c9735db1db9fe9046a65e04efe324",
+  "schema": "liveframe.taew21-protocol-amendment.v2",
+  "scope": "contiguous-weight-materialization-and-parity-rerun-only",
+  "status": "frozen-after-v1-no-go-before-repaired-candidate-metrics",
+  "visibility_at_amendment": "v1-parity-no-go-visible-repair-selected-from-first-divergent-layer"
+}

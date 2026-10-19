@@ -1,0 +1,9 @@
+{
+  "amended_checker_sha256": "sha256:f44db53519420d7e8af777a9ed735111b4c932fa95e9b664882acfe24d001b65",
+  "original_checker_sha256": "sha256:ae65423652dd918bd273675eb58588932f900b331efadbef197f2d03f77b8ec9",
+  "protocol_digest": "sha256:ad0c4b7eed88bff8f6cf66cc33eb2aa1eadea61a97ddebb68eead782c59626f7",
+  "schema": "liveframe.taew21-protocol-amendment.v1",
+  "scope": "full-layer-call-count-validation-only",
+  "status": "frozen-before-first-parity-metric-visibility",
+  "visibility_at_amendment": "mlx-computation-completed-no-candidate-tensor-metrics-read-or-reported"
+}

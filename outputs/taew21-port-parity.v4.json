@@ -1,0 +1,629 @@
+{
+  "amendment_v4_1_sha256": "sha256:b3ccd5a9a35bfc784d17f8a81b34fc83c2d7be8b7d57c53e585bcc33b0b72a0a",
+  "amendment_v4_sha256": "sha256:4dd7b080d6cc3dde403f72136d4d21d08bcacb76af63648a577cd9e40cf0e319",
+  "call_counts": {
+    "decoder.0": 21,
+    "decoder.1": 21,
+    "decoder.10": 21,
+    "decoder.11": 21,
+    "decoder.12": 21,
+    "decoder.13": 21,
+    "decoder.14": 42,
+    "decoder.15": 42,
+    "decoder.16": 42,
+    "decoder.17": 42,
+    "decoder.18": 42,
+    "decoder.19": 42,
+    "decoder.2": 21,
+    "decoder.20": 84,
+    "decoder.21": 84,
+    "decoder.22": 84,
+    "decoder.3": 21,
+    "decoder.4": 21,
+    "decoder.5": 21,
+    "decoder.6": 21,
+    "decoder.7": 21,
+    "decoder.8": 21,
+    "decoder.9": 21
+  },
+  "comparison_engine_sha256": "sha256:39ef19505b1434835f95b96f30df4529ac036b087b585c1ba968812641435814",
+  "conversion_manifest_sha256": "sha256:9c14765b6019fdf07de6a61b2d221be63531b44cbae51600acb8646cd035e5d3",
+  "diagnostic_runner_sha256": "sha256:e0855968d5c8113a110e95b36bfa9683b1f433d84a822ac043a13d928ec8982d",
+  "execution_binding_sha256": "sha256:7bed9593a7d4cc1e147e0dc020ae3664c555223242812cc7e7f801e4225b6bbf",
+  "failed_tensors": [
+    "decoder.11.call.000",
+    "decoder.11.call.010",
+    "decoder.11.call.020",
+    "decoder.17.call.000"
+  ],
+  "fp32_reference_manifest_sha256": "sha256:90217913d5b62a56b137ab485a375f796d51df2b2ea8cadb6f1141a5a948865f",
+  "fp32_reference_tensors_sha256": "sha256:2fa57e329437c23c0416e8094311cf5c108349aa0226fd49bd45ffe63733755c",
+  "passed": false,
+  "policy_v2_sha256": "sha256:92219705c499983758e06fe28b3a8a659c8ab619ddc5b1b4f400e26b0edc197e",
+  "schema": "liveframe.taew21-fp32-diagnostic-result.v1",
+  "tensors": {
+    "decoder.0.call.000": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999999999999992,
+        "element_count": 99840,
+        "maximum_absolute_error": 2.384185791015625e-07,
+        "mean_absolute_error": 8.261948982507397e-09
+      },
+      "passed": true,
+      "shape": [
+        1,
+        16,
+        60,
+        104
+      ]
+    },
+    "decoder.0.call.010": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999999999999996,
+        "element_count": 99840,
+        "maximum_absolute_error": 2.384185791015625e-07,
+        "mean_absolute_error": 1.4776625716760278e-08
+      },
+      "passed": true,
+      "shape": [
+        1,
+        16,
+        60,
+        104
+      ]
+    },
+    "decoder.0.call.020": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999999999999999,
+        "element_count": 99840,
+        "maximum_absolute_error": 2.384185791015625e-07,
+        "mean_absolute_error": 1.8020730352966497e-08
+      },
+      "passed": true,
+      "shape": [
+        1,
+        16,
+        60,
+        104
+      ]
+    },
+    "decoder.11.call.000": {
+      "dtype": "float32",
+      "failures": [
+        "maximum_absolute_error"
+      ],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.999996276155009,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.07853871583938599,
+        "mean_absolute_error": 0.00037941781236982744
+      },
+      "passed": false,
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.11.call.010": {
+      "dtype": "float32",
+      "failures": [
+        "maximum_absolute_error"
+      ],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999948645172847,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.05476313829421997,
+        "mean_absolute_error": 0.0005451038885185377
+      },
+      "passed": false,
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.11.call.020": {
+      "dtype": "float32",
+      "failures": [
+        "maximum_absolute_error"
+      ],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.999995372730037,
+        "element_count": 3194880,
+        "maximum_absolute_error": 0.05781137943267822,
+        "mean_absolute_error": 0.0006325278718305424
+      },
+      "passed": false,
+      "shape": [
+        1,
+        128,
+        120,
+        208
+      ]
+    },
+    "decoder.13.call.000": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999928953325395,
+        "element_count": 25559040,
+        "maximum_absolute_error": 0.010530705098062754,
+        "mean_absolute_error": 0.00018038684225542116
+      },
+      "passed": true,
+      "shape": [
+        2,
+        128,
+        240,
+        416
+      ]
+    },
+    "decoder.13.call.010": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999895311071874,
+        "element_count": 25559040,
+        "maximum_absolute_error": 0.007679600268602371,
+        "mean_absolute_error": 0.00028061950350979464
+      },
+      "passed": true,
+      "shape": [
+        2,
+        128,
+        240,
+        416
+      ]
+    },
+    "decoder.13.call.020": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999905744649271,
+        "element_count": 25559040,
+        "maximum_absolute_error": 0.009189411997795105,
+        "mean_absolute_error": 0.0003232056077212698
+      },
+      "passed": true,
+      "shape": [
+        2,
+        128,
+        240,
+        416
+      ]
+    },
+    "decoder.17.call.000": {
+      "dtype": "float32",
+      "failures": [
+        "maximum_absolute_error"
+      ],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999862642595501,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.07314138859510422,
+        "mean_absolute_error": 0.000737377014359679
+      },
+      "passed": false,
+      "shape": [
+        1,
+        64,
+        240,
+        416
+      ]
+    },
+    "decoder.17.call.020": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999866455566898,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.0345233678817749,
+        "mean_absolute_error": 0.000907928637727007
+      },
+      "passed": true,
+      "shape": [
+        1,
+        64,
+        240,
+        416
+      ]
+    },
+    "decoder.17.call.041": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999910175853673,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.04678967595100403,
+        "mean_absolute_error": 0.0007265162450015298
+      },
+      "passed": true,
+      "shape": [
+        1,
+        64,
+        240,
+        416
+      ]
+    },
+    "decoder.19.call.000": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.99998237673631,
+        "element_count": 51118080,
+        "maximum_absolute_error": 0.01807975396513939,
+        "mean_absolute_error": 0.0003456366650632686
+      },
+      "passed": true,
+      "shape": [
+        2,
+        64,
+        480,
+        832
+      ]
+    },
+    "decoder.19.call.020": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999829934325682,
+        "element_count": 51118080,
+        "maximum_absolute_error": 0.008696459233760834,
+        "mean_absolute_error": 0.00038296173642579347
+      },
+      "passed": true,
+      "shape": [
+        2,
+        64,
+        480,
+        832
+      ]
+    },
+    "decoder.19.call.041": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999886143139558,
+        "element_count": 51118080,
+        "maximum_absolute_error": 0.00990065187215805,
+        "mean_absolute_error": 0.000360134170047067
+      },
+      "passed": true,
+      "shape": [
+        2,
+        64,
+        480,
+        832
+      ]
+    },
+    "decoder.22.call.000": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999990743981789,
+        "element_count": 1198080,
+        "maximum_absolute_error": 0.02171504497528076,
+        "mean_absolute_error": 0.0006328742425342396
+      },
+      "passed": true,
+      "shape": [
+        1,
+        3,
+        480,
+        832
+      ]
+    },
+    "decoder.22.call.041": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999995289564143,
+        "element_count": 1198080,
+        "maximum_absolute_error": 0.006852686405181885,
+        "mean_absolute_error": 0.00038238485062361515
+      },
+      "passed": true,
+      "shape": [
+        1,
+        3,
+        480,
+        832
+      ]
+    },
+    "decoder.22.call.083": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999994011780707,
+        "element_count": 1198080,
+        "maximum_absolute_error": 0.0091371089220047,
+        "mean_absolute_error": 0.0004639700493280793
+      },
+      "passed": true,
+      "shape": [
+        1,
+        3,
+        480,
+        832
+      ]
+    },
+    "decoder.5.call.000": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999998011018897,
+        "element_count": 1597440,
+        "maximum_absolute_error": 0.005288273096084595,
+        "mean_absolute_error": 4.5888718052290545e-05
+      },
+      "passed": true,
+      "shape": [
+        1,
+        256,
+        60,
+        104
+      ]
+    },
+    "decoder.5.call.010": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999998076451759,
+        "element_count": 1597440,
+        "maximum_absolute_error": 0.004814088344573975,
+        "mean_absolute_error": 6.249540560130348e-05
+      },
+      "passed": true,
+      "shape": [
+        1,
+        256,
+        60,
+        104
+      ]
+    },
+    "decoder.5.call.020": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999998129935243,
+        "element_count": 1597440,
+        "maximum_absolute_error": 0.006436407566070557,
+        "mean_absolute_error": 7.086167774282162e-05
+      },
+      "passed": true,
+      "shape": [
+        1,
+        256,
+        60,
+        104
+      ]
+    },
+    "decoder.7.call.000": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999995265467163,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.002132222056388855,
+        "mean_absolute_error": 4.2505325913343866e-05
+      },
+      "passed": true,
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "decoder.7.call.010": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999996651049027,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.0017877817153930664,
+        "mean_absolute_error": 5.2879649974164354e-05
+      },
+      "passed": true,
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "decoder.7.call.020": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999996796708726,
+        "element_count": 6389760,
+        "maximum_absolute_error": 0.0014787912368774414,
+        "mean_absolute_error": 6.062417205108335e-05
+      },
+      "passed": true,
+      "shape": [
+        1,
+        256,
+        120,
+        208
+      ]
+    },
+    "float_decoder_output": {
+      "dtype": "float32",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 0.05,
+        "mean_absolute_error": 0.005,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999991646561863,
+        "element_count": 97044480,
+        "maximum_absolute_error": 0.020054757595062256,
+        "mean_absolute_error": 0.0004989223656629639
+      },
+      "passed": true,
+      "shape": [
+        1,
+        81,
+        3,
+        480,
+        832
+      ]
+    },
+    "rgb_uint8": {
+      "dtype": "uint8",
+      "failures": [],
+      "limits": {
+        "maximum_absolute_error": 13.0,
+        "mean_absolute_error": 2.275,
+        "minimum_cosine_similarity": 0.999
+      },
+      "metrics": {
+        "cosine_similarity": 0.9999964613705614,
+        "element_count": 97044480,
+        "maximum_absolute_error": 5.0,
+        "mean_absolute_error": 0.12724092086432942
+      },
+      "passed": true,
+      "shape": [
+        81,
+        480,
+        832,
+        3
+      ]
+    }
+  },
+  "timing_authority": "none-diagnostic-only",
+  "weights_sha256": "sha256:45d7a2585169e24903ea826a6c76605a2b2df54b2e252b2224551c6889038461"
+}

@@ -1,0 +1,403 @@
+{
+  "amendment_sha256": "sha256:899d0e68e2174a4bc06b860a4d515709282545d3e54ad11213c7a5227f4b17e7",
+  "manipulation": "h264-videotoolbox-8M-roundtrip-of-full-decoder-video",
+  "protocol_sha256": "sha256:3090504d0fb925ac53b5878fbe61ece7da4e1f170f37126f85c88162cd230dce",
+  "records": [
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_01-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.005844119983383372,
+        "pairwise_lpips_mean": 0.0027041417867817645,
+        "pairwise_temporal_clip_distance_mean": 0.24619222841209779
+      },
+      "prompt_id": "limited_hold_01",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_01-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.01088641320957857,
+        "pairwise_lpips_mean": 0.0026933861602293817,
+        "pairwise_temporal_clip_distance_mean": 0.22235083577708026
+      },
+      "prompt_id": "limited_hold_01",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_02-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.01177124433879611,
+        "pairwise_lpips_mean": 0.0029043218151387222,
+        "pairwise_temporal_clip_distance_mean": 0.21084471678329728
+      },
+      "prompt_id": "limited_hold_02",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_02-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.015179681519605796,
+        "pairwise_lpips_mean": 0.0031844359352584963,
+        "pairwise_temporal_clip_distance_mean": 0.20242641884679638
+      },
+      "prompt_id": "limited_hold_02",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_03-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.010724727363023073,
+        "pairwise_lpips_mean": 0.004590834404502991,
+        "pairwise_temporal_clip_distance_mean": 0.241284457808834
+      },
+      "prompt_id": "limited_hold_03",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_03-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.014080103644399574,
+        "pairwise_lpips_mean": 0.004389431852351401,
+        "pairwise_temporal_clip_distance_mean": 0.21582803664313369
+      },
+      "prompt_id": "limited_hold_03",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-limited_hold_04-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.010304403707447937,
+        "pairwise_lpips_mean": 0.00481519908133407,
+        "pairwise_temporal_clip_distance_mean": 0.155414713704485
+      },
+      "prompt_id": "limited_hold_04",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-limited_hold_04-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.01261590877922696,
+        "pairwise_lpips_mean": 0.005232605507926029,
+        "pairwise_temporal_clip_distance_mean": 0.17745312483411682
+      },
+      "prompt_id": "limited_hold_04",
+      "stratum": "limited-animation-held-frames",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_01-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.008627204703882273,
+        "pairwise_lpips_mean": 0.003143485798598719,
+        "pairwise_temporal_clip_distance_mean": 0.2040000539588726
+      },
+      "prompt_id": "dialogue_01",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_01-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.01228768039414019,
+        "pairwise_lpips_mean": 0.005373909266211931,
+        "pairwise_temporal_clip_distance_mean": 0.1850210942851364
+      },
+      "prompt_id": "dialogue_01",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_02-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.005966807216531617,
+        "pairwise_lpips_mean": 0.003586622648125805,
+        "pairwise_temporal_clip_distance_mean": 0.1390996795084517
+      },
+      "prompt_id": "dialogue_02",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_02-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.006178670500331127,
+        "pairwise_lpips_mean": 0.003038381948880659,
+        "pairwise_temporal_clip_distance_mean": 0.1735639890486544
+      },
+      "prompt_id": "dialogue_02",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_03-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.012668393583740363,
+        "pairwise_lpips_mean": 0.004337912512833119,
+        "pairwise_temporal_clip_distance_mean": 0.25655574865749703
+      },
+      "prompt_id": "dialogue_03",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_03-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.008152057204330177,
+        "pairwise_lpips_mean": 0.0037231218503255654,
+        "pairwise_temporal_clip_distance_mean": 0.3078923227096146
+      },
+      "prompt_id": "dialogue_03",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dialogue_04-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.006601330348710973,
+        "pairwise_lpips_mean": 0.01009659908460414,
+        "pairwise_temporal_clip_distance_mean": 0.22248342866867277
+      },
+      "prompt_id": "dialogue_04",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dialogue_04-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.009341440087624501,
+        "pairwise_lpips_mean": 0.007441157573628383,
+        "pairwise_temporal_clip_distance_mean": 0.20190466917889607
+      },
+      "prompt_id": "dialogue_04",
+      "stratum": "dialogue-minimal-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_01-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.020844074744212477,
+        "pairwise_lpips_mean": 0.01240357545593494,
+        "pairwise_temporal_clip_distance_mean": 0.214839835540723
+      },
+      "prompt_id": "cyclic_01",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_01-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.018494121307436034,
+        "pairwise_lpips_mean": 0.006398987624279086,
+        "pairwise_temporal_clip_distance_mean": 0.1889140073918114
+      },
+      "prompt_id": "cyclic_01",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_02-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.014616046022262252,
+        "pairwise_lpips_mean": 0.0075293875501770136,
+        "pairwise_temporal_clip_distance_mean": 0.3154641327021991
+      },
+      "prompt_id": "cyclic_02",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_02-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.014547683752235122,
+        "pairwise_lpips_mean": 0.007592659736517337,
+        "pairwise_temporal_clip_distance_mean": 0.25229435273222933
+      },
+      "prompt_id": "cyclic_02",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_03-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.014769166582244357,
+        "pairwise_lpips_mean": 0.004185980939373122,
+        "pairwise_temporal_clip_distance_mean": 0.2227239924467216
+      },
+      "prompt_id": "cyclic_03",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_03-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.01567350612459291,
+        "pairwise_lpips_mean": 0.005465645596199506,
+        "pairwise_temporal_clip_distance_mean": 0.18446747556882948
+      },
+      "prompt_id": "cyclic_03",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-cyclic_04-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.012482141895133232,
+        "pairwise_lpips_mean": 0.00521074641763158,
+        "pairwise_temporal_clip_distance_mean": 0.17718488230543622
+      },
+      "prompt_id": "cyclic_04",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-cyclic_04-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.015156014046801872,
+        "pairwise_lpips_mean": 0.00446796752570122,
+        "pairwise_temporal_clip_distance_mean": 0.09321928726247519
+      },
+      "prompt_id": "cyclic_04",
+      "stratum": "cyclic-motion",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_01-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.047434887554072123,
+        "pairwise_lpips_mean": 0.01302062332795202,
+        "pairwise_temporal_clip_distance_mean": 0.23014493412890677
+      },
+      "prompt_id": "dense_motion_01",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_01-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.036283549201992886,
+        "pairwise_lpips_mean": 0.00987036705091096,
+        "pairwise_temporal_clip_distance_mean": 0.23489129752659602
+      },
+      "prompt_id": "dense_motion_01",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_02-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.031753144183742345,
+        "pairwise_lpips_mean": 0.007932371044342842,
+        "pairwise_temporal_clip_distance_mean": 0.1512037298436892
+      },
+      "prompt_id": "dense_motion_02",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_02-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.02989580190833754,
+        "pairwise_lpips_mean": 0.008132034313448843,
+        "pairwise_temporal_clip_distance_mean": 0.149602670468821
+      },
+      "prompt_id": "dense_motion_02",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_03-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.03008443343488476,
+        "pairwise_lpips_mean": 0.01362201215145237,
+        "pairwise_temporal_clip_distance_mean": 0.34867905332880506
+      },
+      "prompt_id": "dense_motion_03",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_03-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.037282181475061626,
+        "pairwise_lpips_mean": 0.014389047794662978,
+        "pairwise_temporal_clip_distance_mean": 0.35417016987950534
+      },
+      "prompt_id": "dense_motion_03",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": true
+    },
+    {
+      "horizon_seconds": 15,
+      "job_id": "taew21-dense_motion_04-15s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.023108586228849516,
+        "pairwise_lpips_mean": 0.021815372326407376,
+        "pairwise_temporal_clip_distance_mean": 0.22622068756717748
+      },
+      "prompt_id": "dense_motion_04",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    },
+    {
+      "horizon_seconds": 60,
+      "job_id": "taew21-dense_motion_04-60s",
+      "null_pairwise": {
+        "pairwise_clip_distance_mean": 0.019706329940150275,
+        "pairwise_lpips_mean": 0.016719579909783015,
+        "pairwise_temporal_clip_distance_mean": 0.21663650518960573
+      },
+      "prompt_id": "dense_motion_04",
+      "stratum": "high-motion-dense-scenes",
+      "violates_v1_temporal_bound": false
+    }
+  ],
+  "schema": "liveframe.taew21-null-control.v1",
+  "summary_sha256": "sha256:3253859ebaaac3aa3e6855512164a88bf5a1c9542f0f025a46e9d2e2391109dc",
+  "temporal_summary": {
+    "jobs": 32,
+    "max": 0.35417016987950534,
+    "median": 0.21533393609192836,
+    "min": 0.09321928726247519,
+    "v1_bound": 0.35,
+    "violations": 1
+  },
+  "tool_sha256": "sha256:6c5301685f547f8dfbbb24706df957769007f3cf8d3aaec9abadc10720532f7d",
+  "v1_temporal_instrument_invalidated": true
+}

@@ -1,0 +1,31 @@
+{
+  "allowed_implementation_change": {
+    "accumulation_dtype": "float32",
+    "cast_boundary": "cast-each-selected-memory-block-input-prior-and-weights-to-float32-then-cast-block-output-to-input-dtype",
+    "layers": [
+      11,
+      17
+    ],
+    "op_order": "unchanged"
+  },
+  "base_protocol_digest": "sha256:ad0c4b7eed88bff8f6cf66cc33eb2aa1eadea61a97ddebb68eead782c59626f7",
+  "policy_v2_sha256": "sha256:92219705c499983758e06fe28b3a8a659c8ab619ddc5b1b4f400e26b0edc197e",
+  "pre_repair_checker_sha256": "sha256:1b706e372ae9a8b7b43d7af4f4e3b0ae6b37b0b9df6780fd9a36b9ff87c68154",
+  "pre_repair_decoder_sha256": "sha256:b63b777d391f7af09f5a2d45e7ba0c4ee1cbe2558a391a115cfb5dbbdb43d668",
+  "previous_amendment_sha256": "sha256:66b2ae0f1d7a2f37761071c52784da99e5ba9e540f39aaab7038b9a50f8a061c",
+  "previous_result_sha256": "sha256:0747be23498d54e839a23c5e997dfeb73fe56c5360ae90a209c6e1e250105d1d",
+  "schema": "liveframe.taew21-protocol-amendment.v3",
+  "status": "frozen-before-fp32-block-11-and-17-candidate-execution",
+  "unchanged_constraints": {
+    "activation_anchors": true,
+    "float_limits": {
+      "maximum_absolute_error": 0.05,
+      "mean_absolute_error": 0.005,
+      "minimum_cosine_similarity": 0.999
+    },
+    "fixture": true,
+    "golden": true,
+    "weights": true
+  },
+  "visibility_at_freeze": "v2-no-go-metrics-visible-no-fp32-block-11-or-17-candidate-executed"
+}

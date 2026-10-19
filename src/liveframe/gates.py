@@ -93,7 +93,7 @@ def load_gate(path: Path) -> GateArtifact:
 def load_bundled_gate(gate_id: str = "gates.v1") -> GateArtifact:
     if gate_id != "gates.v1":
         raise GateError(f"unknown bundled gate ID: {gate_id}")
-    resource = files("liveframe").joinpath("data", "gates", f"{gate_id}.json")
+    resource = files("liveframe").joinpath("data").joinpath("gates").joinpath(f"{gate_id}.json")
     with resource.open("r", encoding="utf-8") as stream:
         raw = json.load(stream)
     contract = raw.get("contract")

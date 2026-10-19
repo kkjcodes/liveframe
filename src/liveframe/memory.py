@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import StrEnum
+from enum import Enum
 
 
-class MemoryMode(StrEnum):
+class MemoryMode(str, Enum):
     RESIDENT_TEXT = "resident-text"
     EVICTED_TEXT = "evicted-text"
     DUAL_STATE_REFRESH = "dual-state-refresh"

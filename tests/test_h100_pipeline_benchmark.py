@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-import torch
+
+torch = pytest.importorskip("torch")
 
 ROOT = Path(__file__).parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
