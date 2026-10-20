@@ -53,22 +53,38 @@ benchmarks. Start at [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide —
 install, a paste-and-run adapter, reading the report, and verifying the ledger —
 or the template in [examples/byo_adapter/](examples/byo_adapter/).
 
-### Measured references (single GPU, with receipts)
+### Measured references (with receipts)
 
-We ran three published interactive world models through the harness on one GPU.
-Each vendor number assumes a very different machine; the harness reports what a
-single GPU actually delivers and labels the gap as a configuration difference,
-not a failure:
+We ran four published interactive world models through the harness, each in a
+stated configuration, every number backed by a re-verifiable ledger. The headline
+isn't "these models are slow" — it's that published frame rates are hard to
+reproduce from what's shipped. When a claim is fully specified and we run that
+exact config (Matrix-Game 2.0), it reproduces; otherwise we show which condition
+differs (a different GPU, a proprietary engine vs the open weights, or a streaming
+mode that isn't the released code).
 
-| Model | Vendor claim | Claim's setup | One GPU (measured) |
+| Model | Claim (as published) | Measured | Why they differ (stated conditions) |
 |---|---|---|---|
-| Matrix-Game 2.0 | 25 fps | single H100 | **11.2 fps** (24 cases) |
-| Matrix-Game 3.0 | 40 fps | 8 DiT + 1 VAE GPUs | **2.04 fps** (8 trials) |
-| HY-World 1.5 | 24 fps | 8-GPU sequence-parallel | **0.616 fps** (8 trials) |
+| Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps — **reproduces** |
+| ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **3.70 fps** | we ran an older GPU (A100) with their fp8/sage speedups off — gap plausibly explained by hardware + settings |
+| Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla — a different artifact than the engine behind the claim |
+| HY-World 1.5 | 24 fps (streaming; GPU/steps unstated) | **1.36 fps** | released pipeline runs batch, not streaming — not directly comparable |
 
-The harness times frames as they are delivered, so it errs low rather than
-inflating; every number reproduces from a digest-bound ledger
-(`liveframe world verify`).
+**None of these results contradict a vendor's claim.** The one claim that is fully
+specified and matched (Matrix-Game 2.0) reproduces; the other three can't be tested
+as published from what's shipped — a different GPU class, a proprietary serving
+engine, or a mode not in the released code. That reproducibility gap, stated
+precisely, is the finding.
+
+It times frames as they are delivered (so it errs low, never inflates) and counts
+native decoded frames only. We run the released pipeline with conservative settings
+(optional fp8/attention/compile off — for ABot this includes stubbing its optional
+fp8 kernel, unused at our settings), so these are floors, not each model's best.
+The Oasis adapter decodes every frame as it is generated (the interactive cost);
+the upstream script batch-decodes at the end. Every number reproduces from a
+digest-bound ledger (`liveframe world verify`). Matrix-Game 3.0's claim is 9 GPUs
+(8 DiT + 1 VAE) — more than a single node — so its cluster figure is pending; its
+single-GPU number is 2.04 fps.
 
 LiveFrame defines **real-time** as at least **16 native generated frames per second for a continuous 60-second stream**, with time-to-first-frame, p95 chunk latency, thermal state, memory, intrinsic quality, same-seed identity, and long-horizon drift disclosed. Interpolated or duplicated presentation frames never count as generated FPS.
 
