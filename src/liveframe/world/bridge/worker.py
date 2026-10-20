@@ -31,6 +31,7 @@ import argparse
 import base64
 import importlib
 import json
+import os
 import sys
 import time
 import traceback
@@ -148,6 +149,99 @@ def _build_image(message: dict[str, Any]) -> Any:
         return {"shape": (height, width, channels), "data": raw}
 
 
+class _SP:
+    """Sequence-parallel fan-out for adapters whose model runs across N ranks.
+
+    Rank 0 (the process the host spawns) stays on the host control channel. It
+    spawns N-1 helper copies of this worker, initialises a torch.distributed
+    group, and broadcasts each host command so every rank calls the SAME adapter
+    method in lockstep -- the model's own SP collectives then coordinate. Only
+    rank 0 captures frames and talks to the host; helpers discard output.
+
+    Activated only when ``capabilities["sp_degree"] > 1``; torch is imported
+    lazily so the normal single-process path stays stdlib-only.
+    """
+
+    def __init__(self, degree: int, adapter_arg: str) -> None:
+        import torch
+        import torch.distributed as dist
+
+        self.torch, self.dist, self.degree = torch, dist, degree
+        self.is_helper = "LIVEFRAME_SP_HELPER_RANK" in os.environ
+        self.rank = int(os.environ["LIVEFRAME_SP_HELPER_RANK"]) if self.is_helper else 0
+        os.environ.setdefault("MASTER_ADDR", "127.0.0.1")
+        os.environ.setdefault("MASTER_PORT", os.environ.get("LIVEFRAME_SP_PORT", "29599"))
+        os.environ["WORLD_SIZE"] = str(degree)
+        os.environ["RANK"] = str(self.rank)
+        os.environ["LOCAL_RANK"] = str(self.rank)
+        self._procs: list[Any] = []
+        if not self.is_helper:
+            import subprocess
+
+            worker_file = os.path.abspath(sys.argv[0])
+            for r in range(1, degree):
+                env = dict(os.environ)
+                env.update(LIVEFRAME_SP_HELPER_RANK=str(r), RANK=str(r), LOCAL_RANK=str(r))
+                # Redirect helper stdout to a log (NOT the inherited host pipe,
+                # which would corrupt the JSONL control channel); keep stderr too.
+                hlog = open(f"/tmp/liveframe_sp_helper_{r}.log", "w")  # noqa: SIM115
+                self._procs.append(
+                    subprocess.Popen(
+                        [sys.executable, worker_file, "--adapter", adapter_arg],
+                        env=env, stdin=subprocess.DEVNULL, stdout=hlog, stderr=hlog,
+                    )
+                )
+        backend = os.environ.get(
+            "LIVEFRAME_SP_BACKEND", "nccl" if torch.cuda.is_available() else "gloo"
+        )
+        dist.init_process_group(backend=backend, rank=self.rank, world_size=degree)
+
+    def bcast(self, obj: Any) -> Any:
+        box = [obj]
+        self.dist.broadcast_object_list(box, src=0)
+        return box[0]
+
+    def shutdown(self) -> None:
+        import contextlib
+
+        with contextlib.suppress(Exception):
+            self.dist.destroy_process_group()
+        for p in self._procs:
+            try:
+                p.wait(timeout=60)
+            except Exception:
+                p.kill()
+
+
+def _run_sp_helper(adapter: Any, sp: _SP) -> int:
+    """Non-rank-0 loop: mirror rank 0's calls, produce no host output."""
+    while True:
+        cmd = sp.bcast(None)
+        kind = cmd.get("type")
+        if kind == "load":
+            adapter.load()
+        elif kind == "reset":
+            adapter.reset(cmd["image"], cmd.get("prompt"), int(cmd["seed"]))
+        elif kind == "step":
+            for _ in adapter.step(list(cmd["actions"])):
+                pass
+        elif kind == "run_script":
+            for _ in adapter.run_script(list(cmd["segments"])):
+                pass
+        elif kind == "close":
+            adapter.close()
+            break
+    sp.shutdown()
+    return 0
+
+
+def _sp_degree(capabilities: dict[str, Any]) -> int:
+    try:
+        return max(1, int(capabilities.get("sp_degree", 1)))
+    except (TypeError, ValueError):
+        return 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--adapter", required=True, help="module:Class inside the model env")
@@ -166,6 +260,13 @@ def main() -> int:
     except Exception:
         _fail(out, f"failed to construct adapter {arguments.adapter}")
         return 1
+
+    # Sequence-parallel adapters fan out across ranks; helpers never touch the
+    # host channel and exit via the mirror loop.
+    degree = _sp_degree(capabilities)
+    sp = _SP(degree, arguments.adapter) if degree > 1 else None
+    if sp is not None and sp.is_helper:
+        return _run_sp_helper(adapter, sp)
 
     hello = json.loads(inp.readline())
     if hello.get("type") != "hello" or hello.get("proto") != PROTOCOL:
@@ -188,6 +289,8 @@ def main() -> int:
             message = json.loads(line)
             kind = message.get("type")
             if kind == "load":
+                if sp is not None:
+                    sp.bcast({"type": "load"})
                 adapter.load()
                 _send(out, {"type": "loaded"})
             elif kind == "reset":
@@ -197,20 +300,29 @@ def main() -> int:
                         int(message["ring_slots"]),
                         int(message["slot_bytes"]),
                     )
-                adapter.reset(
-                    _build_image(message), message.get("prompt"), int(message["seed"])
-                )
+                image = _build_image(message)
+                seed = int(message["seed"])
+                if sp is not None:
+                    sp.bcast(
+                        {"type": "reset", "image": image,
+                         "prompt": message.get("prompt"), "seed": seed}
+                    )
+                adapter.reset(image, message.get("prompt"), seed)
                 chunk_index = 0
                 ring.free = list(range(ring.slots))
                 _send(out, {"type": "reset_done"})
             elif kind == "step":
                 assert ring is not None, "step before reset"
+                if sp is not None:
+                    sp.bcast({"type": "step", "actions": list(message["actions"])})
                 chunk_index = _emit_chunks(
                     out, inp, ring, adapter.step(list(message["actions"])), chunk_index
                 )
                 _send(out, {"type": "chunk_done", "next_index": chunk_index})
             elif kind == "run_script":
                 assert ring is not None, "run_script before reset"
+                if sp is not None:
+                    sp.bcast({"type": "run_script", "segments": list(message["segments"])})
                 chunk_index = _emit_chunks(
                     out,
                     inp,
@@ -223,6 +335,8 @@ def main() -> int:
                 assert ring is not None
                 ring.release(int(message["slot"]))
             elif kind == "close":
+                if sp is not None:
+                    sp.bcast({"type": "close"})
                 adapter.close()
                 _send(out, {"type": "closed"})
                 break
@@ -234,6 +348,8 @@ def main() -> int:
     finally:
         if ring is not None:
             ring.close()
+        if sp is not None:
+            sp.shutdown()
     return 0
 
 

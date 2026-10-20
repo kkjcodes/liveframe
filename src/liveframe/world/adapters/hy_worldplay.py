@@ -43,7 +43,13 @@ HYW_STEPS = int(os.environ.get("HYW_STEPS", "4"))
 # Default ON: the full resident model (~78 GB incl. the 34 GB action model) OOMs
 # an 80 GB GPU without it (confirmed on A100 80 GB, 2026-10-16). Group-offloading
 # fits it, at a speed cost. Set HYW_OFFLOAD=0 only on a >80 GB / multi-GPU setup.
-HYW_OFFLOAD = os.environ.get("HYW_OFFLOAD", "1") == "1"
+# Sequence-parallel degree (= number of GPUs). The bridge worker fans out to
+# this many ranks (see worker._SP); the HY pipeline's own SP collectives then
+# split the transformer across them. >1 implies a multi-GPU box, so offloading
+# defaults OFF (the memory pressure that forced it on one GPU is gone).
+HYW_SP = max(1, int(os.environ.get("HYW_SP", "1")))
+_offload_default = "0" if HYW_SP > 1 else "1"
+HYW_OFFLOAD = os.environ.get("HYW_OFFLOAD", _offload_default) == "1"
 HYW_HEIGHT = int(os.environ.get("HYW_HEIGHT", "480"))
 # 832 (not 854): width must be divisible by the VAE spatial factor or the decode
 # rearrange fails (854/2 = 427 is odd).
@@ -82,6 +88,7 @@ class HYWorldPlayAdapter:
             "action_magnitudes": {"pose_unit": 1.0},
             "supports_seed": True,
             "min_vram_gb": 72.0,
+            "sp_degree": HYW_SP,  # bridge fans out to this many ranks for SP
             "license_notice": LICENSE_NOTICE,
         }
 
