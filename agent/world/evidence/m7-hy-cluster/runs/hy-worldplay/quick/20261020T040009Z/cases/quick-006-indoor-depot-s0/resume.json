@@ -1,0 +1,22 @@
+{
+  "key": "sha256:ee4a90b7e6112523eb812cfecac184c0d6c6ede2f22174d91f730a3fce90bcdf",
+  "scene": "indoor-depot",
+  "script": [
+    [
+      0,
+      "W",
+      246
+    ],
+    [
+      246,
+      "L",
+      123
+    ],
+    [
+      369,
+      "0",
+      124
+    ]
+  ],
+  "seed": 0
+}

@@ -1,0 +1,95 @@
+<!-- rendered by liveframe world; self-contained, no scripts, no network -->
+<style>
+:root{
+  --bg:#fafaf8; --panel:#ffffff; --ink:#1c1c1a; --muted:#6b6b66;
+  --line:#e4e2dc; --accent:#3d6bb3; --good:#1b7a2d; --bad:#b00020;
+  --good-bg:#e9f5ec; --bad-bg:#fbeaec; --notice-bg:#fdf6e3; --notice-line:#d9c37a;
+  --bar:#7596c8;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#16161a; --panel:#1f1f24; --ink:#e8e8e4; --muted:#9a9a94;
+    --line:#34343b; --accent:#7ba3dd; --good:#6fce84; --bad:#ef8a97;
+    --good-bg:#1d2b21; --bad-bg:#322126; --notice-bg:#2b2618; --notice-line:#6b5d2e;
+    --bar:#5a7cb0;
+  }
+}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+     margin:0;background:var(--bg);color:var(--ink);line-height:1.5}
+main{max-width:1020px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:1.5rem;letter-spacing:-0.01em;margin:0 0 0.25rem}
+.sub{color:var(--muted);margin:0 0 1.75rem;font-size:0.95rem}
+h2{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--muted);
+   margin:2.5rem 0 0.75rem;padding-bottom:0.4rem;border-bottom:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:0.88rem;background:var(--panel);
+      border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);
+   font-weight:600}
+td,th{border-bottom:1px solid var(--line);padding:0.5rem 0.75rem;text-align:left;
+      vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.headline{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));
+          gap:0.75rem}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      padding:0.8rem 1rem}
+.stat b{display:block;font-size:1.45rem;font-weight:650;letter-spacing:-0.01em;
+        font-variant-numeric:tabular-nums}
+.stat b small{font-size:0.8rem;font-weight:500;color:var(--muted)}
+.stat span{font-size:0.78rem;color:var(--muted)}
+.chip{display:inline-block;border-radius:999px;padding:0.1rem 0.65rem;
+      font-size:0.78rem;font-weight:600}
+.chip.ok{color:var(--good);background:var(--good-bg)}
+.chip.failed{color:var(--bad);background:var(--bad-bg)}
+.chip.neutral{color:var(--muted);background:var(--bg);border:1px solid var(--line)}
+.notice{background:var(--notice-bg);border:1px solid var(--notice-line);
+        padding:0.75rem 1rem;border-radius:10px;font-size:0.9rem}
+.failed{color:var(--bad)} .ok{color:var(--good)}
+code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
+     padding:0 0.3rem;font-size:0.85em;word-break:break-all}
+svg{max-width:100%;display:block}
+ul{padding-left:1.2rem} li{margin:0.3rem 0}
+p,li{font-size:0.92rem}
+footer{margin-top:3.5rem;font-size:0.8rem;color:var(--muted);
+       border-top:1px solid var(--line);padding-top:1rem}
+.num{font-variant-numeric:tabular-nums;text-align:right}
+</style>
+<main>
+<h1>abot_adapter <span style='font-weight:400;color:var(--muted)'>· quick suite</span></h1>
+<p class="sub">NVIDIA GeForce RTX 5090, 32607 MiB, 595.91.07, 12.0 · 704x1280 · interactive · native 12 fps &nbsp; <span class="chip ok">all cases ok</span> <span class="chip neutral">real-time check not applicable</span></p>
+<div class="headline">
+<div class="stat"><b>5.84<small></small></b><span>generated FPS, median</span></div>
+<div class="stat"><b>4.50<small></small></b><span>sustained FPS, worst window</span></div>
+<div class="stat"><b>1.37<small> s</small></b><span>time to first frame, p50</span></div>
+<div class="stat"><b>1.73 / 1.91<small> s</small></b><span>action latency p50 / p95</span></div>
+<div class="stat"><b>8/8<small></small></b><span>cases ok</span></div>
+<div class="stat"><b>0.04<small> USD</small></b><span>cost per generated minute</span></div>
+</div>
+<h2>Claim check</h2>
+<p>Vendor claim: <em>16 fps, 720p, single RTX 5090, 19GB, 1.2s latency (ABot-World README)</em> — measured generated FPS median: <b>5.84</b>. Verdict: <b>config not stated</b>. measured single-GPU; the vendor claim&#x27;s configuration (see the claim text) differs from this run&#x27;s hardware/config in the environment section. &#x27;reproduced&#x27;/&#x27;not reproduced&#x27; require a configuration-matched comparison by a human.</p>
+<h2>Runtime, per case</h2>
+<table><tr><th>case</th><th>actions</th><th>status</th><th class="num">FPS</th><th class="num">first frame</th><th class="num">stalls</th><th>emission intervals</th></tr>
+<tr><td>quick-000-outdoor-meadow-s0<br><span style='color:var(--muted);font-size:0.8em'>outdoor-meadow · seed 0</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">5.22</td><td class="num">2.577s</td><td class="num">19</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="144.5" height="11" rx="2" fill="var(--bar)"></rect><text x="178.5" y="13" font-size="9" fill="var(--muted)">2.296s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="148.9" height="11" rx="2" fill="var(--bar)"></rect><text x="182.9" y="28" font-size="9" fill="var(--muted)">2.366s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.383s</text></svg></td></tr>
+<tr><td>quick-001-outdoor-meadow-s1<br><span style='color:var(--muted);font-size:0.8em'>outdoor-meadow · seed 1</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">5.42</td><td class="num">1.463s</td><td class="num">19</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="144.0" height="11" rx="2" fill="var(--bar)"></rect><text x="178.0" y="13" font-size="9" fill="var(--muted)">2.287s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="149.0" height="11" rx="2" fill="var(--bar)"></rect><text x="183.0" y="28" font-size="9" fill="var(--muted)">2.368s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.383s</text></svg></td></tr>
+<tr><td>quick-002-outdoor-dunes-s0<br><span style='color:var(--muted);font-size:0.8em'>outdoor-dunes · seed 0</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">5.98</td><td class="num">1.359s</td><td class="num">15</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="142.7" height="11" rx="2" fill="var(--bar)"></rect><text x="176.7" y="13" font-size="9" fill="var(--muted)">2.098s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="143.3" height="11" rx="2" fill="var(--bar)"></rect><text x="177.3" y="28" font-size="9" fill="var(--muted)">2.106s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.205s</text></svg></td></tr>
+<tr><td>quick-003-outdoor-dunes-s1<br><span style='color:var(--muted);font-size:0.8em'>outdoor-dunes · seed 1</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">6.07</td><td class="num">1.307s</td><td class="num">12</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="138.8" height="11" rx="2" fill="var(--bar)"></rect><text x="172.8" y="13" font-size="9" fill="var(--muted)">2.008s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="147.4" height="11" rx="2" fill="var(--bar)"></rect><text x="181.4" y="28" font-size="9" fill="var(--muted)">2.132s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.170s</text></svg></td></tr>
+<tr><td>quick-004-indoor-hall-s0<br><span style='color:var(--muted);font-size:0.8em'>indoor-hall · seed 0</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">6.14</td><td class="num">1.261s</td><td class="num">9</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="142.2" height="11" rx="2" fill="var(--bar)"></rect><text x="176.2" y="13" font-size="9" fill="var(--muted)">1.998s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="149.8" height="11" rx="2" fill="var(--bar)"></rect><text x="183.8" y="28" font-size="9" fill="var(--muted)">2.105s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.108s</text></svg></td></tr>
+<tr><td>quick-005-indoor-hall-s1<br><span style='color:var(--muted);font-size:0.8em'>indoor-hall · seed 1</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">5.70</td><td class="num">1.372s</td><td class="num">17</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="136.8" height="11" rx="2" fill="var(--bar)"></rect><text x="170.8" y="13" font-size="9" fill="var(--muted)">2.109s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="149.4" height="11" rx="2" fill="var(--bar)"></rect><text x="183.4" y="28" font-size="9" fill="var(--muted)">2.303s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.312s</text></svg></td></tr>
+<tr><td>quick-006-indoor-depot-s0<br><span style='color:var(--muted);font-size:0.8em'>indoor-depot · seed 0</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">6.26</td><td class="num">1.503s</td><td class="num">5</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="142.3" height="11" rx="2" fill="var(--bar)"></rect><text x="176.3" y="13" font-size="9" fill="var(--muted)">1.906s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="28" font-size="9" fill="var(--muted)">2.009s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.009s</text></svg></td></tr>
+<tr><td>quick-007-indoor-depot-s1<br><span style='color:var(--muted);font-size:0.8em'>indoor-depot · seed 1</span></td><td><svg viewBox="0 0 360 26" role="img" aria-label="action timeline"><rect x="0.0" y="6" width="179.3" height="14" rx="2" fill="#4c9e5f"></rect><text x="89.6" y="17" font-size="10" fill="#ffffff" text-anchor="middle">W</text><rect x="179.3" y="6" width="89.6" height="14" rx="2" fill="#b88a3c"></rect><text x="224.1" y="17" font-size="10" fill="#ffffff" text-anchor="middle">L</text><rect x="268.9" y="6" width="91.1" height="14" rx="2" fill="#9a9a94"></rect><text x="314.5" y="17" font-size="10" fill="#ffffff" text-anchor="middle">0</text></svg></td><td><span class="chip ok">ok</span></td><td class="num">5.61</td><td class="num">1.277s</td><td class="num">17</td><td><svg viewBox="0 0 240 52" width="240" role="img" aria-label="emission intervals"><text x="0" y="13" font-size="9" fill="var(--muted)">p50</text><rect x="28" y="4" width="141.3" height="11" rx="2" fill="var(--bar)"></rect><text x="175.3" y="13" font-size="9" fill="var(--muted)">2.195s</text><text x="0" y="28" font-size="9" fill="var(--muted)">p95</text><rect x="28" y="19" width="148.7" height="11" rx="2" fill="var(--bar)"></rect><text x="182.7" y="28" font-size="9" fill="var(--muted)">2.311s</text><text x="0" y="43" font-size="9" fill="var(--muted)">max</text><rect x="28" y="34" width="150.0" height="11" rx="2" fill="var(--bar)"></rect><text x="184.0" y="43" font-size="9" fill="var(--muted)">2.330s</text></svg></td></tr>
+</table>
+<p>Cold start: 82.5 s from container-disk storage — reported as context, never blended into generation numbers.</p>
+<h2>Control <span class="chip neutral">experimental</span></h2>
+<div class="notice"><b>Control metrics are experimental and excluded from the headline and public reporting by default.</b> They are computed and stored in this run's evidence, but the optical-flow classifier is not yet validated to the promotion bar (per-class ≥ 85% blind two-labeler agreement on fresh clips). Commanded actions are not ground truth. For control scoring now, export the run for a dedicated benchmark: <code>liveframe world export &lt;run&gt; --format worldmark</code>.</div>
+<h2>What was not measured</h2><ul>
+<li>peak_vram_gb / gpu_util / power: NVML sampling not yet wired (lands with the next GPU-session milestone)</li>
+<li>control metrics: EXPERIMENTAL — computed and stored, but excluded from the headline and public reporting until the classifier reaches the promotion bar (per-class &gt;=85% blind two-labeler agreement on fresh clips). Use `world export --format worldmark` for control scoring</li>
+</ul>
+<h2>Evidence</h2><ul>
+<li>Suite digest: <code>sha256:4ee6226a9eb84db5ee0666d95d7605deb10f544cbb570f499d9d395278031119</code></li>
+<li>Re-verify every artifact: <code>liveframe world verify &lt;run_dir&gt;/ledger.json</code></li>
+<li>Host: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 · Python 3.11.10 · 128 CPUs</li>
+<li>Time from command to this report: 560.8 s</li>
+</ul>
+<footer>liveframe world report v1 — self-contained page, no scripts, no network. Every number traces to the digest-bound run ledger next to this file.</footer>
+</main>

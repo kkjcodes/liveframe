@@ -1,0 +1,2425 @@
+{
+  "capabilities": {
+    "action_magnitudes": {
+      "keyboard_one_hot": 1.0,
+      "mouse_pitch_yaw_value": 0.1
+    },
+    "actions": [
+      "0",
+      "A",
+      "D",
+      "L",
+      "N",
+      "R",
+      "S",
+      "U",
+      "W"
+    ],
+    "chunk_frames": 12,
+    "chunk_frames_first": 9,
+    "interaction_mode": "interactive",
+    "license_notice": "MIT (SkyworkAI/Matrix-Game)",
+    "min_vram_gb": 24.0,
+    "name": "matrix-game-2",
+    "native_fps": 12.0,
+    "resolution": [
+      352,
+      640
+    ],
+    "supports_seed": true
+  },
+  "cases": [
+    {
+      "case_id": "standard-000-outdoor-meadow-s0",
+      "error": null,
+      "metric_pass_seconds": 13.948078306999378,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.8870005465144523,
+        "flicker_mean": 9.040847899453652,
+        "metric_pass_seconds": 13.948078306999378,
+        "motion_onset_frames_median": 0.5
+      },
+      "metric_throughput_fps": 52.265264357899085,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5525393709976925,
+          "p50": 0.5221319720003521,
+          "p95": 0.5525393709976925,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.036366973999975016,
+          "max": 0.6906193680006254,
+          "p50": 0.6193020669998077,
+          "p95": 0.6556690409997827,
+          "p99": 0.6906193680006254
+        },
+        "generated_fps": 19.159389818650794,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 38.049s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.5966158182208996,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 38.049s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.813424063999264,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 17.7,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 29
+        },
+        "time_to_first_frame_seconds": 0.7429209830006585,
+        "wall_seconds": 38.049228440999286
+      },
+      "scene": "outdoor-meadow",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-001-outdoor-meadow-s1",
+      "error": null,
+      "metric_pass_seconds": 13.958915500999865,
+      "metric_summary": {
+        "collapse_flag_count": 466,
+        "direction_accuracy_mean": 0.38937842343415097,
+        "flicker_mean": 1.7856601566980737,
+        "metric_pass_seconds": 13.958915500999865,
+        "motion_onset_frames_median": 1.0
+      },
+      "metric_throughput_fps": 52.22468750869524,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5445809739976539,
+          "p50": 0.5231374610011699,
+          "p95": 0.5445809739976539,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.02367003299514181,
+          "max": 0.6377248949975183,
+          "p50": 0.6039333220032859,
+          "p95": 0.6276033549984277,
+          "p99": 0.6377248949975183
+        },
+        "generated_fps": 19.793184695893643,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.831s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.649432057991137,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.831s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.631904716999998,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.49354327699984424,
+        "wall_seconds": 36.830859268000495
+      },
+      "scene": "outdoor-meadow",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-002-outdoor-meadow-s2",
+      "error": null,
+      "metric_pass_seconds": 14.034187930999906,
+      "metric_summary": {
+        "collapse_flag_count": 1,
+        "direction_accuracy_mean": 0.6721774717422372,
+        "flicker_mean": 1.8778404066605228,
+        "metric_pass_seconds": 14.034187930999906,
+        "motion_onset_frames_median": 4.5
+      },
+      "metric_throughput_fps": 51.94458016268422,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.533415634999983,
+          "p50": 0.5313462570011325,
+          "p95": 0.533415634999983,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.016722748998290626,
+          "max": 0.6341009179996036,
+          "p50": 0.604774052000721,
+          "p95": 0.6214968009990116,
+          "p99": 0.6341009179996036
+        },
+        "generated_fps": 19.787983190456526,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.841s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6489985992047105,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.841s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.556553017999249,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.4966817330023332,
+        "wall_seconds": 36.84054069500053
+      },
+      "scene": "outdoor-meadow",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-003-outdoor-dunes-s0",
+      "error": null,
+      "metric_pass_seconds": 12.919231800999114,
+      "metric_summary": {
+        "collapse_flag_count": 68,
+        "direction_accuracy_mean": 0.5547585945399394,
+        "flicker_mean": 6.699761036156605,
+        "metric_pass_seconds": 12.919231800999114,
+        "motion_onset_frames_median": 4.0
+      },
+      "metric_throughput_fps": 56.427503680491476,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5322901740000816,
+          "p50": 0.527705562999472,
+          "p95": 0.5322901740000816,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.024884194001060678,
+          "max": 0.6474567049990583,
+          "p50": 0.6085256500009564,
+          "p95": 0.633409844002017,
+          "p99": 0.6474567049990583
+        },
+        "generated_fps": 19.712173815650708,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.982s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6426811513042257,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.982s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.469154235001042,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.49058984700241126,
+        "wall_seconds": 36.9822226010001
+      },
+      "scene": "outdoor-dunes",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-004-outdoor-dunes-s1",
+      "error": null,
+      "metric_pass_seconds": 14.896399780001957,
+      "metric_summary": {
+        "collapse_flag_count": 56,
+        "direction_accuracy_mean": 0.8180476482438469,
+        "flicker_mean": 12.933670218133337,
+        "metric_pass_seconds": 14.896399780001957,
+        "motion_onset_frames_median": 2.0
+      },
+      "metric_throughput_fps": 48.93799916531941,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5409272440010682,
+          "p50": 0.5321921559989278,
+          "p95": 0.5409272440010682,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.03568548700059182,
+          "max": 0.6669221480005945,
+          "p50": 0.6061375389981549,
+          "p95": 0.6418230259987467,
+          "p99": 0.6669221480005945
+        },
+        "generated_fps": 19.617515810415814,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.161s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6347929842013178,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.161s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.218720232001942,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.5674772890015447,
+        "wall_seconds": 37.16066840700296
+      },
+      "scene": "outdoor-dunes",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-005-outdoor-dunes-s2",
+      "error": null,
+      "metric_pass_seconds": 16.30061793999994,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.10468119451170299,
+        "flicker_mean": 2.929496376191849,
+        "metric_pass_seconds": 16.30061793999994,
+        "motion_onset_frames_median": 74.0
+      },
+      "metric_throughput_fps": 44.722230941387416,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5394494160027534,
+          "p50": 0.5338346969983832,
+          "p95": 0.5394494160027534,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.022670630998618435,
+          "max": 0.6512665139998717,
+          "p50": 0.6100282930019603,
+          "p95": 0.6326989240005787,
+          "p99": 0.6512665139998717
+        },
+        "generated_fps": 19.603091279701722,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.188s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6335909399751436,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.188s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.531433781998203,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.4971766889975697,
+        "wall_seconds": 37.18801231899852
+      },
+      "scene": "outdoor-dunes",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-006-indoor-hall-s0",
+      "error": null,
+      "metric_pass_seconds": 12.258400094000535,
+      "metric_summary": {
+        "collapse_flag_count": 253,
+        "direction_accuracy_mean": 0.7051630434782609,
+        "flicker_mean": 8.828959941549309,
+        "metric_pass_seconds": 12.258400094000535,
+        "motion_onset_frames_median": 16.0
+      },
+      "metric_throughput_fps": 59.46942459128779,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5374056959990412,
+          "p50": 0.5294463789978181,
+          "p95": 0.5374056959990412,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.025282151000283193,
+          "max": 0.6833046009996906,
+          "p50": 0.6201479689989355,
+          "p95": 0.6454301199992187,
+          "p99": 0.6833046009996906
+        },
+        "generated_fps": 19.29600868797217,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.780s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6080007239976808,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.780s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.601408566999453,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.5011912200025108,
+        "wall_seconds": 37.779833736
+      },
+      "scene": "indoor-hall",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-007-indoor-hall-s1",
+      "error": null,
+      "metric_pass_seconds": 12.245315774998744,
+      "metric_summary": {
+        "collapse_flag_count": 229,
+        "direction_accuracy_mean": 0.3491492032497647,
+        "flicker_mean": 6.489701674556632,
+        "metric_pass_seconds": 12.245315774998744,
+        "motion_onset_frames_median": 1.0
+      },
+      "metric_throughput_fps": 59.53296863837509,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5684671449998859,
+          "p50": 0.5648766159974912,
+          "p95": 0.5684671449998859,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.046143635001499206,
+          "max": 0.6767722669974319,
+          "p50": 0.6255353710002964,
+          "p95": 0.6716790060017956,
+          "p99": 0.6767722669974319
+        },
+        "generated_fps": 19.056313485107076,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 38.255s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.588026123758923,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 38.255s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.947113687998353,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.0,
+          "p5": 18.0,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 29
+        },
+        "time_to_first_frame_seconds": 0.4904460500001733,
+        "wall_seconds": 38.25503818300058
+      },
+      "scene": "indoor-hall",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-008-indoor-hall-s2",
+      "error": null,
+      "metric_pass_seconds": 14.013688563998585,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.32241379310344825,
+        "flicker_mean": 3.8168569676741795,
+        "metric_pass_seconds": 14.013688563998585,
+        "motion_onset_frames_median": 55.5
+      },
+      "metric_throughput_fps": 52.02056522597584,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5396063100015454,
+          "p50": 0.5356383760008612,
+          "p95": 0.5396063100015454,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.02332227800070541,
+          "max": 0.6516510149995156,
+          "p50": 0.6127303639987076,
+          "p95": 0.636052641999413,
+          "p99": 0.6516510149995156
+        },
+        "generated_fps": 19.489180154598724,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.405s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6240983462165604,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.405s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.804576792001171,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.532450096001412,
+        "wall_seconds": 37.40537027300161
+      },
+      "scene": "indoor-hall",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-009-indoor-depot-s0",
+      "error": null,
+      "metric_pass_seconds": 13.10703528600061,
+      "metric_summary": {
+        "collapse_flag_count": 3,
+        "direction_accuracy_mean": 0.7207894235652615,
+        "flicker_mean": 7.2704303584747265,
+        "metric_pass_seconds": 13.10703528600061,
+        "motion_onset_frames_median": 8.5
+      },
+      "metric_throughput_fps": 55.618985078847835,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5277361920016119,
+          "p50": 0.5266100299995742,
+          "p95": 0.5277361920016119,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.04060407299766666,
+          "max": 0.6718584440022823,
+          "p50": 0.6114115790005599,
+          "p95": 0.6520156519982265,
+          "p99": 0.6718584440022823
+        },
+        "generated_fps": 19.41909486899383,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.540s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.618257905749486,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.540s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.566064847000234,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.5004346069981693,
+        "wall_seconds": 37.540369668000494
+      },
+      "scene": "indoor-depot",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-010-indoor-depot-s1",
+      "error": null,
+      "metric_pass_seconds": 13.657909590001509,
+      "metric_summary": {
+        "collapse_flag_count": 71,
+        "direction_accuracy_mean": 0.6165145070373829,
+        "flicker_mean": 5.727264187054371,
+        "metric_pass_seconds": 13.657909590001509,
+        "motion_onset_frames_median": 2.5
+      },
+      "metric_throughput_fps": 53.37566449654024,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5454659839997476,
+          "p50": 0.5197313979988394,
+          "p95": 0.5454659839997476,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.0339962159996503,
+          "max": 0.6543481209992024,
+          "p50": 0.604756314001861,
+          "p95": 0.6387525300015113,
+          "p99": 0.6543481209992024
+        },
+        "generated_fps": 19.66271623097671,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.075s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6385596859147258,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.075s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 5.857189819998894,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.5169710030022543,
+        "wall_seconds": 37.07524390000253
+      },
+      "scene": "indoor-depot",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-011-indoor-depot-s2",
+      "error": null,
+      "metric_pass_seconds": 13.86748297899976,
+      "metric_summary": {
+        "collapse_flag_count": 265,
+        "direction_accuracy_mean": 0.625,
+        "flicker_mean": 3.4155847787969633,
+        "metric_pass_seconds": 13.86748297899976,
+        "motion_onset_frames_median": 28.5
+      },
+      "metric_throughput_fps": 52.56902071586906,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5217096320011478,
+          "p50": 0.5213767489985912,
+          "p95": 0.5217096320011478,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.020011299995530862,
+          "max": 0.6394798389992502,
+          "p50": 0.5989473530025862,
+          "p95": 0.618958652998117,
+          "p99": 0.6394798389992502
+        },
+        "generated_fps": 19.958898437845402,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.525s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.663241536487117,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.525s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.3788517199973285,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 20.4,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.4945519909997529,
+        "wall_seconds": 36.525061855001695
+      },
+      "scene": "indoor-depot",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-012-stylized-blocks-s0",
+      "error": null,
+      "metric_pass_seconds": 14.335310898000898,
+      "metric_summary": {
+        "collapse_flag_count": 53,
+        "direction_accuracy_mean": 0.7266668690794267,
+        "flicker_mean": 11.630553051297154,
+        "metric_pass_seconds": 14.335310898000898,
+        "motion_onset_frames_median": 0.5
+      },
+      "metric_throughput_fps": 50.85344888485545,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5305984490005358,
+          "p50": 0.5220048690025578,
+          "p95": 0.5305984490005358,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.013823934001266025,
+          "max": 0.620837502003269,
+          "p50": 0.5965775789991312,
+          "p95": 0.6104015130003972,
+          "p99": 0.620837502003269
+        },
+        "generated_fps": 20.011277446265378,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.429s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6676064538554483,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.429s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.479105513000832,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 20.4,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.5496773220002069,
+        "wall_seconds": 36.429458436999994
+      },
+      "scene": "stylized-blocks",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-013-stylized-blocks-s1",
+      "error": null,
+      "metric_pass_seconds": 12.864512934000231,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.7355814967496432,
+        "flicker_mean": 8.091709468390915,
+        "metric_pass_seconds": 12.864512934000231,
+        "motion_onset_frames_median": 1.5
+      },
+      "metric_throughput_fps": 56.667516581470515,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5270547830004944,
+          "p50": 0.524383897001826,
+          "p95": 0.5270547830004944,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.022613711000303738,
+          "max": 0.6378281110009993,
+          "p50": 0.5969056819994876,
+          "p95": 0.6195193929997913,
+          "p99": 0.6378281110009993
+        },
+        "generated_fps": 20.025054122590912,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.404s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6687545102159094,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.404s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 5.883161722002114,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 20.4,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.4796882980008377,
+        "wall_seconds": 36.40439599000092
+      },
+      "scene": "stylized-blocks",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-014-stylized-blocks-s2",
+      "error": null,
+      "metric_pass_seconds": 15.707055834998755,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.4738372093023256,
+        "flicker_mean": 5.303281822907073,
+        "metric_pass_seconds": 15.707055834998755,
+        "motion_onset_frames_median": 8.0
+      },
+      "metric_throughput_fps": 46.41226259447226,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.52905306500179,
+          "p50": 0.5213367120013572,
+          "p95": 0.52905306500179,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.018733853998128325,
+          "max": 0.632663276999665,
+          "p50": 0.6051755690023128,
+          "p95": 0.6239094230004412,
+          "p99": 0.632663276999665
+        },
+        "generated_fps": 19.799275729197312,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.820s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.649939644099776,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.820s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.415087033001328,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 20.4,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.4948948279998149,
+        "wall_seconds": 36.81952865199855
+      },
+      "scene": "stylized-blocks",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-015-stylized-night-s0",
+      "error": null,
+      "metric_pass_seconds": 14.933049733001099,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.8950276243093922,
+        "flicker_mean": 11.764561486768198,
+        "metric_pass_seconds": 14.933049733001099,
+        "motion_onset_frames_median": 3.5
+      },
+      "metric_throughput_fps": 48.817891390862776,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5243374040001072,
+          "p50": 0.5207225519989152,
+          "p95": 0.5243374040001072,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.02899331499793334,
+          "max": 0.644345737000549,
+          "p50": 0.6036430790009035,
+          "p95": 0.6326363939988369,
+          "p99": 0.644345737000549
+        },
+        "generated_fps": 19.729544053120964,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.950s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6441286710934138,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.950s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.37049029300033,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.4798030909987574,
+        "wall_seconds": 36.949662801998784
+      },
+      "scene": "stylized-night",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-016-stylized-night-s1",
+      "error": null,
+      "metric_pass_seconds": 13.450353249998443,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.5751132989529614,
+        "flicker_mean": 6.731922970204563,
+        "metric_pass_seconds": 13.450353249998443,
+        "motion_onset_frames_median": 2.5
+      },
+      "metric_throughput_fps": 54.19932000671316,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5289798390003853,
+          "p50": 0.5221690270009276,
+          "p95": 0.5289798390003853,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.017201041999214794,
+          "max": 0.6325181819993304,
+          "p50": 0.6053446609985258,
+          "p95": 0.6225457029977406,
+          "p99": 0.6325181819993304
+        },
+        "generated_fps": 19.796326450104512,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.825s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6496938708420428,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.825s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 5.895016865000798,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.4931542990016169,
+        "wall_seconds": 36.82501406699885
+      },
+      "scene": "stylized-night",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-017-stylized-night-s2",
+      "error": null,
+      "metric_pass_seconds": 14.0120374979997,
+      "metric_summary": {
+        "collapse_flag_count": 489,
+        "direction_accuracy_mean": 0.29654704415617206,
+        "flicker_mean": 1.3089252037026888,
+        "metric_pass_seconds": 14.0120374979997,
+        "motion_onset_frames_median": 2.0
+      },
+      "metric_throughput_fps": 52.026694911719225,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5422773509999388,
+          "p50": 0.5293981229988276,
+          "p95": 0.5422773509999388,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.01891216500007431,
+          "max": 0.6427761140002985,
+          "p50": 0.6099742890000925,
+          "p95": 0.6288864540001669,
+          "p99": 0.6427761140002985
+        },
+        "generated_fps": 19.635931763282983,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.126s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6363276469402486,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.126s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.921219583000493,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.49481267200098955,
+        "wall_seconds": 37.12581652800145
+      },
+      "scene": "stylized-night",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-018-thirdperson-court-s0",
+      "error": null,
+      "metric_pass_seconds": 14.49160524599938,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.8116119398389754,
+        "flicker_mean": 11.10349049771225,
+        "metric_pass_seconds": 14.49160524599938,
+        "motion_onset_frames_median": 2.0
+      },
+      "metric_throughput_fps": 50.30498606779612,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5319497410018812,
+          "p50": 0.5232322629999544,
+          "p95": 0.5319497410018812,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.020219622001604876,
+          "max": 0.6437121960007062,
+          "p50": 0.6092590779990132,
+          "p95": 0.6294787000006181,
+          "p99": 0.6437121960007062
+        },
+        "generated_fps": 19.645147749471022,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.108s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6370956457892518,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.108s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 5.981545491998986,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.48681027899874607,
+        "wall_seconds": 37.108399962002295
+      },
+      "scene": "thirdperson-court",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-019-thirdperson-court-s1",
+      "error": null,
+      "metric_pass_seconds": 14.575677208002162,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.7571238371891966,
+        "flicker_mean": 12.534285274508235,
+        "metric_pass_seconds": 14.575677208002162,
+        "motion_onset_frames_median": 1.5
+      },
+      "metric_throughput_fps": 50.01482878612139,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5230923749986687,
+          "p50": 0.5168580030003795,
+          "p95": 0.5230923749986687,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.022124003000499215,
+          "max": 0.6470875129998603,
+          "p50": 0.604869235001388,
+          "p95": 0.6269932380018872,
+          "p99": 0.6470875129998603
+        },
+        "generated_fps": 19.692269875966915,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.020s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6410224896639096,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.020s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.004957425997418,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.5534780670022883,
+        "wall_seconds": 37.01960234100261
+      },
+      "scene": "thirdperson-court",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-020-thirdperson-court-s2",
+      "error": null,
+      "metric_pass_seconds": 14.403139966998424,
+      "metric_summary": {
+        "collapse_flag_count": 0,
+        "direction_accuracy_mean": 0.4814363143631436,
+        "flicker_mean": 3.465794240666942,
+        "metric_pass_seconds": 14.403139966998424,
+        "motion_onset_frames_median": 8.0
+      },
+      "metric_throughput_fps": 50.613963460074714,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5483734260014899,
+          "p50": 0.5279140409984393,
+          "p95": 0.5483734260014899,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.023937922000186518,
+          "max": 0.6449247290001949,
+          "p50": 0.6155706499994267,
+          "p95": 0.6395085719996132,
+          "p99": 0.6449247290001949
+        },
+        "generated_fps": 19.439818132466883,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.500s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6199848443722402,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 37.500s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.622207084001275,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 28
+        },
+        "time_to_first_frame_seconds": 0.49234920799790416,
+        "wall_seconds": 37.50035082799877
+      },
+      "scene": "thirdperson-court",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-021-thirdperson-yard-s0",
+      "error": null,
+      "metric_pass_seconds": 12.69040639800005,
+      "metric_summary": {
+        "collapse_flag_count": 29,
+        "direction_accuracy_mean": 0.5354259569318502,
+        "flicker_mean": 3.4405115348706534,
+        "metric_pass_seconds": 12.69040639800005,
+        "motion_onset_frames_median": 16.0
+      },
+      "metric_throughput_fps": 57.44496883211613,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.6274259489982796,
+          "p50": 0.5846967920006136,
+          "p95": 0.6274259489982796,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.05641531400033273,
+          "max": 0.7257183609981439,
+          "p50": 0.6609170150004502,
+          "p95": 0.7173323290007829,
+          "p99": 0.7257183609981439
+        },
+        "generated_fps": 18.07515666161975,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 40.332s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.5062630551349792,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 40.332s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.668080372000986,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 18.0,
+          "min": 16.8,
+          "p5": 16.8,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 31
+        },
+        "time_to_first_frame_seconds": 0.535722254000575,
+        "wall_seconds": 40.3316006410023
+      },
+      "scene": "thirdperson-yard",
+      "script": [
+        [
+          0,
+          "W",
+          364
+        ],
+        [
+          364,
+          "L",
+          182
+        ],
+        [
+          546,
+          "0",
+          183
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-022-thirdperson-yard-s1",
+      "error": null,
+      "metric_pass_seconds": 13.494443997002236,
+      "metric_summary": {
+        "collapse_flag_count": 117,
+        "direction_accuracy_mean": 0.5957207207207207,
+        "flicker_mean": 8.613839853391214,
+        "metric_pass_seconds": 13.494443997002236,
+        "motion_onset_frames_median": 1.0
+      },
+      "metric_throughput_fps": 54.02223316217741,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 20,
+            "frames": 6
+          },
+          {
+            "chunk": 40,
+            "frames": 9
+          },
+          {
+            "chunk": 50,
+            "frames": 11
+          }
+        ],
+        "control_latency": {
+          "max": 0.5330975900033081,
+          "p50": 0.5237233609987015,
+          "p95": 0.5330975900033081,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.025882986999931745,
+          "max": 0.6409081260026142,
+          "p50": 0.6066633800001,
+          "p95": 0.6325463670000318,
+          "p99": 0.6409081260026142
+        },
+        "generated_fps": 19.72955461907463,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.950s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6441295515895524,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.950s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.645604014000128,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.49856823200025246,
+        "wall_seconds": 36.949643013998866
+      },
+      "scene": "thirdperson-yard",
+      "script": [
+        [
+          0,
+          "W",
+          243
+        ],
+        [
+          243,
+          "S",
+          243
+        ],
+        [
+          486,
+          "L",
+          122
+        ],
+        [
+          608,
+          "R",
+          121
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "standard-023-thirdperson-yard-s2",
+      "error": null,
+      "metric_pass_seconds": 13.998679299002106,
+      "metric_summary": {
+        "collapse_flag_count": 138,
+        "direction_accuracy_mean": 0.21220930232558138,
+        "flicker_mean": 1.4059588103094598,
+        "metric_pass_seconds": 13.998679299002106,
+        "motion_onset_frames_median": 8.0
+      },
+      "metric_throughput_fps": 52.076341233988174,
+      "metrics": {
+        "chunk_quantization": [
+          {
+            "chunk": 15,
+            "frames": 5
+          },
+          {
+            "chunk": 30,
+            "frames": 7
+          },
+          {
+            "chunk": 45,
+            "frames": 9
+          }
+        ],
+        "control_latency": {
+          "max": 0.5256359330014675,
+          "p50": 0.5231934920011554,
+          "p95": 0.5256359330014675,
+          "samples": 3
+        },
+        "emission_intervals": {
+          "count": 60,
+          "jitter": 0.02185560200450709,
+          "max": 0.6530044529972656,
+          "p50": 0.6061196599985124,
+          "p95": 0.6279752620030195,
+          "p99": 0.6530044529972656
+        },
+        "generated_fps": 19.71929008666844,
+        "interaction_mode": "interactive",
+        "native_frames": 729,
+        "realtime": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.969s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 1.6432741738890366,
+        "realtime_vs_model": {
+          "applicable": false,
+          "passed": null,
+          "reason": "run covers 36.969s wall; the real-time rule requires a continuous 60s stream",
+          "threshold_fps": 12.0
+        },
+        "reset_seconds": 6.177378493001015,
+        "stalls": {
+          "count": 0,
+          "threshold_seconds": 2.0,
+          "total_seconds": 0.0
+        },
+        "sustained_fps": {
+          "median": 19.2,
+          "min": 18.9,
+          "p5": 19.2,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 27
+        },
+        "time_to_first_frame_seconds": 0.48302636299922597,
+        "wall_seconds": 36.968876505998196
+      },
+      "scene": "thirdperson-yard",
+      "script": [
+        [
+          0,
+          "0",
+          182
+        ],
+        [
+          182,
+          "W",
+          182
+        ],
+        [
+          364,
+          "0",
+          182
+        ],
+        [
+          546,
+          "D",
+          183
+        ]
+      ],
+      "seed": 2,
+      "status": "ok"
+    }
+  ],
+  "caveats": [],
+  "claim_check": {
+    "claim": "real-time [25fps] (github.com/SkyworkAI/Matrix-Game README; config not stated in headline)",
+    "measured_generated_fps_median": 19.677493053471814,
+    "note": "measured single-GPU; the vendor claim's configuration (see the claim text) differs from this run's hardware/config in the environment section. 'reproduced'/'not reproduced' require a configuration-matched comparison by a human.",
+    "verdict": "config not stated"
+  },
+  "cold_start_seconds": 42.22533657900203,
+  "cold_start_storage": "container-disk",
+  "control_validated_on_real_output": false,
+  "environment": {
+    "cpu_count": 208,
+    "gpu": "NVIDIA H100 80GB HBM3, 81559 MiB, 595.91.07, 9.0",
+    "machine": "x86_64",
+    "nvidia_smi_q": "env-nvidia-smi.txt",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.35",
+    "python": "3.11.10",
+    "timestamp_utc": "2026-10-19T23:47:34.899799+00:00"
+  },
+  "extra": {
+    "backend": "bridged",
+    "frame_basis": {
+      "counted": "decoded pixel frames in host memory",
+      "interpolation": "none",
+      "latent_to_pixel": "4L-3 causal expansion (first block 9, then 12)",
+      "native_fps_source": "upstream utils/visualize.py:165 (fps = 12)",
+      "vendor_claim_basis": "not stated by vendor"
+    },
+    "provenance": {
+      "cuda": "12.4",
+      "torch": "2.6.0+cu124"
+    },
+    "worker_python": "3.11.10"
+  },
+  "headline": {
+    "cases_failed": 0,
+    "cases_ok": 24,
+    "cases_total": 24,
+    "control_latency_p50_median": 0.5240536290002638,
+    "control_latency_p95_max": 0.6274259489982796,
+    "cost_per_generated_minute_usd_median": 0.04055396934178471,
+    "generated_fps_median": 19.677493053471814,
+    "gpu_price_usd_per_hour": 3.99,
+    "interaction_mode": "interactive",
+    "metric_throughput_fps_median": 52.15051437134171,
+    "model": "matrix-game-2",
+    "realtime_pass": null,
+    "resolution": [
+      352,
+      640
+    ],
+    "single_trial": false,
+    "suite": "standard",
+    "sustained_fps_min": 16.8,
+    "time_to_first_frame_p50": 0.49578828050107404,
+    "trials": 24
+  },
+  "not_measured": [
+    "peak_vram_gb / gpu_util / power: NVML sampling not yet wired (lands with the next GPU-session milestone)",
+    "control metrics: EXPERIMENTAL \u2014 computed and stored, but excluded from the headline and public reporting until the classifier reaches the promotion bar (per-class >=85% blind two-labeler agreement on fresh clips). Use `world export --format worldmark` for control scoring"
+  ],
+  "schema": "liveframe.world.report.v1",
+  "suite_digest": "sha256:b797456950edad7cc161b69ba153dd3f5c80ac300baeedd8a2c06e4bc3672be4",
+  "time_to_first_report_seconds": 1451.5772470720003
+}

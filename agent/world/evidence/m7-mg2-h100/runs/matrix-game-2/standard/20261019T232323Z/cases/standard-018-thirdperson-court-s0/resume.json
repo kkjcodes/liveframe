@@ -1,0 +1,22 @@
+{
+  "key": "sha256:c34a1c0fd3f955a8659d72d0f46d4ae967d269d350d98dccfda1531f2e99eef4",
+  "scene": "thirdperson-court",
+  "script": [
+    [
+      0,
+      "W",
+      364
+    ],
+    [
+      364,
+      "L",
+      182
+    ],
+    [
+      546,
+      "0",
+      183
+    ]
+  ],
+  "seed": 0
+}

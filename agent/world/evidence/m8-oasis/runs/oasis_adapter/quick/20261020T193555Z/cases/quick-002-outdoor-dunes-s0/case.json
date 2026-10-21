@@ -1,0 +1,63 @@
+{
+  "captured_files": [
+    "/opt/liveframe/runs/oasis_adapter/quick/20261020T193555Z/cases/quick-002-outdoor-dunes-s0/frames_256/chunk-0000.npz",
+    "/opt/liveframe/runs/oasis_adapter/quick/20261020T193555Z/cases/quick-002-outdoor-dunes-s0/frames_256/chunk-0001.npz"
+  ],
+  "case_id": "quick-002-outdoor-dunes-s0",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [],
+    "control_latency": {
+      "max": 0.9373796284198761,
+      "p50": 0.9074019640684128,
+      "p95": 0.9373796284198761,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 399,
+      "jitter": 0.05321309715509415,
+      "max": 1.1721369996666908,
+      "p50": 0.9247400090098381,
+      "p95": 0.9779531061649323,
+      "p99": 1.0124271512031555
+    },
+    "generated_fps": 1.0757016058152367,
+    "interaction_mode": "interactive",
+    "native_frames": 400,
+    "realtime": {
+      "applicable": true,
+      "min_window_fps": 1.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 399,
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.05378508029076183,
+    "realtime_vs_model": {
+      "applicable": true,
+      "min_window_fps": 1.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 399,
+      "threshold_fps": 20.0
+    },
+    "reset_seconds": 0.1202937513589859,
+    "stalls": {
+      "count": 399,
+      "threshold_seconds": 0.1,
+      "total_seconds": 370.8450805917382
+    },
+    "sustained_fps": {
+      "median": 1.1,
+      "min": 1.0,
+      "p5": 1.0,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 362
+    },
+    "time_to_first_frame_seconds": 1.0052521005272865,
+    "wall_seconds": 371.8503326922655
+  },
+  "status": "ok"
+}

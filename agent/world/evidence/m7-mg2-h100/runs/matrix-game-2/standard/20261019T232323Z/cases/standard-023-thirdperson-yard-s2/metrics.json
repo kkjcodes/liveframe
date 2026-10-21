@@ -1,0 +1,1429 @@
+{
+  "control": {
+    "pair_classes": [
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "L",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "A",
+      "L",
+      "L",
+      "A",
+      "A",
+      "L",
+      "L",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "0",
+      "0",
+      "R",
+      "R",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "D",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "D",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "D",
+      "R",
+      "R",
+      "D",
+      "R",
+      "R",
+      "R",
+      "D",
+      "D",
+      "D",
+      "R",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "R",
+      "R",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "0",
+      "R",
+      "D",
+      "R",
+      "0",
+      "R",
+      "R",
+      "R",
+      "R",
+      "D",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "D",
+      "R",
+      "D",
+      "R",
+      "R",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D"
+    ],
+    "segments": [
+      {
+        "action": "0",
+        "commanded_class": "0",
+        "direction_accuracy": 0.973404255319149,
+        "direction_purity": null,
+        "motion_onset_frames": 1,
+        "noop_drift": 0.0421673006191011,
+        "pairs": 188,
+        "start_pair": 0
+      },
+      {
+        "action": "W",
+        "commanded_class": "W",
+        "direction_accuracy": 0.19767441860465115,
+        "direction_purity": 0.5028852714042269,
+        "motion_onset_frames": 8,
+        "noop_drift": null,
+        "pairs": 180,
+        "start_pair": 188
+      },
+      {
+        "action": "0",
+        "commanded_class": "0",
+        "direction_accuracy": 0.9333333333333333,
+        "direction_purity": null,
+        "motion_onset_frames": 1,
+        "noop_drift": 0.04903635525851314,
+        "pairs": 180,
+        "start_pair": 368
+      },
+      {
+        "action": "D",
+        "commanded_class": "D",
+        "direction_accuracy": 0.22674418604651161,
+        "direction_purity": 0.3599015240537596,
+        "motion_onset_frames": 8,
+        "noop_drift": null,
+        "pairs": 180,
+        "start_pair": 548
+      }
+    ]
+  },
+  "frames_analyzed": 729,
+  "metric_pass_seconds": 13.998679299002106,
+  "perceived_latency": {
+    "count": 3,
+    "max": 1.189860158667822,
+    "p50": 1.1705318446681,
+    "samples": [
+      {
+        "control_latency_wall": 0.5231934920011554,
+        "motion_onset_frames": 8,
+        "perceived_latency_seconds": 1.189860158667822,
+        "start_frame": 189
+      },
+      {
+        "control_latency_wall": 0.5256359330014675,
+        "motion_onset_frames": 1,
+        "perceived_latency_seconds": 0.6089692663348009,
+        "start_frame": 369
+      },
+      {
+        "control_latency_wall": 0.5038651780014334,
+        "motion_onset_frames": 8,
+        "perceived_latency_seconds": 1.1705318446681,
+        "start_frame": 549
+      }
+    ]
+  },
+  "schema": "liveframe.world.case-metrics.v1",
+  "stability": {
+    "collapse": {
+      "black_frames": [],
+      "collapse_flag_count": 138,
+      "frozen_runs": [
+        {
+          "pairs": 3,
+          "start_frame": 241
+        },
+        {
+          "pairs": 3,
+          "start_frame": 245
+        },
+        {
+          "pairs": 3,
+          "start_frame": 249
+        },
+        {
+          "pairs": 3,
+          "start_frame": 253
+        },
+        {
+          "pairs": 3,
+          "start_frame": 257
+        },
+        {
+          "pairs": 5,
+          "start_frame": 263
+        },
+        {
+          "pairs": 3,
+          "start_frame": 269
+        },
+        {
+          "pairs": 3,
+          "start_frame": 273
+        },
+        {
+          "pairs": 3,
+          "start_frame": 277
+        },
+        {
+          "pairs": 3,
+          "start_frame": 281
+        },
+        {
+          "pairs": 3,
+          "start_frame": 285
+        },
+        {
+          "pairs": 3,
+          "start_frame": 289
+        },
+        {
+          "pairs": 3,
+          "start_frame": 293
+        },
+        {
+          "pairs": 3,
+          "start_frame": 301
+        },
+        {
+          "pairs": 3,
+          "start_frame": 305
+        },
+        {
+          "pairs": 3,
+          "start_frame": 309
+        },
+        {
+          "pairs": 3,
+          "start_frame": 313
+        },
+        {
+          "pairs": 3,
+          "start_frame": 317
+        },
+        {
+          "pairs": 3,
+          "start_frame": 325
+        },
+        {
+          "pairs": 3,
+          "start_frame": 329
+        },
+        {
+          "pairs": 3,
+          "start_frame": 337
+        },
+        {
+          "pairs": 3,
+          "start_frame": 341
+        },
+        {
+          "pairs": 3,
+          "start_frame": 345
+        },
+        {
+          "pairs": 3,
+          "start_frame": 349
+        },
+        {
+          "pairs": 3,
+          "start_frame": 353
+        },
+        {
+          "pairs": 3,
+          "start_frame": 357
+        },
+        {
+          "pairs": 3,
+          "start_frame": 361
+        },
+        {
+          "pairs": 3,
+          "start_frame": 365
+        }
+      ],
+      "repeat_loops": [
+        {
+          "frame": 189,
+          "matches_frame": 180
+        },
+        {
+          "frame": 245,
+          "matches_frame": 237
+        },
+        {
+          "frame": 246,
+          "matches_frame": 238
+        },
+        {
+          "frame": 247,
+          "matches_frame": 239
+        },
+        {
+          "frame": 248,
+          "matches_frame": 240
+        },
+        {
+          "frame": 249,
+          "matches_frame": 241
+        },
+        {
+          "frame": 250,
+          "matches_frame": 242
+        },
+        {
+          "frame": 251,
+          "matches_frame": 243
+        },
+        {
+          "frame": 252,
+          "matches_frame": 244
+        },
+        {
+          "frame": 253,
+          "matches_frame": 245
+        },
+        {
+          "frame": 254,
+          "matches_frame": 246
+        },
+        {
+          "frame": 255,
+          "matches_frame": 247
+        },
+        {
+          "frame": 256,
+          "matches_frame": 248
+        },
+        {
+          "frame": 257,
+          "matches_frame": 249
+        },
+        {
+          "frame": 258,
+          "matches_frame": 250
+        },
+        {
+          "frame": 259,
+          "matches_frame": 251
+        },
+        {
+          "frame": 260,
+          "matches_frame": 252
+        },
+        {
+          "frame": 269,
+          "matches_frame": 261
+        },
+        {
+          "frame": 270,
+          "matches_frame": 262
+        },
+        {
+          "frame": 271,
+          "matches_frame": 263
+        },
+        {
+          "frame": 272,
+          "matches_frame": 264
+        },
+        {
+          "frame": 273,
+          "matches_frame": 265
+        },
+        {
+          "frame": 274,
+          "matches_frame": 266
+        },
+        {
+          "frame": 275,
+          "matches_frame": 267
+        },
+        {
+          "frame": 276,
+          "matches_frame": 268
+        },
+        {
+          "frame": 277,
+          "matches_frame": 269
+        },
+        {
+          "frame": 278,
+          "matches_frame": 270
+        },
+        {
+          "frame": 279,
+          "matches_frame": 271
+        },
+        {
+          "frame": 280,
+          "matches_frame": 272
+        },
+        {
+          "frame": 281,
+          "matches_frame": 273
+        },
+        {
+          "frame": 282,
+          "matches_frame": 274
+        },
+        {
+          "frame": 283,
+          "matches_frame": 275
+        },
+        {
+          "frame": 284,
+          "matches_frame": 276
+        },
+        {
+          "frame": 285,
+          "matches_frame": 277
+        },
+        {
+          "frame": 286,
+          "matches_frame": 278
+        },
+        {
+          "frame": 287,
+          "matches_frame": 279
+        },
+        {
+          "frame": 288,
+          "matches_frame": 279
+        },
+        {
+          "frame": 289,
+          "matches_frame": 281
+        },
+        {
+          "frame": 290,
+          "matches_frame": 282
+        },
+        {
+          "frame": 291,
+          "matches_frame": 283
+        },
+        {
+          "frame": 292,
+          "matches_frame": 284
+        },
+        {
+          "frame": 293,
+          "matches_frame": 285
+        },
+        {
+          "frame": 294,
+          "matches_frame": 286
+        },
+        {
+          "frame": 295,
+          "matches_frame": 287
+        },
+        {
+          "frame": 296,
+          "matches_frame": 288
+        },
+        {
+          "frame": 297,
+          "matches_frame": 289
+        },
+        {
+          "frame": 298,
+          "matches_frame": 290
+        },
+        {
+          "frame": 299,
+          "matches_frame": 291
+        },
+        {
+          "frame": 300,
+          "matches_frame": 292
+        },
+        {
+          "frame": 301,
+          "matches_frame": 293
+        },
+        {
+          "frame": 302,
+          "matches_frame": 294
+        },
+        {
+          "frame": 303,
+          "matches_frame": 295
+        },
+        {
+          "frame": 304,
+          "matches_frame": 296
+        },
+        {
+          "frame": 305,
+          "matches_frame": 297
+        },
+        {
+          "frame": 306,
+          "matches_frame": 298
+        },
+        {
+          "frame": 307,
+          "matches_frame": 299
+        },
+        {
+          "frame": 308,
+          "matches_frame": 300
+        },
+        {
+          "frame": 309,
+          "matches_frame": 301
+        },
+        {
+          "frame": 310,
+          "matches_frame": 302
+        },
+        {
+          "frame": 311,
+          "matches_frame": 303
+        },
+        {
+          "frame": 312,
+          "matches_frame": 304
+        },
+        {
+          "frame": 313,
+          "matches_frame": 305
+        },
+        {
+          "frame": 314,
+          "matches_frame": 306
+        },
+        {
+          "frame": 315,
+          "matches_frame": 307
+        },
+        {
+          "frame": 316,
+          "matches_frame": 308
+        },
+        {
+          "frame": 317,
+          "matches_frame": 309
+        },
+        {
+          "frame": 318,
+          "matches_frame": 310
+        },
+        {
+          "frame": 319,
+          "matches_frame": 311
+        },
+        {
+          "frame": 320,
+          "matches_frame": 312
+        },
+        {
+          "frame": 321,
+          "matches_frame": 313
+        },
+        {
+          "frame": 322,
+          "matches_frame": 314
+        },
+        {
+          "frame": 323,
+          "matches_frame": 315
+        },
+        {
+          "frame": 324,
+          "matches_frame": 316
+        },
+        {
+          "frame": 325,
+          "matches_frame": 317
+        },
+        {
+          "frame": 326,
+          "matches_frame": 318
+        },
+        {
+          "frame": 327,
+          "matches_frame": 319
+        },
+        {
+          "frame": 328,
+          "matches_frame": 320
+        },
+        {
+          "frame": 329,
+          "matches_frame": 321
+        },
+        {
+          "frame": 330,
+          "matches_frame": 322
+        },
+        {
+          "frame": 331,
+          "matches_frame": 323
+        },
+        {
+          "frame": 332,
+          "matches_frame": 324
+        },
+        {
+          "frame": 333,
+          "matches_frame": 325
+        },
+        {
+          "frame": 334,
+          "matches_frame": 326
+        },
+        {
+          "frame": 335,
+          "matches_frame": 327
+        },
+        {
+          "frame": 336,
+          "matches_frame": 328
+        },
+        {
+          "frame": 337,
+          "matches_frame": 329
+        },
+        {
+          "frame": 338,
+          "matches_frame": 330
+        },
+        {
+          "frame": 339,
+          "matches_frame": 331
+        },
+        {
+          "frame": 340,
+          "matches_frame": 331
+        },
+        {
+          "frame": 341,
+          "matches_frame": 333
+        },
+        {
+          "frame": 342,
+          "matches_frame": 334
+        },
+        {
+          "frame": 343,
+          "matches_frame": 335
+        },
+        {
+          "frame": 344,
+          "matches_frame": 335
+        },
+        {
+          "frame": 353,
+          "matches_frame": 345
+        },
+        {
+          "frame": 354,
+          "matches_frame": 346
+        },
+        {
+          "frame": 355,
+          "matches_frame": 347
+        },
+        {
+          "frame": 356,
+          "matches_frame": 346
+        },
+        {
+          "frame": 357,
+          "matches_frame": 349
+        },
+        {
+          "frame": 358,
+          "matches_frame": 350
+        },
+        {
+          "frame": 359,
+          "matches_frame": 351
+        },
+        {
+          "frame": 360,
+          "matches_frame": 352
+        },
+        {
+          "frame": 361,
+          "matches_frame": 353
+        },
+        {
+          "frame": 362,
+          "matches_frame": 354
+        },
+        {
+          "frame": 363,
+          "matches_frame": 355
+        },
+        {
+          "frame": 364,
+          "matches_frame": 356
+        },
+        {
+          "frame": 365,
+          "matches_frame": 357
+        },
+        {
+          "frame": 366,
+          "matches_frame": 358
+        },
+        {
+          "frame": 367,
+          "matches_frame": 358
+        },
+        {
+          "frame": 368,
+          "matches_frame": 356
+        },
+        {
+          "frame": 549,
+          "matches_frame": 541
+        }
+      ]
+    },
+    "flicker_mean": 1.4059588103094598,
+    "windows": {
+      "brightness_mean": {
+        "slope_per_window_normalized": -0.021643340905150292,
+        "windows": [
+          146.17649841308594,
+          139.53204345703125,
+          145.87551879882812,
+          147.93031311035156,
+          147.35287475585938,
+          129.1576690673828,
+          123.07198333740234
+        ]
+      },
+      "colorfulness": {
+        "slope_per_window_normalized": 0.018812570148605677,
+        "windows": [
+          99.593505859375,
+          100.50166320800781,
+          65.26810455322266,
+          89.93386840820312,
+          112.81459045410156,
+          107.24336242675781,
+          96.73723602294922
+        ]
+      },
+      "contrast_std": {
+        "slope_per_window_normalized": -0.04109653372344739,
+        "windows": [
+          49.88668441772461,
+          57.23535919189453,
+          51.56157302856445,
+          53.04539489746094,
+          48.50430679321289,
+          42.10392379760742,
+          41.85847854614258
+        ]
+      },
+      "sharpness": {
+        "slope_per_window_normalized": 0.2850288078389356,
+        "windows": [
+          519.1587359110514,
+          488.5847910563151,
+          409.021955871582,
+          443.4337084452311,
+          483.02349955240885,
+          908.4527460734049,
+          1595.6814100477432
+        ]
+      },
+      "temporal_flicker": {
+        "slope_per_window_normalized": 0.6277762122509912,
+        "windows": [
+          0.7186067089438438,
+          2.6760560005903242,
+          0.5230229382713636,
+          0.632087630033493,
+          1.1851838914056618,
+          2.4715449740489324,
+          4.844719588756561
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "key": "sha256:ee0a1515fb1f08e44f62c17eeb263f0f77430afd2e7ea81674bac9ddca659167",
+  "scene": "indoor-hall",
+  "script": [
+    [
+      0,
+      "W",
+      364
+    ],
+    [
+      364,
+      "L",
+      182
+    ],
+    [
+      546,
+      "0",
+      183
+    ]
+  ],
+  "seed": 0
+}

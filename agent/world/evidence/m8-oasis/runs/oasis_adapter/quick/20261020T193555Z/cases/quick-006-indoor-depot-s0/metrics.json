@@ -1,0 +1,868 @@
+{
+  "control": {
+    "pair_classes": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "D",
+      "0",
+      "0",
+      "0",
+      "A",
+      "A",
+      "0",
+      "A",
+      "A",
+      "D",
+      "D",
+      "0",
+      "D",
+      "R",
+      "0",
+      "R",
+      "R",
+      "A",
+      "A",
+      "L",
+      "D",
+      "D",
+      "L",
+      "R",
+      "L",
+      "R",
+      "L",
+      "D",
+      "A",
+      "D",
+      "R",
+      "L",
+      "R",
+      "L",
+      "A",
+      "L",
+      "R",
+      "A",
+      "R",
+      "0",
+      "L",
+      "R",
+      "A",
+      "A",
+      "A",
+      "R",
+      "D",
+      "A",
+      "D",
+      "L",
+      "R"
+    ],
+    "segments": [
+      {
+        "action": "W",
+        "commanded_class": "W",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 199,
+        "start_pair": 0
+      },
+      {
+        "action": "L",
+        "commanded_class": "L",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 100,
+        "start_pair": 199
+      },
+      {
+        "action": "0",
+        "commanded_class": "0",
+        "direction_accuracy": 0.53,
+        "direction_purity": null,
+        "motion_onset_frames": 0,
+        "noop_drift": 0.07813737201449436,
+        "pairs": 100,
+        "start_pair": 299
+      }
+    ]
+  },
+  "frames_analyzed": 400,
+  "metric_pass_seconds": 21.07030151039362,
+  "perceived_latency": {
+    "count": 1,
+    "max": 1.0745181888341904,
+    "p50": 1.0745181888341904,
+    "samples": [
+      {
+        "control_latency_wall": 1.0745181888341904,
+        "motion_onset_frames": 0,
+        "perceived_latency_seconds": 1.0745181888341904,
+        "start_frame": 300
+      }
+    ]
+  },
+  "schema": "liveframe.world.case-metrics.v1",
+  "stability": {
+    "collapse": {
+      "black_frames": [],
+      "collapse_flag_count": 92,
+      "frozen_runs": [],
+      "repeat_loops": [
+        {
+          "frame": 95,
+          "matches_frame": 87
+        },
+        {
+          "frame": 97,
+          "matches_frame": 89
+        },
+        {
+          "frame": 98,
+          "matches_frame": 90
+        },
+        {
+          "frame": 100,
+          "matches_frame": 92
+        },
+        {
+          "frame": 101,
+          "matches_frame": 93
+        },
+        {
+          "frame": 102,
+          "matches_frame": 94
+        },
+        {
+          "frame": 104,
+          "matches_frame": 96
+        },
+        {
+          "frame": 105,
+          "matches_frame": 97
+        },
+        {
+          "frame": 106,
+          "matches_frame": 98
+        },
+        {
+          "frame": 107,
+          "matches_frame": 99
+        },
+        {
+          "frame": 108,
+          "matches_frame": 100
+        },
+        {
+          "frame": 109,
+          "matches_frame": 101
+        },
+        {
+          "frame": 110,
+          "matches_frame": 102
+        },
+        {
+          "frame": 111,
+          "matches_frame": 103
+        },
+        {
+          "frame": 112,
+          "matches_frame": 104
+        },
+        {
+          "frame": 113,
+          "matches_frame": 105
+        },
+        {
+          "frame": 114,
+          "matches_frame": 106
+        },
+        {
+          "frame": 115,
+          "matches_frame": 107
+        },
+        {
+          "frame": 116,
+          "matches_frame": 108
+        },
+        {
+          "frame": 117,
+          "matches_frame": 109
+        },
+        {
+          "frame": 118,
+          "matches_frame": 110
+        },
+        {
+          "frame": 119,
+          "matches_frame": 111
+        },
+        {
+          "frame": 120,
+          "matches_frame": 112
+        },
+        {
+          "frame": 121,
+          "matches_frame": 113
+        },
+        {
+          "frame": 122,
+          "matches_frame": 114
+        },
+        {
+          "frame": 123,
+          "matches_frame": 115
+        },
+        {
+          "frame": 124,
+          "matches_frame": 116
+        },
+        {
+          "frame": 125,
+          "matches_frame": 117
+        },
+        {
+          "frame": 126,
+          "matches_frame": 118
+        },
+        {
+          "frame": 127,
+          "matches_frame": 119
+        },
+        {
+          "frame": 128,
+          "matches_frame": 120
+        },
+        {
+          "frame": 129,
+          "matches_frame": 121
+        },
+        {
+          "frame": 130,
+          "matches_frame": 122
+        },
+        {
+          "frame": 131,
+          "matches_frame": 123
+        },
+        {
+          "frame": 132,
+          "matches_frame": 124
+        },
+        {
+          "frame": 133,
+          "matches_frame": 125
+        },
+        {
+          "frame": 134,
+          "matches_frame": 126
+        },
+        {
+          "frame": 135,
+          "matches_frame": 127
+        },
+        {
+          "frame": 136,
+          "matches_frame": 128
+        },
+        {
+          "frame": 137,
+          "matches_frame": 129
+        },
+        {
+          "frame": 138,
+          "matches_frame": 130
+        },
+        {
+          "frame": 139,
+          "matches_frame": 131
+        },
+        {
+          "frame": 140,
+          "matches_frame": 132
+        },
+        {
+          "frame": 141,
+          "matches_frame": 133
+        },
+        {
+          "frame": 142,
+          "matches_frame": 134
+        },
+        {
+          "frame": 143,
+          "matches_frame": 135
+        },
+        {
+          "frame": 144,
+          "matches_frame": 136
+        },
+        {
+          "frame": 145,
+          "matches_frame": 137
+        },
+        {
+          "frame": 146,
+          "matches_frame": 138
+        },
+        {
+          "frame": 147,
+          "matches_frame": 139
+        },
+        {
+          "frame": 148,
+          "matches_frame": 140
+        },
+        {
+          "frame": 149,
+          "matches_frame": 141
+        },
+        {
+          "frame": 150,
+          "matches_frame": 142
+        },
+        {
+          "frame": 151,
+          "matches_frame": 143
+        },
+        {
+          "frame": 152,
+          "matches_frame": 144
+        },
+        {
+          "frame": 153,
+          "matches_frame": 145
+        },
+        {
+          "frame": 154,
+          "matches_frame": 146
+        },
+        {
+          "frame": 155,
+          "matches_frame": 147
+        },
+        {
+          "frame": 156,
+          "matches_frame": 148
+        },
+        {
+          "frame": 157,
+          "matches_frame": 149
+        },
+        {
+          "frame": 158,
+          "matches_frame": 150
+        },
+        {
+          "frame": 159,
+          "matches_frame": 151
+        },
+        {
+          "frame": 160,
+          "matches_frame": 152
+        },
+        {
+          "frame": 161,
+          "matches_frame": 153
+        },
+        {
+          "frame": 162,
+          "matches_frame": 154
+        },
+        {
+          "frame": 163,
+          "matches_frame": 155
+        },
+        {
+          "frame": 164,
+          "matches_frame": 156
+        },
+        {
+          "frame": 165,
+          "matches_frame": 157
+        },
+        {
+          "frame": 166,
+          "matches_frame": 158
+        },
+        {
+          "frame": 167,
+          "matches_frame": 159
+        },
+        {
+          "frame": 168,
+          "matches_frame": 160
+        },
+        {
+          "frame": 169,
+          "matches_frame": 161
+        },
+        {
+          "frame": 170,
+          "matches_frame": 162
+        },
+        {
+          "frame": 171,
+          "matches_frame": 163
+        },
+        {
+          "frame": 172,
+          "matches_frame": 164
+        },
+        {
+          "frame": 173,
+          "matches_frame": 165
+        },
+        {
+          "frame": 174,
+          "matches_frame": 166
+        },
+        {
+          "frame": 175,
+          "matches_frame": 167
+        },
+        {
+          "frame": 176,
+          "matches_frame": 168
+        },
+        {
+          "frame": 177,
+          "matches_frame": 169
+        },
+        {
+          "frame": 178,
+          "matches_frame": 170
+        },
+        {
+          "frame": 179,
+          "matches_frame": 171
+        },
+        {
+          "frame": 180,
+          "matches_frame": 172
+        },
+        {
+          "frame": 181,
+          "matches_frame": 173
+        },
+        {
+          "frame": 182,
+          "matches_frame": 174
+        },
+        {
+          "frame": 192,
+          "matches_frame": 184
+        },
+        {
+          "frame": 238,
+          "matches_frame": 230
+        },
+        {
+          "frame": 239,
+          "matches_frame": 231
+        },
+        {
+          "frame": 240,
+          "matches_frame": 232
+        },
+        {
+          "frame": 241,
+          "matches_frame": 233
+        },
+        {
+          "frame": 242,
+          "matches_frame": 234
+        },
+        {
+          "frame": 243,
+          "matches_frame": 235
+        }
+      ]
+    },
+    "flicker_mean": 1.0710896178146352,
+    "windows": {
+      "brightness_mean": {
+        "slope_per_window_normalized": 0.0013404654387522922,
+        "windows": [
+          79.97837829589844,
+          80.08558654785156
+        ]
+      },
+      "colorfulness": {
+        "slope_per_window_normalized": 0.26846017495143265,
+        "windows": [
+          83.41461181640625,
+          105.80811309814453
+        ]
+      },
+      "contrast_std": {
+        "slope_per_window_normalized": 0.10952748564910901,
+        "windows": [
+          46.508506774902344,
+          51.60246658325195
+        ]
+      },
+      "sharpness": {
+        "slope_per_window_normalized": 0.4273162450027053,
+        "windows": [
+          296.76884563446043,
+          423.58299438476564
+        ]
+      },
+      "temporal_flicker": {
+        "slope_per_window_normalized": 0.6676590192000111,
+        "windows": [
+          0.8035224063694477,
+          1.3400013881113062
+        ]
+      }
+    }
+  }
+}

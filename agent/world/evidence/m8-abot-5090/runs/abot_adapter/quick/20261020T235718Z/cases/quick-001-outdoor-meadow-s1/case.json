@@ -1,0 +1,67 @@
+{
+  "captured_files": [
+    "/opt/liveframe/runs/abot_adapter/quick/20261020T235718Z/cases/quick-001-outdoor-meadow-s1/frames_256/chunk-0000.npz"
+  ],
+  "case_id": "quick-001-outdoor-meadow-s1",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 10,
+        "frames": 7
+      },
+      {
+        "chunk": 15,
+        "frames": 9
+      }
+    ],
+    "control_latency": {
+      "max": 1.8952497569844127,
+      "p50": 1.8921564370102715,
+      "p95": 1.8952497569844127,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 20,
+      "jitter": 0.08052861000760458,
+      "max": 2.3829160229943227,
+      "p50": 2.28726123800152,
+      "p95": 2.3677898480091244,
+      "p99": 2.3829160229943227
+    },
+    "generated_fps": 5.416212276698654,
+    "interaction_mode": "interactive",
+    "native_frames": 249,
+    "realtime": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 45.973s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.45135102305822117,
+    "realtime_vs_model": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 45.973s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 12.0
+    },
+    "reset_seconds": 2.2481085879844613,
+    "stalls": {
+      "count": 19,
+      "threshold_seconds": 2.0,
+      "total_seconds": 42.66256738299853
+    },
+    "sustained_fps": {
+      "median": 4.8,
+      "min": 4.8,
+      "p5": 4.8,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 36
+    },
+    "time_to_first_frame_seconds": 1.4629601050110068,
+    "wall_seconds": 45.97308733101818
+  },
+  "status": "ok"
+}

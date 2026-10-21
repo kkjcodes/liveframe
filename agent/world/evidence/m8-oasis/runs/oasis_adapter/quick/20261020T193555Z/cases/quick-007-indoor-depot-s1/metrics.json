@@ -1,0 +1,716 @@
+{
+  "control": {
+    "pair_classes": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "D",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "R",
+      "A",
+      "R",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "L",
+      "R",
+      "D",
+      "L",
+      "D",
+      "0",
+      "R",
+      "L",
+      "A",
+      "D",
+      "D",
+      "D",
+      "A",
+      "D",
+      "0",
+      "D",
+      "0",
+      "D",
+      "R",
+      "A",
+      "D",
+      "A",
+      "D",
+      "A",
+      "D",
+      "D",
+      "A",
+      "D",
+      "D",
+      "0",
+      "L",
+      "D",
+      "A",
+      "D",
+      "A",
+      "D",
+      "D",
+      "A",
+      "D",
+      "A",
+      "A"
+    ],
+    "segments": [
+      {
+        "action": "W",
+        "commanded_class": "W",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 199,
+        "start_pair": 0
+      },
+      {
+        "action": "L",
+        "commanded_class": "L",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 100,
+        "start_pair": 199
+      },
+      {
+        "action": "0",
+        "commanded_class": "0",
+        "direction_accuracy": 0.56,
+        "direction_purity": null,
+        "motion_onset_frames": 0,
+        "noop_drift": 0.07522271183375855,
+        "pairs": 100,
+        "start_pair": 299
+      }
+    ]
+  },
+  "frames_analyzed": 400,
+  "metric_pass_seconds": 20.845764353871346,
+  "perceived_latency": {
+    "count": 1,
+    "max": 0.946633905172348,
+    "p50": 0.946633905172348,
+    "samples": [
+      {
+        "control_latency_wall": 0.946633905172348,
+        "motion_onset_frames": 0,
+        "perceived_latency_seconds": 0.946633905172348,
+        "start_frame": 300
+      }
+    ]
+  },
+  "schema": "liveframe.world.case-metrics.v1",
+  "stability": {
+    "collapse": {
+      "black_frames": [],
+      "collapse_flag_count": 54,
+      "frozen_runs": [],
+      "repeat_loops": [
+        {
+          "frame": 80,
+          "matches_frame": 72
+        },
+        {
+          "frame": 81,
+          "matches_frame": 73
+        },
+        {
+          "frame": 82,
+          "matches_frame": 74
+        },
+        {
+          "frame": 83,
+          "matches_frame": 75
+        },
+        {
+          "frame": 84,
+          "matches_frame": 76
+        },
+        {
+          "frame": 85,
+          "matches_frame": 77
+        },
+        {
+          "frame": 86,
+          "matches_frame": 78
+        },
+        {
+          "frame": 87,
+          "matches_frame": 79
+        },
+        {
+          "frame": 88,
+          "matches_frame": 80
+        },
+        {
+          "frame": 89,
+          "matches_frame": 81
+        },
+        {
+          "frame": 90,
+          "matches_frame": 82
+        },
+        {
+          "frame": 91,
+          "matches_frame": 83
+        },
+        {
+          "frame": 92,
+          "matches_frame": 84
+        },
+        {
+          "frame": 94,
+          "matches_frame": 86
+        },
+        {
+          "frame": 96,
+          "matches_frame": 88
+        },
+        {
+          "frame": 97,
+          "matches_frame": 89
+        },
+        {
+          "frame": 98,
+          "matches_frame": 90
+        },
+        {
+          "frame": 99,
+          "matches_frame": 91
+        },
+        {
+          "frame": 100,
+          "matches_frame": 92
+        },
+        {
+          "frame": 101,
+          "matches_frame": 92
+        },
+        {
+          "frame": 102,
+          "matches_frame": 94
+        },
+        {
+          "frame": 103,
+          "matches_frame": 94
+        },
+        {
+          "frame": 104,
+          "matches_frame": 96
+        },
+        {
+          "frame": 105,
+          "matches_frame": 95
+        },
+        {
+          "frame": 106,
+          "matches_frame": 95
+        },
+        {
+          "frame": 107,
+          "matches_frame": 95
+        },
+        {
+          "frame": 108,
+          "matches_frame": 100
+        },
+        {
+          "frame": 109,
+          "matches_frame": 95
+        },
+        {
+          "frame": 113,
+          "matches_frame": 105
+        },
+        {
+          "frame": 114,
+          "matches_frame": 106
+        },
+        {
+          "frame": 115,
+          "matches_frame": 107
+        },
+        {
+          "frame": 116,
+          "matches_frame": 107
+        },
+        {
+          "frame": 117,
+          "matches_frame": 109
+        },
+        {
+          "frame": 201,
+          "matches_frame": 193
+        },
+        {
+          "frame": 202,
+          "matches_frame": 194
+        },
+        {
+          "frame": 203,
+          "matches_frame": 195
+        },
+        {
+          "frame": 204,
+          "matches_frame": 196
+        },
+        {
+          "frame": 205,
+          "matches_frame": 197
+        },
+        {
+          "frame": 206,
+          "matches_frame": 198
+        },
+        {
+          "frame": 207,
+          "matches_frame": 199
+        },
+        {
+          "frame": 208,
+          "matches_frame": 200
+        },
+        {
+          "frame": 209,
+          "matches_frame": 201
+        },
+        {
+          "frame": 210,
+          "matches_frame": 202
+        },
+        {
+          "frame": 239,
+          "matches_frame": 231
+        },
+        {
+          "frame": 240,
+          "matches_frame": 232
+        },
+        {
+          "frame": 242,
+          "matches_frame": 234
+        },
+        {
+          "frame": 244,
+          "matches_frame": 236
+        },
+        {
+          "frame": 245,
+          "matches_frame": 237
+        },
+        {
+          "frame": 246,
+          "matches_frame": 238
+        },
+        {
+          "frame": 247,
+          "matches_frame": 239
+        },
+        {
+          "frame": 249,
+          "matches_frame": 241
+        },
+        {
+          "frame": 250,
+          "matches_frame": 242
+        },
+        {
+          "frame": 259,
+          "matches_frame": 251
+        },
+        {
+          "frame": 260,
+          "matches_frame": 252
+        }
+      ]
+    },
+    "flicker_mean": 1.0266891171161394,
+    "windows": {
+      "brightness_mean": {
+        "slope_per_window_normalized": 0.06861466700241521,
+        "windows": [
+          69.65515899658203,
+          74.43452453613281
+        ]
+      },
+      "colorfulness": {
+        "slope_per_window_normalized": 0.2079627330341568,
+        "windows": [
+          77.53422546386719,
+          93.65845489501953
+        ]
+      },
+      "contrast_std": {
+        "slope_per_window_normalized": 0.10822523217584643,
+        "windows": [
+          43.96559143066406,
+          48.723777770996094
+        ]
+      },
+      "sharpness": {
+        "slope_per_window_normalized": 0.7208567412773326,
+        "windows": [
+          228.61273601531983,
+          393.40976791381837
+        ]
+      },
+      "temporal_flicker": {
+        "slope_per_window_normalized": 0.44146532846566383,
+        "windows": [
+          0.8414246916770936,
+          1.2128845195674418
+        ]
+      }
+    }
+  }
+}

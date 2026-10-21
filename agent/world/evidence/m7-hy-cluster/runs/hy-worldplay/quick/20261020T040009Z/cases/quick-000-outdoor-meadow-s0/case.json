@@ -1,0 +1,70 @@
+{
+  "captured_files": [
+    "runs/hy-worldplay/quick/20261020T040009Z/cases/quick-000-outdoor-meadow-s0/frames_256/chunk-0000.npz",
+    "runs/hy-worldplay/quick/20261020T040009Z/cases/quick-000-outdoor-meadow-s0/frames_256/chunk-0001.npz"
+  ],
+  "case_id": "quick-000-outdoor-meadow-s0",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 15,
+        "frames": 9
+      },
+      {
+        "chunk": 23,
+        "frames": 4
+      }
+    ],
+    "control_latency": {
+      "applicable": false,
+      "reason": "batch mode cannot support latency claims"
+    },
+    "emission_intervals": {
+      "count": 30,
+      "jitter": 0.01634052599547431,
+      "max": 0.33945343899540603,
+      "p50": 0.29915237496607006,
+      "p95": 0.31549290096154436,
+      "p99": 0.33945343899540603
+    },
+    "generated_fps": 1.3006598162449738,
+    "interaction_mode": "batch",
+    "native_frames": 493,
+    "realtime": {
+      "applicable": true,
+      "min_window_fps": 0.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 0,
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.05419415901020724,
+    "realtime_vs_model": {
+      "applicable": true,
+      "min_window_fps": 0.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 0,
+      "threshold_fps": 24.0
+    },
+    "reset_seconds": 0.2016533890273422,
+    "stalls": {
+      "count": 0,
+      "threshold_seconds": 1.3333333333333333,
+      "total_seconds": 0.0
+    },
+    "sustained_fps": {
+      "median": 0.0,
+      "min": 0.0,
+      "p5": 0.0,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 370
+    },
+    "time_to_first_frame_seconds": 370.0358958580182,
+    "wall_seconds": 379.0383879339788
+  },
+  "status": "ok"
+}

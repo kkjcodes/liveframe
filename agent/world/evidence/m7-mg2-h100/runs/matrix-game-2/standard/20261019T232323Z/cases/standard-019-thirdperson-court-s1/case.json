@@ -1,0 +1,73 @@
+{
+  "captured_files": [
+    "runs/matrix-game-2/standard/20261019T232323Z/cases/standard-019-thirdperson-court-s1/frames_256/chunk-0000.npz",
+    "runs/matrix-game-2/standard/20261019T232323Z/cases/standard-019-thirdperson-court-s1/frames_256/chunk-0001.npz",
+    "runs/matrix-game-2/standard/20261019T232323Z/cases/standard-019-thirdperson-court-s1/frames_256/chunk-0002.npz"
+  ],
+  "case_id": "standard-019-thirdperson-court-s1",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 20,
+        "frames": 6
+      },
+      {
+        "chunk": 40,
+        "frames": 9
+      },
+      {
+        "chunk": 50,
+        "frames": 11
+      }
+    ],
+    "control_latency": {
+      "max": 0.5230923749986687,
+      "p50": 0.5168580030003795,
+      "p95": 0.5230923749986687,
+      "samples": 3
+    },
+    "emission_intervals": {
+      "count": 60,
+      "jitter": 0.022124003000499215,
+      "max": 0.6470875129998603,
+      "p50": 0.604869235001388,
+      "p95": 0.6269932380018872,
+      "p99": 0.6470875129998603
+    },
+    "generated_fps": 19.692269875966915,
+    "interaction_mode": "interactive",
+    "native_frames": 729,
+    "realtime": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 37.020s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 1.6410224896639096,
+    "realtime_vs_model": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 37.020s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 12.0
+    },
+    "reset_seconds": 6.004957425997418,
+    "stalls": {
+      "count": 0,
+      "threshold_seconds": 2.0,
+      "total_seconds": 0.0
+    },
+    "sustained_fps": {
+      "median": 19.2,
+      "min": 18.9,
+      "p5": 19.2,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 28
+    },
+    "time_to_first_frame_seconds": 0.5534780670022883,
+    "wall_seconds": 37.01960234100261
+  },
+  "status": "ok"
+}

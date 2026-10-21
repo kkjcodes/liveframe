@@ -1,0 +1,63 @@
+{
+  "captured_files": [
+    "/opt/liveframe/runs/oasis_adapter/quick/20261020T193555Z/cases/quick-000-outdoor-meadow-s0/frames_256/chunk-0000.npz",
+    "/opt/liveframe/runs/oasis_adapter/quick/20261020T193555Z/cases/quick-000-outdoor-meadow-s0/frames_256/chunk-0001.npz"
+  ],
+  "case_id": "quick-000-outdoor-meadow-s0",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [],
+    "control_latency": {
+      "max": 0.9414148852229118,
+      "p50": 0.877881221473217,
+      "p95": 0.9414148852229118,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 399,
+      "jitter": 0.057119205594062805,
+      "max": 1.126699186861515,
+      "p50": 0.8932433575391769,
+      "p95": 0.9503625631332397,
+      "p99": 1.034484252333641
+    },
+    "generated_fps": 1.1112659866898147,
+    "interaction_mode": "interactive",
+    "native_frames": 400,
+    "realtime": {
+      "applicable": true,
+      "min_window_fps": 1.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 399,
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.05556329933449074,
+    "realtime_vs_model": {
+      "applicable": true,
+      "min_window_fps": 1.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 399,
+      "threshold_fps": 20.0
+    },
+    "reset_seconds": 0.7170494720339775,
+    "stalls": {
+      "count": 399,
+      "threshold_seconds": 0.1,
+      "total_seconds": 359.00873494148254
+    },
+    "sustained_fps": {
+      "median": 1.1,
+      "min": 1.0,
+      "p5": 1.0,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 350
+    },
+    "time_to_first_frame_seconds": 0.9410923644900322,
+    "wall_seconds": 359.9498273059726
+  },
+  "status": "ok"
+}

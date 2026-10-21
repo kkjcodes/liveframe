@@ -1,0 +1,22 @@
+{
+  "key": "sha256:db574d263d7e8ab2d5a1ca69e5f664042bc4819e799bf3ede0059c9c26a9db99",
+  "scene": "outdoor-dunes",
+  "script": [
+    [
+      0,
+      "W",
+      200
+    ],
+    [
+      200,
+      "L",
+      100
+    ],
+    [
+      300,
+      "0",
+      100
+    ]
+  ],
+  "seed": 1
+}

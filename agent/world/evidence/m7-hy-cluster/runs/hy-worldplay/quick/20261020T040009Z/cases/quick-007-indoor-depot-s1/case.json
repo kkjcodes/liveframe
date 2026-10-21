@@ -1,0 +1,70 @@
+{
+  "captured_files": [
+    "runs/hy-worldplay/quick/20261020T040009Z/cases/quick-007-indoor-depot-s1/frames_256/chunk-0000.npz",
+    "runs/hy-worldplay/quick/20261020T040009Z/cases/quick-007-indoor-depot-s1/frames_256/chunk-0001.npz"
+  ],
+  "case_id": "quick-007-indoor-depot-s1",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 15,
+        "frames": 9
+      },
+      {
+        "chunk": 23,
+        "frames": 4
+      }
+    ],
+    "control_latency": {
+      "applicable": false,
+      "reason": "batch mode cannot support latency claims"
+    },
+    "emission_intervals": {
+      "count": 30,
+      "jitter": 0.014008625992573798,
+      "max": 0.32492442103102803,
+      "p50": 0.3014726309920661,
+      "p95": 0.3154812569846399,
+      "p99": 0.32492442103102803
+    },
+    "generated_fps": 1.3611617762458905,
+    "interaction_mode": "batch",
+    "native_frames": 493,
+    "realtime": {
+      "applicable": true,
+      "min_window_fps": 0.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 0,
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.05671507401024544,
+    "realtime_vs_model": {
+      "applicable": true,
+      "min_window_fps": 0.0,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 0,
+      "threshold_fps": 24.0
+    },
+    "reset_seconds": 0.1293182410299778,
+    "stalls": {
+      "count": 0,
+      "threshold_seconds": 1.3333333333333333,
+      "total_seconds": 0.0
+    },
+    "sustained_fps": {
+      "median": 0.0,
+      "min": 0.0,
+      "p5": 0.0,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 353
+    },
+    "time_to_first_frame_seconds": 353.14605456596473,
+    "wall_seconds": 362.1905996800051
+  },
+  "status": "ok"
+}

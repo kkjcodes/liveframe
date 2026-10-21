@@ -1,0 +1,71 @@
+{
+  "captured_files": [
+    "/opt/liveframe/runs/abot_adapter/quick/20261020T195752Z/cases/quick-006-indoor-depot-s0/frames_256/chunk-0000.npz"
+  ],
+  "case_id": "quick-006-indoor-depot-s0",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 10,
+        "frames": 7
+      },
+      {
+        "chunk": 15,
+        "frames": 9
+      }
+    ],
+    "control_latency": {
+      "max": 2.4152858927845955,
+      "p50": 2.3635734245181084,
+      "p95": 2.4152858927845955,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 20,
+      "jitter": 0.11806260049343109,
+      "max": 3.386031448841095,
+      "p50": 3.265586033463478,
+      "p95": 3.383648633956909,
+      "p99": 3.386031448841095
+    },
+    "generated_fps": 3.744872344231719,
+    "interaction_mode": "interactive",
+    "native_frames": 249,
+    "realtime": {
+      "applicable": true,
+      "min_window_fps": 3.3,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 20,
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.31207269535264326,
+    "realtime_vs_model": {
+      "applicable": true,
+      "min_window_fps": 3.3,
+      "passed": false,
+      "reason": "window FPS below threshold or stalled",
+      "stalls": 20,
+      "threshold_fps": 12.0
+    },
+    "reset_seconds": 0.48970330506563187,
+    "stalls": {
+      "count": 20,
+      "threshold_seconds": 2.0,
+      "total_seconds": 64.31261351704597
+    },
+    "sustained_fps": {
+      "median": 3.6,
+      "min": 3.3,
+      "p5": 3.6,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 57
+    },
+    "time_to_first_frame_seconds": 2.1783044934272766,
+    "wall_seconds": 66.49091801047325
+  },
+  "status": "ok"
+}

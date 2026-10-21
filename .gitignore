@@ -38,7 +38,7 @@ artifacts/taew21-campaign-noise.v1/
 .claude/settings.local.json
 
 # World-harness run outputs (never committed; evidence bundles go under agent/world/evidence/)
-runs/
+/runs/
 .hf_token.env
 *.env.local
 .env
@@ -56,3 +56,6 @@ agent/world/evidence/**/frames_*/
 /liveframe-world-addendum-flywheel.md
 agent/world/flywheel/
 agent/world/*.md
+
+# Launch / go-to-market drafts (local only)
+publishing/

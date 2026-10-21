@@ -1,0 +1,22 @@
+{
+  "key": "sha256:bf970a4cedc26e1b5a53a8df34cc042cf90450522fad7163f60c22e1b2f2468c",
+  "scene": "stylized-blocks",
+  "script": [
+    [
+      0,
+      "W",
+      364
+    ],
+    [
+      364,
+      "L",
+      182
+    ],
+    [
+      546,
+      "0",
+      183
+    ]
+  ],
+  "seed": 0
+}

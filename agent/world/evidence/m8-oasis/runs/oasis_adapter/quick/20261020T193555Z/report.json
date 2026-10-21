@@ -1,0 +1,776 @@
+{
+  "capabilities": {
+    "action_magnitudes": {},
+    "actions": [
+      "0",
+      "A",
+      "D",
+      "L",
+      "N",
+      "R",
+      "S",
+      "U",
+      "W"
+    ],
+    "chunk_frames": 1,
+    "chunk_frames_first": null,
+    "interaction_mode": "interactive",
+    "license_notice": "open-oasis 500M; 20fps claim is Decart's engine, not these weights",
+    "min_vram_gb": null,
+    "name": "oasis-500m",
+    "native_fps": 20.0,
+    "resolution": [
+      360,
+      640
+    ],
+    "supports_seed": true
+  },
+  "cases": [
+    {
+      "case_id": "quick-000-outdoor-meadow-s0",
+      "error": null,
+      "metric_pass_seconds": 21.479405499994755,
+      "metric_summary": {
+        "collapse_flag_count": 28,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 1.306070049155625,
+        "metric_pass_seconds": 21.479405499994755,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 18.62248934217931,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 0.9414148852229118,
+          "p50": 0.877881221473217,
+          "p95": 0.9414148852229118,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.057119205594062805,
+          "max": 1.126699186861515,
+          "p50": 0.8932433575391769,
+          "p95": 0.9503625631332397,
+          "p99": 1.034484252333641
+        },
+        "generated_fps": 1.1112659866898147,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.05556329933449074,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.7170494720339775,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 359.00873494148254
+        },
+        "sustained_fps": {
+          "median": 1.1,
+          "min": 1.0,
+          "p5": 1.0,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 350
+        },
+        "time_to_first_frame_seconds": 0.9410923644900322,
+        "wall_seconds": 359.9498273059726
+      },
+      "scene": "outdoor-meadow",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-001-outdoor-meadow-s1",
+      "error": null,
+      "metric_pass_seconds": 21.24107674509287,
+      "metric_summary": {
+        "collapse_flag_count": 2,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 1.3931195452099754,
+        "metric_pass_seconds": 21.24107674509287,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 18.831437068858026,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 0.9665270820260048,
+          "p50": 0.9299923181533813,
+          "p95": 0.9665270820260048,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.06916411221027374,
+          "max": 1.181342899799347,
+          "p50": 0.9350796192884445,
+          "p95": 1.0042437314987183,
+          "p99": 1.1210762038826942
+        },
+        "generated_fps": 1.0652853885041524,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 0.9,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.05326426942520762,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 0.9,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.14326273649930954,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 374.5914558917284
+        },
+        "sustained_fps": {
+          "median": 1.1,
+          "min": 0.9,
+          "p5": 1.0,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 366
+        },
+        "time_to_first_frame_seconds": 0.8947793617844582,
+        "wall_seconds": 375.48623525351286
+      },
+      "scene": "outdoor-meadow",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-002-outdoor-dunes-s0",
+      "error": null,
+      "metric_pass_seconds": 20.397490732371807,
+      "metric_summary": {
+        "collapse_flag_count": 197,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 0.8294761213742402,
+        "metric_pass_seconds": 20.397490732371807,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 19.610255263662438,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 0.9373796284198761,
+          "p50": 0.9074019640684128,
+          "p95": 0.9373796284198761,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.05321309715509415,
+          "max": 1.1721369996666908,
+          "p50": 0.9247400090098381,
+          "p95": 0.9779531061649323,
+          "p99": 1.0124271512031555
+        },
+        "generated_fps": 1.0757016058152367,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.05378508029076183,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.1202937513589859,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 370.8450805917382
+        },
+        "sustained_fps": {
+          "median": 1.1,
+          "min": 1.0,
+          "p5": 1.0,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 362
+        },
+        "time_to_first_frame_seconds": 1.0052521005272865,
+        "wall_seconds": 371.8503326922655
+      },
+      "scene": "outdoor-dunes",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-003-outdoor-dunes-s1",
+      "error": null,
+      "metric_pass_seconds": 20.042270459234715,
+      "metric_summary": {
+        "collapse_flag_count": 153,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 0.8445553288125155,
+        "metric_pass_seconds": 20.042270459234715,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 19.957818691928452,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 0.9108230769634247,
+          "p50": 0.8801351711153984,
+          "p95": 0.9108230769634247,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.04214490205049515,
+          "max": 1.022656686604023,
+          "p50": 0.9312741309404373,
+          "p95": 0.9734190329909325,
+          "p99": 1.0152371004223824
+        },
+        "generated_fps": 1.0771843760251951,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.05385921880125975,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.09757260233163834,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 370.45962838083506
+        },
+        "sustained_fps": {
+          "median": 1.1,
+          "min": 1.0,
+          "p5": 1.0,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 362
+        },
+        "time_to_first_frame_seconds": 0.8788433820009232,
+        "wall_seconds": 371.338471762836
+      },
+      "scene": "outdoor-dunes",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-004-indoor-hall-s0",
+      "error": null,
+      "metric_pass_seconds": 21.76859377324581,
+      "metric_summary": {
+        "collapse_flag_count": 134,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 1.3733659220817394,
+        "metric_pass_seconds": 21.76859377324581,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 18.37509598307681,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 0.9564695060253143,
+          "p50": 0.9033593907952309,
+          "p95": 0.9564695060253143,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.0703146681189537,
+          "max": 1.1448353305459023,
+          "p50": 0.9476832002401352,
+          "p95": 1.017997868359089,
+          "p99": 1.114589385688305
+        },
+        "generated_fps": 1.054806223154898,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.0527403111577449,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 1.0,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.19868241250514984,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 378.2422387301922
+        },
+        "sustained_fps": {
+          "median": 1.1,
+          "min": 1.0,
+          "p5": 1.0,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 370
+        },
+        "time_to_first_frame_seconds": 0.9743332043290138,
+        "wall_seconds": 379.2165719345212
+      },
+      "scene": "indoor-hall",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-005-indoor-hall-s1",
+      "error": null,
+      "metric_pass_seconds": 21.277659505605698,
+      "metric_summary": {
+        "collapse_flag_count": 60,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 1.4532480011309,
+        "metric_pass_seconds": 21.277659505605698,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 18.799060107838372,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 1.1500012874603271,
+          "p50": 0.9888672232627869,
+          "p95": 1.1500012874603271,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.20599421113729477,
+          "max": 1.366821549832821,
+          "p50": 0.9788854867219925,
+          "p95": 1.1848796978592873,
+          "p99": 1.2898258045315742
+        },
+        "generated_fps": 0.9988327643065406,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 0.9,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.04994163821532703,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 0.9,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.2016272470355034,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 399.4889443963766
+        },
+        "sustained_fps": {
+          "median": 1.0,
+          "min": 0.9,
+          "p5": 0.9,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 391
+        },
+        "time_to_first_frame_seconds": 0.9784954935312271,
+        "wall_seconds": 400.46743988990784
+      },
+      "scene": "indoor-hall",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-006-indoor-depot-s0",
+      "error": null,
+      "metric_pass_seconds": 21.07030151039362,
+      "metric_summary": {
+        "collapse_flag_count": 92,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 1.0710896178146352,
+        "metric_pass_seconds": 21.07030151039362,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 18.98406626040386,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 1.0745181888341904,
+          "p50": 0.957892544567585,
+          "p95": 1.0745181888341904,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.158579520881176,
+          "max": 1.395584560930729,
+          "p50": 1.0262103080749512,
+          "p95": 1.1847898289561272,
+          "p99": 1.2774625569581985
+        },
+        "generated_fps": 0.9688688036379293,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 0.8,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.04844344018189646,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 0.8,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.16793109476566315,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 411.9447459131479
+        },
+        "sustained_fps": {
+          "median": 1.0,
+          "min": 0.8,
+          "p5": 0.9,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 403
+        },
+        "time_to_first_frame_seconds": 0.9078492969274521,
+        "wall_seconds": 412.8525952100754
+      },
+      "scene": "indoor-depot",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 0,
+      "status": "ok"
+    },
+    {
+      "case_id": "quick-007-indoor-depot-s1",
+      "error": null,
+      "metric_pass_seconds": 20.845764353871346,
+      "metric_summary": {
+        "collapse_flag_count": 54,
+        "direction_accuracy_mean": 0.0,
+        "flicker_mean": 1.0266891171161394,
+        "metric_pass_seconds": 20.845764353871346,
+        "motion_onset_frames_median": null
+      },
+      "metric_throughput_fps": 19.1885504033204,
+      "metrics": {
+        "chunk_quantization": [],
+        "control_latency": {
+          "max": 1.0140345916152,
+          "p50": 0.946633905172348,
+          "p95": 1.0140345916152,
+          "samples": 2
+        },
+        "emission_intervals": {
+          "count": 399,
+          "jitter": 0.09058748930692673,
+          "max": 1.5075056478381157,
+          "p50": 0.9836713969707489,
+          "p95": 1.0742588862776756,
+          "p99": 1.21861881762743
+        },
+        "generated_fps": 1.0107439175289996,
+        "interaction_mode": "interactive",
+        "native_frames": 400,
+        "realtime": {
+          "applicable": true,
+          "min_window_fps": 0.9,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 16.0
+        },
+        "realtime_factor": 0.05053719587644998,
+        "realtime_vs_model": {
+          "applicable": true,
+          "min_window_fps": 0.9,
+          "passed": false,
+          "reason": "window FPS below threshold or stalled",
+          "stalls": 399,
+          "threshold_fps": 20.0
+        },
+        "reset_seconds": 0.23432234674692154,
+        "stalls": {
+          "count": 399,
+          "threshold_seconds": 0.1,
+          "total_seconds": 394.74724213033915
+        },
+        "sustained_fps": {
+          "median": 1.0,
+          "min": 0.9,
+          "p5": 0.9,
+          "step_seconds": 1.0,
+          "window_seconds": 10.0,
+          "windows": 386
+        },
+        "time_to_first_frame_seconds": 1.0008727610111237,
+        "wall_seconds": 395.74811489135027
+      },
+      "scene": "indoor-depot",
+      "script": [
+        [
+          0,
+          "W",
+          200
+        ],
+        [
+          200,
+          "L",
+          100
+        ],
+        [
+          300,
+          "0",
+          100
+        ]
+      ],
+      "seed": 1,
+      "status": "ok"
+    }
+  ],
+  "caveats": [],
+  "claim_check": {
+    "claim": "20 fps (Oasis/Decart via their inference engine, not the open 500M weights)",
+    "measured_generated_fps_median": 1.0600458058295252,
+    "note": "measured single-GPU; the vendor claim's configuration (see the claim text) differs from this run's hardware/config in the environment section. 'reproduced'/'not reproduced' require a configuration-matched comparison by a human.",
+    "verdict": "config not stated"
+  },
+  "cold_start_seconds": 44.97509855031967,
+  "cold_start_storage": "container-disk",
+  "control_validated_on_real_output": false,
+  "environment": {
+    "cpu_count": 64,
+    "gpu": "NVIDIA A100 80GB PCIe, 81920 MiB, 550.54.15, 8.0",
+    "machine": "x86_64",
+    "nvidia_smi_q": "env-nvidia-smi.txt",
+    "platform": "Linux-6.5.0-35-generic-x86_64-with-glibc2.35",
+    "python": "3.11.10",
+    "timestamp_utc": "2026-10-20T20:30:47.772135+00:00"
+  },
+  "extra": {
+    "adapter_spec": "/opt/liveframe/src/liveframe/world/adapters/oasis_adapter.py:OasisAdapter",
+    "backend": "bridged",
+    "provenance": {
+      "cuda": "12.1",
+      "torch": "2.5.1+cu121"
+    },
+    "worker_python": "3.11.10"
+  },
+  "headline": {
+    "cases_failed": 0,
+    "cases_ok": 8,
+    "cases_total": 8,
+    "control_latency_p50_median": 0.9186971411108971,
+    "control_latency_p95_max": 1.1500012874603271,
+    "cost_per_generated_minute_usd_median": 0.3742068085640669,
+    "generated_fps_median": 1.0600458058295252,
+    "gpu_price_usd_per_hour": 1.19,
+    "interaction_mode": "interactive",
+    "metric_throughput_fps_median": 18.907751664630943,
+    "model": "oasis_adapter",
+    "realtime_pass": false,
+    "resolution": [
+      360,
+      640
+    ],
+    "single_trial": false,
+    "suite": "quick",
+    "sustained_fps_min": 0.8,
+    "time_to_first_frame_p50": 0.957712784409523,
+    "trials": 8
+  },
+  "not_measured": [
+    "peak_vram_gb / gpu_util / power: NVML sampling not yet wired (lands with the next GPU-session milestone)",
+    "control metrics: EXPERIMENTAL \u2014 computed and stored, but excluded from the headline and public reporting until the classifier reaches the promotion bar (per-class >=85% blind two-labeler agreement on fresh clips). Use `world export --format worldmark` for control scoring"
+  ],
+  "schema": "liveframe.world.report.v1",
+  "suite_digest": "sha256:4ee6226a9eb84db5ee0666d95d7605deb10f544cbb570f499d9d395278031119",
+  "time_to_first_report_seconds": 3292.596579000354
+}

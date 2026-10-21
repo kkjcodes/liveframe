@@ -1,0 +1,1339 @@
+{
+  "control": {
+    "pair_classes": [
+      "D",
+      "A",
+      "A",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "R",
+      "D",
+      "D",
+      "L",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "L",
+      "W",
+      "L",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "L",
+      "A",
+      "A",
+      "L",
+      "L",
+      "A",
+      "L",
+      "S",
+      "A",
+      "L",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "W",
+      "A",
+      "A",
+      "A",
+      "L",
+      "L",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "A",
+      "L",
+      "D",
+      "A",
+      "A",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "A",
+      "L",
+      "A",
+      "A",
+      "A",
+      "A",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "A",
+      "A",
+      "L",
+      "A",
+      "A",
+      "A",
+      "A",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "A",
+      "A",
+      "A",
+      "L",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "W",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "W",
+      "A",
+      "W",
+      "A",
+      "W",
+      "W",
+      "W",
+      "A",
+      "A",
+      "A",
+      "A",
+      "W",
+      "W",
+      "A",
+      "W",
+      "W",
+      "A",
+      "A",
+      "W",
+      "A",
+      "W",
+      "W",
+      "A",
+      "A",
+      "A",
+      "A",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "A",
+      "A",
+      "W",
+      "A",
+      "W",
+      "A",
+      "W",
+      "W",
+      "A",
+      "A",
+      "A",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "A",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "W",
+      "A",
+      "A",
+      "A",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "R",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "A",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "A",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "A",
+      "A",
+      "A",
+      "A",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "D",
+      "R",
+      "R",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R",
+      "R"
+    ],
+    "segments": [
+      {
+        "action": "W",
+        "commanded_class": "W",
+        "direction_accuracy": 0.38288288288288286,
+        "direction_purity": 0.4993677537262405,
+        "motion_onset_frames": 26,
+        "noop_drift": null,
+        "pairs": 248,
+        "start_pair": 0
+      },
+      {
+        "action": "S",
+        "commanded_class": "S",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 240,
+        "start_pair": 248
+      },
+      {
+        "action": "L",
+        "commanded_class": "L",
+        "direction_accuracy": 1.0,
+        "direction_purity": 0.8338311383606165,
+        "motion_onset_frames": 1,
+        "noop_drift": null,
+        "pairs": 120,
+        "start_pair": 488
+      },
+      {
+        "action": "R",
+        "commanded_class": "R",
+        "direction_accuracy": 1.0,
+        "direction_purity": 0.9004289689880182,
+        "motion_onset_frames": 1,
+        "noop_drift": null,
+        "pairs": 120,
+        "start_pair": 608
+      }
+    ]
+  },
+  "frames_analyzed": 729,
+  "metric_pass_seconds": 13.494443997002236,
+  "perceived_latency": {
+    "count": 2,
+    "max": 0.6164309233366415,
+    "p50": 0.6164309233366415,
+    "samples": [
+      {
+        "control_latency_wall": 0.5330975900033081,
+        "motion_onset_frames": 1,
+        "perceived_latency_seconds": 0.6164309233366415,
+        "start_frame": 489
+      },
+      {
+        "control_latency_wall": 0.5198578589988756,
+        "motion_onset_frames": 1,
+        "perceived_latency_seconds": 0.603191192332209,
+        "start_frame": 609
+      }
+    ]
+  },
+  "schema": "liveframe.world.case-metrics.v1",
+  "stability": {
+    "collapse": {
+      "black_frames": [],
+      "collapse_flag_count": 117,
+      "frozen_runs": [
+        {
+          "pairs": 7,
+          "start_frame": 85
+        },
+        {
+          "pairs": 3,
+          "start_frame": 97
+        },
+        {
+          "pairs": 3,
+          "start_frame": 101
+        },
+        {
+          "pairs": 3,
+          "start_frame": 109
+        },
+        {
+          "pairs": 3,
+          "start_frame": 113
+        },
+        {
+          "pairs": 3,
+          "start_frame": 121
+        },
+        {
+          "pairs": 3,
+          "start_frame": 125
+        },
+        {
+          "pairs": 3,
+          "start_frame": 133
+        }
+      ],
+      "repeat_loops": [
+        {
+          "frame": 89,
+          "matches_frame": 81
+        },
+        {
+          "frame": 90,
+          "matches_frame": 82
+        },
+        {
+          "frame": 92,
+          "matches_frame": 84
+        },
+        {
+          "frame": 99,
+          "matches_frame": 91
+        },
+        {
+          "frame": 100,
+          "matches_frame": 92
+        },
+        {
+          "frame": 101,
+          "matches_frame": 93
+        },
+        {
+          "frame": 102,
+          "matches_frame": 94
+        },
+        {
+          "frame": 103,
+          "matches_frame": 95
+        },
+        {
+          "frame": 104,
+          "matches_frame": 96
+        },
+        {
+          "frame": 105,
+          "matches_frame": 97
+        },
+        {
+          "frame": 113,
+          "matches_frame": 105
+        },
+        {
+          "frame": 114,
+          "matches_frame": 106
+        },
+        {
+          "frame": 125,
+          "matches_frame": 117
+        },
+        {
+          "frame": 126,
+          "matches_frame": 118
+        },
+        {
+          "frame": 127,
+          "matches_frame": 119
+        },
+        {
+          "frame": 128,
+          "matches_frame": 120
+        },
+        {
+          "frame": 129,
+          "matches_frame": 121
+        },
+        {
+          "frame": 130,
+          "matches_frame": 122
+        },
+        {
+          "frame": 131,
+          "matches_frame": 123
+        },
+        {
+          "frame": 132,
+          "matches_frame": 124
+        },
+        {
+          "frame": 133,
+          "matches_frame": 125
+        },
+        {
+          "frame": 134,
+          "matches_frame": 126
+        },
+        {
+          "frame": 135,
+          "matches_frame": 127
+        },
+        {
+          "frame": 136,
+          "matches_frame": 128
+        },
+        {
+          "frame": 137,
+          "matches_frame": 129
+        },
+        {
+          "frame": 138,
+          "matches_frame": 130
+        },
+        {
+          "frame": 139,
+          "matches_frame": 131
+        },
+        {
+          "frame": 140,
+          "matches_frame": 132
+        },
+        {
+          "frame": 141,
+          "matches_frame": 133
+        },
+        {
+          "frame": 142,
+          "matches_frame": 134
+        },
+        {
+          "frame": 143,
+          "matches_frame": 135
+        },
+        {
+          "frame": 144,
+          "matches_frame": 136
+        },
+        {
+          "frame": 145,
+          "matches_frame": 137
+        },
+        {
+          "frame": 146,
+          "matches_frame": 138
+        },
+        {
+          "frame": 147,
+          "matches_frame": 139
+        },
+        {
+          "frame": 148,
+          "matches_frame": 140
+        },
+        {
+          "frame": 149,
+          "matches_frame": 141
+        },
+        {
+          "frame": 150,
+          "matches_frame": 142
+        },
+        {
+          "frame": 151,
+          "matches_frame": 143
+        },
+        {
+          "frame": 152,
+          "matches_frame": 144
+        },
+        {
+          "frame": 153,
+          "matches_frame": 145
+        },
+        {
+          "frame": 154,
+          "matches_frame": 146
+        },
+        {
+          "frame": 155,
+          "matches_frame": 147
+        },
+        {
+          "frame": 156,
+          "matches_frame": 148
+        },
+        {
+          "frame": 157,
+          "matches_frame": 149
+        },
+        {
+          "frame": 158,
+          "matches_frame": 150
+        },
+        {
+          "frame": 159,
+          "matches_frame": 151
+        },
+        {
+          "frame": 160,
+          "matches_frame": 152
+        },
+        {
+          "frame": 161,
+          "matches_frame": 153
+        },
+        {
+          "frame": 162,
+          "matches_frame": 154
+        },
+        {
+          "frame": 163,
+          "matches_frame": 155
+        },
+        {
+          "frame": 164,
+          "matches_frame": 156
+        },
+        {
+          "frame": 165,
+          "matches_frame": 157
+        },
+        {
+          "frame": 166,
+          "matches_frame": 158
+        },
+        {
+          "frame": 167,
+          "matches_frame": 159
+        },
+        {
+          "frame": 168,
+          "matches_frame": 160
+        },
+        {
+          "frame": 169,
+          "matches_frame": 161
+        },
+        {
+          "frame": 170,
+          "matches_frame": 162
+        },
+        {
+          "frame": 171,
+          "matches_frame": 163
+        },
+        {
+          "frame": 172,
+          "matches_frame": 164
+        },
+        {
+          "frame": 173,
+          "matches_frame": 165
+        },
+        {
+          "frame": 174,
+          "matches_frame": 166
+        },
+        {
+          "frame": 175,
+          "matches_frame": 167
+        },
+        {
+          "frame": 176,
+          "matches_frame": 167
+        },
+        {
+          "frame": 177,
+          "matches_frame": 169
+        },
+        {
+          "frame": 178,
+          "matches_frame": 170
+        },
+        {
+          "frame": 179,
+          "matches_frame": 171
+        },
+        {
+          "frame": 180,
+          "matches_frame": 172
+        },
+        {
+          "frame": 181,
+          "matches_frame": 173
+        },
+        {
+          "frame": 182,
+          "matches_frame": 174
+        },
+        {
+          "frame": 183,
+          "matches_frame": 174
+        },
+        {
+          "frame": 184,
+          "matches_frame": 174
+        },
+        {
+          "frame": 185,
+          "matches_frame": 177
+        },
+        {
+          "frame": 186,
+          "matches_frame": 178
+        },
+        {
+          "frame": 187,
+          "matches_frame": 179
+        },
+        {
+          "frame": 188,
+          "matches_frame": 180
+        },
+        {
+          "frame": 189,
+          "matches_frame": 181
+        },
+        {
+          "frame": 190,
+          "matches_frame": 182
+        },
+        {
+          "frame": 191,
+          "matches_frame": 183
+        },
+        {
+          "frame": 192,
+          "matches_frame": 180
+        },
+        {
+          "frame": 197,
+          "matches_frame": 189
+        },
+        {
+          "frame": 198,
+          "matches_frame": 190
+        },
+        {
+          "frame": 199,
+          "matches_frame": 191
+        },
+        {
+          "frame": 200,
+          "matches_frame": 192
+        },
+        {
+          "frame": 201,
+          "matches_frame": 193
+        },
+        {
+          "frame": 202,
+          "matches_frame": 194
+        },
+        {
+          "frame": 203,
+          "matches_frame": 195
+        },
+        {
+          "frame": 204,
+          "matches_frame": 196
+        },
+        {
+          "frame": 205,
+          "matches_frame": 197
+        },
+        {
+          "frame": 209,
+          "matches_frame": 201
+        },
+        {
+          "frame": 210,
+          "matches_frame": 202
+        },
+        {
+          "frame": 211,
+          "matches_frame": 203
+        },
+        {
+          "frame": 212,
+          "matches_frame": 204
+        },
+        {
+          "frame": 213,
+          "matches_frame": 205
+        },
+        {
+          "frame": 221,
+          "matches_frame": 213
+        },
+        {
+          "frame": 222,
+          "matches_frame": 214
+        },
+        {
+          "frame": 225,
+          "matches_frame": 217
+        },
+        {
+          "frame": 237,
+          "matches_frame": 229
+        },
+        {
+          "frame": 238,
+          "matches_frame": 230
+        },
+        {
+          "frame": 245,
+          "matches_frame": 237
+        },
+        {
+          "frame": 246,
+          "matches_frame": 238
+        },
+        {
+          "frame": 249,
+          "matches_frame": 241
+        },
+        {
+          "frame": 250,
+          "matches_frame": 242
+        },
+        {
+          "frame": 251,
+          "matches_frame": 243
+        },
+        {
+          "frame": 252,
+          "matches_frame": 244
+        },
+        {
+          "frame": 253,
+          "matches_frame": 245
+        },
+        {
+          "frame": 254,
+          "matches_frame": 245
+        },
+        {
+          "frame": 333,
+          "matches_frame": 325
+        },
+        {
+          "frame": 334,
+          "matches_frame": 326
+        }
+      ]
+    },
+    "flicker_mean": 8.613839853391214,
+    "windows": {
+      "brightness_mean": {
+        "slope_per_window_normalized": -0.0765049165754862,
+        "windows": [
+          121.62551879882812,
+          104.62541961669922,
+          104.99797058105469,
+          102.61474609375,
+          61.27623748779297,
+          64.36784362792969,
+          76.19161224365234
+        ]
+      },
+      "colorfulness": {
+        "slope_per_window_normalized": -0.049183835691397663,
+        "windows": [
+          78.53626251220703,
+          77.93675994873047,
+          82.33387756347656,
+          84.30159759521484,
+          53.58112716674805,
+          54.78256607055664,
+          67.504638671875
+        ]
+      },
+      "contrast_std": {
+        "slope_per_window_normalized": -0.0046688306609258415,
+        "windows": [
+          61.401981353759766,
+          87.65800476074219,
+          89.3370590209961,
+          87.67108917236328,
+          72.87515258789062,
+          71.86161041259766,
+          74.74457550048828
+        ]
+      },
+      "sharpness": {
+        "slope_per_window_normalized": 0.7752153290058569,
+        "windows": [
+          428.87067387898765,
+          558.1622469584147,
+          860.6304870605469,
+          923.5702728271484,
+          1586.8742080688476,
+          2596.506792195638,
+          1930.9195285373264
+        ]
+      },
+      "temporal_flicker": {
+        "slope_per_window_normalized": 1.3447528717203194,
+        "windows": [
+          3.1715822900334993,
+          0.9212240892151992,
+          1.2270554587244988,
+          1.3084744364023209,
+          16.039852498968443,
+          28.26850102742513,
+          19.80907964706421
+        ]
+      }
+    }
+  }
+}

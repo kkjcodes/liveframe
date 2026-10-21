@@ -1,0 +1,27 @@
+{
+  "key": "sha256:3e7ba608eb8c998db4c0e79d3c4b6e6487ecb51a26aed2790e137c1df909aedf",
+  "scene": "outdoor-meadow",
+  "script": [
+    [
+      0,
+      "W",
+      243
+    ],
+    [
+      243,
+      "S",
+      243
+    ],
+    [
+      486,
+      "L",
+      122
+    ],
+    [
+      608,
+      "R",
+      121
+    ]
+  ],
+  "seed": 1
+}
