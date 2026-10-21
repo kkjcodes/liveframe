@@ -73,7 +73,8 @@ class OasisAdapter:
         from einops import rearrange
         from torchvision.transforms.functional import resize
 
-        torch.manual_seed(int(seed)); torch.cuda.manual_seed(int(seed))
+        torch.manual_seed(int(seed))
+        torch.cuda.manual_seed(int(seed))
         img = torch.from_numpy(np.asarray(image, dtype=np.uint8)).permute(2, 0, 1).float() / 255.0
         img = resize(img, (H, W)).unsqueeze(0).to(self._device)  # (1,3,H,W) in [0,1]
         with torch.no_grad(), torch.autocast("cuda", dtype=torch.half):
@@ -90,8 +91,13 @@ class OasisAdapter:
         import numpy as np
         import torch
 
-        x = self._x; i = self._i; dev = self._device; rr = self._rearrange
-        acp = self._acp; nr = self._noise_range; mf = self._model.max_frames
+        x = self._x
+        i = self._i
+        dev = self._device
+        rr = self._rearrange
+        acp = self._acp
+        nr = self._noise_range
+        mf = self._model.max_frames
         chunk = torch.randn((x.shape[0], 1, *x.shape[-3:]), device=dev)
         chunk = torch.clamp(chunk, -NOISE_ABS_MAX, NOISE_ABS_MAX)
         x = torch.cat([x, chunk], dim=1)
@@ -101,13 +107,17 @@ class OasisAdapter:
             t = torch.full((x.shape[0], 1), nr[ni], dtype=torch.long, device=dev)
             tn = torch.full((x.shape[0], 1), nr[ni - 1], dtype=torch.long, device=dev)
             tn = torch.where(tn < 0, t, tn)
-            t = torch.cat([t_ctx, t], dim=1); tn = torch.cat([t_ctx, tn], dim=1)
-            xc = x.clone()[:, start:]; t = t[:, start:]; tn = tn[:, start:]
+            t = torch.cat([t_ctx, t], dim=1)
+            tn = torch.cat([t_ctx, tn], dim=1)
+            xc = x.clone()[:, start:]
+            t = t[:, start:]
+            tn = tn[:, start:]
             with torch.no_grad(), torch.autocast("cuda", dtype=torch.half):
                 v = self._model(xc, t, self._actions[:, start:i + 1])
             x_start = acp[t].sqrt() * xc - (1 - acp[t]).sqrt() * v
             x_noise = ((1 / acp[t]).sqrt() * xc - x_start) / (1 / acp[t] - 1).sqrt()
-            an = acp[tn]; an[:, :-1] = torch.ones_like(an[:, :-1])
+            an = acp[tn]
+            an[:, :-1] = torch.ones_like(an[:, :-1])
             if ni == 1:
                 an[:, -1:] = torch.ones_like(an[:, -1:])
             x_pred = an.sqrt() * x_start + x_noise * (1 - an).sqrt()
@@ -117,8 +127,11 @@ class OasisAdapter:
         with torch.no_grad():
             dec = (self._vae.decode(newlat / SCALE) + 1) / 2
         frame = (torch.clamp(dec, 0, 1) * 255).byte()  # (1,3,H,W)
-        arr = frame[0].permute(1, 2, 0).contiguous().cpu().numpy().astype(np.uint8)[None]  # (1,H,W,3)
-        self._x = x; self._i += 1; self._emission += 1
+        # shape (1, H, W, 3)
+        arr = frame[0].permute(1, 2, 0).contiguous().cpu().numpy().astype(np.uint8)[None]
+        self._x = x
+        self._i += 1
+        self._emission += 1
         yield (np.ascontiguousarray(arr), 1)
 
     def run_script(self, script: Any):

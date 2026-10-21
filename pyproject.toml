@@ -153,6 +153,8 @@ module = [
   "liveframe.world.adapters.matrix_game2",
   "liveframe.world.adapters.matrix_game3",
   "liveframe.world.adapters.hy_worldplay",
+  "liveframe.world.adapters.oasis_adapter",
+  "liveframe.world.adapters.abot_adapter",
   "liveframe.backends.mlx_causal",
   "liveframe.mlx_causal_smoke",
   "liveframe.mlx_parity",

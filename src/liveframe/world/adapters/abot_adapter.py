@@ -9,9 +9,9 @@ claim is 16 fps on an RTX 5090).
 """
 from __future__ import annotations
 
+import contextlib
 import os
 import sys
-import time
 from typing import Any
 
 ABOT_REPO = os.environ.get("ABOT_REPO", "/opt/code/ABot-World")
@@ -45,7 +45,7 @@ class ABotAdapter:
             "resolution": [STREAM_H, STREAM_W],
             "actions": ["W", "S", "A", "D", "L", "R", "U", "N", "0"],
             "supports_seed": True,
-            "license_notice": "Apache-2.0 (acvlab/ABot-World-0-5B-LF); claim 16fps@720p on RTX 5090",
+            "license_notice": "Apache-2.0 (acvlab/ABot-World-0-5B-LF); claims 16fps on RTX 5090",
         }
 
     def load(self) -> None:
@@ -84,15 +84,11 @@ class ABotAdapter:
             getattr(self._pipe, "encoder", None),
         ):
             if obj is not None and hasattr(obj, "clear_cache"):
-                try:
+                with contextlib.suppress(Exception):
                     obj.clear_cache()
-                except Exception:
-                    pass
         if hasattr(self._pipe, "_clear_generation_caches"):
-            try:
+            with contextlib.suppress(Exception):
                 self._pipe._clear_generation_caches()
-            except Exception:
-                pass
         self._pipe.set_prompts([prompt or "| unknown |"], device=self._device)
         self._pipe.reset_stream(1, dtype=self._dtype, device=self._device, initial_latent=None)
         self._torch.manual_seed(int(seed))
