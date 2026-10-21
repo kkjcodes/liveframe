@@ -194,11 +194,24 @@ class _SP:
         backend = os.environ.get(
             "LIVEFRAME_SP_BACKEND", "nccl" if torch.cuda.is_available() else "gloo"
         )
+        # Bind this rank to its own GPU BEFORE init_process_group, or NCCL maps
+        # multiple ranks onto the same device ("Duplicate GPU detected").
+        self._dev = None
+        if torch.cuda.is_available() and torch.cuda.device_count() > 0:
+            local = self.rank % torch.cuda.device_count()
+            torch.cuda.set_device(local)
+            self._dev = torch.device("cuda", local)
         dist.init_process_group(backend=backend, rank=self.rank, world_size=degree)
 
     def bcast(self, obj: Any) -> Any:
         box = [obj]
-        self.dist.broadcast_object_list(box, src=0)
+        # Pass an explicit per-rank device: broadcast_object_list otherwise
+        # defaults its size/data tensors to cuda:0 on every rank, so NCCL sees
+        # all ranks on one GPU ("Duplicate GPU detected").
+        if self._dev is not None:
+            self.dist.broadcast_object_list(box, src=0, device=self._dev)
+        else:
+            self.dist.broadcast_object_list(box, src=0)
         return box[0]
 
     def shutdown(self) -> None:

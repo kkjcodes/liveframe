@@ -107,6 +107,17 @@ class HYWorldPlayAdapter:
         from hyvideo.generate import pose_to_input
 
         self._pose_to_input = pose_to_input
+        # Sequence-parallel setup, mirroring generate.py lines 38-39: build the
+        # SP device-mesh over the (already-initialized by the bridge _SP) default
+        # process group and bind this rank's GPU. sp = WORLD_SIZE (the bridge sets
+        # it). No-op at sp=1 (single-GPU). initialize_parallel_state reuses the
+        # existing group (it checks dist.is_initialized()), so there's no collision.
+        if HYW_SP > 1:
+            from hyvideo.commons.parallel_states import initialize_parallel_state
+
+            initialize_parallel_state(sp=int(os.environ.get("WORLD_SIZE", str(HYW_SP))))
+            if torch.cuda.is_available():
+                torch.cuda.set_device(int(os.environ.get("LOCAL_RANK", "0")))
         # The pipeline reads a module-global infer_state that generate.py sets up;
         # single-GPU safe defaults (no sage/fp8/vae-parallel/compile).
         initialize_infer_state(
