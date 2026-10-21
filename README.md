@@ -66,7 +66,7 @@ mode that isn't the released code).
 | Model | Claim (as published) | Measured | Why they differ (stated conditions) |
 |---|---|---|---|
 | Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps — **reproduces** |
-| ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **3.70 fps** | we ran an older GPU (A100) with their fp8/sage speedups off — gap plausibly explained by hardware + settings |
+| ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **5.85 fps** | same RTX 5090; remaining gap = their optional fp8/sage stack off (not pip-installable) + the interactive delivery path. (A100 reference: 3.70) |
 | Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla — a different artifact than the engine behind the claim |
 | HY-World 1.5 | 24 fps (streaming; GPU/steps unstated) | **1.36 fps** | released pipeline runs batch, not streaming — not directly comparable |
 
