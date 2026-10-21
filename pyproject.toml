@@ -37,9 +37,12 @@ dev = [
   "pytest>=8.3",
   "ruff>=0.9",
 ]
+# PyPI rejects direct URL dependencies, so the research backend's pinned
+# mlx-video (git+https://github.com/Blaizzy/mlx-video.git@87db56a5) is NOT part
+# of this extra; install it manually from a source checkout if you need the MLX
+# research backend. The world harness does not require it.
 mlx = [
   "mlx>=0.31; platform_system == 'Darwin'",
-  "mlx-video @ git+https://github.com/Blaizzy/mlx-video.git@87db56a51758fefb748a359b90a5283bb8ba4837 ; platform_system == 'Darwin'",
 ]
 cuda = ["torch>=2.6"]
 metrics = [
@@ -119,9 +122,6 @@ exclude = [
   "paper",
   "artifacts",
 ]
-
-[tool.hatch.metadata]
-allow-direct-references = true
 
 [tool.pytest.ini_options]
 addopts = "-ra"
