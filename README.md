@@ -1,5 +1,10 @@
 # LiveFrame
 
+[![PyPI](https://img.shields.io/pypi/v/liveframe.svg)](https://pypi.org/project/liveframe/)
+[![Python](https://img.shields.io/pypi/pyversions/liveframe.svg)](https://pypi.org/project/liveframe/)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![CI](https://github.com/kkjcodes/liveframe/actions/workflows/ci.yml/badge.svg)](https://github.com/kkjcodes/liveframe/actions/workflows/ci.yml)
+
 LiveFrame helps engineers determine whether a streaming video-generation system works for a real
 workload, understand why it fails, and verify that an optimization improves complete-wall
 performance without silently weakening quality or deployment eligibility. The active product
@@ -11,9 +16,8 @@ Point the harness at an action-conditioned world model and get a verified
 runtime + control + stability report — one command, one GPU, minutes:
 
 ```bash
-# From a source checkout:
-pip install -e ".[world]"
-# (PyPI: `pip install "liveframe[world]"` once 0.3.0 is published.)
+pip install "liveframe[world]"
+# (or from a source checkout: pip install -e ".[world]")
 
 # Prove the loop end to end on CPU first (~seconds):
 liveframe world run synthetic --suite smoke
