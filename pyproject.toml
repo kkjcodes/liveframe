@@ -162,5 +162,33 @@ module = [
   "liveframe.mlx_rolling_parity",
   "liveframe.mlx_vae_decode",
   "liveframe.rolling_perceptual_parity",
+  "liveframe.mlx_vae_profile",
+  "liveframe.mlx_quality_runner",
+  "liveframe.quality_metric_runner",
 ]
 ignore_errors = true
+
+# Heavy optional deps (installed only in model envs / research setups): resolve
+# as Any everywhere so mypy results do not depend on what happens to be installed.
+[[tool.mypy.overrides]]
+module = [
+  "torch",
+  "torch.*",
+  "PIL",
+  "PIL.*",
+  "mlx",
+  "mlx.*",
+  "mlx_video.*",
+  "transformers",
+  "transformers.*",
+  "cv2",
+  "pynvml",
+]
+ignore_missing_imports = true
+
+# This module's `type: ignore` comments are needed when torch is installed and
+# flagged unused when it is not; exempt it from the unused-ignore check so mypy
+# passes identically with or without the optional deps.
+[[tool.mypy.overrides]]
+module = ["liveframe.quality_stochastic"]
+warn_unused_ignores = false
