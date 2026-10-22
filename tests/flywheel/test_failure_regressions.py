@@ -21,6 +21,9 @@ FAILURES_DIR = (
 )
 
 
+@pytest.mark.skipif(
+    not FAILURES_DIR.exists(), reason="failure library is local-only (not in the public tree)"
+)
 def test_every_failure_entry_names_a_regression_check() -> None:
     entries = sorted(FAILURES_DIR.glob("F-*.md"))
     assert len(entries) >= 5

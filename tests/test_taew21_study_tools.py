@@ -597,7 +597,10 @@ def test_bundle_manifest_binds_current_amendment():
     assert manifest["amendment_sha256"] == file_sha256(amendment_path)
 
 
-@pytest.mark.skipif(not BUNDLE.exists(), reason="rendered study bundle not present")
+@pytest.mark.skipif(
+    not any(BUNDLE.glob("*/*.mp4")),
+    reason="study bundle media is local-only (mp4s are not in the public tree)",
+)
 def test_bundle_media_digests_are_unique_and_leak_free():
     digests: dict[str, str] = {}
     item_dirs = sorted(path for path in BUNDLE.iterdir() if path.is_dir())
@@ -616,7 +619,10 @@ def test_bundle_media_digests_are_unique_and_leak_free():
             assert option != reference, f"{item_dir.name}/{side} equals its reference"
 
 
-@pytest.mark.skipif(not BUNDLE.exists(), reason="rendered study bundle not present")
+@pytest.mark.skipif(
+    not any(BUNDLE.glob("attention-*/*.mp4")),
+    reason="study bundle media is local-only (mp4s are not in the public tree)",
+)
 def test_attention_candidates_have_equivalent_metadata():
     item_dirs = [path for path in sorted(BUNDLE.glob("attention-*")) if path.is_dir()]
     assert len(item_dirs) == 2
