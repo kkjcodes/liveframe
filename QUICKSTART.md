@@ -1,7 +1,7 @@
-# LiveFrame World — Quickstart
+# LiveFrame World - Quickstart
 
 Point the harness at an action-conditioned world model and get a verified
-runtime + stability report — one command, one GPU, minutes. Every step below
+runtime + stability report - one command, one GPU, minutes. Every step below
 was run against the published `0.3.0` package in a clean virtualenv (nothing
 from the source tree on the path), so it is exactly what a `pip install` user
 experiences.
@@ -35,7 +35,7 @@ liveframe world --help      # run | verify | fetch | doctor | suites | compare |
 
 ## 2. Prove the loop on CPU first (ships in the package)
 
-The `synthetic` backend is built in — no model, no GPU — so you can prove the
+The `synthetic` backend is built in - no model, no GPU - so you can prove the
 whole pipeline in seconds before touching real weights:
 
 ```bash
@@ -47,7 +47,7 @@ It prints the paths it wrote. Every run produces three things in
 
 | File | What it is |
 |---|---|
-| `report.html` | Self-contained page — no scripts, no network. Open it directly. |
+| `report.html` | Self-contained page - no scripts, no network. Open it directly. |
 | `report.json` | Machine-readable headline + per-case metrics. |
 | `ledger.json` | Digest-bound manifest; re-verifiable byte for byte (step 6). |
 
@@ -59,14 +59,14 @@ liveframe world suites
 ```
 
 `smoke` and `quick` are deliberately short, so the real-time verdict reports
-`null` — the real-time rule needs a continuous 60-second stream (`soak`).
+`null` - the real-time rule needs a continuous 60-second stream (`soak`).
 
 ---
 
 ## 3. Bring your own model
 
 Any `FILE.py:ClassName` implementing the adapter protocol works, run
-in-process. Save this as `my_world.py` — it is a complete, runnable stand-in
+in-process. Save this as `my_world.py` - it is a complete, runnable stand-in
 (it pans the start image per action). Replace the body with your model; keep
 the five methods and the declared capabilities.
 
@@ -134,7 +134,7 @@ class MyWorld:
             self._pos[1] = float(np.clip(self._pos[1], 0, self._w * 2))
             r, c = int(self._pos[0]), int(self._pos[1])
             frames.append(np.ascontiguousarray(self._canvas[r:r + self._h, c:c + self._w]))
-        # Emit one NativeFrame per step — never buffer and dump at the end; the
+        # Emit one NativeFrame per step - never buffer and dump at the end; the
         # harness measures the cadence your users would actually see.
         yield NativeFrame(
             index=self._emission,
@@ -163,11 +163,11 @@ The run directory is slugged from the **filename** (`my_world`), not the
 declared `name`, so look in `runs/my_world/quick/<timestamp>/`.
 
 > **Three rules the harness enforces per case (it fails the case, not the run):**
-> 1. `capabilities` must tell the truth — `resolution` is exact, and every
+> 1. `capabilities` must tell the truth - `resolution` is exact, and every
 >    commanded action must be declared.
-> 2. `step` must emit real work as it happens — no buffering frames and
+> 2. `step` must emit real work as it happens - no buffering frames and
 >    releasing them at the end.
-> 3. Never interpolate or duplicate frames to look faster — only native frames
+> 3. Never interpolate or duplicate frames to look faster - only native frames
 >    are counted, and the frame-accounting check fails the case if the count
 >    doesn't match the script.
 
@@ -197,7 +197,7 @@ the declared resolution).
 ## 5. Run inside your model's own environment
 
 Your model usually needs its own torch/CUDA. Keep the harness in its own
-process and run the SAME adapter file inside the model's interpreter — the
+process and run the SAME adapter file inside the model's interpreter - the
 harness talks to it over a subprocess bridge:
 
 ```bash
@@ -225,7 +225,7 @@ That is what lets someone else trust a report they didn't produce.
 ## 7. Reference adapters (optional)
 
 Three real models ship as named adapters. They need the vendor's weights and
-checkout, so preflight first — every failed check prints its exact fix:
+checkout, so preflight first - every failed check prints its exact fix:
 
 ```bash
 liveframe world doctor matrix-game-2 --python /opt/envs/mg2/bin/python
@@ -235,10 +235,10 @@ liveframe world run  matrix-game-2 --suite quick --python /opt/envs/mg2/bin/pyth
 
 Also useful:
 
-- `liveframe world compare A B` — side-by-side HTML; configuration differences
+- `liveframe world compare A B` - side-by-side HTML; configuration differences
   are listed **before** any numbers, so a 25-fps-on-8-GPUs claim is never shown
   next to a 1-GPU number without the caveat.
-- `liveframe world export --format worldmark|wbench|raw` — hand frames + action
+- `liveframe world export --format worldmark|wbench|raw` - hand frames + action
   logs to an external quality scorer.
 
 ---
@@ -247,7 +247,7 @@ Also useful:
 
 Generated FPS counts decoded native frames only; interpolated or duplicated
 frames never count. Cold start is reported as context, not blended into
-generation time. Vendor claims get a neutral verdict — `different
+generation time. Vendor claims get a neutral verdict - `different
 configuration` when the claim names a setup (different GPU count, step count,
 resolution), else `config not stated`. The harness never says "reproduced",
 and it times frames as they are delivered, so it errs low rather than

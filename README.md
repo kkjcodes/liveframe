@@ -13,7 +13,7 @@ mission is documented in [agent/liveframe_product_mission.md](agent/liveframe_pr
 ## LiveFrame World: runtime truth for interactive world models
 
 Point the harness at an action-conditioned world model and get a verified
-runtime + control + stability report — one command, one GPU, minutes:
+runtime + control + stability report - one command, one GPU, minutes:
 
 ```bash
 pip install "liveframe[world]"
@@ -34,7 +34,7 @@ liveframe world run my_model.py:MyWorld --suite quick \
     --python /path/to/model-env/bin/python
 
 # Matrix-Game 2.0 reference adapter (weights + checkout required; run
-# `liveframe world doctor matrix-game-2 --python ...` first — every failed
+# `liveframe world doctor matrix-game-2 --python ...` first - every failed
 # check prints its exact fix):
 liveframe world run matrix-game-2 --suite quick --python /opt/envs/mg2/bin/python
 ```
@@ -44,24 +44,24 @@ machine-readable `report.json`, and a digest-bound ledger; the command prints
 the `report.html` path when it finishes, and
 `liveframe world verify <run>/ledger.json` re-checks every artifact byte.
 (`smoke` and `quick` are deliberately short, so `realtime_pass` reports `null`
-— the real-time rule needs a continuous 60-second stream; use `soak` for it.)
-Generated FPS counts decoded native frames only — interpolated or duplicated
+- the real-time rule needs a continuous 60-second stream; use `soak` for it.)
+Generated FPS counts decoded native frames only - interpolated or duplicated
 frames never count, cold start is reported as context rather than blended into
 generation numbers, and vendor claims are compared with neutral verdicts
 (`different configuration` when the claim names a setup, else `config not
-stated`) — the builder never says "reproduced". Suites: `smoke`,
+stated`) - the builder never says "reproduced". Suites: `smoke`,
 `quick`, `standard`, `soak`, `memory` (`liveframe world suites`). Also:
 `world compare A B` (config differences listed before any numbers) and
 `world export --format worldmark|wbench|raw` for interop with quality-focused
-benchmarks. Start at [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide —
-install, a paste-and-run adapter, reading the report, and verifying the ledger —
+benchmarks. Start at [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide -
+install, a paste-and-run adapter, reading the report, and verifying the ledger -
 or the template in [examples/byo_adapter/](examples/byo_adapter/).
 
 ### Measured references (with receipts)
 
 We ran four published interactive world models through the harness, each in a
 stated configuration, every number backed by a re-verifiable ledger. The headline
-isn't "these models are slow" — it's that published frame rates are hard to
+isn't "these models are slow" - it's that published frame rates are hard to
 reproduce from what's shipped. When a claim is fully specified and we run that
 exact config (Matrix-Game 2.0), it reproduces; otherwise we show which condition
 differs (a different GPU, a proprietary engine vs the open weights, or a streaming
@@ -69,25 +69,25 @@ mode that isn't the released code).
 
 | Model | Claim (as published) | Measured | Why they differ (stated conditions) |
 |---|---|---|---|
-| Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps — **reproduces** |
+| Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps - **reproduces** |
 | ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **5.85 fps** | same RTX 5090; remaining gap = their optional fp8/sage stack off (not pip-installable) + the interactive delivery path. (A100 reference: 3.70) |
-| Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla (1× A100 PCIe) — a different artifact than the engine behind the claim |
-| HY-World 1.5 | 24 fps (streaming; GPU/steps unstated) | **1.36 fps** | released pipeline runs batch, not streaming — not directly comparable |
+| Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla (1× A100 PCIe) - a different artifact than the engine behind the claim |
+| HY-World 1.5 | 24 fps (streaming; GPU/steps unstated) | **1.36 fps** | released pipeline runs batch, not streaming - not directly comparable |
 
 **None of these results contradict a vendor's claim.** The one claim that is fully
 specified and matched (Matrix-Game 2.0) reproduces; the other three can't be tested
-as published from what's shipped — a different GPU class, a proprietary serving
+as published from what's shipped - a different GPU class, a proprietary serving
 engine, or a mode not in the released code. That reproducibility gap, stated
 precisely, is the finding.
 
 It times frames as they are delivered (so it errs low, never inflates) and counts
 native decoded frames only. We run the released pipeline with conservative settings
-(optional fp8/attention/compile off — for ABot this includes stubbing its optional
+(optional fp8/attention/compile off - for ABot this includes stubbing its optional
 fp8 kernel, unused at our settings), so these are floors, not each model's best.
 The Oasis adapter decodes every frame as it is generated (the interactive cost);
 the upstream script batch-decodes at the end. Every number reproduces from a
 digest-bound ledger (`liveframe world verify`). Matrix-Game 3.0's claim is 9 GPUs
-(8 DiT + 1 VAE) — more than a single node — so its cluster figure is pending; its
+(8 DiT + 1 VAE) - more than a single node - so its cluster figure is pending; its
 single-GPU number is 2.04 fps.
 
 LiveFrame defines **real-time** as at least **16 native generated frames per second for a continuous 60-second stream**, with time-to-first-frame, p95 chunk latency, thermal state, memory, intrinsic quality, same-seed identity, and long-horizon drift disclosed. Interpolated or duplicated presentation frames never count as generated FPS.
