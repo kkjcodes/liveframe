@@ -63,7 +63,7 @@ We ran four published interactive world models through the harness, each in a
 stated configuration, every number backed by a re-verifiable ledger. The headline
 isn't "these models are slow" - it's that published frame rates are hard to
 reproduce from what's shipped. When a claim is fully specified and we run that
-exact config (Matrix-Game 2.0), it reproduces; otherwise we show which condition
+exact config (Matrix-Game 2.0), the result is consistent with it; otherwise we show which condition
 differs (a different GPU, a proprietary engine vs the open weights, or a streaming
 mode that isn't the released code).
 
