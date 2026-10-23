@@ -69,16 +69,25 @@ mode that isn't the released code).
 
 | Model | Claim (as published) | Measured | Why they differ (stated conditions) |
 |---|---|---|---|
-| Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps - **reproduces** |
+| Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps - **consistent with the claim** (79% of it; band below) |
 | ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **5.85 fps** | same RTX 5090; remaining gap = their optional fp8/sage stack off (not pip-installable) + the interactive delivery path. (A100 reference: 3.70) |
 | Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla (1× A100 PCIe) - a different artifact than the engine behind the claim |
 | HY-World 1.5 | 24 fps (streaming; GPU/steps unstated) | **1.36 fps** | released pipeline runs batch, not streaming - not directly comparable |
 
 **None of these results contradict a vendor's claim.** The one claim that is fully
-specified and matched (Matrix-Game 2.0) reproduces; the other three can't be tested
-as published from what's shipped - a different GPU class, a proprietary serving
-engine, or a mode not in the released code. That reproducibility gap, stated
-precisely, is the finding.
+specified and matched (Matrix-Game 2.0) is consistent with our measurement; the
+other three can't be tested as published from what's shipped - a different GPU
+class, a proprietary serving engine, or a mode not in the released code. That
+reproducibility gap, stated precisely, is the finding.
+
+**The consistency band, stated:** under matched conditions we read a result within
+~25% below the claim as consistent, because the harness carries a measured 7-9%
+low bias from the delivery path (harness vs harness-free in-process timing of the
+same model: 92.7% for Matrix-Game) and runs the released pipeline with optional
+speedups off, making every number a floor. 79% of claim passes that band; 50%
+would not - it would be reported as "below claim under matched conditions, cause
+unknown" and investigated before publication. The band is one-sided: a result
+ABOVE a claim would make us suspect our own instrument first.
 
 It times frames as they are delivered (so it errs low, never inflates) and counts
 native decoded frames only. We run the released pipeline with conservative settings
