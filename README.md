@@ -72,13 +72,17 @@ mode that isn't the released code).
 | Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps - **consistent with the claim** (79% of it; band below) |
 | ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **5.85 fps** | same RTX 5090; remaining gap = their optional fp8/sage stack off (not pip-installable) + the interactive delivery path. (A100 reference: 3.70) |
 | Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla (1× A100 PCIe) - a different artifact than the engine behind the claim |
-| HY-World 1.5 | 24 fps (streaming; GPU/steps unstated) | **1.36 fps** | released pipeline runs batch, not streaming - not directly comparable |
+| HY-World 1.5 | 24 fps streaming (tech report: 8-GPU sequence parallel for DiT+VAE, Triton streaming serving, progressive VAE decode; GPU model unstated) | **1.36 fps** | measured on 8× A100 sp=8: the described streaming/serving stack is not in the released code, which runs batch |
 
-**None of these results contradict a vendor's claim.** The one claim that is fully
-specified and matched (Matrix-Game 2.0) is consistent with our measurement; the
-other three can't be tested as published from what's shipped - a different GPU
-class, a proprietary serving engine, or a mode not in the released code. That
-reproducibility gap, stated precisely, is the finding.
+**None of these results contradict a vendor's claim.** The one claim that is both
+fully specified and runnable from the release (Matrix-Game 2.0) is consistent with
+our measurement. The other three can't be tested as published from what's shipped:
+ABot names its GPU but its published speed stack isn't installable from the
+release; Oasis's number comes from a proprietary engine, not the open weights;
+HY-World's deployment is described in its tech report (8-GPU sequence parallelism,
+Triton streaming serving, progressive VAE decoding) but that serving stack is not
+in the released code, which runs batch. Reproducibility from released artifacts,
+stated precisely, is the finding.
 
 **The consistency band, stated:** under matched conditions we read a result within
 ~25% below the claim as consistent, because the harness carries a measured 7-9%
