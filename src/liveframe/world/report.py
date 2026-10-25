@@ -177,6 +177,7 @@ def build_report(
 
     return {
         "schema": REPORT_SCHEMA,
+        "harness_version": _harness_version(),
         "headline": headline,
         "claim_check": claim_check,
         "caveats": caveats,
@@ -601,3 +602,12 @@ def render_comparison_html(comparison: dict[str, Any]) -> str:
     )
     parts.append("</main>")
     return "\n".join(parts)
+
+def _harness_version() -> str:
+    try:
+        import liveframe
+
+        return str(liveframe.__version__)
+    except Exception:  # pragma: no cover - import oddity in exotic envs
+        return "unknown"
+
