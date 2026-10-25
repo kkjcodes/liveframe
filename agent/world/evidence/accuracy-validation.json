@@ -1,36 +1,65 @@
 {
-  "cross_tool": {
-    "hy-worldplay": {
-      "agreement_pct": 92.3,
-      "direct_pipeline_fps": 0.65,
-      "harness_fps": 0.6,
-      "note": "same A100, same pipe(); harness adds frame capture + a slightly longer clip (253 vs 125 frames)"
-    },
-    "matrix-game-2": "pending short upstream-timing re-run",
-    "matrix-game-3": "pending short upstream-timing re-run"
+ "cross_tool": {
+  "abot-world-0": {
+   "agreement_pct": 86.2,
+   "caveat": "measured across TWO different RTX 5090 instances; later measured instance variance (~36%) confounds this ratio - same-box ratios are the reliable ones",
+   "direct_pipeline_fps": 6.784,
+   "harness_fps": 5.845,
+   "note": "2026-10-21/23"
   },
-  "ground_truth_exactness": {
-    "exact": true,
-    "measured": {
-      "generated_fps": 50.00000000002771,
-      "native_frames": 80,
-      "stalls_count": 1,
-      "time_to_first_frame_seconds": 0.049999999999954525,
-      "wall_seconds": 1.5999999999991132
-    },
-    "truth": {
-      "generated_fps": 50.0,
-      "native_frames": 80,
-      "stalls_count": 1,
-      "time_to_first_frame_seconds": 0.05,
-      "wall_seconds": 1.6
-    }
+  "hy-worldplay": {
+   "agreement_pct": 92.3,
+   "direct_pipeline_fps": 0.65,
+   "harness_fps": 0.6,
+   "note": "same A100, same pipe(); harness adds frame capture + a slightly longer clip (253 vs 125 frames)"
   },
-  "harness_overhead": {
-    "generated_fps_capture_off": 1269.04,
-    "generated_fps_capture_on": 1259.23,
-    "overhead_pct": 0.77,
-    "within_2pct": true
+  "matrix-game-2": {
+   "agreement_pct": 92.7,
+   "direct_pipeline_fps": 12.73,
+   "harness_fps": 11.8,
+   "note": "same box (M5 MG2 pod, RTX 4090 era env), same pipeline, direct = raw perf_counter around upstream generation, 2026-10-16"
   },
-  "schema": "liveframe.world.accuracy-validation.v1"
+  "matrix-game-3": {
+   "agreement_pct_range": [
+    93,
+    100
+   ],
+   "direct_pipeline_fps": 1.93,
+   "harness_fps_range": [
+    1.8,
+    2.1
+   ],
+   "note": "same box; within MG3 int8/SDPA run variance, 2026-10-16"
+  },
+  "oasis-500m": {
+   "agreement_pct": 94.4,
+   "direct_pipeline_fps": 1.477,
+   "harness_fps": 1.394,
+   "note": "SAME box (A100 SXM), harness smoke vs direct 120-frame loop, 2026-10-21"
+  }
+ },
+ "ground_truth_exactness": {
+  "exact": true,
+  "measured": {
+   "generated_fps": 50.00000000002771,
+   "native_frames": 80,
+   "stalls_count": 1,
+   "time_to_first_frame_seconds": 0.049999999999954525,
+   "wall_seconds": 1.5999999999991132
+  },
+  "truth": {
+   "generated_fps": 50.0,
+   "native_frames": 80,
+   "stalls_count": 1,
+   "time_to_first_frame_seconds": 0.05,
+   "wall_seconds": 1.6
+  }
+ },
+ "harness_overhead": {
+  "generated_fps_capture_off": 1269.04,
+  "generated_fps_capture_on": 1259.23,
+  "overhead_pct": 0.77,
+  "within_2pct": true
+ },
+ "schema": "liveframe.world.accuracy-validation.v1"
 }

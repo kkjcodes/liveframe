@@ -69,7 +69,7 @@ mode that isn't the released code).
 
 | Model | Claim (as published) | Measured | Why they differ (stated conditions) |
 |---|---|---|---|
-| Matrix-Game 2.0 | 25 fps (1× H100) | **19.7 fps** | same H100, same steps - **consistent with the claim** (79% of it; band below) |
+| Matrix-Game 2.0 | 25 fps, 1× H100, 3-step (stated in the paper, arXiv 2508.13009) | **19.7 fps** | same H100, same steps, vendor's flash-attn - **consistent with the claim** (79% of it; band below) |
 | ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **5.85 fps** | same RTX 5090; remaining gap = their optional fp8/sage stack off (not pip-installable) + the interactive delivery path. (A100 reference: 3.70) |
 | Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla (1× A100 PCIe) - a different artifact than the engine behind the claim |
 | HY-World 1.5 | 24 fps streaming (tech report: 8-GPU sequence parallel for DiT+VAE, Triton streaming serving, progressive VAE decode; GPU model unstated) | **1.36 fps** | measured on 8× A100 sp=8: the described streaming/serving stack is not in the released code, which runs batch |
@@ -77,21 +77,31 @@ mode that isn't the released code).
 **None of these results contradict a vendor's claim.** The one claim that is both
 fully specified and runnable from the release (Matrix-Game 2.0) is consistent with
 our measurement. The other three can't be tested as published from what's shipped:
-ABot names its GPU but its published speed stack isn't installable from the
-release; Oasis's number comes from a proprietary engine, not the open weights;
+ABot names its GPU but its published speed stack isn't installable from the release; Oasis's number comes from a proprietary engine, not the open weights;
 HY-World's deployment is described in its tech report (8-GPU sequence parallelism,
 Triton streaming serving, progressive VAE decoding) but that serving stack is not
 in the released code, which runs batch. Reproducibility from released artifacts,
 stated precisely, is the finding.
 
 **The consistency band, stated:** under matched conditions we read a result within
-~25% below the claim as consistent, because the harness carries a measured 7-9%
-low bias from the delivery path (harness vs harness-free in-process timing of the
-same model: 92.7% for Matrix-Game) and runs the released pipeline with optional
-speedups off, making every number a floor. 79% of claim passes that band; 50%
-would not - it would be reported as "below claim under matched conditions, cause
-unknown" and investigated before publication. The band is one-sided: a result
-ABOVE a claim would make us suspect our own instrument first.
+~25% below the claim as consistent. What that allowance is made of differs per
+model and we say so: for Matrix-Game 2.0 the run used the vendor's own stack
+(flash-attn per their pins; nothing disabled), so only the measured ~7% same-box
+delivery bias (harness 11.80 vs harness-free 12.73 = 92.7%, recorded in
+agent/world/evidence/accuracy-validation.json) is evidenced - the remaining ~14
+points of the band are explicit unexplained allowance (instance variance alone
+measured ~36% between two same-model GPUs). For models where optional speedups
+were off (ABot, Oasis), the floor argument applies additionally. 79% of claim
+passes the band; 50% would not - it would be reported as "below claim under
+matched conditions, cause unknown" and investigated. The band is one-sided: a
+result ABOVE a claim would make us suspect our own instrument first.
+
+A bookkeeping note a careful reader will find: the MG2 bundle's in-run
+claim_check verdict reads "config not stated" because that run was fed a
+conservative claim string citing the repo README headline (where the config is
+indeed absent); the 1× H100 / 3-step configuration is stated in the paper.
+Future runs embed the full paper-sourced claim text so the bundle and the table
+agree without a footnote.
 
 It times frames as they are delivered (so it errs low, never inflates) and counts
 native decoded frames only. We run the released pipeline with conservative settings
