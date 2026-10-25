@@ -69,7 +69,7 @@ mode that isn't the released code).
 
 | Model | Claim (as published) | Measured | Why they differ (stated conditions) |
 |---|---|---|---|
-| Matrix-Game 2.0 | 25 fps, 1× H100, 3-step (stated in the paper, arXiv 2508.13009) | **19.7 fps** | same H100, same steps, vendor's flash-attn - **consistent with the claim** (79% of it; band below) |
+| Matrix-Game 2.0 | 25 fps, 1× H100, 3-step (stated in Skywork's Matrix-Game 2.0 paper, arXiv 2508.13009) | **19.7 fps** | same H100, same steps, vendor's flash-attn - **consistent with the claim** (79% of it; band below) |
 | ABot-World-0 | 16 fps (720p, 1× RTX 5090) | **5.85 fps** | same RTX 5090; remaining gap = their optional fp8/sage stack off (not pip-installable) + the interactive delivery path. (A100 reference: 3.70) |
 | Oasis-500M | 20 fps (Decart's proprietary engine) | **1.06 fps** | we measured the open 500M weights vanilla (1× A100 PCIe) - a different artifact than the engine behind the claim |
 | HY-World 1.5 | 24 fps streaming (tech report: 8-GPU sequence parallel for DiT+VAE, Triton streaming serving, progressive VAE decode; GPU model unstated) | **1.36 fps** | measured on 8× A100 sp=8: the described streaming/serving stack is not in the released code, which runs batch |
@@ -99,7 +99,7 @@ result ABOVE a claim would make us suspect our own instrument first.
 A bookkeeping note a careful reader will find: the MG2 bundle's in-run
 claim_check verdict reads "config not stated" because that run was fed a
 conservative claim string citing the repo README headline (where the config is
-indeed absent); the 1× H100 / 3-step configuration is stated in the paper.
+indeed absent); the 1× H100 / 3-step configuration is stated in Skywork's paper.
 Future runs embed the full paper-sourced claim text so the bundle and the table
 agree without a footnote.
 
