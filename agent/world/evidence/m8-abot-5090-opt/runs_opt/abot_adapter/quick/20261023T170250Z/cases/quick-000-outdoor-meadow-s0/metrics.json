@@ -1,0 +1,437 @@
+{
+  "control": {
+    "pair_classes": [
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "L",
+      "L",
+      "A",
+      "R",
+      "R",
+      "0",
+      "0",
+      "L",
+      "0",
+      "0",
+      "0",
+      "L",
+      "A",
+      "L",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "L",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "L",
+      "R",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "A",
+      "A",
+      "A",
+      "A",
+      "L",
+      "A",
+      "A",
+      "D",
+      "L",
+      "A",
+      "L",
+      "A",
+      "L",
+      "L",
+      "L",
+      "L",
+      "A",
+      "A",
+      "0",
+      "A",
+      "A",
+      "0",
+      "A",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "A",
+      "A",
+      "A",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "R",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "segments": [
+      {
+        "action": "W",
+        "commanded_class": "W",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 128,
+        "start_pair": 0
+      },
+      {
+        "action": "L",
+        "commanded_class": "L",
+        "direction_accuracy": 0.5932203389830508,
+        "direction_purity": 0.4623825434451874,
+        "motion_onset_frames": 1,
+        "noop_drift": null,
+        "pairs": 60,
+        "start_pair": 128
+      },
+      {
+        "action": "0",
+        "commanded_class": "0",
+        "direction_accuracy": 0.8833333333333333,
+        "direction_purity": null,
+        "motion_onset_frames": 3,
+        "noop_drift": 0.05459428564423134,
+        "pairs": 60,
+        "start_pair": 188
+      }
+    ]
+  },
+  "frames_analyzed": 249,
+  "metric_pass_seconds": 3.6386396270099794,
+  "perceived_latency": {
+    "count": 2,
+    "max": 1.5198693900019862,
+    "p50": 1.5198693900019862,
+    "samples": [
+      {
+        "control_latency_wall": 1.2579783830005908,
+        "motion_onset_frames": 1,
+        "perceived_latency_seconds": 1.341311716333924,
+        "start_frame": 129
+      },
+      {
+        "control_latency_wall": 1.2698693900019862,
+        "motion_onset_frames": 3,
+        "perceived_latency_seconds": 1.5198693900019862,
+        "start_frame": 189
+      }
+    ]
+  },
+  "schema": "liveframe.world.case-metrics.v1",
+  "stability": {
+    "collapse": {
+      "black_frames": [],
+      "collapse_flag_count": 19,
+      "frozen_runs": [
+        {
+          "pairs": 2,
+          "start_frame": 42
+        },
+        {
+          "pairs": 2,
+          "start_frame": 50
+        },
+        {
+          "pairs": 3,
+          "start_frame": 53
+        },
+        {
+          "pairs": 3,
+          "start_frame": 57
+        },
+        {
+          "pairs": 7,
+          "start_frame": 61
+        },
+        {
+          "pairs": 3,
+          "start_frame": 69
+        },
+        {
+          "pairs": 3,
+          "start_frame": 73
+        },
+        {
+          "pairs": 3,
+          "start_frame": 77
+        },
+        {
+          "pairs": 3,
+          "start_frame": 89
+        },
+        {
+          "pairs": 3,
+          "start_frame": 101
+        },
+        {
+          "pairs": 3,
+          "start_frame": 113
+        },
+        {
+          "pairs": 3,
+          "start_frame": 125
+        }
+      ],
+      "repeat_loops": [
+        {
+          "frame": 57,
+          "matches_frame": 49
+        },
+        {
+          "frame": 58,
+          "matches_frame": 50
+        },
+        {
+          "frame": 59,
+          "matches_frame": 51
+        },
+        {
+          "frame": 60,
+          "matches_frame": 52
+        },
+        {
+          "frame": 78,
+          "matches_frame": 70
+        },
+        {
+          "frame": 79,
+          "matches_frame": 71
+        },
+        {
+          "frame": 80,
+          "matches_frame": 72
+        }
+      ]
+    },
+    "flicker_mean": 1.873900591245582,
+    "windows": {
+      "brightness_mean": {
+        "slope_per_window_normalized": 0.08015845772822786,
+        "windows": [
+          67.38961791992188,
+          75.06962585449219,
+          78.19331359863281
+        ]
+      },
+      "colorfulness": {
+        "slope_per_window_normalized": 0.11535811589581502,
+        "windows": [
+          45.86583709716797,
+          53.793113708496094,
+          56.44783020019531
+        ]
+      },
+      "contrast_std": {
+        "slope_per_window_normalized": -0.17944951201502887,
+        "windows": [
+          18.748485565185547,
+          12.27402114868164,
+          12.019672393798828
+        ]
+      },
+      "sharpness": {
+        "slope_per_window_normalized": -0.12729372125029634,
+        "windows": [
+          70.97559067408244,
+          70.9090630531311,
+          52.90609656439887
+        ]
+      },
+      "temporal_flicker": {
+        "slope_per_window_normalized": -0.25685670771999763,
+        "windows": [
+          1.4885278070966403,
+          2.335943341255188,
+          0.723851103335619
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "captured_files": [
+    "runs_base/abot_adapter/quick/20261023T165712Z/cases/quick-006-indoor-depot-s0/frames_256/chunk-0000.npz"
+  ],
+  "case_id": "quick-006-indoor-depot-s0",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 10,
+        "frames": 7
+      },
+      {
+        "chunk": 15,
+        "frames": 9
+      }
+    ],
+    "control_latency": {
+      "max": 1.4231775880034547,
+      "p50": 1.419891886995174,
+      "p95": 1.4231775880034547,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 20,
+      "jitter": 0.012971318981726654,
+      "max": 1.5825431330013089,
+      "p50": 1.567743732011877,
+      "p95": 1.5807150509936037,
+      "p99": 1.5825431330013089
+    },
+    "generated_fps": 7.938808767712863,
+    "interaction_mode": "interactive",
+    "native_frames": 249,
+    "realtime": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 31.365s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.6615673973094053,
+    "realtime_vs_model": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 31.365s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 12.0
+    },
+    "reset_seconds": 0.9836034869949799,
+    "stalls": {
+      "count": 0,
+      "threshold_seconds": 2.0,
+      "total_seconds": 0.0
+    },
+    "sustained_fps": {
+      "median": 7.2,
+      "min": 7.2,
+      "p5": 7.2,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 22
+    },
+    "time_to_first_frame_seconds": 1.034807730000466,
+    "wall_seconds": 31.36490716499975
+  },
+  "status": "ok"
+}

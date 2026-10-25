@@ -61,4 +61,4 @@ __all__ = [
 	"qualify",
 	"stream",
 ]
-__version__ = "0.3.0"
+__version__ = "0.3.1"

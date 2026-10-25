@@ -1,0 +1,549 @@
+{
+  "control": {
+    "pair_classes": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "A",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "L",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "segments": [
+      {
+        "action": "W",
+        "commanded_class": "W",
+        "direction_accuracy": 0.0,
+        "direction_purity": null,
+        "motion_onset_frames": null,
+        "noop_drift": null,
+        "pairs": 128,
+        "start_pair": 0
+      },
+      {
+        "action": "L",
+        "commanded_class": "L",
+        "direction_accuracy": 1.0,
+        "direction_purity": 0.9026882402801987,
+        "motion_onset_frames": 1,
+        "noop_drift": null,
+        "pairs": 60,
+        "start_pair": 128
+      },
+      {
+        "action": "0",
+        "commanded_class": "0",
+        "direction_accuracy": 0.9333333333333333,
+        "direction_purity": null,
+        "motion_onset_frames": 4,
+        "noop_drift": 0.4078684673959959,
+        "pairs": 60,
+        "start_pair": 188
+      }
+    ]
+  },
+  "frames_analyzed": 249,
+  "metric_pass_seconds": 3.471815140990657,
+  "perceived_latency": {
+    "count": 2,
+    "max": 1.7467286713266124,
+    "p50": 1.7467286713266124,
+    "samples": [
+      {
+        "control_latency_wall": 1.4072764239972457,
+        "motion_onset_frames": 1,
+        "perceived_latency_seconds": 1.490609757330579,
+        "start_frame": 129
+      },
+      {
+        "control_latency_wall": 1.413395337993279,
+        "motion_onset_frames": 4,
+        "perceived_latency_seconds": 1.7467286713266124,
+        "start_frame": 189
+      }
+    ]
+  },
+  "schema": "liveframe.world.case-metrics.v1",
+  "stability": {
+    "collapse": {
+      "black_frames": [],
+      "collapse_flag_count": 47,
+      "frozen_runs": [
+        {
+          "pairs": 2,
+          "start_frame": 26
+        },
+        {
+          "pairs": 2,
+          "start_frame": 34
+        },
+        {
+          "pairs": 7,
+          "start_frame": 37
+        },
+        {
+          "pairs": 11,
+          "start_frame": 45
+        },
+        {
+          "pairs": 7,
+          "start_frame": 61
+        },
+        {
+          "pairs": 11,
+          "start_frame": 69
+        },
+        {
+          "pairs": 5,
+          "start_frame": 87
+        },
+        {
+          "pairs": 2,
+          "start_frame": 98
+        },
+        {
+          "pairs": 3,
+          "start_frame": 101
+        },
+        {
+          "pairs": 5,
+          "start_frame": 111
+        },
+        {
+          "pairs": 6,
+          "start_frame": 122
+        }
+      ],
+      "repeat_loops": [
+        {
+          "frame": 33,
+          "matches_frame": 25
+        },
+        {
+          "frame": 34,
+          "matches_frame": 26
+        },
+        {
+          "frame": 41,
+          "matches_frame": 33
+        },
+        {
+          "frame": 42,
+          "matches_frame": 34
+        },
+        {
+          "frame": 43,
+          "matches_frame": 35
+        },
+        {
+          "frame": 45,
+          "matches_frame": 37
+        },
+        {
+          "frame": 46,
+          "matches_frame": 38
+        },
+        {
+          "frame": 47,
+          "matches_frame": 39
+        },
+        {
+          "frame": 48,
+          "matches_frame": 40
+        },
+        {
+          "frame": 49,
+          "matches_frame": 41
+        },
+        {
+          "frame": 50,
+          "matches_frame": 42
+        },
+        {
+          "frame": 51,
+          "matches_frame": 43
+        },
+        {
+          "frame": 52,
+          "matches_frame": 43
+        },
+        {
+          "frame": 53,
+          "matches_frame": 44
+        },
+        {
+          "frame": 54,
+          "matches_frame": 44
+        },
+        {
+          "frame": 55,
+          "matches_frame": 44
+        },
+        {
+          "frame": 56,
+          "matches_frame": 44
+        },
+        {
+          "frame": 57,
+          "matches_frame": 44
+        },
+        {
+          "frame": 61,
+          "matches_frame": 53
+        },
+        {
+          "frame": 62,
+          "matches_frame": 54
+        },
+        {
+          "frame": 65,
+          "matches_frame": 57
+        },
+        {
+          "frame": 66,
+          "matches_frame": 58
+        },
+        {
+          "frame": 67,
+          "matches_frame": 59
+        },
+        {
+          "frame": 68,
+          "matches_frame": 60
+        },
+        {
+          "frame": 69,
+          "matches_frame": 61
+        },
+        {
+          "frame": 70,
+          "matches_frame": 62
+        },
+        {
+          "frame": 71,
+          "matches_frame": 63
+        },
+        {
+          "frame": 72,
+          "matches_frame": 64
+        },
+        {
+          "frame": 73,
+          "matches_frame": 65
+        },
+        {
+          "frame": 74,
+          "matches_frame": 66
+        },
+        {
+          "frame": 75,
+          "matches_frame": 67
+        },
+        {
+          "frame": 76,
+          "matches_frame": 68
+        },
+        {
+          "frame": 77,
+          "matches_frame": 69
+        },
+        {
+          "frame": 78,
+          "matches_frame": 70
+        },
+        {
+          "frame": 79,
+          "matches_frame": 71
+        },
+        {
+          "frame": 80,
+          "matches_frame": 72
+        }
+      ]
+    },
+    "flicker_mean": 3.0367178048097316,
+    "windows": {
+      "brightness_mean": {
+        "slope_per_window_normalized": -0.2671437771620432,
+        "windows": [
+          111.45317840576172,
+          64.650146484375,
+          51.90513229370117
+        ]
+      },
+      "colorfulness": {
+        "slope_per_window_normalized": -0.308432875889576,
+        "windows": [
+          58.45807647705078,
+          38.043006896972656,
+          22.39729118347168
+        ]
+      },
+      "contrast_std": {
+        "slope_per_window_normalized": -0.2350171373181944,
+        "windows": [
+          42.132957458496094,
+          30.24956703186035,
+          22.329023361206055
+        ]
+      },
+      "sharpness": {
+        "slope_per_window_normalized": -0.32440614628277364,
+        "windows": [
+          605.9873097737631,
+          256.8453913370768,
+          212.81529405381946
+        ]
+      },
+      "temporal_flicker": {
+        "slope_per_window_normalized": -0.30672682314071487,
+        "windows": [
+          0.718008301158746,
+          5.539372262731194,
+          0.2775434907525778
+        ]
+      }
+    }
+  }
+}

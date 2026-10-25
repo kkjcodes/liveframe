@@ -163,6 +163,10 @@ def test_claim_check_is_neutral_and_survives_empty_runs() -> None:
     # Claim with no config stated -> "config not stated".
     bare = _report([failed], vendor_claim="25 fps (press release)")
     assert bare["claim_check"]["verdict"] == "config not stated"
+    # Consumer GPU names count as a stated config (regression: "RTX 5090"
+    # claims were mislabeled "config not stated").
+    consumer = _report([failed], vendor_claim="16 fps on a single RTX 5090")
+    assert consumer["claim_check"]["verdict"] == "different configuration"
 
 
 def test_render_html_is_self_contained_and_keeps_rows_for_skipped_cases() -> None:

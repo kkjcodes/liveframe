@@ -1,0 +1,67 @@
+{
+  "captured_files": [
+    "runs_opt/abot_adapter/quick/20261023T170250Z/cases/quick-002-outdoor-dunes-s0/frames_256/chunk-0000.npz"
+  ],
+  "case_id": "quick-002-outdoor-dunes-s0",
+  "error": null,
+  "error_type": null,
+  "metrics": {
+    "chunk_quantization": [
+      {
+        "chunk": 10,
+        "frames": 7
+      },
+      {
+        "chunk": 15,
+        "frames": 9
+      }
+    ],
+    "control_latency": {
+      "max": 1.2639655390084954,
+      "p50": 1.2611424460046692,
+      "p95": 1.2639655390084954,
+      "samples": 2
+    },
+    "emission_intervals": {
+      "count": 20,
+      "jitter": 0.012661039014346898,
+      "max": 1.4363703510025516,
+      "p50": 1.4168958789960016,
+      "p95": 1.4295569180103485,
+      "p99": 1.4363703510025516
+    },
+    "generated_fps": 8.700071666307952,
+    "interaction_mode": "interactive",
+    "native_frames": 249,
+    "realtime": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 28.620s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 16.0
+    },
+    "realtime_factor": 0.7250059721923293,
+    "realtime_vs_model": {
+      "applicable": false,
+      "passed": null,
+      "reason": "run covers 28.620s wall; the real-time rule requires a continuous 60s stream",
+      "threshold_fps": 12.0
+    },
+    "reset_seconds": 0.9923609190009302,
+    "stalls": {
+      "count": 0,
+      "threshold_seconds": 2.0,
+      "total_seconds": 0.0
+    },
+    "sustained_fps": {
+      "median": 8.4,
+      "min": 8.1,
+      "p5": 8.1,
+      "step_seconds": 1.0,
+      "window_seconds": 10.0,
+      "windows": 19
+    },
+    "time_to_first_frame_seconds": 1.0082561110029928,
+    "wall_seconds": 28.620453893992817
+  },
+  "status": "ok"
+}

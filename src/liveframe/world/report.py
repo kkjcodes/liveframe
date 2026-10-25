@@ -134,9 +134,14 @@ def build_report(
         # defaults to different-configuration when the claim text names a config
         # (contains "GPU"/"@"/"parallel"/steps), else config-not-stated. A human
         # upgrades to reproduced / not-reproduced only after matching the config.
+        # Consumer GPU names count as naming a config too (a claim saying
+        # "on an RTX 5090" is configured even without the word "GPU").
         names_config = any(
             marker in vendor_claim.lower()
-            for marker in ("gpu", "@", "parallel", "step", "h100", "a100", "sp")
+            for marker in (
+                "gpu", "@", "parallel", "step", "h100", "a100", "h800", "h200",
+                "b200", "l20", "l40", "rtx", "4090", "5090", "3090",
+            )
         )
         claim_check = {
             "claim": vendor_claim,
