@@ -1,0 +1,14 @@
+{
+  "model_sha256": "sha256:1f15d166a8a60bed70c2a8ab2923f40bd2b6b53ed2e0be87905bf45d0666d971",
+  "schema": "liveframe.cfpp-mlx-conversion.v1",
+  "source_checkpoint": "/Users/kumarjha/Code/liveframe/weights/Causal-Forcing/chunkwise/longvideo.pt",
+  "source_sha256": "sha256:1f123dce60e60424a9c6d949643176840fceffb947932997bcf1202d93656d98",
+  "stock_assets": {
+    "config.json": "sha256:2e67801aacdab64458665e1dab3969046101dec205bcb87aa520c21e5ea4ee5b",
+    "t5_encoder.safetensors": "sha256:e86ee4199903e00a88dcd43583a43a6eb898cef600e38670f222d7e37d163787",
+    "vae.safetensors": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414"
+  },
+  "stock_mlx_dir": "/Users/kumarjha/Code/liveframe/weights/Wan2.1-T2V-1.3B-MLX",
+  "target_dtype": "bfloat16",
+  "tensor_count": 825
+}

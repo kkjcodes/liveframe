@@ -1,0 +1,14 @@
+{
+  "model_sha256": "sha256:bf66578aba9e9bdf76d104a2ff72df4e19bbfc2b829a8c5a2254b7cd848b9b5e",
+  "schema": "liveframe.cfpp-mlx-conversion.v1",
+  "source_checkpoint": "/Users/kumarjha/Code/liveframe/weights/Causal-Forcing/causal-forcing++/framewise-2step.pt",
+  "source_sha256": "sha256:8f899a016dffb9539788fac82c6200e43ef6e23b6e61ec6b885bb507a760ce42",
+  "stock_assets": {
+    "config.json": "sha256:2e67801aacdab64458665e1dab3969046101dec205bcb87aa520c21e5ea4ee5b",
+    "t5_encoder.safetensors": "sha256:e86ee4199903e00a88dcd43583a43a6eb898cef600e38670f222d7e37d163787",
+    "vae.safetensors": "sha256:977530e453dbfabbab31e2972e1577d8d7e2840ba7410c81aa3fd421c0cd7414"
+  },
+  "stock_mlx_dir": "/Users/kumarjha/Code/liveframe/weights/Wan2.1-T2V-1.3B-MLX",
+  "target_dtype": "bfloat16",
+  "tensor_count": 825
+}
