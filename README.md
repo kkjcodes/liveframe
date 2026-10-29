@@ -86,10 +86,13 @@ stated precisely, is the finding.
 **The consistency band, stated:** under matched conditions we read a result within
 ~25% below the claim as consistent. What that allowance is made of differs per
 model and we say so: for Matrix-Game 2.0 the run used the vendor's own stack
-(flash-attn per their pins; nothing disabled), so only the measured ~7% same-box
-delivery bias (harness 11.80 vs harness-free 12.73 = 92.7%, recorded in
-agent/world/evidence/accuracy-validation.json) is evidenced - the remaining ~14
-points of the band are explicit unexplained allowance (instance variance alone
+(flash-attn per their pins; nothing disabled), so the only harness cost we have
+measured is the delivery bias (harness 11.80 vs harness-free 12.73 = 92.7%,
+recorded in agent/world/evidence/accuracy-validation.json), and it was measured
+on the 4090-era MG2 environment, not on the H100. Carried to the H100 row as a
+ratio it accounts for ~7 points; as a fixed ~6 ms per frame, ~12. Neither is
+measured on the H100, so we claim neither: the remaining ~10 to 14 points of the
+band are explicit unexplained allowance (instance variance alone
 measured ~36% between two same-model GPUs). For models where optional speedups
 were off (ABot, Oasis), the floor argument applies additionally. 79% of claim
 passes the band; 50% would not - it would be reported as "below claim under
